@@ -22,3 +22,6 @@ export const Combination: Story = {
     template: `<div class="flex items-center gap-1"><kbd appKbd>Ctrl</kbd><span>+</span><kbd appKbd>Shift</kbd><span>+</span><kbd appKbd>P</kbd></div>`,
   }),
 }
+export const Group: Story = {
+  render: () => ({ template: `<div class="flex items-center gap-1"><kbd appKbd>Ctrl</kbd><kbd appKbd>B</kbd></div>` }),
+}

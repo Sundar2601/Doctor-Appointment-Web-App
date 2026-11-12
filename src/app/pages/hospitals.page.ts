@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core'
 import { RouterLink } from '@angular/router'
 import { AppointmentStore } from '@/services/appointment.store'
+import { SearchService } from '@/services/search.service'
 import { AREAS } from '@/data/data'
 import {
   BadgeComponent,
@@ -43,6 +44,7 @@ import {
           class="w-full sm:w-80"
           placeholder="Search hospital"
           aria-label="Search hospitals"
+          [value]="q()"
           (input)="q.set(eventValue($event))"
         />
         <div class="w-44">
@@ -82,7 +84,7 @@ export class HospitalsPage {
   protected readonly eventChecked = eventChecked
   protected readonly store = inject(AppointmentStore)
   protected readonly areaOptions = [{ value: '', label: 'All areas' }, ...AREAS.map((a) => ({ value: a, label: a }))]
-  protected readonly q = signal('')
+  protected readonly q = inject(SearchService).query
   protected readonly area = signal('')
   protected readonly er = signal(false)
   protected readonly rows = computed(() => {

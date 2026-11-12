@@ -1,5 +1,15 @@
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay'
-import { ChangeDetectionStrategy, Component, computed, type ElementRef, input, model, signal, viewChild } from '@angular/core'
+import {
+  afterNextRender,
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  type ElementRef,
+  input,
+  model,
+  signal,
+  viewChild,
+} from '@angular/core'
 import { NgIcon, provideIcons } from '@ng-icons/core'
 import { lucideCheck, lucideChevronDown } from '@ng-icons/lucide'
 
@@ -7,6 +17,8 @@ export interface SelectOption {
   value: string
   label: string
   disabled?: boolean
+  /** Optional group heading, rendered once above the first option of each consecutive group. */
+  group?: string
 }
 
 /**
@@ -54,9 +66,12 @@ export interface SelectOption {
         role="listbox"
         [id]="id() + '-list'"
         [attr.aria-labelledby]="id()"
-        class="bg-popover text-popover-foreground mt-1 max-h-60 overflow-auto rounded-md border p-1 shadow-md"
+        class="bg-popover text-popover-foreground mt-1 max-h-60 min-w-56 overflow-auto rounded-md border p-1 shadow-md"
       >
         @for (o of options(); track o.value; let i = $index) {
+          @if (o.group && o.group !== options()[i - 1]?.group) {
+            <div role="presentation" class="text-muted-foreground text-xs leading-4">{{ o.group }}</div>
+          }
           <div
             role="option"
             [id]="id() + '-opt-' + i"
@@ -89,12 +104,20 @@ export class SelectComponent {
   readonly invalid = input(false)
   readonly ariaLabel = input<string>()
   readonly id = input(`app-select-${SelectComponent.n++}`)
+  /** Opens the list once after first render (for docs/visual tests). */
+  readonly defaultOpen = input(false)
 
   protected readonly open = signal(false)
   protected readonly active = signal(-1)
   protected readonly width = signal(0)
   private readonly trigger = viewChild.required<ElementRef<HTMLElement>>('trigger')
   protected readonly selected = computed(() => this.options().find((o) => o.value === this.value()))
+
+  constructor() {
+    afterNextRender(() => {
+      if (this.defaultOpen() && !this.disabled()) this.show()
+    })
+  }
 
   protected toggle() {
     if (this.open()) this.close()

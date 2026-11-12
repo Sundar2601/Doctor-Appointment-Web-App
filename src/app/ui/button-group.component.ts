@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core'
   host: {
     role: 'group',
     class:
-      'border-input inline-flex items-stretch overflow-hidden rounded-md border shadow-xs [&>*]:rounded-none [&>*]:border-0 [&>*:not(:first-child)]:border-l [&>*]:bg-background',
+      'border-input inline-flex items-stretch overflow-hidden rounded-md border shadow-xs [&>*]:rounded-none [&>*]:border-0 [&>*]:bg-background',
   },
   template: '<ng-content />',
 })

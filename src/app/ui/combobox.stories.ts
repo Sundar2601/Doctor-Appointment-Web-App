@@ -48,3 +48,20 @@ type Story = StoryObj<Args>
 export const Default: Story = {}
 export const WithValue: Story = { args: { value: 'angular' } }
 export const Disabled: Story = { args: { disabled: true } }
+
+/** Open popover with search field and the selected item checked (Figma "Combobox List"). */
+export const OpenList: Story = {
+  args: {
+    options: [
+      { value: 'next', label: 'Next.js' },
+      { value: 'svelte', label: 'SvelteKit' },
+      { value: 'nuxt', label: 'Nuxt.js' },
+      { value: 'remix', label: 'Remix' },
+    ],
+    value: 'next',
+  },
+  render: (args) => ({
+    props: args,
+    template: `<div class="h-72 w-56"><app-combobox ariaLabel="Framework" [options]="options" [(value)]="value" [placeholder]="placeholder" [searchPlaceholder]="searchPlaceholder" [defaultOpen]="true" /></div>`,
+  }),
+}

@@ -4,14 +4,14 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core'
 @Component({
   selector: 'app-field',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'grid gap-1.5' },
+  host: { class: 'grid gap-2' },
   template: `
-    <label class="text-sm font-medium" [attr.for]="for()">{{ label() }}</label>
+    <label class="text-foreground text-sm leading-5 font-medium" [attr.for]="for()">{{ label() }}</label>
     <ng-content />
     @if (error()) {
-      <p class="text-destructive text-xs" role="alert">{{ error() }}</p>
+      <p class="text-destructive text-sm" role="alert">{{ error() }}</p>
     } @else if (hint()) {
-      <p class="text-muted-foreground text-xs">{{ hint() }}</p>
+      <p class="text-muted-foreground text-sm">{{ hint() }}</p>
     }
   `,
 })

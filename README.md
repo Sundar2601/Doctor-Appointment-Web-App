@@ -47,6 +47,10 @@ Everything in `src/app/ui/` is exported from `@/ui` and has stories (`*.stories.
 - Overlays (dialog, sheet, drawer, popover, menus, tooltip) are built on `@angular/cdk`.
 - Event values are read with the typed helpers in `ui/dom-events.ts` instead of `$any`.
 
+## Header search
+
+The header search box filters the page you are on (doctors by name or specialty, hospitals by name, appointments by patient or reason). Press Enter on a page with nothing to search to jump to Doctors.
+
 ## Design system
 
 The Figma file "Doctor Appointment Design System" is mapped to these components with Code Connect (`figma/*.figma.ts`, config in `figma.config.json`). Open a component in Figma Dev Mode to see the Angular snippet.
@@ -55,4 +59,4 @@ The Figma file "Doctor Appointment Design System" is mapped to these components 
 
 - TypeScript `strict` plus `noUncheckedIndexedAccess`, `noImplicitOverride` and `noImplicitReturns`; Angular `strictTemplates`.
 - ESLint with `typescript-eslint` and `angular-eslint` (including template accessibility rules); Prettier for formatting (no semicolons, single quotes, 140 columns).
-- Run `npm run lint`, `npm run typecheck` and `npm run build` before committing; CI runs the same checks.
+- Run `npm run lint`, `npm run typecheck`, `npm test` and `npm run build` before committing; CI runs the same checks.

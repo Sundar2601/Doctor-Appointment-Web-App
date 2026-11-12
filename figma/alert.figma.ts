@@ -6,17 +6,16 @@ const instance = figma.selectedInstance
 
 const title = instance.getString('Title')
 const description = instance.getString('Description')
-// NOTE: code tones are danger | success; warning falls back to 'danger', default/info to 'success'.
 const tone = instance.getEnum('Variant', {
-  default: 'success',
+  default: 'default',
   destructive: 'danger',
   success: 'success',
-  warning: 'danger',
-  info: 'success',
+  warning: 'warning',
+  info: 'info',
 })
 
 export default {
-  example: figma.code`<app-alert tone="${tone}"><strong>${title}</strong> ${description}</app-alert>`,
+  example: figma.code`<app-alert tone="${tone}" heading="${title}">${description}</app-alert>`,
   imports: ["import { AlertComponent } from '@/ui'"],
   id: 'alert',
   metadata: { nestable: true },

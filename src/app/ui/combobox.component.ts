@@ -1,6 +1,16 @@
 import { CdkTrapFocus } from '@angular/cdk/a11y'
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay'
-import { ChangeDetectionStrategy, Component, computed, type ElementRef, input, model, signal, viewChild } from '@angular/core'
+import {
+  afterNextRender,
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  type ElementRef,
+  input,
+  model,
+  signal,
+  viewChild,
+} from '@angular/core'
 import { NgIcon, provideIcons } from '@ng-icons/core'
 import { lucideCheck, lucideChevronsUpDown, lucideSearch } from '@ng-icons/lucide'
 
@@ -36,8 +46,8 @@ export interface ComboboxOption {
       class="border-input bg-background flex h-9 w-full items-center justify-between gap-2 rounded-md border px-3 text-sm shadow-xs transition-colors focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
       (click)="open() ? close() : show()"
     >
-      <span class="truncate" [class.text-muted-foreground]="!selected()">{{ selected()?.label ?? placeholder() }}</span>
-      <ng-icon name="lucideChevronsUpDown" class="text-muted-foreground size-4 shrink-0" />
+      <span class="truncate">{{ selected()?.label ?? placeholder() }}</span>
+      <ng-icon name="lucideChevronsUpDown" class="text-foreground size-4 shrink-0" />
     </button>
     <ng-template
       cdkConnectedOverlay
@@ -100,6 +110,8 @@ export class ComboboxComponent {
   readonly disabled = input(false)
   readonly ariaLabel = input<string>()
   readonly id = input(`app-combobox-${ComboboxComponent.n++}`)
+  /** Opens the popover once after first render (for docs/visual tests). */
+  readonly defaultOpen = input(false)
 
   protected readonly open = signal(false)
   protected readonly query = signal('')
@@ -111,6 +123,12 @@ export class ComboboxComponent {
     const q = this.query().trim().toLowerCase()
     return q ? this.options().filter((o) => o.label.toLowerCase().includes(q)) : this.options()
   })
+
+  constructor() {
+    afterNextRender(() => {
+      if (this.defaultOpen() && !this.disabled()) this.show()
+    })
+  }
 
   protected show() {
     this.width.set(this.trigger().nativeElement.offsetWidth)

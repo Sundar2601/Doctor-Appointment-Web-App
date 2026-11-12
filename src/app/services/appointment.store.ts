@@ -1,11 +1,11 @@
 import { Injectable, computed, inject, signal } from '@angular/core'
 import { AuthService } from '@/services/auth.service'
-import { DOCTORS, HOSPITALS, SEED_APPOINTMENTS, toIsoDate, type Appointment } from '@/data/data'
+import { DOCTORS, HOSPITALS, SEED_APPOINTMENTS, toIsoDate, type Appointment, type Doctor, type Hospital } from '@/data/data'
 
 @Injectable({ providedIn: 'root' })
 export class AppointmentStore {
-  readonly doctors = DOCTORS
-  readonly hospitals = HOSPITALS
+  readonly doctors: readonly Doctor[] = [...DOCTORS]
+  readonly hospitals: readonly Hospital[] = [...HOSPITALS]
   private readonly auth = inject(AuthService)
   /** Every booking, used only to compute doctor availability. Pages must read `mine`. */
   private readonly all = signal<Appointment[]>(SEED_APPOINTMENTS)

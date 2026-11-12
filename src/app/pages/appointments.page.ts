@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core'
 import { AppointmentStore } from '@/services/appointment.store'
+import { SearchService } from '@/services/search.service'
 import type { ApptStatus } from '@/data/data'
 import {
   AvatarComponent,
@@ -40,6 +41,7 @@ import {
         class="w-full! sm:w-[280px]!"
         placeholder="Search patient or reason"
         aria-label="Search appointments"
+        [value]="q()"
         (input)="q.set(eventValue($event))"
       />
       <select appControl class="w-full! sm:w-[150px]!" aria-label="Filter by status" (change)="status.set(eventValue($event))">
@@ -110,7 +112,7 @@ export class AppointmentsPage {
   protected readonly tone: Record<ApptStatus, BadgeTone> = { Scheduled: 'primary', Completed: 'success', Cancelled: 'neutral' }
   protected readonly headings = ['ID', 'Patient', 'Doctor', 'Hospital', 'When', 'Reason', 'Status']
   protected readonly statuses = ['Scheduled', 'Completed', 'Cancelled']
-  protected readonly q = signal('')
+  protected readonly q = inject(SearchService).query
   protected readonly status = signal('')
   protected readonly doctor = signal('')
   protected readonly tabs = computed(() => {

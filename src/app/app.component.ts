@@ -1,12 +1,13 @@
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core'
+import { ChangeDetectionStrategy, Component, computed, effect, inject, untracked } from '@angular/core'
 import { toSignal } from '@angular/core/rxjs-interop'
 import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router'
 import { NgIcon, provideIcons } from '@ng-icons/core'
 import { lucideActivity, lucideLogOut, lucideMoon, lucideSearch, lucideSun, lucideUser } from '@ng-icons/lucide'
 import { filter, map } from 'rxjs'
 import { AuthService } from '@/services/auth.service'
+import { SearchService } from '@/services/search.service'
 import { ThemeService } from '@/services/theme.service'
-import { AvatarComponent, BreadcrumbComponent, ButtonDirective, SidebarComponent, type SidebarGroup } from '@/ui'
+import { AvatarComponent, BreadcrumbComponent, ButtonDirective, SidebarComponent, eventValue, type SidebarGroup } from '@/ui'
 
 const NAV: SidebarGroup[] = [
   {
@@ -70,7 +71,14 @@ const PAGE_TITLES: Record<string, string> = {
             <label class="text-muted-foreground relative hidden h-10 w-56 items-center gap-2 px-3 text-sm sm:flex">
               <ng-icon name="lucideSearch" size="16" />
               <span class="sr-only">Search</span>
-              <input type="search" placeholder="Search..." class="placeholder:text-muted-foreground w-full bg-transparent outline-none" />
+              <input
+                type="search"
+                placeholder="Search..."
+                class="placeholder:text-muted-foreground w-full bg-transparent outline-none"
+                [value]="search.query()"
+                (input)="search.query.set(eventValue($event))"
+                (keydown.enter)="submitSearch()"
+              />
             </label>
             <button
               appButton
@@ -96,6 +104,8 @@ const PAGE_TITLES: Record<string, string> = {
 export class AppComponent {
   protected readonly theme = inject(ThemeService)
   protected readonly auth = inject(AuthService)
+  protected readonly search = inject(SearchService)
+  protected readonly eventValue = eventValue
   private readonly router = inject(Router)
   protected readonly nav = NAV
 
@@ -106,9 +116,27 @@ export class AppComponent {
     ),
     { initialValue: this.router.url },
   )
+  private readonly segment = computed(() => this.url().split(/[?#/]/).filter(Boolean)[0] ?? 'dashboard')
+
+  constructor() {
+    // Search text belongs to one page: clear it when moving to another, unless a search caused the move.
+    effect(() => {
+      this.segment()
+      untracked(() => {
+        if (this.search.keepOnNextNavigation) this.search.keepOnNextNavigation = false
+        else this.search.clear()
+      })
+    })
+  }
+
+  protected submitSearch() {
+    if (!this.search.query().trim() || this.search.isSearchable(this.segment())) return
+    this.search.keepOnNextNavigation = true
+    void this.router.navigateByUrl('/doctors')
+  }
+
   protected readonly crumbs = computed(() => {
-    const segment = this.url().split(/[?#/]/).filter(Boolean)[0] ?? 'dashboard'
-    return [{ label: 'Home', href: '/dashboard' }, { label: PAGE_TITLES[segment] ?? 'Dashboard' }]
+    return [{ label: 'Home', href: '/dashboard' }, { label: PAGE_TITLES[this.segment()] ?? 'Dashboard' }]
   })
 
   protected signOut() {

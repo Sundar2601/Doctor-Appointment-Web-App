@@ -5,14 +5,13 @@ import figma from 'figma'
 const instance = figma.selectedInstance
 
 const label = instance.getString('Label')
-// NOTE: code tones are neutral | info | success | danger; 'warning' falls back to 'danger'.
 const tone = instance.getEnum('Variant', {
-  default: 'neutral',
-  secondary: 'info',
+  default: 'primary',
+  secondary: 'neutral',
   destructive: 'danger',
-  outline: 'info',
+  outline: 'outline',
   success: 'success',
-  warning: 'danger',
+  warning: 'warning',
 })
 
 export default {

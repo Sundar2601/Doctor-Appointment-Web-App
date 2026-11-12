@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core'
 import { RouterLink } from '@angular/router'
 import { AppointmentStore } from '@/services/appointment.store'
+import { SearchService } from '@/services/search.service'
 import { money } from '@/data/data'
 import { AvatarComponent, ButtonDirective, CardComponent, EmptyStateComponent, HeroComponent, SelectComponent } from '@/ui'
 
@@ -46,7 +47,13 @@ export class DoctorsPage {
   readonly hospital = input<string | undefined>()
   protected readonly picked = signal<string | null>(null)
   protected readonly hospitalId = computed(() => this.picked() ?? this.hospital() ?? '')
-  protected readonly rows = computed(() => this.store.doctors.filter((d) => !this.hospitalId() || d.hospitalId === this.hospitalId()))
+  private readonly search = inject(SearchService)
+  protected readonly rows = computed(() => {
+    const q = this.search.query().toLowerCase().trim()
+    return this.store.doctors.filter(
+      (d) => (!this.hospitalId() || d.hospitalId === this.hospitalId()) && (!q || `${d.name} ${d.specialty}`.toLowerCase().includes(q)),
+    )
+  })
   protected readonly hospitalOptions = computed(() => [
     { value: '', label: 'All hospitals' },
     ...this.store.hospitals.map((h) => ({ value: h.id, label: h.name })),

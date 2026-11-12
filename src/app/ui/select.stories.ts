@@ -39,3 +39,18 @@ export const Default: Story = {}
 export const WithValue: Story = { args: { value: 'neurology' } }
 export const Invalid: Story = { args: { invalid: true } }
 export const Disabled: Story = { args: { disabled: true, value: 'cardiology' } }
+
+const fruits: SelectOption[] = [
+  { value: 'apple', label: 'Apple', group: 'Fruits' },
+  { value: 'banana', label: 'Banana', group: 'Fruits' },
+  { value: 'blueberry', label: 'Blueberry', group: 'Fruits' },
+  { value: 'grapes', label: 'Grapes', group: 'Fruits' },
+]
+/** Open list with a group label and the selected item checked (Figma "Select Content"). */
+export const OpenList: Story = {
+  args: { options: fruits, value: 'grapes', placeholder: 'Select a fruit' },
+  render: (args) => ({
+    props: args,
+    template: `<div class="h-64 w-56"><app-select ariaLabel="Fruit" [options]="options" [(value)]="value" [placeholder]="placeholder" [defaultOpen]="true" /></div>`,
+  }),
+}
