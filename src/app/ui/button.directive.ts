@@ -1,17 +1,19 @@
 import { computed, Directive, input } from '@angular/core'
 
-export type ButtonVariant = 'primary' | 'outline' | 'ghost' | 'link'
-export type ButtonSize = 'sm' | 'md' | 'icon'
+export type ButtonVariant = 'primary' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link'
+export type ButtonSize = 'sm' | 'md' | 'lg' | 'icon'
 
 const BASE =
-  'inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50'
+  'inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors focus-visible:ring-ring/50 focus-visible:ring-[3px] focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50'
 const VARIANT: Record<ButtonVariant, string> = {
   primary: 'bg-primary text-primary-foreground hover:bg-primary/90',
-  outline: 'border bg-background hover:bg-accent hover:text-accent-foreground',
+  destructive: 'bg-destructive text-white hover:bg-destructive/90',
+  outline: 'border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground',
+  secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
   ghost: 'hover:bg-accent hover:text-accent-foreground',
   link: 'text-primary underline-offset-4 hover:underline',
 }
-const SIZE: Record<ButtonSize, string> = { sm: 'h-8 px-3', md: 'h-9 px-4', icon: 'size-9' }
+const SIZE: Record<ButtonSize, string> = { sm: 'h-8 px-3', md: 'h-9 px-4', lg: 'h-10 px-6', icon: 'size-9' }
 
 /** Usage: `<button appButton variant="outline" size="sm">`. Works on `button` and `a`. */
 @Directive({ selector: 'button[appButton], a[appButton]', host: { '[class]': 'classes()' } })

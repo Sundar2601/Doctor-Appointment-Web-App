@@ -6,7 +6,7 @@
     "start": "ng serve --port 4300",
     "build": "ng build",
     "ng": "ng",
-    "storybook": "npm run storybook:css && ng run doctor-appointment-app:storybook",
+    "storybook": "node scripts/storybook-dev.mjs",
     "build-storybook": "npm run storybook:css && ng run doctor-appointment-app:build-storybook",
     "storybook:css": "node scripts/build-storybook-css.mjs",
     "lint": "eslint .",

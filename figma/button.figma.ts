@@ -5,17 +5,15 @@ import figma from 'figma'
 const instance = figma.selectedInstance
 
 const label = instance.getString('Label')
-// NOTE: code has no 'destructive' / 'secondary' variant; they fall back to the closest style.
 const variant = instance.getEnum('Variant', {
   default: 'primary',
-  destructive: 'primary',
+  destructive: 'destructive',
   outline: 'outline',
-  secondary: 'outline',
+  secondary: 'secondary',
   ghost: 'ghost',
   link: 'link',
 })
-// NOTE: code has no 'lg' size; falls back to 'md'.
-const size = instance.getEnum('Size', { default: 'md', sm: 'sm', lg: 'md', icon: 'icon' })
+const size = instance.getEnum('Size', { default: 'md', sm: 'sm', lg: 'lg', icon: 'icon' })
 const disabled = instance.getEnum('State', { default: false, hover: false, focus: false, disabled: true })
 
 export default {
