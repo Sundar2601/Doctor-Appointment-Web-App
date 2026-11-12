@@ -1,8 +1,6 @@
 import { Overlay, OverlayRef } from '@angular/cdk/overlay'
 import { TemplatePortal } from '@angular/cdk/portal'
-import { DOCUMENT } from '@angular/common'
 import { ChangeDetectionStrategy, Component, Directive, ElementRef, inject, input, OnDestroy, TemplateRef, ViewContainerRef } from '@angular/core'
-import { ensureOverlayStyles } from './overlay-styles'
 
 /** The card surface (Figma "Hover Card"): popover bg, border, shadow, 320px wide. Put it inside the `ng-template` given to `appHoverCard`. */
 @Component({
@@ -31,7 +29,6 @@ export class HoverCardDirective implements OnDestroy {
   private readonly overlay = inject(Overlay)
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef)
   private readonly vcr = inject(ViewContainerRef)
-  private readonly doc = inject(DOCUMENT)
   private ref?: OverlayRef
   private timer?: ReturnType<typeof setTimeout>
 
@@ -42,7 +39,6 @@ export class HoverCardDirective implements OnDestroy {
 
   private open() {
     if (this.ref?.hasAttached()) return
-    ensureOverlayStyles(this.doc)
     if (!this.ref) {
       const below = this.hoverCardPosition() === 'bottom'
       this.ref = this.overlay.create({

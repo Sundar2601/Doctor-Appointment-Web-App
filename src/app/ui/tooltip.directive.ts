@@ -1,8 +1,6 @@
 import { Overlay, OverlayRef } from '@angular/cdk/overlay'
 import { ComponentPortal } from '@angular/cdk/portal'
-import { DOCUMENT } from '@angular/common'
 import { ChangeDetectionStrategy, Component, Directive, ElementRef, inject, input, OnDestroy, signal } from '@angular/core'
-import { ensureOverlayStyles } from './overlay-styles'
 
 export type TooltipPosition = 'top' | 'bottom' | 'left' | 'right'
 let nextId = 0
@@ -35,13 +33,11 @@ export class TooltipDirective implements OnDestroy {
 
   private readonly overlay = inject(Overlay)
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef)
-  private readonly doc = inject(DOCUMENT)
   private readonly id = `app-tooltip-${nextId++}`
   private ref?: OverlayRef
 
   protected show() {
     if (this.ref?.hasAttached() || !this.appTooltip()) return
-    ensureOverlayStyles(this.doc)
     const pos = this.tooltipPosition()
     const positions = {
       top: { originX: 'center', originY: 'top', overlayX: 'center', overlayY: 'bottom', offsetY: -6 },

@@ -1,7 +1,6 @@
 import { A11yModule } from '@angular/cdk/a11y'
 import { CdkConnectedOverlay, CdkOverlayOrigin, ConnectedPosition } from '@angular/cdk/overlay'
 import { ChangeDetectionStrategy, Component, computed, input, model } from '@angular/core'
-import { ensureOverlayStyles } from './overlay.base'
 
 export type PopoverSide = 'bottom' | 'top'
 let uid = 0
@@ -42,7 +41,6 @@ export class PopoverComponent {
     const originX = a === 'center' ? 'center' : a
     return [{ originX, originY: top ? 'top' : 'bottom', overlayX: originX, overlayY: top ? 'bottom' : 'top', offsetY: top ? -8 : 8 }]
   })
-  constructor() { ensureOverlayStyles() }
   protected onOutside(e: MouseEvent, origin: HTMLElement): void {
     if (!origin.contains(e.target as Node)) this.open.set(false)
   }

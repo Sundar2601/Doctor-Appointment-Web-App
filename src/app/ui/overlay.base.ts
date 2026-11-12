@@ -2,27 +2,7 @@ import { Dialog, DialogConfig, DialogRef } from '@angular/cdk/dialog'
 import { Directive, effect, inject, DestroyRef, input, model, TemplateRef, untracked, viewChild, ViewContainerRef } from '@angular/core'
 import { filter } from 'rxjs'
 
-const OVERLAY_CSS = `
-.cdk-overlay-container{position:fixed;inset:0;z-index:1000;pointer-events:none}
-.cdk-overlay-container:empty{display:none}
-.cdk-global-overlay-wrapper,.cdk-overlay-connected-position-bounding-box{position:absolute;z-index:1000;display:flex;flex-direction:column;min-width:1px;min-height:1px}
-.cdk-global-overlay-wrapper{inset:0;pointer-events:none}
-.cdk-overlay-pane{position:absolute;z-index:1000;display:flex;box-sizing:border-box;max-width:100%;max-height:100%;pointer-events:auto}
-.cdk-overlay-backdrop{position:absolute;inset:0;z-index:1000;pointer-events:auto;opacity:0;transition:opacity .15s ease}
-.cdk-overlay-backdrop.cdk-overlay-backdrop-showing{opacity:1}
-.cdk-overlay-transparent-backdrop{background:transparent}
-.cdk-dialog-container{display:block;width:100%;height:100%;min-height:inherit;max-height:inherit;outline:0}
-.cdk-visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-`
 
-/** Injects the minimal CDK overlay structural CSS once (the app does not import the prebuilt CDK stylesheet). */
-export function ensureOverlayStyles(): void {
-  if (typeof document === 'undefined' || document.getElementById('app-cdk-overlay-styles')) return
-  const el = document.createElement('style')
-  el.id = 'app-cdk-overlay-styles'
-  el.textContent = OVERLAY_CSS
-  document.head.appendChild(el)
-}
 
 let uid = 0
 
@@ -44,7 +24,6 @@ export abstract class OverlayPanelBase {
   protected abstract config(): DialogConfig
 
   constructor() {
-    ensureOverlayStyles()
     effect(() => {
       const open = this.open()
       const tpl = this.tpl()

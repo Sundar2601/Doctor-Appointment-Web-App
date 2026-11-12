@@ -3,7 +3,6 @@ import { ChangeDetectionStrategy, Component, Directive, input, output } from '@a
 import { NgIcon, provideIcons } from '@ng-icons/core'
 import { lucideCheck } from '@ng-icons/lucide'
 import { ButtonDirective, ButtonVariant } from './button.directive'
-import { ensureOverlayStyles } from './overlay.base'
 
 export interface MenuEntry {
   label?: string
@@ -27,7 +26,6 @@ export interface MenubarMenu { label: string; entries: MenuEntry[] }
   host: { class: 'bg-popover text-popover-foreground flex min-w-48 flex-col rounded-md border p-1 shadow-md outline-none' },
 })
 export class MenuPanelDirective {
-  constructor() { ensureOverlayStyles() }
 }
 
 /** Renders `entries` as menu items; must sit inside an `appMenuPanel`. */
