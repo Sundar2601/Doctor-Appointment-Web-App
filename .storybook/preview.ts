@@ -1,3 +1,6 @@
+import '@fontsource-variable/inter/index.css'
+import './generated.css' // built by scripts/build-storybook-css.mjs from src/styles.css
+
 import { provideRouter } from '@angular/router'
 import { applicationConfig, type Preview } from '@storybook/angular-vite'
 

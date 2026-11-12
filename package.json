@@ -6,8 +6,9 @@
     "start": "ng serve --port 4300",
     "build": "ng build",
     "ng": "ng",
-    "storybook": "ng run doctor-appointment-app:storybook",
-    "build-storybook": "ng run doctor-appointment-app:build-storybook"
+    "storybook": "npm run storybook:css && ng run doctor-appointment-app:storybook",
+    "build-storybook": "npm run storybook:css && ng run doctor-appointment-app:build-storybook",
+    "storybook:css": "node scripts/build-storybook-css.mjs"
   },
   "dependencies": {
     "@angular/cdk": "^22.2.6",

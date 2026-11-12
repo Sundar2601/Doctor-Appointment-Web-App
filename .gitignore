@@ -8,3 +8,5 @@ dist
 
 *storybook.log
 storybook-static
+
+.storybook/generated.css
