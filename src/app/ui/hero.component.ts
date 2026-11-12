@@ -12,7 +12,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core'
     <div aria-hidden="true" class="bg-brand-500 pointer-events-none absolute -top-44 -left-24 size-[340px] rounded-full"></div>
     <div aria-hidden="true" class="bg-brand-700 pointer-events-none absolute top-16 right-12 size-64 rounded-full"></div>
     <div aria-hidden="true" class="bg-brand-400 pointer-events-none absolute -top-12 right-1/3 size-28 rounded-full"></div>
-    <div class="relative flex items-center gap-6 p-8">
+    <div class="relative flex min-h-44 items-center gap-6 p-8" [class]="illustration() ? 'md:pr-80' : ''">
       <div class="flex min-w-0 flex-1 flex-col items-start gap-3">
         <ng-content select="[heroChip]" />
         <h1 class="text-3xl leading-9 font-bold">{{ title() }}</h1>
@@ -22,7 +22,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core'
         <ng-content select="[heroActions]" />
       </div>
       @if (illustration()) {
-        <img [src]="illustration()" alt="" class="hidden h-36 w-auto shrink-0 md:block" />
+        <img [src]="illustration()" alt="" class="pointer-events-none absolute right-12 bottom-0 hidden h-36 w-auto max-w-none md:block" />
       }
     </div>
   `,

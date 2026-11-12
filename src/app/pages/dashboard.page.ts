@@ -19,7 +19,7 @@ import { ButtonDirective, EmptyStateComponent, HeroComponent, NotificationItemCo
       illustration="illustrations/hero-dashboard.svg"
     >
       @if (next(); as n) {
-        <span heroChip class="bg-primary-foreground/20 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium">
+        <span heroChip class="bg-black/20 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium">
           <ng-icon name="lucideCalendar" size="16" />
           Next: {{ n.date }} · {{ n.time }} · {{ store.doctor(n.doctorId)?.name }}
         </span>
