@@ -9,7 +9,7 @@ import { Directive } from '@angular/core'
   host: {
     role: 'switch',
     class:
-      'ui-switch bg-input checked:bg-primary focus-visible:outline-ring h-[18px] w-8 shrink-0 cursor-pointer appearance-none rounded-full transition-colors focus-visible:outline-[3px] focus-visible:outline-offset-1 disabled:cursor-not-allowed disabled:opacity-50',
+      'ui-switch bg-input checked:bg-primary h-[18px] w-8 shrink-0 border border-transparent cursor-pointer appearance-none rounded-full transition-colors focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50',
   },
 })
 export class SwitchDirective {}

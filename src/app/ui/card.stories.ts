@@ -26,3 +26,10 @@ export const WithAction: Story = {
 export const NoHeader: Story = {
   args: { heading: undefined },
 }
+export const WithFooter: Story = {
+  render: (args) => ({
+    props: args,
+    template: `<div class="w-96"><app-card heading="Card Title" description="Card description goes here."><p class="text-sm">Card content</p>
+      <button cardFooter appButton variant="outline">Cancel</button><button cardFooter appButton>Save</button></app-card></div>`,
+  }),
+}

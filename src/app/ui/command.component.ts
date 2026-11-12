@@ -18,9 +18,9 @@ let uid = 0
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgIcon],
   viewProviders: [provideIcons({ lucideSearch })],
-  host: { class: 'bg-popover text-popover-foreground flex w-full flex-col overflow-hidden rounded-md border shadow-md' },
+  host: { class: 'bg-popover text-popover-foreground flex w-full flex-col overflow-hidden rounded-lg border shadow-md' },
   template: `
-    <div class="flex h-9 items-center gap-2 border-b px-3">
+    <div class="flex h-11 items-center gap-2 border-b px-3">
       <ng-icon name="lucideSearch" size="16" class="text-muted-foreground shrink-0" />
       <input
         type="text"
@@ -33,7 +33,7 @@ let uid = 0
         [value]="query()"
         (input)="onInput(eventValue($event))"
         (keydown)="onKey($event)"
-        class="placeholder:text-muted-foreground h-10 w-full bg-transparent text-sm outline-none"
+        class="placeholder:text-muted-foreground h-11 w-full bg-transparent text-sm outline-none"
       />
     </div>
     <div [id]="listId" role="listbox" class="max-h-72 overflow-auto p-1">

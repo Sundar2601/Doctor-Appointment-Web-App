@@ -12,7 +12,7 @@ import { lucideGripVertical } from '@ng-icons/lucide'
   template: `
     <div class="min-h-0 min-w-0 overflow-auto" [style.flex]="'0 0 ' + size() + '%'"><ng-content select="[pane1]" /></div>
     <div
-      class="bg-border focus-visible:outline-ring relative flex shrink-0 items-center justify-center focus-visible:outline-2"
+      class="bg-border focus-visible:ring-ring/50 relative flex shrink-0 items-center justify-center focus-visible:ring-[3px] focus-visible:outline-none"
       [class]="horizontal() ? 'w-2 cursor-col-resize' : 'h-2 cursor-row-resize'"
       role="separator"
       tabindex="0"

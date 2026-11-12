@@ -20,7 +20,7 @@ export interface SegmentOption {
       <button
         type="button"
         role="radio"
-        class="focus-visible:outline-ring inline-flex h-full items-center justify-center rounded-md px-3 text-sm font-medium whitespace-nowrap transition-colors focus-visible:outline-2 disabled:opacity-50"
+        class="focus-visible:ring-ring/50 focus-visible:ring-[3px] focus-visible:outline-none inline-flex h-full items-center justify-center rounded-md px-3 text-sm font-medium whitespace-nowrap transition-colors disabled:opacity-50"
         [class]="o.value === value() ? 'bg-background text-foreground shadow-xs' : 'hover:text-foreground'"
         [attr.aria-checked]="o.value === value()"
         [tabindex]="o.value === value() ? 0 : -1"

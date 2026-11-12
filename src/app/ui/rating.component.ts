@@ -14,8 +14,8 @@ import { lucideStar } from '@ng-icons/lucide'
       <button
         type="button"
         role="radio"
-        class="focus-visible:outline-ring rounded-xs text-foreground focus-visible:outline-2 disabled:cursor-default"
-        [class.text-muted-foreground]="n > (hover() || value())"
+        class="rounded-xs focus-visible:ring-ring/50 focus-visible:ring-[3px] focus-visible:outline-none disabled:cursor-default"
+        [class]="n > (hover() || value()) ? 'text-muted-foreground' : 'text-warning'"
         [attr.aria-checked]="n === value()"
         [attr.aria-label]="n + (n === 1 ? ' star' : ' stars')"
         [disabled]="readonly()"

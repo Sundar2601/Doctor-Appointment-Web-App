@@ -21,7 +21,7 @@ const meta: Meta<AlertDialogComponent> = {
     cancelLabel: 'Cancel',
   },
   render: (args) => ({
-    props: { ...args, open: false, result: '' },
+    props: { ...args, open: args.open ?? false, result: '' },
     template: `
       <button appButton variant="outline" (click)="open = true">Open alert dialog</button>
       <app-alert-dialog [heading]="heading" [description]="description" [confirmLabel]="confirmLabel" [cancelLabel]="cancelLabel"
@@ -42,3 +42,4 @@ export const Destructive: Story = {
     cancelLabel: 'Keep account',
   },
 }
+export const Open: Story = { args: { open: true } }

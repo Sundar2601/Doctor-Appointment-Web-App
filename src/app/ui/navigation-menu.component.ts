@@ -32,26 +32,26 @@ export interface NavMenuItem {
                 [attr.aria-expanded]="openIndex() === i"
                 [attr.aria-controls]="'app-navmenu-' + i"
                 (click)="openIndex.set(openIndex() === i ? -1 : i)"
-                class="hover:bg-accent hover:text-accent-foreground focus-visible:outline-ring data-[open=true]:bg-accent/50 inline-flex h-9 items-center justify-center gap-1 rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-2"
+                class="hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none data-[open=true]:bg-accent inline-flex h-9 items-center justify-center gap-1 rounded-md px-4 py-2 text-sm font-medium transition-colors"
                 [attr.data-open]="openIndex() === i"
               >
-                {{ item.label }}<ng-icon name="lucideChevronDown" size="12" />
+                {{ item.label }}<ng-icon name="lucideChevronDown" size="16" />
               </button>
               @if (openIndex() === i) {
                 <ul
                   [id]="'app-navmenu-' + i"
-                  class="bg-popover text-popover-foreground absolute top-full left-0 z-50 mt-1.5 grid w-96 gap-1 rounded-md border p-2 shadow-md"
+                  class="bg-popover text-popover-foreground absolute top-full left-0 z-50 mt-1.5 grid w-[400px] gap-2 rounded-lg border p-4 shadow-md"
                 >
                   @for (c of item.children; track c.href) {
                     <li>
                       <a
                         [routerLink]="c.href"
                         (click)="openIndex.set(-1)"
-                        class="hover:bg-accent hover:text-accent-foreground focus-visible:outline-ring block rounded-sm p-3 text-sm focus-visible:outline-2"
+                        class="hover:bg-accent hover:text-accent-foreground block rounded-md p-3 text-sm focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none"
                       >
                         <div class="font-medium">{{ c.label }}</div>
                         @if (c.description) {
-                          <p class="text-muted-foreground line-clamp-2 text-sm leading-snug">{{ c.description }}</p>
+                          <p class="text-muted-foreground line-clamp-2 text-sm leading-5">{{ c.description }}</p>
                         }
                       </a>
                     </li>
@@ -61,7 +61,7 @@ export interface NavMenuItem {
             } @else {
               <a
                 [routerLink]="item.href"
-                class="hover:bg-accent hover:text-accent-foreground focus-visible:outline-ring inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-2"
+                class="hover:bg-accent hover:text-accent-foreground inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none"
                 >{{ item.label }}</a
               >
             }

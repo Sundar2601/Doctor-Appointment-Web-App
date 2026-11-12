@@ -44,5 +44,5 @@ export class ToggleGroupItemDirective {
   readonly value = input.required<string>()
   protected readonly on = computed(() => this.group.isOn(this.value()))
   protected readonly classes =
-    'inline-flex h-9 min-w-9 items-center justify-center gap-2 rounded-md px-2 text-sm font-medium whitespace-nowrap transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-3 focus-visible:outline-offset-[-3px] focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-pressed:bg-accent aria-pressed:text-accent-foreground'
+    'inline-flex h-9 min-w-9 items-center justify-center gap-2 rounded-md px-2 text-sm font-medium whitespace-nowrap transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none focus-visible:z-10 disabled:pointer-events-none disabled:opacity-50 aria-pressed:bg-accent aria-pressed:text-accent-foreground'
 }

@@ -14,12 +14,16 @@ import { lucideArrowDown, lucideArrowUp } from '@ng-icons/lucide'
       <p class="text-muted-foreground text-sm">{{ label() }}</p>
       @if (delta()) {
         <span class="text-foreground inline-flex items-center gap-1 rounded-md border px-2 py-0.5 text-xs font-medium">
-          <ng-icon [name]="trend() === 'down' ? 'lucideArrowDown' : 'lucideArrowUp'" size="12" />
+          <ng-icon
+            [name]="trend() === 'down' ? 'lucideArrowDown' : 'lucideArrowUp'"
+            size="12"
+            [class]="trend() === 'down' ? 'text-destructive' : 'text-success'"
+          />
           {{ delta() }}
         </span>
       }
     </div>
-    <p class="text-3xl font-bold">{{ value() }}</p>
+    <p class="text-4xl font-bold">{{ value() }}</p>
     @if (hint()) {
       <p class="text-muted-foreground text-sm">{{ hint() }}</p>
     }

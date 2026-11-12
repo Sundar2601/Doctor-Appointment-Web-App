@@ -15,7 +15,7 @@ import { ChangeDetectionStrategy, Component, input, model } from '@angular/core'
         <span class="text-sm font-semibold">{{ heading() }}</span>
         <span class="group-hover:bg-accent group-hover:text-accent-foreground inline-flex size-9 items-center justify-center rounded-md">
           <svg
-            class="size-4 transition-transform group-open:rotate-45"
+            class="size-4"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"

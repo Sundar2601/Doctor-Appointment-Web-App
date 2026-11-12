@@ -26,7 +26,7 @@ export interface MenubarMenu {
 @Directive({
   selector: 'div[appMenuPanel]',
   hostDirectives: [CdkMenu],
-  host: { class: 'bg-popover text-popover-foreground flex min-w-48 flex-col rounded-md border p-1 shadow-md outline-none' },
+  host: { class: 'bg-popover text-popover-foreground flex min-w-60 flex-col rounded-md border p-1 shadow-md outline-none' },
 })
 export class MenuPanelDirective {}
 
@@ -49,7 +49,7 @@ export class MenuPanelDirective {}
           cdkMenuItem
           [cdkMenuItemDisabled]="!!e.disabled"
           (cdkMenuItemTriggered)="picked.emit(e)"
-          class="hover:bg-accent focus:bg-accent focus:text-accent-foreground flex w-full cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-left text-sm outline-none aria-disabled:pointer-events-none aria-disabled:opacity-50"
+          class="hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex w-full cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-left text-sm outline-none aria-disabled:pointer-events-none aria-disabled:opacity-50"
           [class.text-destructive]="e.destructive"
         >
           <span class="flex-1">{{ e.label }}</span>
@@ -120,7 +120,7 @@ export class ContextMenuComponent {
           type="button"
           cdkMenuItem
           [cdkMenuTriggerFor]="menu"
-          class="hover:bg-accent focus:bg-accent aria-expanded:bg-accent rounded-sm px-2 py-1 text-sm font-medium outline-none"
+          class="hover:bg-accent focus:bg-accent aria-expanded:bg-accent rounded-sm px-2 py-1 text-sm font-medium outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
         >
           {{ m.label }}
         </button>

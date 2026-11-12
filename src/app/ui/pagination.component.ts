@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, input, model } from '@angular/core'
 import { NgIcon, provideIcons } from '@ng-icons/core'
-import { lucideChevronLeft, lucideChevronRight } from '@ng-icons/lucide'
+import { lucideChevronLeft, lucideChevronRight, lucideEllipsis } from '@ng-icons/lucide'
 import { ButtonDirective } from './button.directive'
 
 /** Usage: `<app-pagination [pageCount]="12" [(page)]="page" />`. */
@@ -8,7 +8,7 @@ import { ButtonDirective } from './button.directive'
   selector: 'app-pagination',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [ButtonDirective, NgIcon],
-  viewProviders: [provideIcons({ lucideChevronLeft, lucideChevronRight })],
+  viewProviders: [provideIcons({ lucideChevronLeft, lucideChevronRight, lucideEllipsis })],
   host: { class: 'block', role: 'navigation', 'aria-label': 'Pagination' },
   template: `
     <ul class="flex items-center justify-center gap-1">
@@ -20,7 +20,7 @@ import { ButtonDirective } from './button.directive'
       @for (p of pages(); track $index) {
         <li>
           @if (p === 0) {
-            <span class="flex size-9 items-center justify-center" aria-hidden="true">…</span>
+            <span class="flex size-9 items-center justify-center" aria-hidden="true"><ng-icon name="lucideEllipsis" size="16" /></span>
           } @else {
             <button
               type="button"

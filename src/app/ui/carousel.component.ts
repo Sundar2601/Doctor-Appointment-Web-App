@@ -27,7 +27,7 @@ export class CarouselSlideDirective {}
     <div class="flex gap-2">
       <button
         type="button"
-        class="border-input hover:bg-accent inline-flex size-8 items-center justify-center rounded-full border disabled:opacity-50"
+        class="border-input bg-background hover:bg-accent focus-visible:ring-ring/50 inline-flex size-8 items-center justify-center rounded-full border shadow-xs focus-visible:ring-[3px] focus-visible:outline-none disabled:opacity-50"
         aria-label="Previous slide"
         [disabled]="index() === 0"
         (click)="go(-1)"
@@ -36,7 +36,7 @@ export class CarouselSlideDirective {}
       </button>
       <button
         type="button"
-        class="border-input hover:bg-accent inline-flex size-8 items-center justify-center rounded-full border disabled:opacity-50"
+        class="border-input bg-background hover:bg-accent focus-visible:ring-ring/50 inline-flex size-8 items-center justify-center rounded-full border shadow-xs focus-visible:ring-[3px] focus-visible:outline-none disabled:opacity-50"
         aria-label="Next slide"
         [disabled]="index() >= slides().length - 1"
         (click)="go(1)"

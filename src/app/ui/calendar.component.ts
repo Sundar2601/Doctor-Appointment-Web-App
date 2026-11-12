@@ -10,7 +10,7 @@ const sameDay = (a: Date, b: Date) => a.getFullYear() === b.getFullYear() && a.g
   imports: [NgIcon],
   viewProviders: [provideIcons({ lucideChevronLeft, lucideChevronRight })],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'bg-popover text-popover-foreground inline-flex w-fit flex-col gap-2 rounded-md border p-3' },
+  host: { class: 'bg-popover text-popover-foreground inline-flex w-fit flex-col gap-2 rounded-lg border p-3' },
   template: `
     <div class="flex h-8 w-56 items-center justify-between">
       <button
@@ -31,7 +31,7 @@ const sameDay = (a: Date, b: Date) => a.getFullYear() === b.getFullYear() && a.g
         <ng-icon name="lucideChevronRight" size="16" />
       </button>
     </div>
-    <div class="grid grid-cols-7" role="grid" [attr.aria-label]="title()">
+    <div class="grid grid-cols-7 gap-y-2" role="grid" [attr.aria-label]="title()">
       @for (d of weekdays; track d) {
         <div class="text-muted-foreground flex h-7 w-8 items-center justify-center text-xs" role="columnheader">{{ d }}</div>
       }
@@ -39,7 +39,7 @@ const sameDay = (a: Date, b: Date) => a.getFullYear() === b.getFullYear() && a.g
         <button
           type="button"
           role="gridcell"
-          class="focus-visible:outline-ring flex size-8 items-center justify-center rounded-md text-sm focus-visible:outline-2"
+          class="focus-visible:ring-ring/50 flex size-8 items-center justify-center rounded-md text-sm focus-visible:ring-[3px] focus-visible:outline-none"
           [class]="c.selected ? 'bg-primary text-primary-foreground' : c.today ? 'bg-accent text-accent-foreground' : 'hover:bg-accent'"
           [class.opacity-50]="c.outside"
           [attr.aria-selected]="c.selected"
@@ -62,7 +62,8 @@ export class CalendarComponent {
     const start = new Date(v.getFullYear(), v.getMonth(), 1 - v.getDay())
     const today = new Date()
     const sel = this.value()
-    return Array.from({ length: 42 }, (_, i) => {
+    const weeks = Math.ceil((v.getDay() + new Date(v.getFullYear(), v.getMonth() + 1, 0).getDate()) / 7)
+    return Array.from({ length: weeks * 7 }, (_, i) => {
       const date = new Date(start.getFullYear(), start.getMonth(), start.getDate() + i)
       return { date, outside: date.getMonth() !== v.getMonth(), today: sameDay(date, today), selected: !!sel && sameDay(date, sel) }
     })

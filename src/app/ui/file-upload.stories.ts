@@ -13,7 +13,7 @@ const meta: Meta<Args> = {
   title: 'Forms/File Upload',
   decorators: [moduleMetadata({ imports: [FileUploadComponent] })],
   argTypes: { label: { control: 'text' }, hint: { control: 'text' }, accept: { control: 'text' }, multiple: { control: 'boolean' } },
-  args: { label: 'Drag and drop files here', hint: '', accept: '', multiple: false },
+  args: { label: 'Drag and drop files here', hint: 'PDF, PNG or JPG up to 10 MB', accept: '', multiple: false },
   render: (args) => ({
     props: args,
     template: `<div class="w-96"><app-file-upload [label]="label" [hint]="hint" [accept]="accept" [multiple]="multiple" /></div>`,

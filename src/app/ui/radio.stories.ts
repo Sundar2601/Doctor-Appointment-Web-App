@@ -29,3 +29,15 @@ type Story = StoryObj<Args>
 export const Default: Story = {}
 export const SecondSelected: Story = { args: { selected: 'b' } }
 export const Disabled: Story = { args: { disabled: true } }
+export const AllStates: Story = {
+  render: () => ({
+    template: `<div class="flex items-center gap-6 p-2">
+      <input type="radio" appRadio name="s1" aria-label="unchecked" />
+      <input type="radio" appRadio name="s2" aria-label="unchecked focus" class="border-ring ring-ring/50 ring-[3px]" />
+      <input type="radio" appRadio name="s3" disabled aria-label="unchecked disabled" />
+      <input type="radio" appRadio name="s4" checked aria-label="checked" />
+      <input type="radio" appRadio name="s5" checked aria-label="checked focus" class="border-ring ring-ring/50 ring-[3px]" />
+      <input type="radio" appRadio name="s6" checked disabled aria-label="checked disabled" />
+    </div>`,
+  }),
+}

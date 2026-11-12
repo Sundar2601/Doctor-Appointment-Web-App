@@ -25,3 +25,15 @@ export const Default: Story = {}
 export const On: Story = { args: { checked: true } }
 export const Disabled: Story = { args: { disabled: true } }
 export const DisabledOn: Story = { args: { disabled: true, checked: true } }
+export const AllStates: Story = {
+  render: () => ({
+    template: `<div class="flex items-center gap-6 p-2">
+      <input type="checkbox" appSwitch aria-label="off" />
+      <input type="checkbox" appSwitch aria-label="off focus" class="border-ring ring-ring/50 ring-[3px]" />
+      <input type="checkbox" appSwitch disabled aria-label="off disabled" />
+      <input type="checkbox" appSwitch checked aria-label="on" />
+      <input type="checkbox" appSwitch checked aria-label="on focus" class="border-ring ring-ring/50 ring-[3px]" />
+      <input type="checkbox" appSwitch checked disabled aria-label="on disabled" />
+    </div>`,
+  }),
+}

@@ -35,12 +35,12 @@ export interface SelectOption {
       [attr.aria-invalid]="invalid() || null"
       [attr.aria-label]="ariaLabel()"
       [attr.aria-activedescendant]="open() && active() >= 0 ? id() + '-opt-' + active() : null"
-      class="border-input bg-background focus-visible:outline-ring aria-[invalid=true]:border-destructive flex h-9 w-full items-center justify-between gap-2 rounded-md border px-3 text-sm shadow-xs focus-visible:outline-2 focus-visible:outline-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+      class="border-input bg-background flex h-9 w-full items-center justify-between gap-2 rounded-md border px-3 text-sm shadow-xs transition-colors focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 aria-[invalid=true]:border-destructive aria-[invalid=true]:ring-destructive/20 aria-[invalid=true]:focus-visible:ring-destructive/40"
       (click)="toggle()"
       (keydown)="onKey($event)"
     >
       <span class="truncate" [class.text-muted-foreground]="!selected()">{{ selected()?.label ?? placeholder() }}</span>
-      <ng-icon name="lucideChevronDown" class="text-muted-foreground size-4 shrink-0" />
+      <ng-icon name="lucideChevronDown" class="text-foreground size-4 shrink-0" />
     </button>
     <ng-template
       cdkConnectedOverlay

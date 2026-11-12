@@ -9,7 +9,7 @@ import { Directive } from '@angular/core'
   selector: 'input[type=range][appSlider]',
   host: {
     class:
-      'ui-slider focus-visible:outline-ring h-4 w-60 cursor-pointer appearance-none bg-transparent focus-visible:outline-[3px] focus-visible:outline-offset-1 disabled:cursor-not-allowed disabled:opacity-50',
+      'ui-slider h-4 w-60 cursor-pointer appearance-none bg-transparent focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50',
   },
 })
 export class SliderDirective {}

@@ -15,15 +15,33 @@ export function initialsOf(name: string): string {
 @Component({
   selector: 'app-avatar',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { '[class]': 'classes()', '[attr.aria-label]': 'name()', role: 'img' },
-  template: '{{ initials() }}',
+  host: { '[class]': 'classes()', '[attr.aria-label]': 'name() || null', role: 'img' },
+  template: `
+    @if (initials()) {
+      {{ initials() }}
+    } @else {
+      <svg
+        class="size-1/2"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+        <circle cx="12" cy="7" r="4" />
+      </svg>
+    }
+  `,
 })
 export class AvatarComponent {
-  readonly name = input.required<string>()
+  readonly name = input<string>('')
   readonly size = input<'sm' | 'md' | 'lg'>('md')
   protected readonly initials = computed(() => initialsOf(this.name()))
   protected readonly classes = computed(
     () =>
-      `bg-muted inline-flex shrink-0 items-center justify-center rounded-full font-semibold ${{ sm: 'size-6 text-[10px]', md: 'size-8 text-xs', lg: 'size-10 text-sm' }[this.size()]}`,
+      `bg-muted inline-flex shrink-0 items-center justify-center rounded-full font-normal text-muted-foreground ${{ sm: 'size-6 text-[10px]', md: 'size-8 text-xs', lg: 'size-10 text-sm' }[this.size()]}`,
   )
 }

@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component, computed, input } from '@angular/co
   host: { class: 'text-muted-foreground inline-flex items-center gap-3 text-sm', role: 'status' },
   template: `
     <svg
-      [class]="'animate-spin shrink-0 ' + sizeClass()"
+      [class]="'text-foreground animate-spin shrink-0 ' + sizeClass()"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

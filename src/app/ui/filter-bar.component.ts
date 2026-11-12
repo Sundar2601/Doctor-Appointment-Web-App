@@ -19,7 +19,7 @@ export interface FilterOption {
     <div class="relative w-60">
       <ng-icon name="lucideSearch" size="16" class="text-muted-foreground pointer-events-none absolute top-1/2 left-3 -translate-y-1/2" />
       <input
-        class="border-input bg-background placeholder:text-muted-foreground focus-visible:outline-ring h-9 w-full rounded-md border pr-3 pl-9 text-sm focus-visible:outline-2 focus-visible:outline-offset-1"
+        class="border-input bg-background placeholder:text-muted-foreground focus-visible:ring-ring/50 focus-visible:border-ring h-9 w-full rounded-md border pr-3 pl-9 text-sm shadow-xs focus-visible:ring-[3px] focus-visible:outline-none"
         type="search"
         [placeholder]="placeholder()"
         [attr.aria-label]="placeholder()"
@@ -30,14 +30,14 @@ export interface FilterOption {
     @for (f of filters(); track f.value) {
       <button
         type="button"
-        class="focus-visible:outline-ring border-input inline-flex h-8 items-center gap-1.5 rounded-full border px-2.5 text-sm focus-visible:outline-2"
+        class="border-input focus-visible:ring-ring/50 inline-flex h-8 items-center gap-1.5 rounded-full border px-2.5 text-sm shadow-xs focus-visible:ring-[3px] focus-visible:outline-none"
         [class]="isOn(f.value) ? 'text-foreground' : 'text-muted-foreground hover:bg-accent'"
         [attr.aria-pressed]="isOn(f.value)"
         (click)="toggle(f.value)"
       >
         {{ f.label }}
         @if (isOn(f.value)) {
-          <ng-icon name="lucideX" size="12" />
+          <ng-icon name="lucideX" size="12" strokeWidth="2.5" />
         }
       </button>
     }
@@ -45,7 +45,7 @@ export interface FilterOption {
     @if (dirty()) {
       <button
         type="button"
-        class="hover:bg-accent text-foreground ml-auto inline-flex h-8 items-center rounded-md px-3 text-sm font-medium"
+        class="hover:bg-accent text-foreground focus-visible:ring-ring/50 ml-auto inline-flex h-8 items-center rounded-md px-3 text-sm font-medium focus-visible:ring-[3px] focus-visible:outline-none"
         (click)="clear()"
       >
         Clear all

@@ -1,6 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/angular-vite'
 import { moduleMetadata } from '@storybook/angular-vite'
-import { ContextMenuComponent, DropdownMenuComponent, MenubarComponent, type MenuEntry } from './menu.component'
+import {
+  ContextMenuComponent,
+  DropdownMenuComponent,
+  MenubarComponent,
+  MenuEntriesComponent,
+  MenuPanelDirective,
+  type MenuEntry,
+} from './menu.component'
 
 const entries: MenuEntry[] = [
   { heading: true, label: 'My account' },
@@ -14,7 +21,9 @@ const entries: MenuEntry[] = [
 
 const meta: Meta = {
   title: 'Overlays/Menus',
-  decorators: [moduleMetadata({ imports: [DropdownMenuComponent, ContextMenuComponent, MenubarComponent] })],
+  decorators: [
+    moduleMetadata({ imports: [DropdownMenuComponent, ContextMenuComponent, MenubarComponent, MenuPanelDirective, MenuEntriesComponent] }),
+  ],
   parameters: { layout: 'padded' },
 }
 export default meta
@@ -35,6 +44,15 @@ export const Dropdown: Story = {
       <app-dropdown-menu [label]="label" [variant]="variant" [entries]="entries" (selected)="pick($event)" />
       <p class="mt-4 text-sm">Last selected: {{ last || 'none' }}</p>
     `,
+  }),
+}
+
+/** The open menu panel rendered inline (as it appears when the dropdown / context menu is open). */
+export const Panel: Story = {
+  args: { entries },
+  render: (args) => ({
+    props: args,
+    template: `<div appMenuPanel class="w-60"><app-menu-entries [entries]="entries" /></div>`,
   }),
 }
 
@@ -63,6 +81,13 @@ export const Menubar: Story = {
         ],
       },
       {
+        label: 'Edit',
+        entries: [
+          { label: 'Undo', value: 'undo', shortcut: 'Ctrl+Z' },
+          { label: 'Redo', value: 'redo', shortcut: 'Ctrl+Y' },
+        ],
+      },
+      {
         label: 'View',
         entries: [
           { label: 'Show sidebar', value: 'sidebar', checked: true },
@@ -70,10 +95,10 @@ export const Menubar: Story = {
         ],
       },
       {
-        label: 'Help',
+        label: 'Profiles',
         entries: [
-          { label: 'Documentation', value: 'docs' },
-          { label: 'About', value: 'about' },
+          { label: 'Andy', value: 'andy' },
+          { label: 'Benoit', value: 'benoit' },
         ],
       },
     ],

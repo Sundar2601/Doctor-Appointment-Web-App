@@ -14,7 +14,7 @@ const meta: Meta<PopoverComponent> = {
   },
   args: { side: 'bottom', align: 'center' },
   render: (args) => ({
-    props: { ...args, open: false },
+    props: { ...args, open: args.open ?? false },
     template: `
       <div style="padding: 6rem 8rem">
         <app-popover [side]="side" [align]="align" [(open)]="open">
@@ -34,3 +34,4 @@ type Story = StoryObj<PopoverComponent>
 export const Bottom: Story = {}
 export const Top: Story = { args: { side: 'top' } }
 export const AlignStart: Story = { args: { align: 'start' } }
+export const Open: Story = { args: { open: true } }

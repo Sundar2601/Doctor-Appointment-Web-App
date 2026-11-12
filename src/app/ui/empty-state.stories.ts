@@ -18,6 +18,6 @@ export const TitleOnly: Story = { args: { description: undefined } }
 export const WithAction: Story = {
   render: (args) => ({
     props: args,
-    template: `<app-empty-state [title]="title" [description]="description"><button appButton class="mt-3">Book appointment</button></app-empty-state>`,
+    template: `<app-empty-state [title]="title" [description]="description"><button appButton class="mt-2">Book appointment</button></app-empty-state>`,
   }),
 }

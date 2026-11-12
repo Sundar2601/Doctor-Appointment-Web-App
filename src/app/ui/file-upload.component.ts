@@ -12,7 +12,7 @@ import { eventFiles } from './dom-events'
   host: { class: 'block' },
   template: `
     <label
-      class="focus-within:outline-ring flex cursor-pointer flex-col items-center gap-3 rounded-lg border border-dashed p-8 text-center focus-within:outline-2"
+      class="focus-within:ring-ring/50 focus-within:border-ring flex cursor-pointer flex-col items-center gap-3 rounded-lg border border-dashed p-8 text-center focus-within:ring-[3px]"
       [class]="dragging() ? 'bg-accent' : 'bg-background hover:bg-accent/50'"
       (dragover)="$event.preventDefault(); dragging.set(true)"
       (dragleave)="dragging.set(false)"
@@ -20,7 +20,9 @@ import { eventFiles } from './dom-events'
     >
       <span class="bg-muted flex size-10 items-center justify-center rounded-full"><ng-icon name="lucideUpload" size="20" /></span>
       <span class="text-sm font-medium">{{ label() }}</span>
-      <span class="text-muted-foreground text-xs">{{ hint() }}</span>
+      @if (hint()) {
+        <span class="text-muted-foreground text-xs">{{ hint() }}</span>
+      }
       <span class="border-input bg-background rounded-md border px-3 py-1.5 text-sm font-medium shadow-xs">Browse files</span>
       <input class="sr-only" type="file" [accept]="accept()" [multiple]="multiple()" (change)="take(eventFiles($event))" />
     </label>
@@ -29,11 +31,25 @@ import { eventFiles } from './dom-events'
         @for (f of files(); track $index) {
           <li class="flex items-center gap-3 rounded-md border p-3">
             <ng-icon name="lucideFile" size="20" class="shrink-0" />
-            <span class="min-w-0 flex-1 truncate text-sm font-medium">{{ f.name }}</span>
+            <span class="flex min-w-0 flex-1 flex-col gap-1.5">
+              <span class="truncate text-sm font-medium">{{ f.name }}</span>
+              @if (progress() !== undefined) {
+                <span
+                  class="bg-muted block h-1 overflow-hidden rounded-full"
+                  role="progressbar"
+                  aria-label="Upload progress"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  [attr.aria-valuenow]="progress()"
+                >
+                  <span class="bg-primary block h-full rounded-full" [style.width.%]="progress()"></span>
+                </span>
+              }
+            </span>
             <span class="text-muted-foreground text-xs">{{ size(f.size) }}</span>
             <button
               type="button"
-              class="text-muted-foreground hover:text-foreground"
+              class="text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 rounded-xs focus-visible:ring-[3px] focus-visible:outline-none"
               [attr.aria-label]="'Remove ' + f.name"
               (click)="remove($index)"
             >
@@ -51,6 +67,8 @@ export class FileUploadComponent {
   readonly hint = input('')
   readonly accept = input('')
   readonly multiple = input(false)
+  /** Optional upload progress (0-100) shown under each file name. */
+  readonly progress = input<number>()
   readonly filesChange = output<File[]>()
   protected readonly dragging = signal(false)
   protected readonly files = signal<File[]>([])

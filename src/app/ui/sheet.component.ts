@@ -33,7 +33,7 @@ export type SheetSide = 'right' | 'left'
           type="button"
           aria-label="Close"
           (click)="close()"
-          class="focus-visible:outline-ring absolute top-4 right-4 rounded-sm opacity-70 hover:opacity-100 focus-visible:outline-2"
+          class="focus-visible:ring-ring/50 absolute top-4 right-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus-visible:ring-[3px] focus-visible:outline-none"
         >
           <ng-icon name="lucideX" size="16" />
         </button>

@@ -29,7 +29,7 @@ export interface TabItem {
           [attr.tabindex]="t.value === value() ? 0 : -1"
           [disabled]="t.disabled"
           (click)="value.set(t.value)"
-          class="focus-visible:outline-ring inline-flex h-[calc(100%-1px)] items-center justify-center rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors focus-visible:outline-2 disabled:pointer-events-none disabled:opacity-50"
+          class="focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none inline-flex h-[calc(100%-1px)] items-center justify-center rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors disabled:pointer-events-none disabled:opacity-50"
           [class]="t.value === value() ? 'bg-background text-foreground shadow-sm' : 'hover:text-foreground'"
         >
           {{ t.label }}

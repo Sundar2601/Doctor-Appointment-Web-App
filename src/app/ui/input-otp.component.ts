@@ -12,7 +12,7 @@ import { ChangeDetectionStrategy, Component, computed, type ElementRef, input, m
   template: `
     @for (s of slots(); track s) {
       <div
-        class="border-input bg-background data-[active=true]:border-ring data-[active=true]:outline-ring/50 flex size-9 items-center justify-center rounded-md border text-sm shadow-xs data-[active=true]:outline-3"
+        class="border-input bg-background data-[active=true]:border-ring flex size-9 items-center justify-center rounded-md border text-sm shadow-xs data-[active=true]:ring-[3px] data-[active=true]:ring-ring/50"
         [attr.data-active]="focused() && s === active()"
       >
         {{ value()[s] ?? '' }}

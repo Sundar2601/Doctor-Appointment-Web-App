@@ -11,7 +11,7 @@ const meta: Meta<DrawerComponent> = {
   argTypes: { heading: { control: 'text' }, description: { control: 'text' } },
   args: { heading: 'Reschedule appointment', description: 'Pick a new time that works for you.' },
   render: (args) => ({
-    props: { ...args, open: false },
+    props: { ...args, open: args.open ?? false },
     template: `
       <button appButton variant="outline" (click)="open = true">Open drawer</button>
       <app-drawer [heading]="heading" [description]="description" [(open)]="open">
@@ -29,3 +29,4 @@ type Story = StoryObj<DrawerComponent>
 
 export const Default: Story = {}
 export const WithoutDescription: Story = { args: { description: undefined } }
+export const Open: Story = { args: { open: true } }

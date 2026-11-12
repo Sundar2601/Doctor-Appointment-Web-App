@@ -11,17 +11,17 @@ import { eventNumber } from './dom-events'
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class:
-      'border-input bg-background focus-within:outline-ring inline-flex h-9 w-[136px] items-center overflow-hidden rounded-md border shadow-xs focus-within:outline-2 focus-within:outline-offset-1',
+      'border-input bg-background focus-within:ring-ring/50 focus-within:border-ring inline-flex h-9 w-[136px] items-center overflow-hidden rounded-md border shadow-xs focus-within:ring-[3px]',
   },
   template: `
     <button
       type="button"
-      class="hover:bg-accent inline-flex h-full w-9 items-center justify-center disabled:opacity-50"
+      class="hover:bg-accent focus-visible:ring-ring/50 inline-flex h-full w-9 items-center justify-center focus-visible:ring-[3px] focus-visible:outline-none focus-visible:ring-inset disabled:opacity-50"
       aria-label="Decrease"
       [disabled]="disabled() || value() <= min()"
       (click)="step(-1)"
     >
-      <ng-icon name="lucideMinus" size="16" />
+      <ng-icon name="lucideMinus" size="16" strokeWidth="2.5" />
     </button>
     <input
       class="h-full w-16 min-w-0 bg-transparent text-center text-sm outline-none [appearance:textfield]"
@@ -37,12 +37,12 @@ import { eventNumber } from './dom-events'
     />
     <button
       type="button"
-      class="hover:bg-accent inline-flex h-full w-9 items-center justify-center disabled:opacity-50"
+      class="hover:bg-accent focus-visible:ring-ring/50 inline-flex h-full w-9 items-center justify-center focus-visible:ring-[3px] focus-visible:outline-none focus-visible:ring-inset disabled:opacity-50"
       aria-label="Increase"
       [disabled]="disabled() || value() >= max()"
       (click)="step(1)"
     >
-      <ng-icon name="lucidePlus" size="16" />
+      <ng-icon name="lucidePlus" size="16" strokeWidth="2.5" />
     </button>
   `,
 })

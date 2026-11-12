@@ -27,7 +27,7 @@ import { lucideBell } from '@ng-icons/lucide'
       }
     </div>
     @if (unread()) {
-      <span class="bg-primary size-2 shrink-0 rounded-full" aria-label="Unread"></span>
+      <span class="bg-info size-2 shrink-0 rounded-full" aria-label="Unread"></span>
     }
   `,
 })

@@ -32,3 +32,11 @@ type Story = StoryObj<Args>
 export const Default: Story = {}
 export const Stepped: Story = { args: { step: 10, value: 30 } }
 export const Disabled: Story = { args: { disabled: true } }
+export const AllStates: Story = {
+  render: () => ({
+    template: `<div class="flex items-center gap-8 p-2">
+      <input type="range" appSlider aria-label="default" value="50" style="--ui-slider-fill: 50%" />
+      <input type="range" appSlider aria-label="disabled" value="50" disabled style="--ui-slider-fill: 50%" />
+    </div>`,
+  }),
+}

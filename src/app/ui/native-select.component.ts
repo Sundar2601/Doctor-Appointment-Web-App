@@ -10,7 +10,7 @@ import { lucideChevronDown } from '@ng-icons/lucide'
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class:
-      'relative block w-full [&>select]:border-input [&>select]:bg-background [&>select]:focus-visible:outline-ring [&>select]:h-9 [&>select]:w-full [&>select]:cursor-pointer [&>select]:appearance-none [&>select]:rounded-md [&>select]:border [&>select]:py-0 [&>select]:pr-9 [&>select]:pl-3 [&>select]:text-sm [&>select]:shadow-xs [&>select]:focus-visible:outline-2 [&>select]:focus-visible:outline-offset-1 [&>select:disabled]:cursor-not-allowed [&>select:disabled]:opacity-50 [&>select[aria-invalid=true]]:border-destructive',
+      'relative block w-full [&>select]:border-input [&>select]:bg-background [&>select]:h-9 [&>select]:w-full [&>select]:cursor-pointer [&>select]:appearance-none [&>select]:rounded-md [&>select]:border [&>select]:py-0 [&>select]:pr-9 [&>select]:pl-3 [&>select]:text-sm [&>select]:shadow-xs [&>select]:focus-visible:border-ring [&>select]:focus-visible:ring-[3px] [&>select]:focus-visible:ring-ring/50 [&>select]:focus-visible:outline-none [&>select[aria-invalid=true]]:ring-destructive/20 [&>select:disabled]:cursor-not-allowed [&>select:disabled]:opacity-50 [&>select[aria-invalid=true]]:border-destructive',
   },
   template: `
     <ng-content select="select" />

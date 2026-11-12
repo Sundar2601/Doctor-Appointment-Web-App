@@ -10,14 +10,19 @@ import { lucideX } from '@ng-icons/lucide'
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class:
-      'border-input bg-background focus-within:outline-ring flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border p-1.5 focus-within:outline-2 focus-within:outline-offset-1',
+      'border-input bg-background focus-within:ring-ring/50 focus-within:border-ring flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border p-1.5 shadow-xs focus-within:ring-[3px]',
   },
   template: `
     @for (t of tags(); track t) {
       <span class="bg-secondary text-secondary-foreground inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-xs font-medium">
         {{ t }}
-        <button type="button" class="hover:text-foreground text-muted-foreground" [attr.aria-label]="'Remove ' + t" (click)="remove(t)">
-          <ng-icon name="lucideX" size="12" />
+        <button
+          type="button"
+          class="text-secondary-foreground hover:text-foreground focus-visible:ring-ring/50 rounded-xs focus-visible:ring-[3px] focus-visible:outline-none"
+          [attr.aria-label]="'Remove ' + t"
+          (click)="remove(t)"
+        >
+          <ng-icon name="lucideX" size="12" strokeWidth="2.5" />
         </button>
       </span>
     }

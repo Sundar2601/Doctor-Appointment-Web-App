@@ -11,7 +11,7 @@ const meta: Meta<SheetComponent> = {
   argTypes: { side: { control: 'select', options: ['right', 'left'] }, heading: { control: 'text' }, description: { control: 'text' } },
   args: { side: 'right', heading: 'Filters', description: 'Narrow down the list of doctors.' },
   render: (args) => ({
-    props: { ...args, open: false },
+    props: { ...args, open: args.open ?? false },
     template: `
       <button appButton variant="outline" (click)="open = true">Open sheet</button>
       <app-sheet [heading]="heading" [description]="description" [side]="side" [(open)]="open">
@@ -28,3 +28,4 @@ type Story = StoryObj<SheetComponent>
 
 export const Right: Story = {}
 export const Left: Story = { args: { side: 'left', heading: 'Navigation', description: undefined } }
+export const Open: Story = { args: { open: true } }

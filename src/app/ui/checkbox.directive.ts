@@ -9,7 +9,7 @@ import { Directive } from '@angular/core'
   selector: 'input[type=checkbox][appCheckbox]',
   host: {
     class:
-      'ui-checkbox border-input bg-background focus-visible:outline-ring checked:bg-primary checked:border-primary indeterminate:bg-primary indeterminate:border-primary size-4 shrink-0 cursor-pointer appearance-none rounded-xs border shadow-xs focus-visible:outline-[3px] focus-visible:outline-offset-1 disabled:cursor-not-allowed disabled:opacity-50',
+      'ui-checkbox border-input bg-background checked:bg-primary checked:border-primary indeterminate:bg-primary indeterminate:border-primary size-4 shrink-0 cursor-pointer appearance-none rounded-[4px] border shadow-xs focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50',
   },
 })
 export class CheckboxDirective {}

@@ -11,7 +11,7 @@ const meta: Meta<DialogComponent> = {
   argTypes: { heading: { control: 'text' }, description: { control: 'text' } },
   args: { heading: 'Edit profile', description: 'Make changes to your profile here. Click save when you are done.' },
   render: (args) => ({
-    props: { ...args, open: false },
+    props: { ...args, open: args.open ?? false },
     template: `
       <button appButton (click)="open = true">Open dialog</button>
       <app-dialog [heading]="heading" [description]="description" [(open)]="open">
@@ -29,3 +29,4 @@ type Story = StoryObj<DialogComponent>
 
 export const Default: Story = {}
 export const WithoutDescription: Story = { args: { heading: 'Quick note', description: undefined } }
+export const Open: Story = { args: { open: true } }

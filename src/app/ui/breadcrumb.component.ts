@@ -16,13 +16,13 @@ export interface BreadcrumbItem {
   viewProviders: [provideIcons({ lucideChevronRight })],
   host: { class: 'block', role: 'navigation', 'aria-label': 'Breadcrumb' },
   template: `
-    <ol class="text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5">
+    <ol class="text-muted-foreground flex flex-wrap items-center gap-2 text-sm break-words sm:gap-2">
       @for (item of items(); track $index; let last = $last) {
         <li class="inline-flex items-center gap-1.5">
           @if (!last && item.href) {
             <a
               [routerLink]="item.href"
-              class="hover:text-foreground focus-visible:outline-ring rounded-sm transition-colors focus-visible:outline-2"
+              class="hover:text-foreground rounded-sm transition-colors focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none"
               >{{ item.label }}</a
             >
           } @else {
@@ -32,7 +32,7 @@ export interface BreadcrumbItem {
           }
         </li>
         @if (!last) {
-          <li role="presentation" aria-hidden="true" class="[&>ng-icon]:size-3.5"><ng-icon name="lucideChevronRight" /></li>
+          <li role="presentation" aria-hidden="true" class="text-foreground"><ng-icon name="lucideChevronRight" size="16" /></li>
         }
       }
     </ol>

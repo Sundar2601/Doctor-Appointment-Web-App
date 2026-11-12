@@ -12,9 +12,9 @@ const meta: Meta<CollapsibleComponent> = {
     template: `
       <div class="w-96">
         <app-collapsible [heading]="heading" [open]="open">
-          <div class="rounded-md border px-4 py-2 text-sm">@radix-ui/primitives</div>
-          <div class="rounded-md border px-4 py-2 text-sm">@radix-ui/colors</div>
-          <div class="rounded-md border px-4 py-2 text-sm">@stitches/react</div>
+          <div class="rounded-md border px-4 py-2 font-mono text-sm">@radix-ui/primitives</div>
+          <div class="rounded-md border px-4 py-2 font-mono text-sm">@radix-ui/colors</div>
+          <div class="rounded-md border px-4 py-2 font-mono text-sm">@stitches/react</div>
         </app-collapsible>
       </div>`,
   }),

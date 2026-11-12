@@ -23,7 +23,7 @@ export interface TreeNode {
           <li role="treeitem" [attr.aria-expanded]="n.children ? isOpen(n.id) : null" [attr.aria-selected]="selected() === n.id">
             <button
               type="button"
-              class="focus-visible:outline-ring hover:bg-accent flex h-7 w-full items-center gap-1.5 rounded-sm pr-2 text-left focus-visible:outline-2"
+              class="hover:bg-accent focus-visible:ring-ring/50 flex h-7 w-full items-center gap-1.5 rounded-md pr-2 text-left focus-visible:ring-[3px] focus-visible:outline-none"
               [class.bg-accent]="selected() === n.id"
               [style.padding-left.px]="8 + level * 16"
               (click)="activate(n)"

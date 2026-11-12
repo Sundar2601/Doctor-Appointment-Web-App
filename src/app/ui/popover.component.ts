@@ -36,7 +36,7 @@ let uid = 0
         role="dialog"
         cdkTrapFocus
         cdkTrapFocusAutoCapture
-        class="bg-popover text-popover-foreground w-72 rounded-md border p-4 shadow-md outline-none"
+        class="bg-popover text-popover-foreground w-80 rounded-md border p-4 shadow-md outline-none"
       >
         <ng-content />
       </div>

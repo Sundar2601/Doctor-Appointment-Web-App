@@ -34,8 +34,14 @@ const meta: Meta<SidebarComponent> = {
     template: `
       <div style="height: 600px">
         <app-sidebar [groups]="groups" [(collapsed)]="collapsed">
-          <div sidebarHeader class="px-2 font-semibold">MediBook</div>
-          <div sidebarFooter class="px-2 text-sm">Jane Doe</div>
+          <div sidebarHeader class="flex items-center gap-2 px-2 py-1">
+            <span class="bg-sidebar-primary text-sidebar-primary-foreground flex size-8 items-center justify-center rounded-lg text-sm font-semibold">A</span>
+            <span class="flex flex-col"><span class="text-sm leading-5 font-semibold">Acme Inc</span><span class="text-muted-foreground text-xs">Enterprise</span></span>
+          </div>
+          <div sidebarFooter class="flex items-center gap-2 px-2 py-1">
+            <span class="bg-muted flex size-8 shrink-0 items-center justify-center rounded-full text-xs font-medium">SC</span>
+            <span class="flex flex-col"><span class="text-sm leading-5 font-medium">shadcn</span><span class="text-muted-foreground text-xs">m@example.com</span></span>
+          </div>
         </app-sidebar>
       </div>
     `,

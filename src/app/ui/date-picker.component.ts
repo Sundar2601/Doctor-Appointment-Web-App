@@ -27,7 +27,7 @@ function ordinal(n: number) {
       [id]="id()"
       [disabled]="disabled()"
       [attr.aria-label]="ariaLabel()"
-      class="border-input bg-background focus-visible:outline-ring flex h-9 w-full items-center gap-2 rounded-md border px-3 text-sm shadow-xs focus-visible:outline-2 focus-visible:outline-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+      class="border-input bg-background flex h-9 w-full items-center gap-2 rounded-md border px-3 text-sm shadow-xs transition-colors focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
       [class.text-muted-foreground]="!label()"
       (click)="openPicker()"
     >

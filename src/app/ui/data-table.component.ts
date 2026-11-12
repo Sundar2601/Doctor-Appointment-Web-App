@@ -33,12 +33,12 @@ export type DataTableRow = Record<string, string | number>
         (input)="setFilter($event)"
       />
     }
-    <div class="overflow-hidden rounded-md border">
+    <div class="overflow-hidden rounded-md border [&_tbody_tr:last-child]:border-b-0">
       <table appTable>
         <thead>
           <tr>
             @if (selectable()) {
-              <th class="w-11 !px-0 text-center">
+              <th class="w-11 !px-0 !text-center">
                 <input type="checkbox" appCheckbox aria-label="Select all" [checked]="allSelected()" (change)="toggleAll()" />
               </th>
             }

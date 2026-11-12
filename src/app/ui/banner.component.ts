@@ -31,7 +31,7 @@ const TONES: Record<BannerVariant, string> = {
     @if (dismissible()) {
       <button
         type="button"
-        class="hover:bg-foreground/10 inline-flex size-6 items-center justify-center rounded-md"
+        class="text-foreground/70 hover:bg-foreground/10 focus-visible:ring-ring/50 inline-flex size-6 items-center justify-center rounded-md focus-visible:ring-[3px] focus-visible:outline-none"
         aria-label="Dismiss"
         (click)="closed.set(true)"
       >
@@ -45,5 +45,7 @@ export class BannerComponent {
   readonly dismissible = input(true)
   protected readonly closed = signal(false)
   protected readonly icon = computed(() => ICONS[this.variant()])
-  protected readonly classes = computed(() => `text-foreground flex w-full items-center gap-3 border px-4 py-2.5 ${TONES[this.variant()]}`)
+  protected readonly classes = computed(
+    () => `text-foreground flex w-full items-center gap-3 border min-h-13.5 px-4 py-2.5 ${TONES[this.variant()]}`,
+  )
 }

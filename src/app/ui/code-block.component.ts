@@ -8,12 +8,12 @@ import { lucideCheck, lucideCopy } from '@ng-icons/lucide'
   imports: [NgIcon],
   viewProviders: [provideIcons({ lucideCheck, lucideCopy })],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'bg-muted text-foreground relative block rounded-md' },
+  host: { class: 'bg-muted text-foreground relative block rounded-lg' },
   template: `
-    <pre class="overflow-x-auto p-4 font-mono text-[13px] leading-5"><code>{{ code() }}</code></pre>
+    <pre class="overflow-x-auto p-4 pr-12 font-mono text-[13px] leading-6"><code>{{ code() }}</code></pre>
     <button
       type="button"
-      class="hover:bg-accent absolute top-2 right-2 inline-flex size-7 items-center justify-center rounded-md"
+      class="hover:bg-accent focus-visible:ring-ring/50 absolute top-2 right-2 inline-flex size-7 items-center justify-center rounded-md focus-visible:ring-[3px] focus-visible:outline-none"
       aria-label="Copy code"
       (click)="copy()"
     >
