@@ -6,6 +6,7 @@ import {
   AlertComponent,
   ButtonDirective,
   CardComponent,
+  DatePickerComponent,
   ControlDirective,
   FieldComponent,
   HeroComponent,
@@ -16,7 +17,16 @@ import {
 @Component({
   selector: 'app-book-page',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AlertComponent, ButtonDirective, CardComponent, ControlDirective, FieldComponent, HeroComponent, ItemComponent],
+  imports: [
+    AlertComponent,
+    ButtonDirective,
+    CardComponent,
+    ControlDirective,
+    DatePickerComponent,
+    FieldComponent,
+    HeroComponent,
+    ItemComponent,
+  ],
   template: `
     <app-hero
       title="Book an appointment"
@@ -43,7 +53,7 @@ import {
             </select>
           </app-field>
           <app-field label="Date" for="date">
-            <input id="date" appControl type="date" [min]="today" [value]="date()" (input)="date.set(eventValue($event)); time.set('')" />
+            <app-date-picker id="date" ariaLabel="Date" [min]="today" [value]="date()" (valueChange)="date.set($event); time.set('')" />
           </app-field>
           <app-field label="Patient name" for="name">
             <input id="name" appControl placeholder="Full name" [value]="patient()" (input)="patient.set(eventValue($event))" />
