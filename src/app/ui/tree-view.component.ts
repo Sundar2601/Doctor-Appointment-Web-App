@@ -23,13 +23,13 @@ export interface TreeNode {
           <li role="treeitem" [attr.aria-expanded]="n.children ? isOpen(n.id) : null" [attr.aria-selected]="selected() === n.id">
             <button
               type="button"
-              class="focus-visible:outline-ring hover:bg-accent flex h-8 w-full items-center gap-1.5 rounded-md pr-2 text-left focus-visible:outline-2"
+              class="focus-visible:outline-ring hover:bg-accent flex h-7 w-full items-center gap-1.5 rounded-sm pr-2 text-left focus-visible:outline-2"
               [class.bg-accent]="selected() === n.id"
               [style.padding-left.px]="8 + level * 16"
               (click)="activate(n)"
             >
-              @if (n.children) { <ng-icon [name]="isOpen(n.id) ? 'lucideChevronDown' : 'lucideChevronRight'" size="14" /> } @else { <span class="w-3.5"></span> }
-              <ng-icon [name]="n.children ? 'lucideFolder' : 'lucideFile'" size="16" class="text-muted-foreground" />
+              @if (n.children) { <ng-icon [name]="isOpen(n.id) ? 'lucideChevronDown' : 'lucideChevronRight'" size="16" /> } @else { <span class="size-4 shrink-0"></span> }
+              <ng-icon [name]="n.children ? 'lucideFolder' : 'lucideFile'" size="16" />
               <span class="truncate">{{ n.label }}</span>
             </button>
             @if (n.children && isOpen(n.id)) {

@@ -8,7 +8,7 @@ import { lucideStar } from '@ng-icons/lucide'
   imports: [NgIcon],
   viewProviders: [provideIcons({ lucideStar })],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'inline-flex gap-0.5', role: 'radiogroup', '[attr.aria-label]': 'label()', '(mouseleave)': 'hover.set(0)' },
+  host: { class: 'inline-flex items-center gap-1', role: 'radiogroup', '[attr.aria-label]': 'label()', '(mouseleave)': 'hover.set(0)' },
   template: `
     @for (n of stars(); track n) {
       <button
@@ -25,6 +25,7 @@ import { lucideStar } from '@ng-icons/lucide'
         <ng-icon name="lucideStar" size="20" [class]="n <= (hover() || value()) ? '[&_svg]:fill-current' : ''" />
       </button>
     }
+    @if (count() !== undefined) { <span class="text-muted-foreground ml-1 text-sm">{{ value().toFixed(1) }} ({{ count() }})</span> }
   `,
 })
 export class RatingComponent {
@@ -32,6 +33,8 @@ export class RatingComponent {
   readonly max = input(5)
   readonly readonly = input(false)
   readonly label = input('Rating')
+  /** When set, shows "4.0 (count)" after the stars. */
+  readonly count = input<number>()
   protected readonly hover = signal(0)
   protected stars() {
     return Array.from({ length: this.max() }, (_, i) => i + 1)

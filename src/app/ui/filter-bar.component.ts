@@ -15,21 +15,22 @@ export interface FilterOption {
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'flex flex-wrap items-center gap-2', role: 'search' },
   template: `
-    <div class="relative w-64">
+    <div class="relative w-60">
       <ng-icon name="lucideSearch" size="16" class="text-muted-foreground pointer-events-none absolute top-1/2 left-3 -translate-y-1/2" />
       <input class="border-input bg-background placeholder:text-muted-foreground focus-visible:outline-ring h-9 w-full rounded-md border pr-3 pl-9 text-sm focus-visible:outline-2 focus-visible:outline-offset-1" type="search" [placeholder]="placeholder()" [attr.aria-label]="placeholder()" [value]="search()" (input)="search.set($any($event.target).value)" />
     </div>
     @for (f of filters(); track f.value) {
       <button
         type="button"
-        class="focus-visible:outline-ring inline-flex h-8 items-center rounded-full border px-3 text-sm font-medium focus-visible:outline-2"
-        [class]="isOn(f.value) ? 'bg-primary text-primary-foreground border-primary' : 'bg-background hover:bg-accent'"
+        class="focus-visible:outline-ring border-input inline-flex h-8 items-center gap-1.5 rounded-full border px-2.5 text-sm focus-visible:outline-2"
+        [class]="isOn(f.value) ? 'text-foreground' : 'text-muted-foreground hover:bg-accent'"
         [attr.aria-pressed]="isOn(f.value)"
         (click)="toggle(f.value)"
-      >{{ f.label }}</button>
+      >{{ f.label }}@if (isOn(f.value)) { <ng-icon name="lucideX" size="12" /> }</button>
     }
+    <ng-content />
     @if (dirty()) {
-      <button type="button" class="text-muted-foreground hover:text-foreground inline-flex h-8 items-center gap-1 px-2 text-sm" (click)="clear()"><ng-icon name="lucideX" size="14" />Clear</button>
+      <button type="button" class="hover:bg-accent text-foreground ml-auto inline-flex h-8 items-center rounded-md px-3 text-sm font-medium" (click)="clear()">Clear all</button>
     }
   `,
 })
