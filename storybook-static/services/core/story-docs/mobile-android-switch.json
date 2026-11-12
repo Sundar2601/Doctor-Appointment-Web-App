@@ -1,0 +1,26 @@
+{
+  "components": {
+    "mobile-android-switch": {
+      "id": "mobile-android-switch",
+      "name": "AndroidSwitchComponent",
+      "path": "./src/app/ui/android-switch.stories.ts",
+      "stories": {
+        "mobile-android-switch--unchecked": {
+          "id": "mobile-android-switch--unchecked",
+          "name": "Unchecked",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidSwitchComponent } from './android-switch.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidSwitchComponent],\n  template: `\n    <div class=\"p-4\">\n        <app-android-switch\n            [(checked)]=\"checked\"\n            [disabled]=\"disabled\"\n            [ariaLabel]=\"ariaLabel\" />\n    </div>`,\n})\nexport class DemoComponent {\n  checked = false;\n  disabled = false;\n  ariaLabel = 'Notifications';\n  checkedChange(event: unknown) {}\n}"
+        },
+        "mobile-android-switch--checked": {
+          "id": "mobile-android-switch--checked",
+          "name": "Checked",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidSwitchComponent } from './android-switch.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidSwitchComponent],\n  template: `\n    <div class=\"p-4\">\n        <app-android-switch\n            [(checked)]=\"checked\"\n            [disabled]=\"disabled\"\n            [ariaLabel]=\"ariaLabel\" />\n    </div>`,\n})\nexport class DemoComponent {\n  checked = true;\n  disabled = false;\n  ariaLabel = 'Notifications';\n  checkedChange(event: unknown) {}\n}"
+        },
+        "mobile-android-switch--disabled": {
+          "id": "mobile-android-switch--disabled",
+          "name": "Disabled",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidSwitchComponent } from './android-switch.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidSwitchComponent],\n  template: `\n    <div class=\"p-4\">\n        <app-android-switch\n            [(checked)]=\"checked\"\n            [disabled]=\"disabled\"\n            [ariaLabel]=\"ariaLabel\" />\n    </div>`,\n})\nexport class DemoComponent {\n  checked = false;\n  disabled = true;\n  ariaLabel = 'Notifications';\n  checkedChange(event: unknown) {}\n}"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "components": {
+    "overlays-menus": {
+      "id": "overlays-menus",
+      "name": "Menus",
+      "path": "./src/app/ui/menu.stories.ts",
+      "stories": {
+        "overlays-menus--dropdown": {
+          "id": "overlays-menus--dropdown",
+          "name": "Dropdown"
+        },
+        "overlays-menus--panel": {
+          "id": "overlays-menus--panel",
+          "name": "Panel",
+          "description": "The open menu panel rendered inline (as it appears when the dropdown / context menu is open)."
+        },
+        "overlays-menus--context-menu": {
+          "id": "overlays-menus--context-menu",
+          "name": "Context Menu"
+        },
+        "overlays-menus--menubar": {
+          "id": "overlays-menus--menubar",
+          "name": "Menubar"
+        }
+      }
+    }
+  }
+}

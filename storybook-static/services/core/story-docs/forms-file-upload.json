@@ -1,0 +1,23 @@
+{
+  "components": {
+    "forms-file-upload": {
+      "id": "forms-file-upload",
+      "name": "FileUpload",
+      "path": "./src/app/ui/file-upload.stories.ts",
+      "stories": {
+        "forms-file-upload--default": {
+          "id": "forms-file-upload--default",
+          "name": "Default"
+        },
+        "forms-file-upload--with-hint": {
+          "id": "forms-file-upload--with-hint",
+          "name": "With Hint"
+        },
+        "forms-file-upload--multiple": {
+          "id": "forms-file-upload--multiple",
+          "name": "Multiple"
+        }
+      }
+    }
+  }
+}

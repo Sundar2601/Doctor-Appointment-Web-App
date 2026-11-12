@@ -1,0 +1,70 @@
+{
+  "components": {
+    "mobile-android-snackbar": {
+      "id": "mobile-android-snackbar",
+      "name": "AndroidSnackbarComponent",
+      "path": "./src/app/ui/android-snackbar.stories.ts",
+      "description": "Material 3 snackbar on the inverse surface with a single action.",
+      "jsDocTags": {},
+      "argTypes": {
+        "action": {
+          "name": "action",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "message": {
+          "name": "message",
+          "type": {
+            "name": "string",
+            "required": true
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "actionClick": {
+          "name": "actionClick",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "actionClick",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "void"
+            },
+            "defaultValue": {}
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type AndroidSnackbarComponentInputs = {\n  action?: string;\n  message: string;\n}\n```\n\n## Outputs\n\n```\nexport type AndroidSnackbarComponentOutputs = {\n  actionClick: void;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "AndroidSnackbarComponent",
+        "selector": "app-android-snackbar",
+        "standalone": true,
+        "inputs": [
+          "action",
+          "message"
+        ],
+        "outputs": [
+          "actionClick"
+        ],
+        "enums": []
+      }
+    }
+  }
+}

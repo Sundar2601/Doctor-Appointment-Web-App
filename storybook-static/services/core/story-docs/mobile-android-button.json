@@ -1,0 +1,31 @@
+{
+  "components": {
+    "mobile-android-button": {
+      "id": "mobile-android-button",
+      "name": "Button",
+      "path": "./src/app/ui/android-button.stories.ts",
+      "stories": {
+        "mobile-android-button--filled": {
+          "id": "mobile-android-button--filled",
+          "name": "Filled"
+        },
+        "mobile-android-button--tonal": {
+          "id": "mobile-android-button--tonal",
+          "name": "Tonal"
+        },
+        "mobile-android-button--outlined": {
+          "id": "mobile-android-button--outlined",
+          "name": "Outlined"
+        },
+        "mobile-android-button--text": {
+          "id": "mobile-android-button--text",
+          "name": "Text"
+        },
+        "mobile-android-button--elevated": {
+          "id": "mobile-android-button--elevated",
+          "name": "Elevated"
+        }
+      }
+    }
+  }
+}

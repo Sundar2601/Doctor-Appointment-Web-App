@@ -1,0 +1,31 @@
+{
+  "components": {
+    "actions-toggle": {
+      "id": "actions-toggle",
+      "name": "Toggle",
+      "path": "./src/app/ui/toggle.stories.ts",
+      "stories": {
+        "actions-toggle--default": {
+          "id": "actions-toggle--default",
+          "name": "Default"
+        },
+        "actions-toggle--pressed": {
+          "id": "actions-toggle--pressed",
+          "name": "Pressed"
+        },
+        "actions-toggle--outline": {
+          "id": "actions-toggle--outline",
+          "name": "Outline"
+        },
+        "actions-toggle--small": {
+          "id": "actions-toggle--small",
+          "name": "Small"
+        },
+        "actions-toggle--disabled": {
+          "id": "actions-toggle--disabled",
+          "name": "Disabled"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "components": {
+    "forms-calendar": {
+      "id": "forms-calendar",
+      "name": "Calendar",
+      "path": "./src/app/ui/calendar.stories.ts",
+      "stories": {
+        "forms-calendar--default": {
+          "id": "forms-calendar--default",
+          "name": "Default"
+        },
+        "forms-calendar--with-selected-date": {
+          "id": "forms-calendar--with-selected-date",
+          "name": "With Selected Date"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "components": {
+    "charts-heatmap": {
+      "id": "charts-heatmap",
+      "name": "Heatmap",
+      "path": "./src/app/ui/heatmap-chart.stories.ts",
+      "stories": {
+        "charts-heatmap--default": {
+          "id": "charts-heatmap--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

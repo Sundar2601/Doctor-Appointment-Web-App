@@ -1,0 +1,21 @@
+{
+  "components": {
+    "navigation-breadcrumb": {
+      "id": "navigation-breadcrumb",
+      "name": "BreadcrumbComponent",
+      "path": "./src/app/ui/breadcrumb.stories.ts",
+      "stories": {
+        "navigation-breadcrumb--default": {
+          "id": "navigation-breadcrumb--default",
+          "name": "Default",
+          "snippet": "import { Component } from '@angular/core';\nimport { BreadcrumbComponent } from './breadcrumb.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [BreadcrumbComponent],\n  template: `<app-breadcrumb [items]=\"items\" />`,\n})\nexport class DemoComponent {\n  items = [{label: 'Home', href: '/'}, {label: 'Doctors', href: '/doctors'}, {label: 'Dr. Smith'}];\n}"
+        },
+        "navigation-breadcrumb--two-levels": {
+          "id": "navigation-breadcrumb--two-levels",
+          "name": "Two Levels",
+          "snippet": "import { Component } from '@angular/core';\nimport { BreadcrumbComponent } from './breadcrumb.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [BreadcrumbComponent],\n  template: `<app-breadcrumb [items]=\"items\" />`,\n})\nexport class DemoComponent {\n  items = [{label: 'Dashboard', href: '/'}, {label: 'Appointments'}];\n}"
+        }
+      }
+    }
+  }
+}

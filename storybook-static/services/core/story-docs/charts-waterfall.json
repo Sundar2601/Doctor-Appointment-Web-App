@@ -1,0 +1,15 @@
+{
+  "components": {
+    "charts-waterfall": {
+      "id": "charts-waterfall",
+      "name": "Waterfall",
+      "path": "./src/app/ui/waterfall-chart.stories.ts",
+      "stories": {
+        "charts-waterfall--default": {
+          "id": "charts-waterfall--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "components": {
+    "feedback-alert": {
+      "id": "feedback-alert",
+      "name": "Alert",
+      "path": "./src/app/ui/alert.stories.ts",
+      "stories": {
+        "feedback-alert--danger": {
+          "id": "feedback-alert--danger",
+          "name": "Danger"
+        },
+        "feedback-alert--success": {
+          "id": "feedback-alert--success",
+          "name": "Success"
+        },
+        "feedback-alert--default": {
+          "id": "feedback-alert--default",
+          "name": "Default"
+        },
+        "feedback-alert--warning": {
+          "id": "feedback-alert--warning",
+          "name": "Warning"
+        },
+        "feedback-alert--info": {
+          "id": "feedback-alert--info",
+          "name": "Info"
+        },
+        "feedback-alert--all-variants": {
+          "id": "feedback-alert--all-variants",
+          "name": "All Variants"
+        }
+      }
+    }
+  }
+}

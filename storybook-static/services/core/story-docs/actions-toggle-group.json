@@ -1,0 +1,23 @@
+{
+  "components": {
+    "actions-toggle-group": {
+      "id": "actions-toggle-group",
+      "name": "ToggleGroup",
+      "path": "./src/app/ui/toggle-group.stories.ts",
+      "stories": {
+        "actions-toggle-group--multiple": {
+          "id": "actions-toggle-group--multiple",
+          "name": "Multiple"
+        },
+        "actions-toggle-group--single": {
+          "id": "actions-toggle-group--single",
+          "name": "Single"
+        },
+        "actions-toggle-group--disabled": {
+          "id": "actions-toggle-group--disabled",
+          "name": "Disabled"
+        }
+      }
+    }
+  }
+}

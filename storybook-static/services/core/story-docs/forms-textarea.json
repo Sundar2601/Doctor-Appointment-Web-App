@@ -1,0 +1,27 @@
+{
+  "components": {
+    "forms-textarea": {
+      "id": "forms-textarea",
+      "name": "Textarea",
+      "path": "./src/app/ui/textarea.stories.ts",
+      "stories": {
+        "forms-textarea--default": {
+          "id": "forms-textarea--default",
+          "name": "Default"
+        },
+        "forms-textarea--filled": {
+          "id": "forms-textarea--filled",
+          "name": "Filled"
+        },
+        "forms-textarea--invalid": {
+          "id": "forms-textarea--invalid",
+          "name": "Invalid"
+        },
+        "forms-textarea--disabled": {
+          "id": "forms-textarea--disabled",
+          "name": "Disabled"
+        }
+      }
+    }
+  }
+}

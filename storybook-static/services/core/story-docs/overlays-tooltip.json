@@ -1,0 +1,27 @@
+{
+  "components": {
+    "overlays-tooltip": {
+      "id": "overlays-tooltip",
+      "name": "Tooltip",
+      "path": "./src/app/ui/tooltip.stories.ts",
+      "stories": {
+        "overlays-tooltip--top": {
+          "id": "overlays-tooltip--top",
+          "name": "Top"
+        },
+        "overlays-tooltip--bottom": {
+          "id": "overlays-tooltip--bottom",
+          "name": "Bottom"
+        },
+        "overlays-tooltip--left": {
+          "id": "overlays-tooltip--left",
+          "name": "Left"
+        },
+        "overlays-tooltip--right": {
+          "id": "overlays-tooltip--right",
+          "name": "Right"
+        }
+      }
+    }
+  }
+}

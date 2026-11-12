@@ -1,0 +1,241 @@
+{
+  "components": {
+    "overlays-command": {
+      "id": "overlays-command",
+      "name": "CommandComponent",
+      "path": "./src/app/ui/command.stories.ts",
+      "description": "Command palette (combobox + listbox, filter, arrow/Enter keys). Usage: `<app-command [items]=\"items\" (selected)=\"run($event)\" />`. Place inside `app-dialog` for a modal palette.",
+      "jsDocTags": {},
+      "argTypes": {
+        "activeId": {
+          "name": "activeId",
+          "type": {
+            "name": "other",
+            "value": "empty-enum"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "Signal<string | null>"
+            },
+            "defaultValue": {}
+          }
+        },
+        "eventValue": {
+          "name": "eventValue",
+          "type": {
+            "name": "function"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "(e: Event) => string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "groups": {
+          "name": "groups",
+          "type": {
+            "name": "other",
+            "value": "empty-enum"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "Signal<{ name: string; items: CommandItem[]; }[]>"
+            },
+            "defaultValue": {}
+          }
+        },
+        "listId": {
+          "name": "listId",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "query": {
+          "name": "query",
+          "type": {
+            "name": "other",
+            "value": "empty-enum"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "WritableSignal<string>"
+            },
+            "defaultValue": {}
+          }
+        },
+        "emptyText": {
+          "name": "emptyText",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {
+              "summary": "No results found."
+            }
+          }
+        },
+        "items": {
+          "name": "items",
+          "type": {
+            "name": "other",
+            "value": "empty-enum",
+            "required": true
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "CommandItem[]"
+            },
+            "defaultValue": {}
+          }
+        },
+        "placeholder": {
+          "name": "placeholder",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {
+              "summary": "Type a command or search..."
+            }
+          }
+        },
+        "selected": {
+          "name": "selected",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "selected",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "CommandItem"
+            },
+            "defaultValue": {}
+          }
+        },
+        "activate": {
+          "name": "activate",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "table": {
+            "category": "methods",
+            "type": {
+              "summary": "(i: CommandItem) => void"
+            },
+            "defaultValue": {}
+          }
+        },
+        "isActive": {
+          "name": "isActive",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "table": {
+            "category": "methods",
+            "type": {
+              "summary": "(i: CommandItem) => boolean"
+            },
+            "defaultValue": {}
+          }
+        },
+        "onInput": {
+          "name": "onInput",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "table": {
+            "category": "methods",
+            "type": {
+              "summary": "(v: string) => void"
+            },
+            "defaultValue": {}
+          }
+        },
+        "onKey": {
+          "name": "onKey",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "table": {
+            "category": "methods",
+            "type": {
+              "summary": "(e: KeyboardEvent) => void"
+            },
+            "defaultValue": {}
+          }
+        },
+        "optId": {
+          "name": "optId",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "table": {
+            "category": "methods",
+            "type": {
+              "summary": "(i: CommandItem) => string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "pick": {
+          "name": "pick",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "table": {
+            "category": "methods",
+            "type": {
+              "summary": "(i: CommandItem) => void"
+            },
+            "defaultValue": {}
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type CommandComponentInputs = {\n  /** @default No results found. */\n  emptyText?: string;\n  items: CommandItem[];\n  /** @default Type a command or search... */\n  placeholder?: string;\n}\n```\n\n## Outputs\n\n```\nexport type CommandComponentOutputs = {\n  selected: CommandItem;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "CommandComponent",
+        "selector": "app-command",
+        "standalone": true,
+        "inputs": [
+          "emptyText",
+          "items",
+          "placeholder"
+        ],
+        "outputs": [
+          "selected"
+        ],
+        "enums": []
+      }
+    }
+  }
+}

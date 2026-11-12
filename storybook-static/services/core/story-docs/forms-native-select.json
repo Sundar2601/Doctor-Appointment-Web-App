@@ -1,0 +1,23 @@
+{
+  "components": {
+    "forms-native-select": {
+      "id": "forms-native-select",
+      "name": "NativeSelect",
+      "path": "./src/app/ui/native-select.stories.ts",
+      "stories": {
+        "forms-native-select--default": {
+          "id": "forms-native-select--default",
+          "name": "Default"
+        },
+        "forms-native-select--invalid": {
+          "id": "forms-native-select--invalid",
+          "name": "Invalid"
+        },
+        "forms-native-select--disabled": {
+          "id": "forms-native-select--disabled",
+          "name": "Disabled"
+        }
+      }
+    }
+  }
+}

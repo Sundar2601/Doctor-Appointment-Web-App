@@ -1,0 +1,21 @@
+{
+  "components": {
+    "mobile-android-snackbar": {
+      "id": "mobile-android-snackbar",
+      "name": "AndroidSnackbarComponent",
+      "path": "./src/app/ui/android-snackbar.stories.ts",
+      "stories": {
+        "mobile-android-snackbar--default": {
+          "id": "mobile-android-snackbar--default",
+          "name": "Default",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidSnackbarComponent } from './android-snackbar.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidSnackbarComponent],\n  template: `\n    <div class=\"p-4\">\n        <app-android-snackbar [message]=\"message\" [action]=\"action\" />\n    </div>`,\n})\nexport class DemoComponent {\n  message = 'Message archived';\n  action = 'Undo';\n}"
+        },
+        "mobile-android-snackbar--without-action": {
+          "id": "mobile-android-snackbar--without-action",
+          "name": "Without Action",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidSnackbarComponent } from './android-snackbar.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidSnackbarComponent],\n  template: `\n    <div class=\"p-4\">\n        <app-android-snackbar [message]=\"message\" [action]=\"action\" />\n    </div>`,\n})\nexport class DemoComponent {\n  message = 'Message archived';\n  action = undefined;\n}"
+        }
+      }
+    }
+  }
+}

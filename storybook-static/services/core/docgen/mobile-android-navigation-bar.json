@@ -1,0 +1,87 @@
+{
+  "components": {
+    "mobile-android-navigation-bar": {
+      "id": "mobile-android-navigation-bar",
+      "name": "AndroidNavBarItemComponent",
+      "path": "./src/app/ui/android-nav-bar.stories.ts",
+      "description": "One destination: icon in a 64x32 pill (filled when active) with a label underneath.",
+      "jsDocTags": {},
+      "argTypes": {
+        "active": {
+          "name": "active",
+          "type": {
+            "name": "boolean"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "boolean"
+            },
+            "defaultValue": {
+              "summary": false
+            }
+          }
+        },
+        "icon": {
+          "name": "icon",
+          "type": {
+            "name": "string",
+            "required": true
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "label": {
+          "name": "label",
+          "type": {
+            "name": "string",
+            "required": true
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "pressed": {
+          "name": "pressed",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "pressed",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "void"
+            },
+            "defaultValue": {}
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type AndroidNavBarItemComponentInputs = {\n  /** @default false */\n  active?: boolean;\n  icon: string;\n  label: string;\n}\n```\n\n## Outputs\n\n```\nexport type AndroidNavBarItemComponentOutputs = {\n  pressed: void;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "AndroidNavBarItemComponent",
+        "selector": "app-android-nav-bar-item",
+        "standalone": true,
+        "inputs": [
+          "active",
+          "icon",
+          "label"
+        ],
+        "outputs": [
+          "pressed"
+        ],
+        "enums": []
+      }
+    }
+  }
+}

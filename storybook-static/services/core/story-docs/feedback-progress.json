@@ -1,0 +1,23 @@
+{
+  "components": {
+    "feedback-progress": {
+      "id": "feedback-progress",
+      "name": "Progress",
+      "path": "./src/app/ui/progress.stories.ts",
+      "stories": {
+        "feedback-progress--default": {
+          "id": "feedback-progress--default",
+          "name": "Default"
+        },
+        "feedback-progress--empty": {
+          "id": "feedback-progress--empty",
+          "name": "Empty"
+        },
+        "feedback-progress--complete": {
+          "id": "feedback-progress--complete",
+          "name": "Complete"
+        }
+      }
+    }
+  }
+}

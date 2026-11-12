@@ -1,0 +1,19 @@
+{
+  "components": {
+    "data-code-block": {
+      "id": "data-code-block",
+      "name": "CodeBlock",
+      "path": "./src/app/ui/code-block.stories.ts",
+      "stories": {
+        "data-code-block--default": {
+          "id": "data-code-block--default",
+          "name": "Default"
+        },
+        "data-code-block--appointment-payload": {
+          "id": "data-code-block--appointment-payload",
+          "name": "Appointment Payload"
+        }
+      }
+    }
+  }
+}

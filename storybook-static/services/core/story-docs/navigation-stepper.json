@@ -1,0 +1,27 @@
+{
+  "components": {
+    "navigation-stepper": {
+      "id": "navigation-stepper",
+      "name": "Stepper",
+      "path": "./src/app/ui/stepper.stories.ts",
+      "stories": {
+        "navigation-stepper--default": {
+          "id": "navigation-stepper--default",
+          "name": "Default"
+        },
+        "navigation-stepper--first-step": {
+          "id": "navigation-stepper--first-step",
+          "name": "First Step"
+        },
+        "navigation-stepper--completed": {
+          "id": "navigation-stepper--completed",
+          "name": "Completed"
+        },
+        "navigation-stepper--titles-only": {
+          "id": "navigation-stepper--titles-only",
+          "name": "Titles Only"
+        }
+      }
+    }
+  }
+}

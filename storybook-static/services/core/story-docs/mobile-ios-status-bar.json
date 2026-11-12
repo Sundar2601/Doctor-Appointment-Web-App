@@ -1,0 +1,23 @@
+{
+  "components": {
+    "mobile-ios-status-bar": {
+      "id": "mobile-ios-status-bar",
+      "name": "StatusBar",
+      "path": "./src/app/ui/ios-status-bar.stories.ts",
+      "stories": {
+        "mobile-ios-status-bar--default": {
+          "id": "mobile-ios-status-bar--default",
+          "name": "Default"
+        },
+        "mobile-ios-status-bar--home-indicator": {
+          "id": "mobile-ios-status-bar--home-indicator",
+          "name": "Home Indicator"
+        },
+        "mobile-ios-status-bar--with-home-indicator": {
+          "id": "mobile-ios-status-bar--with-home-indicator",
+          "name": "With Home Indicator"
+        }
+      }
+    }
+  }
+}

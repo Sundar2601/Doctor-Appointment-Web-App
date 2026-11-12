@@ -1,0 +1,31 @@
+{
+  "components": {
+    "feedback-banner": {
+      "id": "feedback-banner",
+      "name": "Banner",
+      "path": "./src/app/ui/banner.stories.ts",
+      "stories": {
+        "feedback-banner--info": {
+          "id": "feedback-banner--info",
+          "name": "Info"
+        },
+        "feedback-banner--warning": {
+          "id": "feedback-banner--warning",
+          "name": "Warning"
+        },
+        "feedback-banner--success": {
+          "id": "feedback-banner--success",
+          "name": "Success"
+        },
+        "feedback-banner--destructive": {
+          "id": "feedback-banner--destructive",
+          "name": "Destructive"
+        },
+        "feedback-banner--with-action": {
+          "id": "feedback-banner--with-action",
+          "name": "With Action"
+        }
+      }
+    }
+  }
+}

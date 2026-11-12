@@ -1,0 +1,28 @@
+{
+  "components": {
+    "overlays-drawer": {
+      "id": "overlays-drawer",
+      "name": "DrawerComponent",
+      "path": "./src/app/ui/drawer.stories.ts",
+      "stories": {
+        "overlays-drawer--default": {
+          "id": "overlays-drawer--default",
+          "name": "Default",
+          "snippet": "import { Component } from '@angular/core';\nimport { DrawerComponent } from './drawer.component';\nimport { ButtonDirective } from './button.directive';\n\n@Component({\n  selector: 'app-demo',\n  imports: [DrawerComponent, ButtonDirective],\n  template: `\n    <button appButton variant=\"outline\" (click)=\"open = true\">Open drawer</button>\n    <app-drawer [heading]=\"heading\" [description]=\"description\" [(open)]=\"open\">\n        <p class=\"text-sm\">Drawer content goes here.</p>\n        <div drawerFooter>\n            <button appButton (click)=\"open = false\">Confirm</button>\n            <button\n                appButton\n                variant=\"outline\"\n                (click)=\"open = false\">\n                Cancel\n            </button>\n        </div>\n    </app-drawer>`,\n})\nexport class DemoComponent {\n  heading = 'Reschedule appointment';\n  description = 'Pick a new time that works for you.';\n  openChange(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `open` could not be provided, since the story declares no such arg."
+        },
+        "overlays-drawer--without-description": {
+          "id": "overlays-drawer--without-description",
+          "name": "Without Description",
+          "snippet": "import { Component } from '@angular/core';\nimport { DrawerComponent } from './drawer.component';\nimport { ButtonDirective } from './button.directive';\n\n@Component({\n  selector: 'app-demo',\n  imports: [DrawerComponent, ButtonDirective],\n  template: `\n    <button appButton variant=\"outline\" (click)=\"open = true\">Open drawer</button>\n    <app-drawer [heading]=\"heading\" [description]=\"description\" [(open)]=\"open\">\n        <p class=\"text-sm\">Drawer content goes here.</p>\n        <div drawerFooter>\n            <button appButton (click)=\"open = false\">Confirm</button>\n            <button\n                appButton\n                variant=\"outline\"\n                (click)=\"open = false\">\n                Cancel\n            </button>\n        </div>\n    </app-drawer>`,\n})\nexport class DemoComponent {\n  heading = 'Reschedule appointment';\n  description = undefined;\n  openChange(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `open` could not be provided, since the story declares no such arg."
+        },
+        "overlays-drawer--open": {
+          "id": "overlays-drawer--open",
+          "name": "Open",
+          "snippet": "import { Component } from '@angular/core';\nimport { DrawerComponent } from './drawer.component';\nimport { ButtonDirective } from './button.directive';\n\n@Component({\n  selector: 'app-demo',\n  imports: [DrawerComponent, ButtonDirective],\n  template: `\n    <button appButton variant=\"outline\" (click)=\"open = true\">Open drawer</button>\n    <app-drawer [heading]=\"heading\" [description]=\"description\" [(open)]=\"open\">\n        <p class=\"text-sm\">Drawer content goes here.</p>\n        <div drawerFooter>\n            <button appButton (click)=\"open = false\">Confirm</button>\n            <button\n                appButton\n                variant=\"outline\"\n                (click)=\"open = false\">\n                Cancel\n            </button>\n        </div>\n    </app-drawer>`,\n})\nexport class DemoComponent {\n  heading = 'Reschedule appointment';\n  description = 'Pick a new time that works for you.';\n  open = true;\n  openChange(event: unknown) {}\n}"
+        }
+      }
+    }
+  }
+}

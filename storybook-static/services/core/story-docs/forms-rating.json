@@ -1,0 +1,23 @@
+{
+  "components": {
+    "forms-rating": {
+      "id": "forms-rating",
+      "name": "Rating",
+      "path": "./src/app/ui/rating.stories.ts",
+      "stories": {
+        "forms-rating--default": {
+          "id": "forms-rating--default",
+          "name": "Default"
+        },
+        "forms-rating--selected": {
+          "id": "forms-rating--selected",
+          "name": "Selected"
+        },
+        "forms-rating--readonly-with-count": {
+          "id": "forms-rating--readonly-with-count",
+          "name": "Readonly With Count"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "components": {
+    "forms-radio": {
+      "id": "forms-radio",
+      "name": "Radio",
+      "path": "./src/app/ui/radio.stories.ts",
+      "stories": {
+        "forms-radio--default": {
+          "id": "forms-radio--default",
+          "name": "Default"
+        },
+        "forms-radio--second-selected": {
+          "id": "forms-radio--second-selected",
+          "name": "Second Selected"
+        },
+        "forms-radio--disabled": {
+          "id": "forms-radio--disabled",
+          "name": "Disabled"
+        },
+        "forms-radio--all-states": {
+          "id": "forms-radio--all-states",
+          "name": "All States"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "components": {
+    "ai-reasoning": {
+      "id": "ai-reasoning",
+      "name": "Reasoning",
+      "path": "./src/app/ui/reasoning.stories.ts",
+      "stories": {
+        "ai-reasoning--default": {
+          "id": "ai-reasoning--default",
+          "name": "Default"
+        },
+        "ai-reasoning--streaming": {
+          "id": "ai-reasoning--streaming",
+          "name": "Streaming"
+        }
+      }
+    }
+  }
+}

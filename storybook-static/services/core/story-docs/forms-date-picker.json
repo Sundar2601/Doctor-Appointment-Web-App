@@ -1,0 +1,27 @@
+{
+  "components": {
+    "forms-date-picker": {
+      "id": "forms-date-picker",
+      "name": "DatePicker",
+      "path": "./src/app/ui/date-picker.stories.ts",
+      "stories": {
+        "forms-date-picker--default": {
+          "id": "forms-date-picker--default",
+          "name": "Default"
+        },
+        "forms-date-picker--with-value": {
+          "id": "forms-date-picker--with-value",
+          "name": "With Value"
+        },
+        "forms-date-picker--with-range": {
+          "id": "forms-date-picker--with-range",
+          "name": "With Range"
+        },
+        "forms-date-picker--disabled": {
+          "id": "forms-date-picker--disabled",
+          "name": "Disabled"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "components": {
+    "forms-input": {
+      "id": "forms-input",
+      "name": "Input",
+      "path": "./src/app/ui/control.stories.ts",
+      "stories": {
+        "forms-input--default": {
+          "id": "forms-input--default",
+          "name": "Default"
+        },
+        "forms-input--filled": {
+          "id": "forms-input--filled",
+          "name": "Filled"
+        },
+        "forms-input--invalid": {
+          "id": "forms-input--invalid",
+          "name": "Invalid"
+        },
+        "forms-input--disabled": {
+          "id": "forms-input--disabled",
+          "name": "Disabled"
+        },
+        "forms-input--password": {
+          "id": "forms-input--password",
+          "name": "Password"
+        }
+      }
+    }
+  }
+}

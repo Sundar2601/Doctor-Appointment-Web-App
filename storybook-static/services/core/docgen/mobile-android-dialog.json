@@ -1,0 +1,103 @@
+{
+  "components": {
+    "mobile-android-dialog": {
+      "id": "mobile-android-dialog",
+      "name": "AndroidDialogComponent",
+      "path": "./src/app/ui/android-dialog.stories.ts",
+      "description": "Material 3 basic dialog (312dp, 28dp radius) with text-button actions right-aligned.",
+      "jsDocTags": {},
+      "argTypes": {
+        "id": {
+          "name": "id",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "actions": {
+          "name": "actions",
+          "description": "Action button labels, in display order.",
+          "type": {
+            "name": "other",
+            "value": "empty-enum"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string[]"
+            },
+            "defaultValue": {
+              "summary": "['Cancel', 'OK']"
+            }
+          }
+        },
+        "text": {
+          "name": "text",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {
+              "summary": ""
+            }
+          }
+        },
+        "title": {
+          "name": "title",
+          "type": {
+            "name": "string",
+            "required": true
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "actionClick": {
+          "name": "actionClick",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "actionClick",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type AndroidDialogComponentInputs = {\n  /**\n   * Action button labels, in display order.\n   *\n   * @default ['Cancel', 'OK']\n   */\n  actions?: string[];\n  /** @default '' */\n  text?: string;\n  title: string;\n}\n```\n\n## Outputs\n\n```\nexport type AndroidDialogComponentOutputs = {\n  actionClick: string;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "AndroidDialogComponent",
+        "selector": "app-android-dialog",
+        "standalone": true,
+        "inputs": [
+          "actions",
+          "text",
+          "title"
+        ],
+        "outputs": [
+          "actionClick"
+        ],
+        "enums": []
+      }
+    }
+  }
+}

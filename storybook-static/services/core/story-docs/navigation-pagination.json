@@ -1,0 +1,31 @@
+{
+  "components": {
+    "navigation-pagination": {
+      "id": "navigation-pagination",
+      "name": "PaginationComponent",
+      "path": "./src/app/ui/pagination.stories.ts",
+      "stories": {
+        "navigation-pagination--default": {
+          "id": "navigation-pagination--default",
+          "name": "Default",
+          "snippet": "import { Component } from '@angular/core';\nimport { PaginationComponent } from './pagination.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [PaginationComponent],\n  template: `<app-pagination [pageCount]=\"pageCount\" [siblings]=\"siblings\" [(page)]=\"page\" />`,\n})\nexport class DemoComponent {\n  page = 1;\n  pageCount = 12;\n  siblings = 1;\n  pageChange(event: unknown) {}\n}"
+        },
+        "navigation-pagination--middle-page": {
+          "id": "navigation-pagination--middle-page",
+          "name": "Middle Page",
+          "snippet": "import { Component } from '@angular/core';\nimport { PaginationComponent } from './pagination.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [PaginationComponent],\n  template: `<app-pagination [pageCount]=\"pageCount\" [siblings]=\"siblings\" [(page)]=\"page\" />`,\n})\nexport class DemoComponent {\n  page = 6;\n  pageCount = 12;\n  siblings = 1;\n  pageChange(event: unknown) {}\n}"
+        },
+        "navigation-pagination--few-pages": {
+          "id": "navigation-pagination--few-pages",
+          "name": "Few Pages",
+          "snippet": "import { Component } from '@angular/core';\nimport { PaginationComponent } from './pagination.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [PaginationComponent],\n  template: `<app-pagination [pageCount]=\"pageCount\" [siblings]=\"siblings\" [(page)]=\"page\" />`,\n})\nexport class DemoComponent {\n  page = 1;\n  pageCount = 4;\n  siblings = 1;\n  pageChange(event: unknown) {}\n}"
+        },
+        "navigation-pagination--wide-siblings": {
+          "id": "navigation-pagination--wide-siblings",
+          "name": "Wide Siblings",
+          "snippet": "import { Component } from '@angular/core';\nimport { PaginationComponent } from './pagination.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [PaginationComponent],\n  template: `<app-pagination [pageCount]=\"pageCount\" [siblings]=\"siblings\" [(page)]=\"page\" />`,\n})\nexport class DemoComponent {\n  page = 10;\n  pageCount = 20;\n  siblings = 2;\n  pageChange(event: unknown) {}\n}"
+        }
+      }
+    }
+  }
+}

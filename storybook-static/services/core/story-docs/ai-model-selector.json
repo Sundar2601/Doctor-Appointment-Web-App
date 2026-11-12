@@ -1,0 +1,19 @@
+{
+  "components": {
+    "ai-model-selector": {
+      "id": "ai-model-selector",
+      "name": "ModelSelector",
+      "path": "./src/app/ui/model-selector.stories.ts",
+      "stories": {
+        "ai-model-selector--default": {
+          "id": "ai-model-selector--default",
+          "name": "Default"
+        },
+        "ai-model-selector--no-selection": {
+          "id": "ai-model-selector--no-selection",
+          "name": "No Selection"
+        }
+      }
+    }
+  }
+}

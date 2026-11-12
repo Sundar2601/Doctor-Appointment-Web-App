@@ -1,0 +1,231 @@
+{
+  "components": {
+    "overlays-alert-dialog": {
+      "id": "overlays-alert-dialog",
+      "name": "AlertDialogComponent",
+      "path": "./src/app/ui/alert-dialog.stories.ts",
+      "description": "Alert dialog (role=alertdialog, no backdrop dismiss). Usage: `<app-alert-dialog heading=\"Delete?\" description=\"...\" [(open)]=\"show\" (confirm)=\"del()\" />`.",
+      "jsDocTags": {},
+      "argTypes": {
+        "descId": {
+          "name": "descId",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "role": {
+          "name": "role",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {
+              "summary": "alertdialog"
+            }
+          }
+        },
+        "titleId": {
+          "name": "titleId",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "tpl": {
+          "name": "tpl",
+          "type": {
+            "name": "other",
+            "value": "empty-enum"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "Signal<TemplateRef<unknown> | undefined>"
+            },
+            "defaultValue": {}
+          }
+        },
+        "cancelLabel": {
+          "name": "cancelLabel",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {
+              "summary": "Cancel"
+            }
+          }
+        },
+        "confirmLabel": {
+          "name": "confirmLabel",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {
+              "summary": "Continue"
+            }
+          }
+        },
+        "description": {
+          "name": "description",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "heading": {
+          "name": "heading",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "open": {
+          "name": "open",
+          "type": {
+            "name": "boolean"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "boolean"
+            },
+            "defaultValue": {
+              "summary": false
+            }
+          }
+        },
+        "cancelled": {
+          "name": "cancelled",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "cancelled",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "void"
+            },
+            "defaultValue": {}
+          }
+        },
+        "confirm": {
+          "name": "confirm",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "confirm",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "void"
+            },
+            "defaultValue": {}
+          }
+        },
+        "openChange": {
+          "name": "openChange",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "openChange",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "(e: boolean) => void"
+            }
+          }
+        },
+        "close": {
+          "name": "close",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "table": {
+            "category": "methods",
+            "type": {
+              "summary": "() => void"
+            },
+            "defaultValue": {}
+          }
+        },
+        "config": {
+          "name": "config",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "table": {
+            "category": "methods",
+            "type": {
+              "summary": "() => DialogConfig"
+            },
+            "defaultValue": {}
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type AlertDialogComponentInputs = {\n  /** @default Cancel */\n  cancelLabel?: string;\n  /** @default Continue */\n  confirmLabel?: string;\n  description?: string;\n  heading?: string;\n  /** @default false */\n  open?: boolean; // two-way: [(open)]\n}\n```\n\n## Outputs\n\n```\nexport type AlertDialogComponentOutputs = {\n  cancelled: void;\n  confirm: void;\n  openChange: (e: boolean) => void;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "AlertDialogComponent",
+        "selector": "app-alert-dialog",
+        "standalone": true,
+        "inputs": [
+          "cancelLabel",
+          "confirmLabel",
+          "description",
+          "heading",
+          "open"
+        ],
+        "outputs": [
+          "cancelled",
+          "confirm",
+          "openChange"
+        ],
+        "enums": []
+      }
+    }
+  }
+}

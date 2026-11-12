@@ -1,0 +1,23 @@
+{
+  "components": {
+    "overlays-command": {
+      "id": "overlays-command",
+      "name": "CommandComponent",
+      "path": "./src/app/ui/command.stories.ts",
+      "stories": {
+        "overlays-command--default": {
+          "id": "overlays-command--default",
+          "name": "Default",
+          "snippet": "import { Component } from '@angular/core';\nimport { CommandComponent } from './command.component';\nimport { DialogComponent } from './dialog.component';\nimport { ButtonDirective } from './button.directive';\n\n@Component({\n  selector: 'app-demo',\n  imports: [CommandComponent, DialogComponent, ButtonDirective],\n  template: `\n    <div class=\"max-w-md\">\n        <app-command\n            [items]=\"items\"\n            [placeholder]=\"placeholder\"\n            [emptyText]=\"emptyText\"\n            (selected)=\"pick($event)\" />\n        <p class=\"mt-4 text-sm\">Selected: {{ last || 'none' }}</p>\n    </div>`,\n})\nexport class DemoComponent {\n  items = [{value: 'book', label: 'Book appointment', group: 'Appointments', shortcut: 'Ctrl+B'}, {value: 'upcoming', label: 'View upcoming', group: 'Appointments'}, {value: 'cancel', label: 'Cancel appointment', group: 'Appointments', disabled: true}, {value: 'doctors', label: 'Find a doctor', group: 'Directory', shortcut: 'Ctrl+D'}, {value: 'profile', label: 'Profile', group: 'Settings'}, {value: 'settings', label: 'Settings', group: 'Settings', shortcut: 'Ctrl+,'}];\n  placeholder = 'Type a command or search...';\n  emptyText = 'No results found.';\n  selected(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `pick`, `last` could not be provided, since the story declares no such arg."
+        },
+        "overlays-command--in-dialog": {
+          "id": "overlays-command--in-dialog",
+          "name": "In Dialog",
+          "snippet": "import { Component } from '@angular/core';\nimport { CommandComponent } from './command.component';\nimport { DialogComponent } from './dialog.component';\nimport { ButtonDirective } from './button.directive';\n\n@Component({\n  selector: 'app-demo',\n  imports: [CommandComponent, DialogComponent, ButtonDirective],\n  template: `\n    <button\n        appButton\n        variant=\"outline\"\n        (click)=\"open = true\">\n        Open command palette\n    </button>\n    <app-dialog heading=\"Command palette\" [(open)]=\"open\">\n        <app-command\n            [items]=\"items\"\n            [placeholder]=\"placeholder\"\n            [emptyText]=\"emptyText\"\n            (selected)=\"open = false\" />\n    </app-dialog>`,\n})\nexport class DemoComponent {\n  items = [{value: 'book', label: 'Book appointment', group: 'Appointments', shortcut: 'Ctrl+B'}, {value: 'upcoming', label: 'View upcoming', group: 'Appointments'}, {value: 'cancel', label: 'Cancel appointment', group: 'Appointments', disabled: true}, {value: 'doctors', label: 'Find a doctor', group: 'Directory', shortcut: 'Ctrl+D'}, {value: 'profile', label: 'Profile', group: 'Settings'}, {value: 'settings', label: 'Settings', group: 'Settings', shortcut: 'Ctrl+,'}];\n  placeholder = 'Type a command or search...';\n  emptyText = 'No results found.';\n  selected(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `open` could not be provided, since the story declares no such arg."
+        }
+      }
+    }
+  }
+}

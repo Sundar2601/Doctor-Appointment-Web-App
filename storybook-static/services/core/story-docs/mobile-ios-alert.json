@@ -1,0 +1,23 @@
+{
+  "components": {
+    "mobile-ios-alert": {
+      "id": "mobile-ios-alert",
+      "name": "Alert",
+      "path": "./src/app/ui/ios-alert.stories.ts",
+      "stories": {
+        "mobile-ios-alert--destructive": {
+          "id": "mobile-ios-alert--destructive",
+          "name": "Destructive"
+        },
+        "mobile-ios-alert--single-action": {
+          "id": "mobile-ios-alert--single-action",
+          "name": "Single Action"
+        },
+        "mobile-ios-alert--three-actions": {
+          "id": "mobile-ios-alert--three-actions",
+          "name": "Three Actions"
+        }
+      }
+    }
+  }
+}

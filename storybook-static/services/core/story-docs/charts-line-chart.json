@@ -1,0 +1,19 @@
+{
+  "components": {
+    "charts-line-chart": {
+      "id": "charts-line-chart",
+      "name": "LineChart",
+      "path": "./src/app/ui/line-chart.stories.ts",
+      "stories": {
+        "charts-line-chart--default": {
+          "id": "charts-line-chart--default",
+          "name": "Default"
+        },
+        "charts-line-chart--without-dots": {
+          "id": "charts-line-chart--without-dots",
+          "name": "Without Dots"
+        }
+      }
+    }
+  }
+}

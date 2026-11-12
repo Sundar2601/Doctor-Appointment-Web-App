@@ -1,0 +1,102 @@
+{
+  "components": {
+    "navigation-tabs": {
+      "id": "navigation-tabs",
+      "name": "TabsComponent",
+      "path": "./src/app/ui/tabs.stories.ts",
+      "description": "Tab list (role=tablist, arrow/Home/End keys). Usage:\n`<app-tabs [tabs]=\"tabs\" [(value)]=\"tab\" />",
+      "jsDocTags": {
+        "if": [
+          "(tab() === 'a') { ... }`. Panels: give yours `role=\"tabpanel\"` and `[attr.aria-labelledby]=\"'app-tab-' + value\"`."
+        ]
+      },
+      "argTypes": {
+        "label": {
+          "name": "label",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "tabs": {
+          "name": "tabs",
+          "type": {
+            "name": "other",
+            "value": "empty-enum",
+            "required": true
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "TabItem[]"
+            },
+            "defaultValue": {}
+          }
+        },
+        "value": {
+          "name": "value",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "valueChange": {
+          "name": "valueChange",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "valueChange",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "(e: string) => void"
+            }
+          }
+        },
+        "onKey": {
+          "name": "onKey",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "table": {
+            "category": "methods",
+            "type": {
+              "summary": "(e: KeyboardEvent) => void"
+            },
+            "defaultValue": {}
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type TabsComponentInputs = {\n  label?: string;\n  tabs: TabItem[];\n  value?: string; // two-way: [(value)]\n}\n```\n\n## Outputs\n\n```\nexport type TabsComponentOutputs = {\n  valueChange: (e: string) => void;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "TabsComponent",
+        "selector": "app-tabs",
+        "standalone": true,
+        "inputs": [
+          "label",
+          "tabs",
+          "value"
+        ],
+        "outputs": [
+          "valueChange"
+        ],
+        "enums": []
+      }
+    }
+  }
+}

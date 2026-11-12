@@ -1,0 +1,15 @@
+{
+  "components": {
+    "charts-gauge": {
+      "id": "charts-gauge",
+      "name": "Gauge",
+      "path": "./src/app/ui/gauge-chart.stories.ts",
+      "stories": {
+        "charts-gauge--default": {
+          "id": "charts-gauge--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

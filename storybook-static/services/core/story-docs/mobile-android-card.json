@@ -1,0 +1,26 @@
+{
+  "components": {
+    "mobile-android-card": {
+      "id": "mobile-android-card",
+      "name": "AndroidCardComponent",
+      "path": "./src/app/ui/android-card.stories.ts",
+      "stories": {
+        "mobile-android-card--filled": {
+          "id": "mobile-android-card--filled",
+          "name": "Filled",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidCardComponent } from './android-card.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidCardComponent],\n  template: `\n    <div class=\"w-80 p-4\">\n        <app-android-card [variant]=\"variant\">\n            <p class=\"text-base font-medium\">Card title</p>\n            <p\n                class=\"text-muted-foreground mt-2 text-sm\">\n                Supporting text that describes the card content.\n            </p>\n        </app-android-card>\n    </div>`,\n})\nexport class DemoComponent {\n  variant = 'filled';\n}"
+        },
+        "mobile-android-card--elevated": {
+          "id": "mobile-android-card--elevated",
+          "name": "Elevated",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidCardComponent } from './android-card.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidCardComponent],\n  template: `\n    <div class=\"w-80 p-4\">\n        <app-android-card [variant]=\"variant\">\n            <p class=\"text-base font-medium\">Card title</p>\n            <p\n                class=\"text-muted-foreground mt-2 text-sm\">\n                Supporting text that describes the card content.\n            </p>\n        </app-android-card>\n    </div>`,\n})\nexport class DemoComponent {\n  variant = 'elevated';\n}"
+        },
+        "mobile-android-card--outlined": {
+          "id": "mobile-android-card--outlined",
+          "name": "Outlined",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidCardComponent } from './android-card.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidCardComponent],\n  template: `\n    <div class=\"w-80 p-4\">\n        <app-android-card [variant]=\"variant\">\n            <p class=\"text-base font-medium\">Card title</p>\n            <p\n                class=\"text-muted-foreground mt-2 text-sm\">\n                Supporting text that describes the card content.\n            </p>\n        </app-android-card>\n    </div>`,\n})\nexport class DemoComponent {\n  variant = 'outlined';\n}"
+        }
+      }
+    }
+  }
+}

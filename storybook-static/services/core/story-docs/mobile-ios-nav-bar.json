@@ -1,0 +1,23 @@
+{
+  "components": {
+    "mobile-ios-nav-bar": {
+      "id": "mobile-ios-nav-bar",
+      "name": "NavBar",
+      "path": "./src/app/ui/ios-nav-bar.stories.ts",
+      "stories": {
+        "mobile-ios-nav-bar--inline": {
+          "id": "mobile-ios-nav-bar--inline",
+          "name": "Inline"
+        },
+        "mobile-ios-nav-bar--large": {
+          "id": "mobile-ios-nav-bar--large",
+          "name": "Large"
+        },
+        "mobile-ios-nav-bar--no-back-button": {
+          "id": "mobile-ios-nav-bar--no-back-button",
+          "name": "No Back Button"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "components": {
+    "mobile-android-list-item": {
+      "id": "mobile-android-list-item",
+      "name": "AndroidListItemComponent",
+      "path": "./src/app/ui/android-list-item.stories.ts",
+      "description": "Material 3 list item. Leading can be initials, an icon name, or projected `[leading]` content; trailing is text or `[trailing]`.",
+      "jsDocTags": {},
+      "argTypes": {
+        "destructive": {
+          "name": "destructive",
+          "type": {
+            "name": "boolean"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "boolean"
+            },
+            "defaultValue": {
+              "summary": false
+            }
+          }
+        },
+        "headline": {
+          "name": "headline",
+          "type": {
+            "name": "string",
+            "required": true
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "leading": {
+          "name": "leading",
+          "description": "Initials shown in a circular avatar.",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "leadingIcon": {
+          "name": "leadingIcon",
+          "description": "Icon name shown instead of the avatar.",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "supporting": {
+          "name": "supporting",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "trailing": {
+          "name": "trailing",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type AndroidListItemComponentInputs = {\n  /** @default false */\n  destructive?: boolean;\n  headline: string;\n  /** Initials shown in a circular avatar. */\n  leading?: string;\n  /** Icon name shown instead of the avatar. */\n  leadingIcon?: string;\n  supporting?: string;\n  trailing?: string;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "AndroidListItemComponent",
+        "selector": "app-android-list-item",
+        "standalone": true,
+        "inputs": [
+          "destructive",
+          "headline",
+          "leading",
+          "leadingIcon",
+          "supporting",
+          "trailing"
+        ],
+        "outputs": [],
+        "enums": []
+      }
+    }
+  }
+}

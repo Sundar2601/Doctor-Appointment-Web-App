@@ -1,0 +1,23 @@
+{
+  "components": {
+    "feedback-toast": {
+      "id": "feedback-toast",
+      "name": "Toast",
+      "path": "./src/app/ui/toast.stories.ts",
+      "stories": {
+        "feedback-toast--default": {
+          "id": "feedback-toast--default",
+          "name": "Default"
+        },
+        "feedback-toast--with-description": {
+          "id": "feedback-toast--with-description",
+          "name": "With Description"
+        },
+        "feedback-toast--with-action": {
+          "id": "feedback-toast--with-action",
+          "name": "With Action"
+        }
+      }
+    }
+  }
+}

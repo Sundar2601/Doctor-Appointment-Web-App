@@ -1,0 +1,19 @@
+{
+  "components": {
+    "charts-radial-chart": {
+      "id": "charts-radial-chart",
+      "name": "RadialChart",
+      "path": "./src/app/ui/radial-chart.stories.ts",
+      "stories": {
+        "charts-radial-chart--default": {
+          "id": "charts-radial-chart--default",
+          "name": "Default"
+        },
+        "charts-radial-chart--with-legend": {
+          "id": "charts-radial-chart--with-legend",
+          "name": "With Legend"
+        }
+      }
+    }
+  }
+}

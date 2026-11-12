@@ -1,0 +1,117 @@
+{
+  "components": {
+    "navigation-pagination": {
+      "id": "navigation-pagination",
+      "name": "PaginationComponent",
+      "path": "./src/app/ui/pagination.stories.ts",
+      "description": "Usage: `<app-pagination [pageCount]=\"12\" [(page)]=\"page\" />`.",
+      "jsDocTags": {},
+      "argTypes": {
+        "pages": {
+          "name": "pages",
+          "description": "Page numbers; `0` marks an ellipsis.",
+          "type": {
+            "name": "other",
+            "value": "empty-enum"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "Signal<number[]>"
+            },
+            "defaultValue": {}
+          }
+        },
+        "page": {
+          "name": "page",
+          "type": {
+            "name": "number"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "number"
+            },
+            "defaultValue": {
+              "summary": 1
+            }
+          }
+        },
+        "pageCount": {
+          "name": "pageCount",
+          "type": {
+            "name": "number",
+            "required": true
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "number"
+            },
+            "defaultValue": {}
+          }
+        },
+        "siblings": {
+          "name": "siblings",
+          "description": "Pages shown on each side of the current page.",
+          "type": {
+            "name": "number"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "number"
+            },
+            "defaultValue": {
+              "summary": 1
+            }
+          }
+        },
+        "pageChange": {
+          "name": "pageChange",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "pageChange",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "(e: number) => void"
+            }
+          }
+        },
+        "go": {
+          "name": "go",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "table": {
+            "category": "methods",
+            "type": {
+              "summary": "(p: number) => void"
+            },
+            "defaultValue": {}
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type PaginationComponentInputs = {\n  /** @default 1 */\n  page?: number; // two-way: [(page)]\n  pageCount: number;\n  /**\n   * Pages shown on each side of the current page.\n   *\n   * @default 1\n   */\n  siblings?: number;\n}\n```\n\n## Outputs\n\n```\nexport type PaginationComponentOutputs = {\n  pageChange: (e: number) => void;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "PaginationComponent",
+        "selector": "app-pagination",
+        "standalone": true,
+        "inputs": [
+          "page",
+          "pageCount",
+          "siblings"
+        ],
+        "outputs": [
+          "pageChange"
+        ],
+        "enums": []
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "components": {
+    "display-accordion": {
+      "id": "display-accordion",
+      "name": "Accordion",
+      "path": "./src/app/ui/accordion.stories.ts",
+      "stories": {
+        "display-accordion--default": {
+          "id": "display-accordion--default",
+          "name": "Default"
+        },
+        "display-accordion--first-open": {
+          "id": "display-accordion--first-open",
+          "name": "First Open"
+        },
+        "display-accordion--independent": {
+          "id": "display-accordion--independent",
+          "name": "Independent"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "components": {
+    "mobile-ios-search-bar": {
+      "id": "mobile-ios-search-bar",
+      "name": "SearchBar",
+      "path": "./src/app/ui/ios-search-bar.stories.ts",
+      "stories": {
+        "mobile-ios-search-bar--default": {
+          "id": "mobile-ios-search-bar--default",
+          "name": "Default"
+        },
+        "mobile-ios-search-bar--with-value": {
+          "id": "mobile-ios-search-bar--with-value",
+          "name": "With Value"
+        },
+        "mobile-ios-search-bar--text-field": {
+          "id": "mobile-ios-search-bar--text-field",
+          "name": "Text Field"
+        }
+      }
+    }
+  }
+}

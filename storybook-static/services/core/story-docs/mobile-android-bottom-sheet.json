@@ -1,0 +1,16 @@
+{
+  "components": {
+    "mobile-android-bottom-sheet": {
+      "id": "mobile-android-bottom-sheet",
+      "name": "AndroidBottomSheetComponent",
+      "path": "./src/app/ui/android-bottom-sheet.stories.ts",
+      "stories": {
+        "mobile-android-bottom-sheet--default": {
+          "id": "mobile-android-bottom-sheet--default",
+          "name": "Default",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidBottomSheetComponent } from './android-bottom-sheet.component';\nimport { AndroidListItemComponent } from './android-list-item.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidBottomSheetComponent, AndroidListItemComponent],\n  template: `\n    <div class=\"w-[412px] p-4\">\n        <app-android-bottom-sheet>\n            <div role=\"list\">\n                <app-android-list-item headline=\"Share\" leadingIcon=\"lucideShare\" />\n                <app-android-list-item\n                    headline=\"Copy link\"\n                    leadingIcon=\"lucideCopy\" />\n                <app-android-list-item\n                    headline=\"Delete\"\n                    leadingIcon=\"lucideTrash2\"\n                    [destructive]=\"true\" />\n            </div>\n        </app-android-bottom-sheet>\n    </div>`,\n})\nexport class DemoComponent {}"
+        }
+      }
+    }
+  }
+}

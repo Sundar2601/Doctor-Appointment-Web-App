@@ -1,0 +1,23 @@
+{
+  "components": {
+    "mobile-ios-segmented-control": {
+      "id": "mobile-ios-segmented-control",
+      "name": "SegmentedControl",
+      "path": "./src/app/ui/ios-segmented-control.stories.ts",
+      "stories": {
+        "mobile-ios-segmented-control--default": {
+          "id": "mobile-ios-segmented-control--default",
+          "name": "Default"
+        },
+        "mobile-ios-segmented-control--two-options": {
+          "id": "mobile-ios-segmented-control--two-options",
+          "name": "Two Options"
+        },
+        "mobile-ios-segmented-control--five-options": {
+          "id": "mobile-ios-segmented-control--five-options",
+          "name": "Five Options"
+        }
+      }
+    }
+  }
+}

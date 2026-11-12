@@ -1,0 +1,23 @@
+{
+  "components": {
+    "display-avatar-group": {
+      "id": "display-avatar-group",
+      "name": "AvatarGroup",
+      "path": "./src/app/ui/avatar-group.stories.ts",
+      "stories": {
+        "display-avatar-group--default": {
+          "id": "display-avatar-group--default",
+          "name": "Default"
+        },
+        "display-avatar-group--no-overflow": {
+          "id": "display-avatar-group--no-overflow",
+          "name": "No Overflow"
+        },
+        "display-avatar-group--large": {
+          "id": "display-avatar-group--large",
+          "name": "Large"
+        }
+      }
+    }
+  }
+}

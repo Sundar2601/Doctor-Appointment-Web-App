@@ -1,0 +1,15 @@
+{
+  "components": {
+    "charts-funnel": {
+      "id": "charts-funnel",
+      "name": "Funnel",
+      "path": "./src/app/ui/funnel-chart.stories.ts",
+      "stories": {
+        "charts-funnel--default": {
+          "id": "charts-funnel--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "components": {
+    "navigation-segmented-control": {
+      "id": "navigation-segmented-control",
+      "name": "SegmentedControl",
+      "path": "./src/app/ui/segmented-control.stories.ts",
+      "stories": {
+        "navigation-segmented-control--default": {
+          "id": "navigation-segmented-control--default",
+          "name": "Default"
+        },
+        "navigation-segmented-control--with-disabled-option": {
+          "id": "navigation-segmented-control--with-disabled-option",
+          "name": "With Disabled Option"
+        }
+      }
+    }
+  }
+}

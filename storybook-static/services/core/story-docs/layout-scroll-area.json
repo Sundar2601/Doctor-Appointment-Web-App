@@ -1,0 +1,19 @@
+{
+  "components": {
+    "layout-scroll-area": {
+      "id": "layout-scroll-area",
+      "name": "ScrollArea",
+      "path": "./src/app/ui/scroll-area.stories.ts",
+      "stories": {
+        "layout-scroll-area--doctor-list": {
+          "id": "layout-scroll-area--doctor-list",
+          "name": "Doctor List"
+        },
+        "layout-scroll-area--wide-content": {
+          "id": "layout-scroll-area--wide-content",
+          "name": "Wide Content"
+        }
+      }
+    }
+  }
+}

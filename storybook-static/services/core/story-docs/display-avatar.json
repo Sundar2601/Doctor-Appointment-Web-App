@@ -1,0 +1,31 @@
+{
+  "components": {
+    "display-avatar": {
+      "id": "display-avatar",
+      "name": "Avatar",
+      "path": "./src/app/ui/avatar.stories.ts",
+      "stories": {
+        "display-avatar--default": {
+          "id": "display-avatar--default",
+          "name": "Default"
+        },
+        "display-avatar--small": {
+          "id": "display-avatar--small",
+          "name": "Small"
+        },
+        "display-avatar--large": {
+          "id": "display-avatar--large",
+          "name": "Large"
+        },
+        "display-avatar--fallback": {
+          "id": "display-avatar--fallback",
+          "name": "Fallback"
+        },
+        "display-avatar--all-sizes": {
+          "id": "display-avatar--all-sizes",
+          "name": "All Sizes"
+        }
+      }
+    }
+  }
+}

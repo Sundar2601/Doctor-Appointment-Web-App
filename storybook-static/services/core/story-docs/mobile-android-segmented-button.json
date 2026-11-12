@@ -1,0 +1,21 @@
+{
+  "components": {
+    "mobile-android-segmented-button": {
+      "id": "mobile-android-segmented-button",
+      "name": "AndroidSegmentedButtonComponent",
+      "path": "./src/app/ui/android-segmented-button.stories.ts",
+      "stories": {
+        "mobile-android-segmented-button--default": {
+          "id": "mobile-android-segmented-button--default",
+          "name": "Default",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidSegmentedButtonComponent } from './android-segmented-button.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidSegmentedButtonComponent],\n  template: `\n    <div class=\"p-4\">\n        <app-android-segmented-button\n            [options]=\"options\"\n            [(value)]=\"value\"\n            [ariaLabel]=\"ariaLabel\" />\n    </div>`,\n})\nexport class DemoComponent {\n  options = ['Day', 'Week', 'Month'];\n  value = 'Week';\n  ariaLabel = 'Range';\n  valueChange(event: unknown) {}\n}"
+        },
+        "mobile-android-segmented-button--two-options": {
+          "id": "mobile-android-segmented-button--two-options",
+          "name": "Two Options",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidSegmentedButtonComponent } from './android-segmented-button.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidSegmentedButtonComponent],\n  template: `\n    <div class=\"p-4\">\n        <app-android-segmented-button\n            [options]=\"options\"\n            [(value)]=\"value\"\n            [ariaLabel]=\"ariaLabel\" />\n    </div>`,\n})\nexport class DemoComponent {\n  options = ['List', 'Map'];\n  value = 'List';\n  ariaLabel = 'Range';\n  valueChange(event: unknown) {}\n}"
+        }
+      }
+    }
+  }
+}

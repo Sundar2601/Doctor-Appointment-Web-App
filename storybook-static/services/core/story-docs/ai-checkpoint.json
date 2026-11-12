@@ -1,0 +1,15 @@
+{
+  "components": {
+    "ai-checkpoint": {
+      "id": "ai-checkpoint",
+      "name": "Checkpoint",
+      "path": "./src/app/ui/checkpoint.stories.ts",
+      "stories": {
+        "ai-checkpoint--default": {
+          "id": "ai-checkpoint--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

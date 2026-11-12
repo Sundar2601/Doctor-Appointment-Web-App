@@ -1,0 +1,29 @@
+{
+  "components": {
+    "mobile-android-navigation-bar": {
+      "id": "mobile-android-navigation-bar",
+      "name": "AndroidNavBarItemComponent",
+      "path": "./src/app/ui/android-nav-bar.stories.ts",
+      "stories": {
+        "mobile-android-navigation-bar--item-active": {
+          "id": "mobile-android-navigation-bar--item-active",
+          "name": "Item Active",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidNavBarItemComponent } from './android-nav-bar.component';\nimport { AndroidNavBarComponent } from './android-nav-bar.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidNavBarItemComponent, AndroidNavBarComponent],\n  template: `\n    <app-android-nav-bar-item\n        [icon]=\"'lucideHouse'\"\n        [label]=\"'Home'\"\n        [active]=\"true\"\n        (pressed)=\"pressed($event)\"\n    />`,\n})\nexport class DemoComponent {\n  pressed(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `item` could not be resolved statically."
+        },
+        "mobile-android-navigation-bar--item-inactive": {
+          "id": "mobile-android-navigation-bar--item-inactive",
+          "name": "Item Inactive",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidNavBarItemComponent } from './android-nav-bar.component';\nimport { AndroidNavBarComponent } from './android-nav-bar.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidNavBarItemComponent, AndroidNavBarComponent],\n  template: `\n    <app-android-nav-bar-item\n        [icon]=\"'lucideHouse'\"\n        [label]=\"'Home'\"\n        [active]=\"false\"\n        (pressed)=\"pressed($event)\"\n    />`,\n})\nexport class DemoComponent {\n  pressed(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `item` could not be resolved statically."
+        },
+        "mobile-android-navigation-bar--default": {
+          "id": "mobile-android-navigation-bar--default",
+          "name": "Default",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidNavBarItemComponent } from './android-nav-bar.component';\nimport { AndroidNavBarComponent } from './android-nav-bar.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidNavBarItemComponent, AndroidNavBarComponent],\n  template: `\n    <div class=\"w-[412px]\">\n        <app-android-nav-bar>\n            <app-android-nav-bar-item\n                icon=\"lucideHouse\"\n                label=\"Home\"\n                [active]=\"tab === 'Home'\"\n                (pressed)=\"tab = 'Home'\" />\n            <app-android-nav-bar-item\n                icon=\"lucideSearch\"\n                label=\"Search\"\n                [active]=\"tab === 'Search'\"\n                (pressed)=\"tab = 'Search'\" />\n            <app-android-nav-bar-item\n                icon=\"lucideBell\"\n                label=\"Alerts\"\n                [active]=\"tab === 'Alerts'\"\n                (pressed)=\"tab = 'Alerts'\" />\n            <app-android-nav-bar-item\n                icon=\"lucideUser\"\n                label=\"Profile\"\n                [active]=\"tab === 'Profile'\"\n                (pressed)=\"tab = 'Profile'\" />\n        </app-android-nav-bar>\n    </div>`,\n})\nexport class DemoComponent {\n  pressed(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `tab` could not be provided, since the story declares no such arg."
+        }
+      }
+    }
+  }
+}

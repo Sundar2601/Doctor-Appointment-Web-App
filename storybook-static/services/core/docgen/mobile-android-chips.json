@@ -1,0 +1,151 @@
+{
+  "components": {
+    "mobile-android-chips": {
+      "id": "mobile-android-chips",
+      "name": "AndroidChipComponent",
+      "path": "./src/app/ui/android-chip.stories.ts",
+      "description": "Material 3 chip (32dp). Filter chips toggle `selected` and show a check; input chips can be removed.",
+      "jsDocTags": {},
+      "argTypes": {
+        "classes": {
+          "name": "classes",
+          "type": {
+            "name": "other",
+            "value": "empty-enum"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "Signal<\"text-foreground flex h-8 items-center rounded-lg bg-secondary\" | \"text-foreground flex h-8 items-center rounded-lg bg-background border-border border\">"
+            },
+            "defaultValue": {}
+          }
+        },
+        "icon": {
+          "name": "icon",
+          "description": "Optional leading icon name.",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "kind": {
+          "name": "kind",
+          "type": {
+            "name": "enum",
+            "value": [
+              "assist",
+              "filter",
+              "input"
+            ]
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "AndroidChipKind"
+            },
+            "defaultValue": {
+              "summary": "assist"
+            }
+          }
+        },
+        "label": {
+          "name": "label",
+          "type": {
+            "name": "string",
+            "required": true
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "selected": {
+          "name": "selected",
+          "type": {
+            "name": "boolean"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "boolean"
+            },
+            "defaultValue": {
+              "summary": false
+            }
+          }
+        },
+        "removed": {
+          "name": "removed",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "removed",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "void"
+            },
+            "defaultValue": {}
+          }
+        },
+        "selectedChange": {
+          "name": "selectedChange",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "selectedChange",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "(e: boolean) => void"
+            }
+          }
+        },
+        "toggle": {
+          "name": "toggle",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "table": {
+            "category": "methods",
+            "type": {
+              "summary": "() => void"
+            },
+            "defaultValue": {}
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type AndroidChipComponentInputs = {\n  /** Optional leading icon name. */\n  icon?: string;\n  /** @default assist */\n  kind?: AndroidChipKind;\n  label: string;\n  /** @default false */\n  selected?: boolean; // two-way: [(selected)]\n}\n```\n\n## Outputs\n\n```\nexport type AndroidChipComponentOutputs = {\n  removed: void;\n  selectedChange: (e: boolean) => void;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "AndroidChipComponent",
+        "selector": "app-android-chip",
+        "standalone": true,
+        "inputs": [
+          "icon",
+          "kind",
+          "label",
+          "selected"
+        ],
+        "outputs": [
+          "removed",
+          "selectedChange"
+        ],
+        "enums": []
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "components": {
+    "charts-combo": {
+      "id": "charts-combo",
+      "name": "Combo",
+      "path": "./src/app/ui/combo-chart.stories.ts",
+      "stories": {
+        "charts-combo--default": {
+          "id": "charts-combo--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

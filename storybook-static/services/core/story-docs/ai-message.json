@@ -1,0 +1,19 @@
+{
+  "components": {
+    "ai-message": {
+      "id": "ai-message",
+      "name": "Message",
+      "path": "./src/app/ui/message.stories.ts",
+      "stories": {
+        "ai-message--default": {
+          "id": "ai-message--default",
+          "name": "Default"
+        },
+        "ai-message--user-only": {
+          "id": "ai-message--user-only",
+          "name": "User Only"
+        }
+      }
+    }
+  }
+}

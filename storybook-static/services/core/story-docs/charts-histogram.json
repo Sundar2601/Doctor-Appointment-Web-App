@@ -1,0 +1,15 @@
+{
+  "components": {
+    "charts-histogram": {
+      "id": "charts-histogram",
+      "name": "Histogram",
+      "path": "./src/app/ui/histogram-chart.stories.ts",
+      "stories": {
+        "charts-histogram--default": {
+          "id": "charts-histogram--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

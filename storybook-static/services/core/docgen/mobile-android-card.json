@@ -1,0 +1,59 @@
+{
+  "components": {
+    "mobile-android-card": {
+      "id": "mobile-android-card",
+      "name": "AndroidCardComponent",
+      "path": "./src/app/ui/android-card.stories.ts",
+      "description": "Material 3 card (12dp radius). Project any content.",
+      "jsDocTags": {},
+      "argTypes": {
+        "classes": {
+          "name": "classes",
+          "type": {
+            "name": "other",
+            "value": "empty-enum"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "Signal<string>"
+            },
+            "defaultValue": {}
+          }
+        },
+        "variant": {
+          "name": "variant",
+          "type": {
+            "name": "enum",
+            "value": [
+              "filled",
+              "elevated",
+              "outlined"
+            ]
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "AndroidCardVariant"
+            },
+            "defaultValue": {
+              "summary": "filled"
+            }
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type AndroidCardComponentInputs = {\n  /** @default filled */\n  variant?: AndroidCardVariant;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "AndroidCardComponent",
+        "selector": "app-android-card",
+        "standalone": true,
+        "inputs": [
+          "variant"
+        ],
+        "outputs": [],
+        "enums": []
+      }
+    }
+  }
+}

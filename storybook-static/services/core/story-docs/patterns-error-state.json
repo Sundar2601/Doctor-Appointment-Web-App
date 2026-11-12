@@ -1,0 +1,27 @@
+{
+  "components": {
+    "patterns-error-state": {
+      "id": "patterns-error-state",
+      "name": "ErrorState",
+      "path": "./src/app/ui/error-state.stories.ts",
+      "stories": {
+        "patterns-error-state--not-found": {
+          "id": "patterns-error-state--not-found",
+          "name": "Not Found"
+        },
+        "patterns-error-state--something-went-wrong": {
+          "id": "patterns-error-state--something-went-wrong",
+          "name": "Something Went Wrong"
+        },
+        "patterns-error-state--no-access": {
+          "id": "patterns-error-state--no-access",
+          "name": "No Access"
+        },
+        "patterns-error-state--offline": {
+          "id": "patterns-error-state--offline",
+          "name": "Offline"
+        }
+      }
+    }
+  }
+}

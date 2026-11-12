@@ -1,0 +1,27 @@
+{
+  "components": {
+    "charts-pie-chart": {
+      "id": "charts-pie-chart",
+      "name": "PieChart",
+      "path": "./src/app/ui/pie-chart.stories.ts",
+      "stories": {
+        "charts-pie-chart--default": {
+          "id": "charts-pie-chart--default",
+          "name": "Default"
+        },
+        "charts-pie-chart--donut": {
+          "id": "charts-pie-chart--donut",
+          "name": "Donut"
+        },
+        "charts-pie-chart--donut-with-centre-text": {
+          "id": "charts-pie-chart--donut-with-centre-text",
+          "name": "Donut With Centre Text"
+        },
+        "charts-pie-chart--with-legend": {
+          "id": "charts-pie-chart--with-legend",
+          "name": "With Legend"
+        }
+      }
+    }
+  }
+}

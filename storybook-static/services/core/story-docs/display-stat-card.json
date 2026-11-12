@@ -1,0 +1,23 @@
+{
+  "components": {
+    "display-stat-card": {
+      "id": "display-stat-card",
+      "name": "StatCard",
+      "path": "./src/app/ui/stat-card.stories.ts",
+      "stories": {
+        "display-stat-card--up": {
+          "id": "display-stat-card--up",
+          "name": "Up"
+        },
+        "display-stat-card--down": {
+          "id": "display-stat-card--down",
+          "name": "Down"
+        },
+        "display-stat-card--minimal": {
+          "id": "display-stat-card--minimal",
+          "name": "Minimal"
+        }
+      }
+    }
+  }
+}

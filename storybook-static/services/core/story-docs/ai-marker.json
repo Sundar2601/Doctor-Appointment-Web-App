@@ -1,0 +1,19 @@
+{
+  "components": {
+    "ai-marker": {
+      "id": "ai-marker",
+      "name": "Marker",
+      "path": "./src/app/ui/marker.stories.ts",
+      "stories": {
+        "ai-marker--default": {
+          "id": "ai-marker--default",
+          "name": "Default"
+        },
+        "ai-marker--status": {
+          "id": "ai-marker--status",
+          "name": "Status"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "components": {
+    "mobile-android-status-bar": {
+      "id": "mobile-android-status-bar",
+      "name": "AndroidStatusBarComponent",
+      "path": "./src/app/ui/android-status-bar.stories.ts",
+      "stories": {
+        "mobile-android-status-bar--default": {
+          "id": "mobile-android-status-bar--default",
+          "name": "Default",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidStatusBarComponent } from './android-status-bar.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidStatusBarComponent],\n  template: `\n    <div class=\"w-[412px]\">\n        <app-android-status-bar [time]=\"time\" [gestureBar]=\"gestureBar\" />\n    </div>`,\n})\nexport class DemoComponent {\n  time = '9:30';\n  gestureBar = true;\n}"
+        },
+        "mobile-android-status-bar--without-gesture-bar": {
+          "id": "mobile-android-status-bar--without-gesture-bar",
+          "name": "Without Gesture Bar",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidStatusBarComponent } from './android-status-bar.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidStatusBarComponent],\n  template: `\n    <div class=\"w-[412px]\">\n        <app-android-status-bar [time]=\"time\" [gestureBar]=\"gestureBar\" />\n    </div>`,\n})\nexport class DemoComponent {\n  time = '9:30';\n  gestureBar = false;\n}"
+        }
+      }
+    }
+  }
+}

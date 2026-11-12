@@ -1,0 +1,29 @@
+{
+  "components": {
+    "overlays-alert-dialog": {
+      "id": "overlays-alert-dialog",
+      "name": "AlertDialogComponent",
+      "path": "./src/app/ui/alert-dialog.stories.ts",
+      "stories": {
+        "overlays-alert-dialog--default": {
+          "id": "overlays-alert-dialog--default",
+          "name": "Default",
+          "snippet": "import { Component } from '@angular/core';\nimport { AlertDialogComponent } from './alert-dialog.component';\nimport { ButtonDirective } from './button.directive';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AlertDialogComponent, ButtonDirective],\n  template: `\n    <button\n        appButton\n        variant=\"outline\"\n        (click)=\"open = true\">\n        Open alert dialog\n    </button>\n    <app-alert-dialog\n        [heading]=\"heading\"\n        [description]=\"description\"\n        [confirmLabel]=\"confirmLabel\"\n        [cancelLabel]=\"cancelLabel\"\n        [(open)]=\"open\"\n        (confirm)=\"result = 'Confirmed'\"\n        (cancelled)=\"result = 'Cancelled'\" />\n    <p class=\"mt-4 text-sm\">Result: {{ result || 'none' }}</p>`,\n})\nexport class DemoComponent {\n  heading = 'Cancel this appointment?';\n  description = 'This action cannot be undone. The slot will be released to other patients.';\n  confirmLabel = 'Continue';\n  cancelLabel = 'Cancel';\n  cancelled(event: unknown) {}\n  confirm(event: unknown) {}\n  openChange(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `open`, `result` could not be provided, since the story declares no such arg."
+        },
+        "overlays-alert-dialog--destructive": {
+          "id": "overlays-alert-dialog--destructive",
+          "name": "Destructive",
+          "snippet": "import { Component } from '@angular/core';\nimport { AlertDialogComponent } from './alert-dialog.component';\nimport { ButtonDirective } from './button.directive';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AlertDialogComponent, ButtonDirective],\n  template: `\n    <button\n        appButton\n        variant=\"outline\"\n        (click)=\"open = true\">\n        Open alert dialog\n    </button>\n    <app-alert-dialog\n        [heading]=\"heading\"\n        [description]=\"description\"\n        [confirmLabel]=\"confirmLabel\"\n        [cancelLabel]=\"cancelLabel\"\n        [(open)]=\"open\"\n        (confirm)=\"result = 'Confirmed'\"\n        (cancelled)=\"result = 'Cancelled'\" />\n    <p class=\"mt-4 text-sm\">Result: {{ result || 'none' }}</p>`,\n})\nexport class DemoComponent {\n  heading = 'Delete account?';\n  description = 'All your data will be permanently removed.';\n  confirmLabel = 'Delete';\n  cancelLabel = 'Keep account';\n  cancelled(event: unknown) {}\n  confirm(event: unknown) {}\n  openChange(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `open`, `result` could not be provided, since the story declares no such arg."
+        },
+        "overlays-alert-dialog--open": {
+          "id": "overlays-alert-dialog--open",
+          "name": "Open",
+          "snippet": "import { Component } from '@angular/core';\nimport { AlertDialogComponent } from './alert-dialog.component';\nimport { ButtonDirective } from './button.directive';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AlertDialogComponent, ButtonDirective],\n  template: `\n    <button\n        appButton\n        variant=\"outline\"\n        (click)=\"open = true\">\n        Open alert dialog\n    </button>\n    <app-alert-dialog\n        [heading]=\"heading\"\n        [description]=\"description\"\n        [confirmLabel]=\"confirmLabel\"\n        [cancelLabel]=\"cancelLabel\"\n        [(open)]=\"open\"\n        (confirm)=\"result = 'Confirmed'\"\n        (cancelled)=\"result = 'Cancelled'\" />\n    <p class=\"mt-4 text-sm\">Result: {{ result || 'none' }}</p>`,\n})\nexport class DemoComponent {\n  heading = 'Cancel this appointment?';\n  description = 'This action cannot be undone. The slot will be released to other patients.';\n  confirmLabel = 'Continue';\n  cancelLabel = 'Cancel';\n  open = true;\n  cancelled(event: unknown) {}\n  confirm(event: unknown) {}\n  openChange(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `result` could not be provided, since the story declares no such arg."
+        }
+      }
+    }
+  }
+}

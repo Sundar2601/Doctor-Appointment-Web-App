@@ -1,0 +1,31 @@
+{
+  "components": {
+    "forms-switch": {
+      "id": "forms-switch",
+      "name": "Switch",
+      "path": "./src/app/ui/switch.stories.ts",
+      "stories": {
+        "forms-switch--default": {
+          "id": "forms-switch--default",
+          "name": "Default"
+        },
+        "forms-switch--on": {
+          "id": "forms-switch--on",
+          "name": "On"
+        },
+        "forms-switch--disabled": {
+          "id": "forms-switch--disabled",
+          "name": "Disabled"
+        },
+        "forms-switch--disabled-on": {
+          "id": "forms-switch--disabled-on",
+          "name": "Disabled On"
+        },
+        "forms-switch--all-states": {
+          "id": "forms-switch--all-states",
+          "name": "All States"
+        }
+      }
+    }
+  }
+}

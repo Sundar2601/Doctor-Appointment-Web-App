@@ -1,0 +1,89 @@
+{
+  "components": {
+    "navigation-sidebar": {
+      "id": "navigation-sidebar",
+      "name": "SidebarComponent",
+      "path": "./src/app/ui/sidebar.stories.ts",
+      "description": "Collapsible sidebar. Usage: `<app-sidebar [groups]=\"groups\" [(collapsed)]=\"c\"><div sidebarHeader>Logo</div><div sidebarFooter>User</div></app-sidebar>`.\nRegistered icons: lucideBuilding2, lucideCalendar, lucideCalendarPlus, lucideClipboardList, lucideHouse, lucideLayoutDashboard, lucideSettings, lucideStethoscope, lucideUser, lucideUsers.",
+      "jsDocTags": {},
+      "argTypes": {
+        "collapsed": {
+          "name": "collapsed",
+          "type": {
+            "name": "boolean"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "boolean"
+            },
+            "defaultValue": {
+              "summary": false
+            }
+          }
+        },
+        "collapsible": {
+          "name": "collapsible",
+          "description": "Show the collapse toggle. Disable for a fixed app-shell sidebar.",
+          "type": {
+            "name": "boolean"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "boolean"
+            },
+            "defaultValue": {
+              "summary": true
+            }
+          }
+        },
+        "groups": {
+          "name": "groups",
+          "type": {
+            "name": "other",
+            "value": "empty-enum",
+            "required": true
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "SidebarGroup[]"
+            },
+            "defaultValue": {}
+          }
+        },
+        "collapsedChange": {
+          "name": "collapsedChange",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "collapsedChange",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "(e: boolean) => void"
+            }
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type SidebarComponentInputs = {\n  /** @default false */\n  collapsed?: boolean; // two-way: [(collapsed)]\n  /**\n   * Show the collapse toggle. Disable for a fixed app-shell sidebar.\n   *\n   * @default true\n   */\n  collapsible?: boolean;\n  groups: SidebarGroup[];\n}\n```\n\n## Outputs\n\n```\nexport type SidebarComponentOutputs = {\n  collapsedChange: (e: boolean) => void;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "SidebarComponent",
+        "selector": "app-sidebar",
+        "standalone": true,
+        "inputs": [
+          "collapsed",
+          "collapsible",
+          "groups"
+        ],
+        "outputs": [
+          "collapsedChange"
+        ],
+        "enums": []
+      }
+    }
+  }
+}

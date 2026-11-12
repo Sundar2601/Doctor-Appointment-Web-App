@@ -1,0 +1,19 @@
+{
+  "components": {
+    "auth-brand-panel": {
+      "id": "auth-brand-panel",
+      "name": "BrandPanel",
+      "path": "./src/app/ui/auth-brand-panel.stories.ts",
+      "stories": {
+        "auth-brand-panel--default": {
+          "id": "auth-brand-panel--default",
+          "name": "Default"
+        },
+        "auth-brand-panel--sign-up": {
+          "id": "auth-brand-panel--sign-up",
+          "name": "Sign Up"
+        }
+      }
+    }
+  }
+}

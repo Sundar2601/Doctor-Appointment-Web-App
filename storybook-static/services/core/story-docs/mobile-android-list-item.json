@@ -1,0 +1,28 @@
+{
+  "components": {
+    "mobile-android-list-item": {
+      "id": "mobile-android-list-item",
+      "name": "AndroidListItemComponent",
+      "path": "./src/app/ui/android-list-item.stories.ts",
+      "stories": {
+        "mobile-android-list-item--two-line": {
+          "id": "mobile-android-list-item--two-line",
+          "name": "Two Line",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidListItemComponent } from './android-list-item.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidListItemComponent],\n  template: `\n    <div class=\"w-[412px]\" role=\"list\">\n        <app-android-list-item\n            [headline]=\"headline\"\n            [supporting]=\"supporting\"\n            [leading]=\"leading\"\n            [leadingIcon]=\"leadingIcon\"\n            [trailing]=\"trailing\" />\n    </div>`,\n})\nexport class DemoComponent {\n  headline = 'List item headline';\n  supporting = 'Supporting text goes here';\n  leading = 'A';\n  trailing = '10:24';\n}",
+          "warning": "Incomplete snippet: `leadingIcon` could not be provided, since the story declares no such arg."
+        },
+        "mobile-android-list-item--one-line": {
+          "id": "mobile-android-list-item--one-line",
+          "name": "One Line",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidListItemComponent } from './android-list-item.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidListItemComponent],\n  template: `\n    <div class=\"w-[412px]\" role=\"list\">\n        <app-android-list-item\n            [headline]=\"headline\"\n            [supporting]=\"supporting\"\n            [leading]=\"leading\"\n            [leadingIcon]=\"leadingIcon\"\n            [trailing]=\"trailing\" />\n    </div>`,\n})\nexport class DemoComponent {\n  headline = 'List item headline';\n  supporting = undefined;\n  leading = 'A';\n  trailing = undefined;\n}",
+          "warning": "Incomplete snippet: `leadingIcon` could not be provided, since the story declares no such arg."
+        },
+        "mobile-android-list-item--with-icon": {
+          "id": "mobile-android-list-item--with-icon",
+          "name": "With Icon",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidListItemComponent } from './android-list-item.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidListItemComponent],\n  template: `\n    <div class=\"w-[412px]\" role=\"list\">\n        <app-android-list-item\n            [headline]=\"headline\"\n            [supporting]=\"supporting\"\n            [leading]=\"leading\"\n            [leadingIcon]=\"leadingIcon\"\n            [trailing]=\"trailing\" />\n    </div>`,\n})\nexport class DemoComponent {\n  headline = 'List item headline';\n  supporting = 'Supporting text goes here';\n  leading = undefined;\n  trailing = undefined;\n  leadingIcon = 'lucideMail';\n}"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "components": {
+    "feedback-empty-state": {
+      "id": "feedback-empty-state",
+      "name": "EmptyState",
+      "path": "./src/app/ui/empty-state.stories.ts",
+      "stories": {
+        "feedback-empty-state--default": {
+          "id": "feedback-empty-state--default",
+          "name": "Default"
+        },
+        "feedback-empty-state--title-only": {
+          "id": "feedback-empty-state--title-only",
+          "name": "Title Only"
+        },
+        "feedback-empty-state--with-action": {
+          "id": "feedback-empty-state--with-action",
+          "name": "With Action"
+        }
+      }
+    }
+  }
+}

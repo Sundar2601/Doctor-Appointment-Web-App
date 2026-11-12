@@ -1,0 +1,255 @@
+{
+  "components": {
+    "mobile-android-text-field": {
+      "id": "mobile-android-text-field",
+      "name": "AndroidTextFieldComponent",
+      "path": "./src/app/ui/android-text-field.stories.ts",
+      "description": "Material 3 text field (56dp) with floating label, supporting text and error state.",
+      "jsDocTags": {},
+      "argTypes": {
+        "boxClasses": {
+          "name": "boxClasses",
+          "type": {
+            "name": "other",
+            "value": "empty-enum"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "Signal<string>"
+            },
+            "defaultValue": {}
+          }
+        },
+        "floated": {
+          "name": "floated",
+          "type": {
+            "name": "other",
+            "value": "empty-enum"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "Signal<boolean>"
+            },
+            "defaultValue": {}
+          }
+        },
+        "focused": {
+          "name": "focused",
+          "type": {
+            "name": "other",
+            "value": "empty-enum"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "WritableSignal<boolean>"
+            },
+            "defaultValue": {}
+          }
+        },
+        "hasSupport": {
+          "name": "hasSupport",
+          "type": {
+            "name": "other",
+            "value": "empty-enum"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "Signal<boolean>"
+            },
+            "defaultValue": {}
+          }
+        },
+        "id": {
+          "name": "id",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "labelClasses": {
+          "name": "labelClasses",
+          "type": {
+            "name": "other",
+            "value": "empty-enum"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "Signal<string>"
+            },
+            "defaultValue": {}
+          }
+        },
+        "disabled": {
+          "name": "disabled",
+          "type": {
+            "name": "boolean"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "boolean"
+            },
+            "defaultValue": {
+              "summary": false
+            }
+          }
+        },
+        "error": {
+          "name": "error",
+          "description": "Error message; when set the field turns destructive and replaces the supporting text.",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {
+              "summary": ""
+            }
+          }
+        },
+        "label": {
+          "name": "label",
+          "type": {
+            "name": "string",
+            "required": true
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "placeholder": {
+          "name": "placeholder",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {
+              "summary": ""
+            }
+          }
+        },
+        "supporting": {
+          "name": "supporting",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {
+              "summary": ""
+            }
+          }
+        },
+        "type": {
+          "name": "type",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {
+              "summary": "text"
+            }
+          }
+        },
+        "value": {
+          "name": "value",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {
+              "summary": ""
+            }
+          }
+        },
+        "variant": {
+          "name": "variant",
+          "type": {
+            "name": "enum",
+            "value": [
+              "filled",
+              "outlined"
+            ]
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "AndroidTextFieldVariant"
+            },
+            "defaultValue": {
+              "summary": "outlined"
+            }
+          }
+        },
+        "valueChange": {
+          "name": "valueChange",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "valueChange",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "(e: string) => void"
+            }
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type AndroidTextFieldComponentInputs = {\n  /** @default false */\n  disabled?: boolean;\n  /**\n   * Error message; when set the field turns destructive and replaces the supporting text.\n   *\n   * @default ''\n   */\n  error?: string;\n  label: string;\n  /** @default '' */\n  placeholder?: string;\n  /** @default '' */\n  supporting?: string;\n  /** @default text */\n  type?: string;\n  /** @default '' */\n  value?: string; // two-way: [(value)]\n  /** @default outlined */\n  variant?: AndroidTextFieldVariant;\n}\n```\n\n## Outputs\n\n```\nexport type AndroidTextFieldComponentOutputs = {\n  valueChange: (e: string) => void;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "AndroidTextFieldComponent",
+        "selector": "app-android-text-field",
+        "standalone": true,
+        "inputs": [
+          "disabled",
+          "error",
+          "label",
+          "placeholder",
+          "supporting",
+          "type",
+          "value",
+          "variant"
+        ],
+        "outputs": [
+          "valueChange"
+        ],
+        "enums": []
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "components": {
+    "ai-inline-citation": {
+      "id": "ai-inline-citation",
+      "name": "InlineCitation",
+      "path": "./src/app/ui/inline-citation.stories.ts",
+      "stories": {
+        "ai-inline-citation--default": {
+          "id": "ai-inline-citation--default",
+          "name": "Default"
+        },
+        "ai-inline-citation--single-source": {
+          "id": "ai-inline-citation--single-source",
+          "name": "Single Source"
+        }
+      }
+    }
+  }
+}

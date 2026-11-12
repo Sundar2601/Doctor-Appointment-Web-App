@@ -1,0 +1,15 @@
+{
+  "components": {
+    "ai-message-scroller": {
+      "id": "ai-message-scroller",
+      "name": "MessageScroller",
+      "path": "./src/app/ui/message-scroller.stories.ts",
+      "stories": {
+        "ai-message-scroller--default": {
+          "id": "ai-message-scroller--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

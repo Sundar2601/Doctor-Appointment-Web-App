@@ -1,0 +1,40 @@
+{
+  "components": {
+    "navigation-breadcrumb": {
+      "id": "navigation-breadcrumb",
+      "name": "BreadcrumbComponent",
+      "path": "./src/app/ui/breadcrumb.stories.ts",
+      "description": "Usage: `<app-breadcrumb [items]=\"[{label:'Home', href:'/'}, {label:'Doctors'}]\" />` (last item is the current page).",
+      "jsDocTags": {},
+      "argTypes": {
+        "items": {
+          "name": "items",
+          "type": {
+            "name": "other",
+            "value": "empty-enum",
+            "required": true
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "BreadcrumbItem[]"
+            },
+            "defaultValue": {}
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type BreadcrumbComponentInputs = {\n  items: BreadcrumbItem[];\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "BreadcrumbComponent",
+        "selector": "app-breadcrumb",
+        "standalone": true,
+        "inputs": [
+          "items"
+        ],
+        "outputs": [],
+        "enums": []
+      }
+    }
+  }
+}

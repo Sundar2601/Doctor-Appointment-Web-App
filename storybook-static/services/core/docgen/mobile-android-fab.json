@@ -1,0 +1,122 @@
+{
+  "components": {
+    "mobile-android-fab": {
+      "id": "mobile-android-fab",
+      "name": "AndroidFabComponent",
+      "path": "./src/app/ui/android-fab.stories.ts",
+      "description": "Floating action button: 56dp standard, 40dp small, or extended when a `label` is set.",
+      "jsDocTags": {},
+      "argTypes": {
+        "classes": {
+          "name": "classes",
+          "type": {
+            "name": "other",
+            "value": "empty-enum"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "Signal<\"bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center justify-center shadow-md h-14 gap-2 rounded-2xl px-4\" | \"bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center justify-center shadow-md size-10 rounded-xl\" | \"bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center justify-center shadow-md size-14 rounded-2xl\">"
+            },
+            "defaultValue": {}
+          }
+        },
+        "ariaLabel": {
+          "name": "ariaLabel",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {
+              "summary": "Add"
+            }
+          }
+        },
+        "icon": {
+          "name": "icon",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {
+              "summary": "lucidePlus"
+            }
+          }
+        },
+        "label": {
+          "name": "label",
+          "description": "When set, renders the extended FAB with this text.",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "size": {
+          "name": "size",
+          "type": {
+            "name": "enum",
+            "value": [
+              "standard",
+              "small"
+            ]
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "AndroidFabSize"
+            },
+            "defaultValue": {
+              "summary": "standard"
+            }
+          }
+        },
+        "pressed": {
+          "name": "pressed",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "pressed",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "void"
+            },
+            "defaultValue": {}
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type AndroidFabComponentInputs = {\n  /** @default Add */\n  ariaLabel?: string;\n  /** @default lucidePlus */\n  icon?: string;\n  /** When set, renders the extended FAB with this text. */\n  label?: string;\n  /** @default standard */\n  size?: AndroidFabSize;\n}\n```\n\n## Outputs\n\n```\nexport type AndroidFabComponentOutputs = {\n  pressed: void;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "AndroidFabComponent",
+        "selector": "app-android-fab",
+        "standalone": true,
+        "inputs": [
+          "ariaLabel",
+          "icon",
+          "label",
+          "size"
+        ],
+        "outputs": [
+          "pressed"
+        ],
+        "enums": []
+      }
+    }
+  }
+}

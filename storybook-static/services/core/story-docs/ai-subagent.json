@@ -1,0 +1,23 @@
+{
+  "components": {
+    "ai-subagent": {
+      "id": "ai-subagent",
+      "name": "Subagent",
+      "path": "./src/app/ui/subagent.stories.ts",
+      "stories": {
+        "ai-subagent--done": {
+          "id": "ai-subagent--done",
+          "name": "Done"
+        },
+        "ai-subagent--running": {
+          "id": "ai-subagent--running",
+          "name": "Running"
+        },
+        "ai-subagent--failed": {
+          "id": "ai-subagent--failed",
+          "name": "Failed"
+        }
+      }
+    }
+  }
+}

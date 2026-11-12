@@ -1,0 +1,19 @@
+{
+  "components": {
+    "patterns-inline-retry": {
+      "id": "patterns-inline-retry",
+      "name": "InlineRetry",
+      "path": "./src/app/ui/inline-retry.stories.ts",
+      "stories": {
+        "patterns-inline-retry--loading": {
+          "id": "patterns-inline-retry--loading",
+          "name": "Loading"
+        },
+        "patterns-inline-retry--failed": {
+          "id": "patterns-inline-retry--failed",
+          "name": "Failed"
+        }
+      }
+    }
+  }
+}

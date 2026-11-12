@@ -1,0 +1,19 @@
+{
+  "components": {
+    "charts-area-chart": {
+      "id": "charts-area-chart",
+      "name": "AreaChart",
+      "path": "./src/app/ui/area-chart.stories.ts",
+      "stories": {
+        "charts-area-chart--default": {
+          "id": "charts-area-chart--default",
+          "name": "Default"
+        },
+        "charts-area-chart--stacked": {
+          "id": "charts-area-chart--stacked",
+          "name": "Stacked"
+        }
+      }
+    }
+  }
+}

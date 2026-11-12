@@ -1,0 +1,19 @@
+{
+  "components": {
+    "display-separator": {
+      "id": "display-separator",
+      "name": "Separator",
+      "path": "./src/app/ui/separator.stories.ts",
+      "stories": {
+        "display-separator--horizontal": {
+          "id": "display-separator--horizontal",
+          "name": "Horizontal"
+        },
+        "display-separator--vertical": {
+          "id": "display-separator--vertical",
+          "name": "Vertical"
+        }
+      }
+    }
+  }
+}

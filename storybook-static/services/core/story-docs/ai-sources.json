@@ -1,0 +1,19 @@
+{
+  "components": {
+    "ai-sources": {
+      "id": "ai-sources",
+      "name": "Sources",
+      "path": "./src/app/ui/sources.stories.ts",
+      "stories": {
+        "ai-sources--default": {
+          "id": "ai-sources--default",
+          "name": "Default"
+        },
+        "ai-sources--single": {
+          "id": "ai-sources--single",
+          "name": "Single"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "components": {
+    "mobile-ios-action-sheet": {
+      "id": "mobile-ios-action-sheet",
+      "name": "ActionSheet",
+      "path": "./src/app/ui/ios-action-sheet.stories.ts",
+      "stories": {
+        "mobile-ios-action-sheet--default": {
+          "id": "mobile-ios-action-sheet--default",
+          "name": "Default"
+        },
+        "mobile-ios-action-sheet--without-title": {
+          "id": "mobile-ios-action-sheet--without-title",
+          "name": "Without Title"
+        }
+      }
+    }
+  }
+}

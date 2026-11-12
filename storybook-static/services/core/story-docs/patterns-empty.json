@@ -1,0 +1,23 @@
+{
+  "components": {
+    "patterns-empty": {
+      "id": "patterns-empty",
+      "name": "Empty",
+      "path": "./src/app/ui/empty-pattern.stories.ts",
+      "stories": {
+        "patterns-empty--no-projects-yet": {
+          "id": "patterns-empty--no-projects-yet",
+          "name": "No Projects Yet"
+        },
+        "patterns-empty--no-results": {
+          "id": "patterns-empty--no-results",
+          "name": "No Results"
+        },
+        "patterns-empty--all-caught-up": {
+          "id": "patterns-empty--all-caught-up",
+          "name": "All Caught Up"
+        }
+      }
+    }
+  }
+}

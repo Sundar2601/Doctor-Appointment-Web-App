@@ -1,0 +1,19 @@
+{
+  "components": {
+    "ai-plan": {
+      "id": "ai-plan",
+      "name": "Plan",
+      "path": "./src/app/ui/plan.stories.ts",
+      "stories": {
+        "ai-plan--default": {
+          "id": "ai-plan--default",
+          "name": "Default"
+        },
+        "ai-plan--complete": {
+          "id": "ai-plan--complete",
+          "name": "Complete"
+        }
+      }
+    }
+  }
+}

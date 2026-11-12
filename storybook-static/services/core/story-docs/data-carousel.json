@@ -1,0 +1,19 @@
+{
+  "components": {
+    "data-carousel": {
+      "id": "data-carousel",
+      "name": "Carousel",
+      "path": "./src/app/ui/carousel.stories.ts",
+      "stories": {
+        "data-carousel--hospitals": {
+          "id": "data-carousel--hospitals",
+          "name": "Hospitals"
+        },
+        "data-carousel--doctors": {
+          "id": "data-carousel--doctors",
+          "name": "Doctors"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "components": {
+    "display-typography": {
+      "id": "display-typography",
+      "name": "Typography",
+      "path": "./src/app/ui/typography.stories.ts",
+      "stories": {
+        "display-typography--headings": {
+          "id": "display-typography--headings",
+          "name": "Headings"
+        },
+        "display-typography--text": {
+          "id": "display-typography--text",
+          "name": "Text"
+        }
+      }
+    }
+  }
+}

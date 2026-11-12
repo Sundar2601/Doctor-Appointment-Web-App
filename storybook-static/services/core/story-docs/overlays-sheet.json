@@ -1,0 +1,28 @@
+{
+  "components": {
+    "overlays-sheet": {
+      "id": "overlays-sheet",
+      "name": "SheetComponent",
+      "path": "./src/app/ui/sheet.stories.ts",
+      "stories": {
+        "overlays-sheet--right": {
+          "id": "overlays-sheet--right",
+          "name": "Right",
+          "snippet": "import { Component } from '@angular/core';\nimport { SheetComponent } from './sheet.component';\nimport { ButtonDirective } from './button.directive';\n\n@Component({\n  selector: 'app-demo',\n  imports: [SheetComponent, ButtonDirective],\n  template: `\n    <button appButton variant=\"outline\" (click)=\"open = true\">Open sheet</button>\n    <app-sheet\n        [heading]=\"heading\"\n        [description]=\"description\"\n        [side]=\"side\"\n        [(open)]=\"open\">\n        <p class=\"text-sm\">Sheet content goes here.</p>\n        <div sheetFooter>\n            <button appButton (click)=\"open = false\">Apply filters</button>\n        </div>\n    </app-sheet>`,\n})\nexport class DemoComponent {\n  side = 'right';\n  heading = 'Filters';\n  description = 'Narrow down the list of doctors.';\n  openChange(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `open` could not be provided, since the story declares no such arg."
+        },
+        "overlays-sheet--left": {
+          "id": "overlays-sheet--left",
+          "name": "Left",
+          "snippet": "import { Component } from '@angular/core';\nimport { SheetComponent } from './sheet.component';\nimport { ButtonDirective } from './button.directive';\n\n@Component({\n  selector: 'app-demo',\n  imports: [SheetComponent, ButtonDirective],\n  template: `\n    <button appButton variant=\"outline\" (click)=\"open = true\">Open sheet</button>\n    <app-sheet\n        [heading]=\"heading\"\n        [description]=\"description\"\n        [side]=\"side\"\n        [(open)]=\"open\">\n        <p class=\"text-sm\">Sheet content goes here.</p>\n        <div sheetFooter>\n            <button appButton (click)=\"open = false\">Apply filters</button>\n        </div>\n    </app-sheet>`,\n})\nexport class DemoComponent {\n  side = 'left';\n  heading = 'Navigation';\n  description = undefined;\n  openChange(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `open` could not be provided, since the story declares no such arg."
+        },
+        "overlays-sheet--open": {
+          "id": "overlays-sheet--open",
+          "name": "Open",
+          "snippet": "import { Component } from '@angular/core';\nimport { SheetComponent } from './sheet.component';\nimport { ButtonDirective } from './button.directive';\n\n@Component({\n  selector: 'app-demo',\n  imports: [SheetComponent, ButtonDirective],\n  template: `\n    <button appButton variant=\"outline\" (click)=\"open = true\">Open sheet</button>\n    <app-sheet\n        [heading]=\"heading\"\n        [description]=\"description\"\n        [side]=\"side\"\n        [(open)]=\"open\">\n        <p class=\"text-sm\">Sheet content goes here.</p>\n        <div sheetFooter>\n            <button appButton (click)=\"open = false\">Apply filters</button>\n        </div>\n    </app-sheet>`,\n})\nexport class DemoComponent {\n  side = 'right';\n  heading = 'Filters';\n  description = 'Narrow down the list of doctors.';\n  open = true;\n  openChange(event: unknown) {}\n}"
+        }
+      }
+    }
+  }
+}

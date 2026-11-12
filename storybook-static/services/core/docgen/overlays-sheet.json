@@ -1,0 +1,191 @@
+{
+  "components": {
+    "overlays-sheet": {
+      "id": "overlays-sheet",
+      "name": "SheetComponent",
+      "path": "./src/app/ui/sheet.stories.ts",
+      "description": "Side sheet. Usage: `<app-sheet heading=\"Filters\" side=\"right\" [(open)]=\"show\">body <div sheetFooter>...</div></app-sheet>`.",
+      "jsDocTags": {},
+      "argTypes": {
+        "descId": {
+          "name": "descId",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "role": {
+          "name": "role",
+          "type": {
+            "name": "enum",
+            "value": [
+              "dialog",
+              "alertdialog"
+            ]
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "\"dialog\" | \"alertdialog\""
+            },
+            "defaultValue": {
+              "summary": "dialog"
+            }
+          }
+        },
+        "titleId": {
+          "name": "titleId",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "tpl": {
+          "name": "tpl",
+          "type": {
+            "name": "other",
+            "value": "empty-enum"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "Signal<TemplateRef<unknown> | undefined>"
+            },
+            "defaultValue": {}
+          }
+        },
+        "description": {
+          "name": "description",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "heading": {
+          "name": "heading",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "open": {
+          "name": "open",
+          "type": {
+            "name": "boolean"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "boolean"
+            },
+            "defaultValue": {
+              "summary": false
+            }
+          }
+        },
+        "side": {
+          "name": "side",
+          "type": {
+            "name": "enum",
+            "value": [
+              "right",
+              "left"
+            ]
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "SheetSide"
+            },
+            "defaultValue": {
+              "summary": "right"
+            }
+          }
+        },
+        "openChange": {
+          "name": "openChange",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "openChange",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "(e: boolean) => void"
+            }
+          }
+        },
+        "close": {
+          "name": "close",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "table": {
+            "category": "methods",
+            "type": {
+              "summary": "() => void"
+            },
+            "defaultValue": {}
+          }
+        },
+        "config": {
+          "name": "config",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "table": {
+            "category": "methods",
+            "type": {
+              "summary": "() => DialogConfig"
+            },
+            "defaultValue": {}
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type SheetComponentInputs = {\n  description?: string;\n  heading?: string;\n  /** @default false */\n  open?: boolean; // two-way: [(open)]\n  /** @default right */\n  side?: SheetSide;\n}\n```\n\n## Outputs\n\n```\nexport type SheetComponentOutputs = {\n  openChange: (e: boolean) => void;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "SheetComponent",
+        "selector": "app-sheet",
+        "standalone": true,
+        "inputs": [
+          "description",
+          "heading",
+          "open",
+          "side"
+        ],
+        "outputs": [
+          "openChange"
+        ],
+        "enums": []
+      }
+    }
+  }
+}

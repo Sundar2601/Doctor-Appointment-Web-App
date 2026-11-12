@@ -1,0 +1,27 @@
+{
+  "components": {
+    "forms-field": {
+      "id": "forms-field",
+      "name": "Field",
+      "path": "./src/app/ui/field.stories.ts",
+      "stories": {
+        "forms-field--default": {
+          "id": "forms-field--default",
+          "name": "Default"
+        },
+        "forms-field--with-hint": {
+          "id": "forms-field--with-hint",
+          "name": "With Hint"
+        },
+        "forms-field--with-error": {
+          "id": "forms-field--with-error",
+          "name": "With Error"
+        },
+        "forms-field--with-description": {
+          "id": "forms-field--with-description",
+          "name": "With Description"
+        }
+      }
+    }
+  }
+}

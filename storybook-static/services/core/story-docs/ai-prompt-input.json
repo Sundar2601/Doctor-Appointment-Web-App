@@ -1,0 +1,19 @@
+{
+  "components": {
+    "ai-prompt-input": {
+      "id": "ai-prompt-input",
+      "name": "PromptInput",
+      "path": "./src/app/ui/prompt-input.stories.ts",
+      "stories": {
+        "ai-prompt-input--default": {
+          "id": "ai-prompt-input--default",
+          "name": "Default"
+        },
+        "ai-prompt-input--with-attachment": {
+          "id": "ai-prompt-input--with-attachment",
+          "name": "With Attachment"
+        }
+      }
+    }
+  }
+}

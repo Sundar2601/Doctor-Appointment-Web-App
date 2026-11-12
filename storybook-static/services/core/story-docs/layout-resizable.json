@@ -1,0 +1,19 @@
+{
+  "components": {
+    "layout-resizable": {
+      "id": "layout-resizable",
+      "name": "Resizable",
+      "path": "./src/app/ui/resizable.stories.ts",
+      "stories": {
+        "layout-resizable--horizontal": {
+          "id": "layout-resizable--horizontal",
+          "name": "Horizontal"
+        },
+        "layout-resizable--vertical": {
+          "id": "layout-resizable--vertical",
+          "name": "Vertical"
+        }
+      }
+    }
+  }
+}

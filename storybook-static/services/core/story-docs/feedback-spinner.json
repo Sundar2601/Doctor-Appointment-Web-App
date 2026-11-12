@@ -1,0 +1,23 @@
+{
+  "components": {
+    "feedback-spinner": {
+      "id": "feedback-spinner",
+      "name": "Spinner",
+      "path": "./src/app/ui/spinner.stories.ts",
+      "stories": {
+        "feedback-spinner--default": {
+          "id": "feedback-spinner--default",
+          "name": "Default"
+        },
+        "feedback-spinner--with-label": {
+          "id": "feedback-spinner--with-label",
+          "name": "With Label"
+        },
+        "feedback-spinner--large": {
+          "id": "feedback-spinner--large",
+          "name": "Large"
+        }
+      }
+    }
+  }
+}

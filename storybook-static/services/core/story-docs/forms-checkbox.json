@@ -1,0 +1,31 @@
+{
+  "components": {
+    "forms-checkbox": {
+      "id": "forms-checkbox",
+      "name": "Checkbox",
+      "path": "./src/app/ui/checkbox.stories.ts",
+      "stories": {
+        "forms-checkbox--default": {
+          "id": "forms-checkbox--default",
+          "name": "Default"
+        },
+        "forms-checkbox--checked": {
+          "id": "forms-checkbox--checked",
+          "name": "Checked"
+        },
+        "forms-checkbox--disabled": {
+          "id": "forms-checkbox--disabled",
+          "name": "Disabled"
+        },
+        "forms-checkbox--disabled-checked": {
+          "id": "forms-checkbox--disabled-checked",
+          "name": "Disabled Checked"
+        },
+        "forms-checkbox--all-states": {
+          "id": "forms-checkbox--all-states",
+          "name": "All States"
+        }
+      }
+    }
+  }
+}

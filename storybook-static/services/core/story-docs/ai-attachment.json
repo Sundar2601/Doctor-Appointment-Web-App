@@ -1,0 +1,19 @@
+{
+  "components": {
+    "ai-attachment": {
+      "id": "ai-attachment",
+      "name": "Attachment",
+      "path": "./src/app/ui/attachment.stories.ts",
+      "stories": {
+        "ai-attachment--default": {
+          "id": "ai-attachment--default",
+          "name": "Default"
+        },
+        "ai-attachment--not-removable": {
+          "id": "ai-attachment--not-removable",
+          "name": "Not Removable"
+        }
+      }
+    }
+  }
+}

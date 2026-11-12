@@ -1,0 +1,15 @@
+{
+  "components": {
+    "charts-chart-legend": {
+      "id": "charts-chart-legend",
+      "name": "ChartLegend",
+      "path": "./src/app/ui/chart-legend.stories.ts",
+      "stories": {
+        "charts-chart-legend--default": {
+          "id": "charts-chart-legend--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

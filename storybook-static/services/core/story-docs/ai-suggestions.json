@@ -1,0 +1,15 @@
+{
+  "components": {
+    "ai-suggestions": {
+      "id": "ai-suggestions",
+      "name": "Suggestions",
+      "path": "./src/app/ui/suggestions.stories.ts",
+      "stories": {
+        "ai-suggestions--default": {
+          "id": "ai-suggestions--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

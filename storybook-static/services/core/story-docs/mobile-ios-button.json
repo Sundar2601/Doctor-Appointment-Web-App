@@ -1,0 +1,47 @@
+{
+  "components": {
+    "mobile-ios-button": {
+      "id": "mobile-ios-button",
+      "name": "Button",
+      "path": "./src/app/ui/ios-button.stories.ts",
+      "stories": {
+        "mobile-ios-button--filled-large": {
+          "id": "mobile-ios-button--filled-large",
+          "name": "Filled Large"
+        },
+        "mobile-ios-button--filled-medium": {
+          "id": "mobile-ios-button--filled-medium",
+          "name": "Filled Medium"
+        },
+        "mobile-ios-button--filled-small": {
+          "id": "mobile-ios-button--filled-small",
+          "name": "Filled Small"
+        },
+        "mobile-ios-button--tinted-large": {
+          "id": "mobile-ios-button--tinted-large",
+          "name": "Tinted Large"
+        },
+        "mobile-ios-button--tinted-medium": {
+          "id": "mobile-ios-button--tinted-medium",
+          "name": "Tinted Medium"
+        },
+        "mobile-ios-button--tinted-small": {
+          "id": "mobile-ios-button--tinted-small",
+          "name": "Tinted Small"
+        },
+        "mobile-ios-button--plain-large": {
+          "id": "mobile-ios-button--plain-large",
+          "name": "Plain Large"
+        },
+        "mobile-ios-button--plain-medium": {
+          "id": "mobile-ios-button--plain-medium",
+          "name": "Plain Medium"
+        },
+        "mobile-ios-button--plain-small": {
+          "id": "mobile-ios-button--plain-small",
+          "name": "Plain Small"
+        }
+      }
+    }
+  }
+}

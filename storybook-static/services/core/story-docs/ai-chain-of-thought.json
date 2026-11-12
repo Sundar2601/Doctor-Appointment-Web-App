@@ -1,0 +1,15 @@
+{
+  "components": {
+    "ai-chain-of-thought": {
+      "id": "ai-chain-of-thought",
+      "name": "ChainofThought",
+      "path": "./src/app/ui/chain-of-thought.stories.ts",
+      "stories": {
+        "ai-chain-of-thought--default": {
+          "id": "ai-chain-of-thought--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

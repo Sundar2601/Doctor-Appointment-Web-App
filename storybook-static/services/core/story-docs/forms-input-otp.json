@@ -1,0 +1,27 @@
+{
+  "components": {
+    "forms-input-otp": {
+      "id": "forms-input-otp",
+      "name": "InputOTP",
+      "path": "./src/app/ui/input-otp.stories.ts",
+      "stories": {
+        "forms-input-otp--default": {
+          "id": "forms-input-otp--default",
+          "name": "Default"
+        },
+        "forms-input-otp--filled": {
+          "id": "forms-input-otp--filled",
+          "name": "Filled"
+        },
+        "forms-input-otp--four-digits": {
+          "id": "forms-input-otp--four-digits",
+          "name": "Four Digits"
+        },
+        "forms-input-otp--disabled": {
+          "id": "forms-input-otp--disabled",
+          "name": "Disabled"
+        }
+      }
+    }
+  }
+}

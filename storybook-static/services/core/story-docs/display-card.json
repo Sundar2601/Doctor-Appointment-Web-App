@@ -1,0 +1,27 @@
+{
+  "components": {
+    "display-card": {
+      "id": "display-card",
+      "name": "Card",
+      "path": "./src/app/ui/card.stories.ts",
+      "stories": {
+        "display-card--default": {
+          "id": "display-card--default",
+          "name": "Default"
+        },
+        "display-card--with-action": {
+          "id": "display-card--with-action",
+          "name": "With Action"
+        },
+        "display-card--no-header": {
+          "id": "display-card--no-header",
+          "name": "No Header"
+        },
+        "display-card--with-footer": {
+          "id": "display-card--with-footer",
+          "name": "With Footer"
+        }
+      }
+    }
+  }
+}

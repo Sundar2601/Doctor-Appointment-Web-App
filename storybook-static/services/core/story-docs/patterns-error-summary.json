@@ -1,0 +1,19 @@
+{
+  "components": {
+    "patterns-error-summary": {
+      "id": "patterns-error-summary",
+      "name": "ErrorSummary",
+      "path": "./src/app/ui/error-summary.stories.ts",
+      "stories": {
+        "patterns-error-summary--default": {
+          "id": "patterns-error-summary--default",
+          "name": "Default"
+        },
+        "patterns-error-summary--single-error": {
+          "id": "patterns-error-summary--single-error",
+          "name": "Single Error"
+        }
+      }
+    }
+  }
+}

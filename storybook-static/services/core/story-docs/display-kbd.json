@@ -1,0 +1,23 @@
+{
+  "components": {
+    "display-kbd": {
+      "id": "display-kbd",
+      "name": "Kbd",
+      "path": "./src/app/ui/kbd.stories.ts",
+      "stories": {
+        "display-kbd--default": {
+          "id": "display-kbd--default",
+          "name": "Default"
+        },
+        "display-kbd--combination": {
+          "id": "display-kbd--combination",
+          "name": "Combination"
+        },
+        "display-kbd--group": {
+          "id": "display-kbd--group",
+          "name": "Group"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "components": {
+    "mobile-android-chips": {
+      "id": "mobile-android-chips",
+      "name": "AndroidChipComponent",
+      "path": "./src/app/ui/android-chip.stories.ts",
+      "stories": {
+        "mobile-android-chips--assist": {
+          "id": "mobile-android-chips--assist",
+          "name": "Assist",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidChipComponent } from './android-chip.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidChipComponent],\n  template: `\n    <div class=\"p-4\">\n        <app-android-chip\n            [kind]=\"kind\"\n            [label]=\"label\"\n            [icon]=\"icon\"\n            [(selected)]=\"selected\" />\n    </div>`,\n})\nexport class DemoComponent {\n  kind = 'assist';\n  label = 'Assist';\n  selected = false;\n  selectedChange(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `icon` could not be provided, since the story declares no such arg."
+        },
+        "mobile-android-chips--filter": {
+          "id": "mobile-android-chips--filter",
+          "name": "Filter",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidChipComponent } from './android-chip.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidChipComponent],\n  template: `\n    <div class=\"p-4\">\n        <app-android-chip\n            [kind]=\"kind\"\n            [label]=\"label\"\n            [icon]=\"icon\"\n            [(selected)]=\"selected\" />\n    </div>`,\n})\nexport class DemoComponent {\n  kind = 'filter';\n  label = 'Filter';\n  selected = false;\n  selectedChange(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `icon` could not be provided, since the story declares no such arg."
+        },
+        "mobile-android-chips--filter-selected": {
+          "id": "mobile-android-chips--filter-selected",
+          "name": "Filter Selected",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidChipComponent } from './android-chip.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidChipComponent],\n  template: `\n    <div class=\"p-4\">\n        <app-android-chip\n            [kind]=\"kind\"\n            [label]=\"label\"\n            [icon]=\"icon\"\n            [(selected)]=\"selected\" />\n    </div>`,\n})\nexport class DemoComponent {\n  kind = 'filter';\n  label = 'Filter';\n  selected = true;\n  selectedChange(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `icon` could not be provided, since the story declares no such arg."
+        },
+        "mobile-android-chips--input": {
+          "id": "mobile-android-chips--input",
+          "name": "Input",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidChipComponent } from './android-chip.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidChipComponent],\n  template: `\n    <div class=\"p-4\">\n        <app-android-chip\n            [kind]=\"kind\"\n            [label]=\"label\"\n            [icon]=\"icon\"\n            [(selected)]=\"selected\" />\n    </div>`,\n})\nexport class DemoComponent {\n  kind = 'input';\n  label = 'Input';\n  selected = false;\n  selectedChange(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `icon` could not be provided, since the story declares no such arg."
+        },
+        "mobile-android-chips--assist-with-icon": {
+          "id": "mobile-android-chips--assist-with-icon",
+          "name": "Assist With Icon",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidChipComponent } from './android-chip.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidChipComponent],\n  template: `\n    <div class=\"p-4\">\n        <app-android-chip\n            [kind]=\"kind\"\n            [label]=\"label\"\n            [icon]=\"icon\"\n            [(selected)]=\"selected\" />\n    </div>`,\n})\nexport class DemoComponent {\n  kind = 'assist';\n  label = 'Add to calendar';\n  selected = false;\n  icon = 'lucideCalendar';\n  selectedChange(event: unknown) {}\n}"
+        },
+        "mobile-android-chips--overview": {
+          "id": "mobile-android-chips--overview",
+          "name": "Overview",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidChipComponent } from './android-chip.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidChipComponent],\n  template: `\n    <div class=\"flex gap-2 p-4\">\n        <app-android-chip label=\"Assist\" />\n        <app-android-chip kind=\"filter\" label=\"Filter\" [selected]=\"true\" />\n        <app-android-chip kind=\"input\" label=\"Input\" />\n    </div>`,\n})\nexport class DemoComponent {}"
+        }
+      }
+    }
+  }
+}

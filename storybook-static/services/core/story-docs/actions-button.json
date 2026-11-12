@@ -1,0 +1,43 @@
+{
+  "components": {
+    "actions-button": {
+      "id": "actions-button",
+      "name": "Button",
+      "path": "./src/app/ui/button.stories.ts",
+      "stories": {
+        "actions-button--primary": {
+          "id": "actions-button--primary",
+          "name": "Primary"
+        },
+        "actions-button--destructive": {
+          "id": "actions-button--destructive",
+          "name": "Destructive"
+        },
+        "actions-button--secondary": {
+          "id": "actions-button--secondary",
+          "name": "Secondary"
+        },
+        "actions-button--outline": {
+          "id": "actions-button--outline",
+          "name": "Outline"
+        },
+        "actions-button--ghost": {
+          "id": "actions-button--ghost",
+          "name": "Ghost"
+        },
+        "actions-button--link": {
+          "id": "actions-button--link",
+          "name": "Link"
+        },
+        "actions-button--small": {
+          "id": "actions-button--small",
+          "name": "Small"
+        },
+        "actions-button--large": {
+          "id": "actions-button--large",
+          "name": "Large"
+        }
+      }
+    }
+  }
+}

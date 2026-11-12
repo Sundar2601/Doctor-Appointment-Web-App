@@ -1,0 +1,15 @@
+{
+  "components": {
+    "charts-sparkline": {
+      "id": "charts-sparkline",
+      "name": "Sparkline",
+      "path": "./src/app/ui/sparkline.stories.ts",
+      "stories": {
+        "charts-sparkline--default": {
+          "id": "charts-sparkline--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "components": {
+    "forms-filter-bar": {
+      "id": "forms-filter-bar",
+      "name": "FilterBar",
+      "path": "./src/app/ui/filter-bar.stories.ts",
+      "stories": {
+        "forms-filter-bar--default": {
+          "id": "forms-filter-bar--default",
+          "name": "Default"
+        },
+        "forms-filter-bar--with-active-filters": {
+          "id": "forms-filter-bar--with-active-filters",
+          "name": "With Active Filters"
+        },
+        "forms-filter-bar--search-only": {
+          "id": "forms-filter-bar--search-only",
+          "name": "Search Only"
+        }
+      }
+    }
+  }
+}

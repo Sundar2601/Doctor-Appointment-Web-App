@@ -1,0 +1,27 @@
+{
+  "components": {
+    "mobile-ios-list": {
+      "id": "mobile-ios-list",
+      "name": "List",
+      "path": "./src/app/ui/ios-list.stories.ts",
+      "stories": {
+        "mobile-ios-list--row-default": {
+          "id": "mobile-ios-list--row-default",
+          "name": "Row Default"
+        },
+        "mobile-ios-list--row-value": {
+          "id": "mobile-ios-list--row-value",
+          "name": "Row Value"
+        },
+        "mobile-ios-list--row-toggle": {
+          "id": "mobile-ios-list--row-toggle",
+          "name": "Row Toggle"
+        },
+        "mobile-ios-list--grouped": {
+          "id": "mobile-ios-list--grouped",
+          "name": "Grouped"
+        }
+      }
+    }
+  }
+}

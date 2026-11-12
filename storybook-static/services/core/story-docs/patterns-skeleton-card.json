@@ -1,0 +1,19 @@
+{
+  "components": {
+    "patterns-skeleton-card": {
+      "id": "patterns-skeleton-card",
+      "name": "SkeletonCard",
+      "path": "./src/app/ui/skeleton-card.stories.ts",
+      "stories": {
+        "patterns-skeleton-card--default": {
+          "id": "patterns-skeleton-card--default",
+          "name": "Default"
+        },
+        "patterns-skeleton-card--grid": {
+          "id": "patterns-skeleton-card--grid",
+          "name": "Grid"
+        }
+      }
+    }
+  }
+}

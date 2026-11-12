@@ -1,0 +1,19 @@
+{
+  "components": {
+    "charts-radar-chart": {
+      "id": "charts-radar-chart",
+      "name": "RadarChart",
+      "path": "./src/app/ui/radar-chart.stories.ts",
+      "stories": {
+        "charts-radar-chart--default": {
+          "id": "charts-radar-chart--default",
+          "name": "Default"
+        },
+        "charts-radar-chart--multiple-series": {
+          "id": "charts-radar-chart--multiple-series",
+          "name": "Multiple Series"
+        }
+      }
+    }
+  }
+}

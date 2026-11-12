@@ -1,0 +1,23 @@
+{
+  "components": {
+    "display-notification-item": {
+      "id": "display-notification-item",
+      "name": "NotificationItem",
+      "path": "./src/app/ui/notification-item.stories.ts",
+      "stories": {
+        "display-notification-item--read": {
+          "id": "display-notification-item--read",
+          "name": "Read"
+        },
+        "display-notification-item--unread": {
+          "id": "display-notification-item--unread",
+          "name": "Unread"
+        },
+        "display-notification-item--with-initials": {
+          "id": "display-notification-item--with-initials",
+          "name": "With Initials"
+        }
+      }
+    }
+  }
+}

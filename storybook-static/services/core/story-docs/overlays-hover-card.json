@@ -1,0 +1,23 @@
+{
+  "components": {
+    "overlays-hover-card": {
+      "id": "overlays-hover-card",
+      "name": "HoverCard",
+      "path": "./src/app/ui/hover-card.stories.ts",
+      "stories": {
+        "overlays-hover-card--bottom": {
+          "id": "overlays-hover-card--bottom",
+          "name": "Bottom"
+        },
+        "overlays-hover-card--top": {
+          "id": "overlays-hover-card--top",
+          "name": "Top"
+        },
+        "overlays-hover-card--card-surface": {
+          "id": "overlays-hover-card--card-surface",
+          "name": "Card Surface"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "components": {
+    "mobile-android-dialog": {
+      "id": "mobile-android-dialog",
+      "name": "AndroidDialogComponent",
+      "path": "./src/app/ui/android-dialog.stories.ts",
+      "stories": {
+        "mobile-android-dialog--default": {
+          "id": "mobile-android-dialog--default",
+          "name": "Default",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidDialogComponent } from './android-dialog.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidDialogComponent],\n  template: `\n    <div class=\"p-4\">\n        <app-android-dialog [title]=\"title\" [text]=\"text\" [actions]=\"actions\" />\n    </div>`,\n})\nexport class DemoComponent {\n  title = 'Discard draft?';\n  text = 'Your unsaved changes will be lost.';\n  actions = ['Cancel', 'Discard'];\n}"
+        },
+        "mobile-android-dialog--single-action": {
+          "id": "mobile-android-dialog--single-action",
+          "name": "Single Action",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidDialogComponent } from './android-dialog.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidDialogComponent],\n  template: `\n    <div class=\"p-4\">\n        <app-android-dialog [title]=\"title\" [text]=\"text\" [actions]=\"actions\" />\n    </div>`,\n})\nexport class DemoComponent {\n  title = 'Update available';\n  text = 'A new version is ready to install.';\n  actions = ['OK'];\n}"
+        }
+      }
+    }
+  }
+}

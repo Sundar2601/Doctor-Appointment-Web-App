@@ -1,0 +1,15 @@
+{
+  "components": {
+    "ai-questionnaire": {
+      "id": "ai-questionnaire",
+      "name": "Questionnaire",
+      "path": "./src/app/ui/questionnaire.stories.ts",
+      "stories": {
+        "ai-questionnaire--default": {
+          "id": "ai-questionnaire--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

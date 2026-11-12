@@ -1,0 +1,47 @@
+{
+  "components": {
+    "display-badge": {
+      "id": "display-badge",
+      "name": "Badge",
+      "path": "./src/app/ui/badge.stories.ts",
+      "stories": {
+        "display-badge--neutral": {
+          "id": "display-badge--neutral",
+          "name": "Neutral"
+        },
+        "display-badge--primary": {
+          "id": "display-badge--primary",
+          "name": "Primary"
+        },
+        "display-badge--outline": {
+          "id": "display-badge--outline",
+          "name": "Outline"
+        },
+        "display-badge--info": {
+          "id": "display-badge--info",
+          "name": "Info"
+        },
+        "display-badge--success": {
+          "id": "display-badge--success",
+          "name": "Success"
+        },
+        "display-badge--warning": {
+          "id": "display-badge--warning",
+          "name": "Warning"
+        },
+        "display-badge--danger": {
+          "id": "display-badge--danger",
+          "name": "Danger"
+        },
+        "display-badge--all-tones": {
+          "id": "display-badge--all-tones",
+          "name": "All Tones"
+        },
+        "display-badge--figma-variants": {
+          "id": "display-badge--figma-variants",
+          "name": "Figma Variants"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "components": {
+    "ai-context": {
+      "id": "ai-context",
+      "name": "Context",
+      "path": "./src/app/ui/context-meter.stories.ts",
+      "stories": {
+        "ai-context--default": {
+          "id": "ai-context--default",
+          "name": "Default"
+        },
+        "ai-context--almost-full": {
+          "id": "ai-context--almost-full",
+          "name": "Almost Full"
+        },
+        "ai-context--empty": {
+          "id": "ai-context--empty",
+          "name": "Empty"
+        }
+      }
+    }
+  }
+}

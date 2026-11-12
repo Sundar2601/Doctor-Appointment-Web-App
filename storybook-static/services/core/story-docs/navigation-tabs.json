@@ -1,0 +1,21 @@
+{
+  "components": {
+    "navigation-tabs": {
+      "id": "navigation-tabs",
+      "name": "TabsComponent",
+      "path": "./src/app/ui/tabs.stories.ts",
+      "stories": {
+        "navigation-tabs--default": {
+          "id": "navigation-tabs--default",
+          "name": "Default",
+          "snippet": "import { Component } from '@angular/core';\nimport { TabsComponent } from './tabs.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [TabsComponent],\n  template: `\n    <app-tabs [tabs]=\"tabs\" [label]=\"label\" [(value)]=\"value\" />\n    <div\n        role=\"tabpanel\"\n        [attr.aria-labelledby]=\"'app-tab-' + value\"\n        class=\"mt-4 text-sm\">\n        Showing {{ value }} appointments.\n    </div>`,\n})\nexport class DemoComponent {\n  label = 'Appointments';\n  value = 'upcoming';\n  tabs = [{value: 'upcoming', label: 'Upcoming'}, {value: 'past', label: 'Past'}, {value: 'cancelled', label: 'Cancelled'}];\n  valueChange(event: unknown) {}\n}"
+        },
+        "navigation-tabs--with-disabled-tab": {
+          "id": "navigation-tabs--with-disabled-tab",
+          "name": "With Disabled Tab",
+          "snippet": "import { Component } from '@angular/core';\nimport { TabsComponent } from './tabs.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [TabsComponent],\n  template: `\n    <app-tabs [tabs]=\"tabs\" [label]=\"label\" [(value)]=\"value\" />\n    <div\n        role=\"tabpanel\"\n        [attr.aria-labelledby]=\"'app-tab-' + value\"\n        class=\"mt-4 text-sm\">\n        Showing {{ value }} appointments.\n    </div>`,\n})\nexport class DemoComponent {\n  label = 'Appointments';\n  value = 'upcoming';\n  tabs = [{value: 'upcoming', label: 'Upcoming'}, {value: 'past', label: 'Past'}, {value: 'cancelled', label: 'Cancelled', disabled: true}];\n  valueChange(event: unknown) {}\n}"
+        }
+      }
+    }
+  }
+}

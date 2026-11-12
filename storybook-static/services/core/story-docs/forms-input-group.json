@@ -1,0 +1,31 @@
+{
+  "components": {
+    "forms-input-group": {
+      "id": "forms-input-group",
+      "name": "InputGroup",
+      "path": "./src/app/ui/input-group.stories.ts",
+      "stories": {
+        "forms-input-group--prefix": {
+          "id": "forms-input-group--prefix",
+          "name": "Prefix"
+        },
+        "forms-input-group--suffix": {
+          "id": "forms-input-group--suffix",
+          "name": "Suffix"
+        },
+        "forms-input-group--with-kbd": {
+          "id": "forms-input-group--with-kbd",
+          "name": "With Kbd"
+        },
+        "forms-input-group--disabled": {
+          "id": "forms-input-group--disabled",
+          "name": "Disabled"
+        },
+        "forms-input-group--search-with-icon": {
+          "id": "forms-input-group--search-with-icon",
+          "name": "Search With Icon"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "components": {
+    "charts-chart-tooltip": {
+      "id": "charts-chart-tooltip",
+      "name": "ChartTooltip",
+      "path": "./src/app/ui/chart-tooltip.stories.ts",
+      "stories": {
+        "charts-chart-tooltip--default": {
+          "id": "charts-chart-tooltip--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

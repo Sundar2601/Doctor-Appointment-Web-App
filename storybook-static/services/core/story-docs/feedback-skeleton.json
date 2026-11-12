@@ -1,0 +1,23 @@
+{
+  "components": {
+    "feedback-skeleton": {
+      "id": "feedback-skeleton",
+      "name": "Skeleton",
+      "path": "./src/app/ui/skeleton.stories.ts",
+      "stories": {
+        "feedback-skeleton--rect": {
+          "id": "feedback-skeleton--rect",
+          "name": "Rect"
+        },
+        "feedback-skeleton--circle": {
+          "id": "feedback-skeleton--circle",
+          "name": "Circle"
+        },
+        "feedback-skeleton--card-placeholder": {
+          "id": "feedback-skeleton--card-placeholder",
+          "name": "Card Placeholder"
+        }
+      }
+    }
+  }
+}

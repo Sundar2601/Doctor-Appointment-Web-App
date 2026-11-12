@@ -1,0 +1,19 @@
+{
+  "components": {
+    "actions-button-group": {
+      "id": "actions-button-group",
+      "name": "ButtonGroup",
+      "path": "./src/app/ui/button-group.stories.ts",
+      "stories": {
+        "actions-button-group--default": {
+          "id": "actions-button-group--default",
+          "name": "Default"
+        },
+        "actions-button-group--outline": {
+          "id": "actions-button-group--outline",
+          "name": "Outline"
+        }
+      }
+    }
+  }
+}

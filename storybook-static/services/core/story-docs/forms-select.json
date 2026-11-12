@@ -1,0 +1,32 @@
+{
+  "components": {
+    "forms-select": {
+      "id": "forms-select",
+      "name": "Select",
+      "path": "./src/app/ui/select.stories.ts",
+      "stories": {
+        "forms-select--default": {
+          "id": "forms-select--default",
+          "name": "Default"
+        },
+        "forms-select--with-value": {
+          "id": "forms-select--with-value",
+          "name": "With Value"
+        },
+        "forms-select--invalid": {
+          "id": "forms-select--invalid",
+          "name": "Invalid"
+        },
+        "forms-select--disabled": {
+          "id": "forms-select--disabled",
+          "name": "Disabled"
+        },
+        "forms-select--open-list": {
+          "id": "forms-select--open-list",
+          "name": "Open List",
+          "description": "Open list with a group label and the selected item checked (Figma \"Select Content\")."
+        }
+      }
+    }
+  }
+}

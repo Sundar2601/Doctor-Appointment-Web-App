@@ -1,0 +1,68 @@
+{
+  "components": {
+    "navigation-navigation-menu": {
+      "id": "navigation-navigation-menu",
+      "name": "NavigationMenuComponent",
+      "path": "./src/app/ui/navigation-menu.stories.ts",
+      "description": "Usage: `<app-navigation-menu [items]=\"items\" />`. Items with `children` open a panel of links; Esc / outside click closes.",
+      "jsDocTags": {},
+      "argTypes": {
+        "openIndex": {
+          "name": "openIndex",
+          "type": {
+            "name": "other",
+            "value": "empty-enum"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "WritableSignal<number>"
+            },
+            "defaultValue": {}
+          }
+        },
+        "items": {
+          "name": "items",
+          "type": {
+            "name": "other",
+            "value": "empty-enum",
+            "required": true
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "NavMenuItem[]"
+            },
+            "defaultValue": {}
+          }
+        },
+        "onDocClick": {
+          "name": "onDocClick",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "table": {
+            "category": "methods",
+            "type": {
+              "summary": "(e: Event) => void"
+            },
+            "defaultValue": {}
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type NavigationMenuComponentInputs = {\n  items: NavMenuItem[];\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "NavigationMenuComponent",
+        "selector": "app-navigation-menu",
+        "standalone": true,
+        "inputs": [
+          "items"
+        ],
+        "outputs": [],
+        "enums": []
+      }
+    }
+  }
+}

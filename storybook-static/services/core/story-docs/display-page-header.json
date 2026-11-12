@@ -1,0 +1,27 @@
+{
+  "components": {
+    "display-page-header": {
+      "id": "display-page-header",
+      "name": "PageHeader",
+      "path": "./src/app/ui/page-header.stories.ts",
+      "stories": {
+        "display-page-header--default": {
+          "id": "display-page-header--default",
+          "name": "Default"
+        },
+        "display-page-header--with-breadcrumbs": {
+          "id": "display-page-header--with-breadcrumbs",
+          "name": "With Breadcrumbs"
+        },
+        "display-page-header--with-actions": {
+          "id": "display-page-header--with-actions",
+          "name": "With Actions"
+        },
+        "display-page-header--title-only": {
+          "id": "display-page-header--title-only",
+          "name": "Title Only"
+        }
+      }
+    }
+  }
+}

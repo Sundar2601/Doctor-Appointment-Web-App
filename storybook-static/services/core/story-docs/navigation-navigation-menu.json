@@ -1,0 +1,21 @@
+{
+  "components": {
+    "navigation-navigation-menu": {
+      "id": "navigation-navigation-menu",
+      "name": "NavigationMenuComponent",
+      "path": "./src/app/ui/navigation-menu.stories.ts",
+      "stories": {
+        "navigation-navigation-menu--default": {
+          "id": "navigation-navigation-menu--default",
+          "name": "Default",
+          "snippet": "import { Component } from '@angular/core';\nimport { NavigationMenuComponent } from './navigation-menu.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [NavigationMenuComponent],\n  template: `\n    <div style=\"min-height: 18rem\">\n        <app-navigation-menu [items]=\"items\" />\n    </div>`,\n})\nexport class DemoComponent {\n  items = [{label: 'Home', href: '/'}, {label: 'Services', children: [{label: 'Book appointment', href: '/book', description: 'Schedule a visit with a doctor.'}, {label: 'Telehealth', href: '/telehealth', description: 'Consult from home by video.'}, {label: 'Lab results', href: '/labs', description: 'View your latest reports.'}]}, {label: 'Doctors', children: [{label: 'Find a doctor', href: '/doctors'}, {label: 'Specialties', href: '/specialties'}]}, {label: 'Contact', href: '/contact'}];\n}"
+        },
+        "navigation-navigation-menu--links-only": {
+          "id": "navigation-navigation-menu--links-only",
+          "name": "Links Only",
+          "snippet": "import { Component } from '@angular/core';\nimport { NavigationMenuComponent } from './navigation-menu.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [NavigationMenuComponent],\n  template: `\n    <div style=\"min-height: 18rem\">\n        <app-navigation-menu [items]=\"items\" />\n    </div>`,\n})\nexport class DemoComponent {\n  items = [{label: 'Home', href: '/'}, {label: 'Doctors', href: '/doctors'}, {label: 'Contact', href: '/contact'}];\n}"
+        }
+      }
+    }
+  }
+}

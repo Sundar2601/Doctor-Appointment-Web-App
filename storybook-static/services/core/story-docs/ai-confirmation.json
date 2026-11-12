@@ -1,0 +1,19 @@
+{
+  "components": {
+    "ai-confirmation": {
+      "id": "ai-confirmation",
+      "name": "Confirmation",
+      "path": "./src/app/ui/confirmation.stories.ts",
+      "stories": {
+        "ai-confirmation--default": {
+          "id": "ai-confirmation--default",
+          "name": "Default"
+        },
+        "ai-confirmation--custom-labels": {
+          "id": "ai-confirmation--custom-labels",
+          "name": "Custom Labels"
+        }
+      }
+    }
+  }
+}

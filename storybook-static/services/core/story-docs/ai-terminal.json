@@ -1,0 +1,19 @@
+{
+  "components": {
+    "ai-terminal": {
+      "id": "ai-terminal",
+      "name": "Terminal",
+      "path": "./src/app/ui/terminal.stories.ts",
+      "stories": {
+        "ai-terminal--default": {
+          "id": "ai-terminal--default",
+          "name": "Default"
+        },
+        "ai-terminal--failed": {
+          "id": "ai-terminal--failed",
+          "name": "Failed"
+        }
+      }
+    }
+  }
+}

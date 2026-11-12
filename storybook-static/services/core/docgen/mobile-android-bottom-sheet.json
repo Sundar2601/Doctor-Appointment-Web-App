@@ -1,0 +1,21 @@
+{
+  "components": {
+    "mobile-android-bottom-sheet": {
+      "id": "mobile-android-bottom-sheet",
+      "name": "AndroidBottomSheetComponent",
+      "path": "./src/app/ui/android-bottom-sheet.stories.ts",
+      "description": "Modal bottom sheet with a drag handle and 28dp top corners. Project any content.",
+      "jsDocTags": {},
+      "argTypes": {},
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "AndroidBottomSheetComponent",
+        "selector": "app-android-bottom-sheet",
+        "standalone": true,
+        "inputs": [],
+        "outputs": [],
+        "enums": []
+      }
+    }
+  }
+}

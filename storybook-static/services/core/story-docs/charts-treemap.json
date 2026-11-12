@@ -1,0 +1,15 @@
+{
+  "components": {
+    "charts-treemap": {
+      "id": "charts-treemap",
+      "name": "Treemap",
+      "path": "./src/app/ui/treemap-chart.stories.ts",
+      "stories": {
+        "charts-treemap--default": {
+          "id": "charts-treemap--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

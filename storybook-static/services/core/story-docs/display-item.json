@@ -1,0 +1,23 @@
+{
+  "components": {
+    "display-item": {
+      "id": "display-item",
+      "name": "Item",
+      "path": "./src/app/ui/item.stories.ts",
+      "stories": {
+        "display-item--default": {
+          "id": "display-item--default",
+          "name": "Default"
+        },
+        "display-item--without-media": {
+          "id": "display-item--without-media",
+          "name": "Without Media"
+        },
+        "display-item--no-actions": {
+          "id": "display-item--no-actions",
+          "name": "No Actions"
+        }
+      }
+    }
+  }
+}

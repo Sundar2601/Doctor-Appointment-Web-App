@@ -1,0 +1,26 @@
+{
+  "components": {
+    "mobile-android-top-app-bar": {
+      "id": "mobile-android-top-app-bar",
+      "name": "AndroidTopAppBarComponent",
+      "path": "./src/app/ui/android-top-app-bar.stories.ts",
+      "stories": {
+        "mobile-android-top-app-bar--small": {
+          "id": "mobile-android-top-app-bar--small",
+          "name": "Small",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidTopAppBarComponent } from './android-top-app-bar.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidTopAppBarComponent],\n  template: `\n    <div class=\"w-[412px]\">\n        <app-android-top-app-bar\n            [variant]=\"variant\"\n            [title]=\"title\"\n            [navIcon]=\"navIcon\"\n            [actions]=\"actions\" />\n    </div>`,\n})\nexport class DemoComponent {\n  variant = 'small';\n  title = 'Inbox';\n  navIcon = 'lucideMenu';\n  actions = ['lucideSearch', 'lucideEllipsisVertical'];\n}"
+        },
+        "mobile-android-top-app-bar--center-aligned": {
+          "id": "mobile-android-top-app-bar--center-aligned",
+          "name": "Center Aligned",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidTopAppBarComponent } from './android-top-app-bar.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidTopAppBarComponent],\n  template: `\n    <div class=\"w-[412px]\">\n        <app-android-top-app-bar\n            [variant]=\"variant\"\n            [title]=\"title\"\n            [navIcon]=\"navIcon\"\n            [actions]=\"actions\" />\n    </div>`,\n})\nexport class DemoComponent {\n  variant = 'center-aligned';\n  title = 'Inbox';\n  navIcon = 'lucideMenu';\n  actions = ['lucideSearch', 'lucideEllipsisVertical'];\n}"
+        },
+        "mobile-android-top-app-bar--back-navigation": {
+          "id": "mobile-android-top-app-bar--back-navigation",
+          "name": "Back Navigation",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidTopAppBarComponent } from './android-top-app-bar.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidTopAppBarComponent],\n  template: `\n    <div class=\"w-[412px]\">\n        <app-android-top-app-bar\n            [variant]=\"variant\"\n            [title]=\"title\"\n            [navIcon]=\"navIcon\"\n            [actions]=\"actions\" />\n    </div>`,\n})\nexport class DemoComponent {\n  variant = 'small';\n  title = 'Settings';\n  navIcon = 'lucideArrowLeft';\n  actions = [];\n}"
+        }
+      }
+    }
+  }
+}

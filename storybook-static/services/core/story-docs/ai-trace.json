@@ -1,0 +1,15 @@
+{
+  "components": {
+    "ai-trace": {
+      "id": "ai-trace",
+      "name": "Trace",
+      "path": "./src/app/ui/trace.stories.ts",
+      "stories": {
+        "ai-trace--default": {
+          "id": "ai-trace--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "components": {
+    "display-collapsible": {
+      "id": "display-collapsible",
+      "name": "Collapsible",
+      "path": "./src/app/ui/collapsible.stories.ts",
+      "stories": {
+        "display-collapsible--closed": {
+          "id": "display-collapsible--closed",
+          "name": "Closed"
+        },
+        "display-collapsible--open": {
+          "id": "display-collapsible--open",
+          "name": "Open"
+        }
+      }
+    }
+  }
+}

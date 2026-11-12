@@ -1,0 +1,57 @@
+{
+  "components": {
+    "mobile-android-status-bar": {
+      "id": "mobile-android-status-bar",
+      "name": "AndroidStatusBarComponent",
+      "path": "./src/app/ui/android-status-bar.stories.ts",
+      "description": "Android 24dp status bar plus 24dp gesture navigation area, edge-to-edge.",
+      "jsDocTags": {},
+      "argTypes": {
+        "gestureBar": {
+          "name": "gestureBar",
+          "description": "Shows the 24dp gesture navigation pill below the status bar.",
+          "type": {
+            "name": "boolean"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "boolean"
+            },
+            "defaultValue": {
+              "summary": true
+            }
+          }
+        },
+        "time": {
+          "name": "time",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {
+              "summary": "9:30"
+            }
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type AndroidStatusBarComponentInputs = {\n  /**\n   * Shows the 24dp gesture navigation pill below the status bar.\n   *\n   * @default true\n   */\n  gestureBar?: boolean;\n  /** @default 9:30 */\n  time?: string;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "AndroidStatusBarComponent",
+        "selector": "app-android-status-bar",
+        "standalone": true,
+        "inputs": [
+          "gestureBar",
+          "time"
+        ],
+        "outputs": [],
+        "enums": []
+      }
+    }
+  }
+}

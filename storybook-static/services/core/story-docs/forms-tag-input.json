@@ -1,0 +1,19 @@
+{
+  "components": {
+    "forms-tag-input": {
+      "id": "forms-tag-input",
+      "name": "TagInput",
+      "path": "./src/app/ui/tag-input.stories.ts",
+      "stories": {
+        "forms-tag-input--empty": {
+          "id": "forms-tag-input--empty",
+          "name": "Empty"
+        },
+        "forms-tag-input--with-tags": {
+          "id": "forms-tag-input--with-tags",
+          "name": "With Tags"
+        }
+      }
+    }
+  }
+}

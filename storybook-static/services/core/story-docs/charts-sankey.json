@@ -1,0 +1,15 @@
+{
+  "components": {
+    "charts-sankey": {
+      "id": "charts-sankey",
+      "name": "Sankey",
+      "path": "./src/app/ui/sankey-chart.stories.ts",
+      "stories": {
+        "charts-sankey--default": {
+          "id": "charts-sankey--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

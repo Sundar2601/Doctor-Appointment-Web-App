@@ -1,0 +1,84 @@
+{
+  "components": {
+    "mobile-android-segmented-button": {
+      "id": "mobile-android-segmented-button",
+      "name": "AndroidSegmentedButtonComponent",
+      "path": "./src/app/ui/android-segmented-button.stories.ts",
+      "description": "Material 3 segmented button (2-5 options); the selected segment shows a check.",
+      "jsDocTags": {},
+      "argTypes": {
+        "ariaLabel": {
+          "name": "ariaLabel",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "options": {
+          "name": "options",
+          "type": {
+            "name": "other",
+            "value": "empty-enum",
+            "required": true
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string[]"
+            },
+            "defaultValue": {}
+          }
+        },
+        "value": {
+          "name": "value",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "valueChange": {
+          "name": "valueChange",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "valueChange",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "(e: string) => void"
+            }
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type AndroidSegmentedButtonComponentInputs = {\n  ariaLabel?: string;\n  options: string[];\n  value?: string; // two-way: [(value)]\n}\n```\n\n## Outputs\n\n```\nexport type AndroidSegmentedButtonComponentOutputs = {\n  valueChange: (e: string) => void;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "AndroidSegmentedButtonComponent",
+        "selector": "app-android-segmented-button",
+        "standalone": true,
+        "inputs": [
+          "ariaLabel",
+          "options",
+          "value"
+        ],
+        "outputs": [
+          "valueChange"
+        ],
+        "enums": []
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "components": {
+    "charts-candlestick": {
+      "id": "charts-candlestick",
+      "name": "Candlestick",
+      "path": "./src/app/ui/candlestick-chart.stories.ts",
+      "stories": {
+        "charts-candlestick--default": {
+          "id": "charts-candlestick--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

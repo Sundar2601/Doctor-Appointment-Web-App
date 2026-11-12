@@ -1,0 +1,27 @@
+{
+  "components": {
+    "forms-slider": {
+      "id": "forms-slider",
+      "name": "Slider",
+      "path": "./src/app/ui/slider.stories.ts",
+      "stories": {
+        "forms-slider--default": {
+          "id": "forms-slider--default",
+          "name": "Default"
+        },
+        "forms-slider--stepped": {
+          "id": "forms-slider--stepped",
+          "name": "Stepped"
+        },
+        "forms-slider--disabled": {
+          "id": "forms-slider--disabled",
+          "name": "Disabled"
+        },
+        "forms-slider--all-states": {
+          "id": "forms-slider--all-states",
+          "name": "All States"
+        }
+      }
+    }
+  }
+}

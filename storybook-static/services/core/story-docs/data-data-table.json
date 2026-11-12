@@ -1,0 +1,27 @@
+{
+  "components": {
+    "data-data-table": {
+      "id": "data-data-table",
+      "name": "DataTable",
+      "path": "./src/app/ui/data-table.stories.ts",
+      "stories": {
+        "data-data-table--default": {
+          "id": "data-data-table--default",
+          "name": "Default"
+        },
+        "data-data-table--selectable": {
+          "id": "data-data-table--selectable",
+          "name": "Selectable"
+        },
+        "data-data-table--small-pages": {
+          "id": "data-data-table--small-pages",
+          "name": "Small Pages"
+        },
+        "data-data-table--empty": {
+          "id": "data-data-table--empty",
+          "name": "Empty"
+        }
+      }
+    }
+  }
+}

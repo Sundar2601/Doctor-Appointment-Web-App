@@ -1,0 +1,138 @@
+{
+  "components": {
+    "overlays-popover": {
+      "id": "overlays-popover",
+      "name": "PopoverComponent",
+      "path": "./src/app/ui/popover.stories.ts",
+      "description": "Usage: `<app-popover [(open)]=\"o\"><button trigger appButton variant=\"outline\">Open</button> content...</app-popover>`.",
+      "jsDocTags": {},
+      "argTypes": {
+        "id": {
+          "name": "id",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "positions": {
+          "name": "positions",
+          "type": {
+            "name": "other",
+            "value": "empty-enum"
+          },
+          "table": {
+            "category": "properties",
+            "type": {
+              "summary": "Signal<ConnectedPosition[]>"
+            },
+            "defaultValue": {}
+          }
+        },
+        "align": {
+          "name": "align",
+          "type": {
+            "name": "enum",
+            "value": [
+              "start",
+              "center",
+              "end"
+            ]
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "\"start\" | \"center\" | \"end\""
+            },
+            "defaultValue": {
+              "summary": "center"
+            }
+          }
+        },
+        "open": {
+          "name": "open",
+          "type": {
+            "name": "boolean"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "boolean"
+            },
+            "defaultValue": {
+              "summary": false
+            }
+          }
+        },
+        "side": {
+          "name": "side",
+          "type": {
+            "name": "enum",
+            "value": [
+              "bottom",
+              "top"
+            ]
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "PopoverSide"
+            },
+            "defaultValue": {
+              "summary": "bottom"
+            }
+          }
+        },
+        "openChange": {
+          "name": "openChange",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "openChange",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "(e: boolean) => void"
+            }
+          }
+        },
+        "onOutside": {
+          "name": "onOutside",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "table": {
+            "category": "methods",
+            "type": {
+              "summary": "(e: MouseEvent, origin: HTMLElement) => void"
+            },
+            "defaultValue": {}
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type PopoverComponentInputs = {\n  /** @default center */\n  align?: \"start\" | \"center\" | \"end\";\n  /** @default false */\n  open?: boolean; // two-way: [(open)]\n  /** @default bottom */\n  side?: PopoverSide;\n}\n```\n\n## Outputs\n\n```\nexport type PopoverComponentOutputs = {\n  openChange: (e: boolean) => void;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "PopoverComponent",
+        "selector": "app-popover",
+        "standalone": true,
+        "inputs": [
+          "align",
+          "open",
+          "side"
+        ],
+        "outputs": [
+          "openChange"
+        ],
+        "enums": []
+      }
+    }
+  }
+}

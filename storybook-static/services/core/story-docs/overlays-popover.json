@@ -1,0 +1,34 @@
+{
+  "components": {
+    "overlays-popover": {
+      "id": "overlays-popover",
+      "name": "PopoverComponent",
+      "path": "./src/app/ui/popover.stories.ts",
+      "stories": {
+        "overlays-popover--bottom": {
+          "id": "overlays-popover--bottom",
+          "name": "Bottom",
+          "snippet": "import { Component } from '@angular/core';\nimport { PopoverComponent } from './popover.component';\nimport { ButtonDirective } from './button.directive';\n\n@Component({\n  selector: 'app-demo',\n  imports: [PopoverComponent, ButtonDirective],\n  template: `\n    <div style=\"padding: 6rem 8rem\">\n        <app-popover [side]=\"side\" [align]=\"align\" [(open)]=\"open\">\n            <button\n                trigger\n                appButton\n                variant=\"outline\"\n                (click)=\"open = !open\">\n                Open popover\n            </button>\n            <div class=\"w-64 text-sm\">\n                <p class=\"font-medium\">Dimensions</p>\n                <p\n                    class=\"text-muted-foreground\">\n                    Set the dimensions for the layer.\n                </p>\n            </div>\n        </app-popover>\n    </div>`,\n})\nexport class DemoComponent {\n  side = 'bottom';\n  align = 'center';\n  openChange(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `open` could not be provided, since the story declares no such arg."
+        },
+        "overlays-popover--top": {
+          "id": "overlays-popover--top",
+          "name": "Top",
+          "snippet": "import { Component } from '@angular/core';\nimport { PopoverComponent } from './popover.component';\nimport { ButtonDirective } from './button.directive';\n\n@Component({\n  selector: 'app-demo',\n  imports: [PopoverComponent, ButtonDirective],\n  template: `\n    <div style=\"padding: 6rem 8rem\">\n        <app-popover [side]=\"side\" [align]=\"align\" [(open)]=\"open\">\n            <button\n                trigger\n                appButton\n                variant=\"outline\"\n                (click)=\"open = !open\">\n                Open popover\n            </button>\n            <div class=\"w-64 text-sm\">\n                <p class=\"font-medium\">Dimensions</p>\n                <p\n                    class=\"text-muted-foreground\">\n                    Set the dimensions for the layer.\n                </p>\n            </div>\n        </app-popover>\n    </div>`,\n})\nexport class DemoComponent {\n  side = 'top';\n  align = 'center';\n  openChange(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `open` could not be provided, since the story declares no such arg."
+        },
+        "overlays-popover--align-start": {
+          "id": "overlays-popover--align-start",
+          "name": "Align Start",
+          "snippet": "import { Component } from '@angular/core';\nimport { PopoverComponent } from './popover.component';\nimport { ButtonDirective } from './button.directive';\n\n@Component({\n  selector: 'app-demo',\n  imports: [PopoverComponent, ButtonDirective],\n  template: `\n    <div style=\"padding: 6rem 8rem\">\n        <app-popover [side]=\"side\" [align]=\"align\" [(open)]=\"open\">\n            <button\n                trigger\n                appButton\n                variant=\"outline\"\n                (click)=\"open = !open\">\n                Open popover\n            </button>\n            <div class=\"w-64 text-sm\">\n                <p class=\"font-medium\">Dimensions</p>\n                <p\n                    class=\"text-muted-foreground\">\n                    Set the dimensions for the layer.\n                </p>\n            </div>\n        </app-popover>\n    </div>`,\n})\nexport class DemoComponent {\n  side = 'bottom';\n  align = 'start';\n  openChange(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `open` could not be provided, since the story declares no such arg."
+        },
+        "overlays-popover--open": {
+          "id": "overlays-popover--open",
+          "name": "Open",
+          "snippet": "import { Component } from '@angular/core';\nimport { PopoverComponent } from './popover.component';\nimport { ButtonDirective } from './button.directive';\n\n@Component({\n  selector: 'app-demo',\n  imports: [PopoverComponent, ButtonDirective],\n  template: `\n    <div style=\"padding: 6rem 8rem\">\n        <app-popover [side]=\"side\" [align]=\"align\" [(open)]=\"open\">\n            <button\n                trigger\n                appButton\n                variant=\"outline\"\n                (click)=\"open = !open\">\n                Open popover\n            </button>\n            <div class=\"w-64 text-sm\">\n                <p class=\"font-medium\">Dimensions</p>\n                <p\n                    class=\"text-muted-foreground\">\n                    Set the dimensions for the layer.\n                </p>\n            </div>\n        </app-popover>\n    </div>`,\n})\nexport class DemoComponent {\n  side = 'bottom';\n  align = 'center';\n  open = true;\n  openChange(event: unknown) {}\n}"
+        }
+      }
+    }
+  }
+}

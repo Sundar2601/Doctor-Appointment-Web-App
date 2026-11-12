@@ -1,0 +1,19 @@
+{
+  "components": {
+    "data-timeline": {
+      "id": "data-timeline",
+      "name": "Timeline",
+      "path": "./src/app/ui/timeline.stories.ts",
+      "stories": {
+        "data-timeline--default": {
+          "id": "data-timeline--default",
+          "name": "Default"
+        },
+        "data-timeline--minimal": {
+          "id": "data-timeline--minimal",
+          "name": "Minimal"
+        }
+      }
+    }
+  }
+}

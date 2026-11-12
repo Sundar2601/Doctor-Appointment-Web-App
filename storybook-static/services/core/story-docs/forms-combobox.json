@@ -1,0 +1,28 @@
+{
+  "components": {
+    "forms-combobox": {
+      "id": "forms-combobox",
+      "name": "Combobox",
+      "path": "./src/app/ui/combobox.stories.ts",
+      "stories": {
+        "forms-combobox--default": {
+          "id": "forms-combobox--default",
+          "name": "Default"
+        },
+        "forms-combobox--with-value": {
+          "id": "forms-combobox--with-value",
+          "name": "With Value"
+        },
+        "forms-combobox--disabled": {
+          "id": "forms-combobox--disabled",
+          "name": "Disabled"
+        },
+        "forms-combobox--open-list": {
+          "id": "forms-combobox--open-list",
+          "name": "Open List",
+          "description": "Open popover with search field and the selected item checked (Figma \"Combobox List\")."
+        }
+      }
+    }
+  }
+}

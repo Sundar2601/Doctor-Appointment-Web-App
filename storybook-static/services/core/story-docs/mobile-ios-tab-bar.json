@@ -1,0 +1,19 @@
+{
+  "components": {
+    "mobile-ios-tab-bar": {
+      "id": "mobile-ios-tab-bar",
+      "name": "TabBar",
+      "path": "./src/app/ui/ios-tab-bar.stories.ts",
+      "stories": {
+        "mobile-ios-tab-bar--default": {
+          "id": "mobile-ios-tab-bar--default",
+          "name": "Default"
+        },
+        "mobile-ios-tab-bar--tab-bar-item": {
+          "id": "mobile-ios-tab-bar--tab-bar-item",
+          "name": "Tab Bar Item"
+        }
+      }
+    }
+  }
+}

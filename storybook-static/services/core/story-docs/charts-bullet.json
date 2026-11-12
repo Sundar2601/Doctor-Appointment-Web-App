@@ -1,0 +1,15 @@
+{
+  "components": {
+    "charts-bullet": {
+      "id": "charts-bullet",
+      "name": "Bullet",
+      "path": "./src/app/ui/bullet-chart.stories.ts",
+      "stories": {
+        "charts-bullet--default": {
+          "id": "charts-bullet--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

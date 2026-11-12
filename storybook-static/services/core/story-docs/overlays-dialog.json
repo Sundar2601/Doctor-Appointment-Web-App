@@ -1,0 +1,28 @@
+{
+  "components": {
+    "overlays-dialog": {
+      "id": "overlays-dialog",
+      "name": "DialogComponent",
+      "path": "./src/app/ui/dialog.stories.ts",
+      "stories": {
+        "overlays-dialog--default": {
+          "id": "overlays-dialog--default",
+          "name": "Default",
+          "snippet": "import { Component } from '@angular/core';\nimport { DialogComponent } from './dialog.component';\nimport { ButtonDirective } from './button.directive';\n\n@Component({\n  selector: 'app-demo',\n  imports: [DialogComponent, ButtonDirective],\n  template: `\n    <button appButton (click)=\"open = true\">Open dialog</button>\n    <app-dialog [heading]=\"heading\" [description]=\"description\" [(open)]=\"open\">\n        <p class=\"text-sm\">Dialog body content goes here.</p>\n        <div dialogFooter>\n            <button\n                appButton\n                variant=\"outline\"\n                (click)=\"open = false\">\n                Cancel\n            </button>\n            <button appButton (click)=\"open = false\">Save changes</button>\n        </div>\n    </app-dialog>`,\n})\nexport class DemoComponent {\n  heading = 'Edit profile';\n  description = 'Make changes to your profile here. Click save when you are done.';\n  openChange(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `open` could not be provided, since the story declares no such arg."
+        },
+        "overlays-dialog--without-description": {
+          "id": "overlays-dialog--without-description",
+          "name": "Without Description",
+          "snippet": "import { Component } from '@angular/core';\nimport { DialogComponent } from './dialog.component';\nimport { ButtonDirective } from './button.directive';\n\n@Component({\n  selector: 'app-demo',\n  imports: [DialogComponent, ButtonDirective],\n  template: `\n    <button appButton (click)=\"open = true\">Open dialog</button>\n    <app-dialog [heading]=\"heading\" [description]=\"description\" [(open)]=\"open\">\n        <p class=\"text-sm\">Dialog body content goes here.</p>\n        <div dialogFooter>\n            <button\n                appButton\n                variant=\"outline\"\n                (click)=\"open = false\">\n                Cancel\n            </button>\n            <button appButton (click)=\"open = false\">Save changes</button>\n        </div>\n    </app-dialog>`,\n})\nexport class DemoComponent {\n  heading = 'Quick note';\n  description = undefined;\n  openChange(event: unknown) {}\n}",
+          "warning": "Incomplete snippet: `open` could not be provided, since the story declares no such arg."
+        },
+        "overlays-dialog--open": {
+          "id": "overlays-dialog--open",
+          "name": "Open",
+          "snippet": "import { Component } from '@angular/core';\nimport { DialogComponent } from './dialog.component';\nimport { ButtonDirective } from './button.directive';\n\n@Component({\n  selector: 'app-demo',\n  imports: [DialogComponent, ButtonDirective],\n  template: `\n    <button appButton (click)=\"open = true\">Open dialog</button>\n    <app-dialog [heading]=\"heading\" [description]=\"description\" [(open)]=\"open\">\n        <p class=\"text-sm\">Dialog body content goes here.</p>\n        <div dialogFooter>\n            <button\n                appButton\n                variant=\"outline\"\n                (click)=\"open = false\">\n                Cancel\n            </button>\n            <button appButton (click)=\"open = false\">Save changes</button>\n        </div>\n    </app-dialog>`,\n})\nexport class DemoComponent {\n  heading = 'Edit profile';\n  description = 'Make changes to your profile here. Click save when you are done.';\n  open = true;\n  openChange(event: unknown) {}\n}"
+        }
+      }
+    }
+  }
+}

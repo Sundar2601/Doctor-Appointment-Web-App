@@ -1,0 +1,23 @@
+{
+  "components": {
+    "navigation-tree-view": {
+      "id": "navigation-tree-view",
+      "name": "TreeView",
+      "path": "./src/app/ui/tree-view.stories.ts",
+      "stories": {
+        "navigation-tree-view--default": {
+          "id": "navigation-tree-view--default",
+          "name": "Default"
+        },
+        "navigation-tree-view--preselected-doctor": {
+          "id": "navigation-tree-view--preselected-doctor",
+          "name": "Preselected Doctor"
+        },
+        "navigation-tree-view--flat-list": {
+          "id": "navigation-tree-view--flat-list",
+          "name": "Flat List"
+        }
+      }
+    }
+  }
+}

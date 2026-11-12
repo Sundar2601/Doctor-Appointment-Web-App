@@ -1,0 +1,27 @@
+{
+  "components": {
+    "forms-number-input": {
+      "id": "forms-number-input",
+      "name": "NumberInput",
+      "path": "./src/app/ui/number-input.stories.ts",
+      "stories": {
+        "forms-number-input--default": {
+          "id": "forms-number-input--default",
+          "name": "Default"
+        },
+        "forms-number-input--at-minimum": {
+          "id": "forms-number-input--at-minimum",
+          "name": "At Minimum"
+        },
+        "forms-number-input--big-step": {
+          "id": "forms-number-input--big-step",
+          "name": "Big Step"
+        },
+        "forms-number-input--disabled": {
+          "id": "forms-number-input--disabled",
+          "name": "Disabled"
+        }
+      }
+    }
+  }
+}

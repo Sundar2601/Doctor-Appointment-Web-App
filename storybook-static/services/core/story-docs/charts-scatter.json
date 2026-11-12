@@ -1,0 +1,15 @@
+{
+  "components": {
+    "charts-scatter": {
+      "id": "charts-scatter",
+      "name": "Scatter",
+      "path": "./src/app/ui/scatter-chart.stories.ts",
+      "stories": {
+        "charts-scatter--default": {
+          "id": "charts-scatter--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

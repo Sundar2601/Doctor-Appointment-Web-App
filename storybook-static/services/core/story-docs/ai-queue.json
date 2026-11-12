@@ -1,0 +1,15 @@
+{
+  "components": {
+    "ai-queue": {
+      "id": "ai-queue",
+      "name": "Queue",
+      "path": "./src/app/ui/queue.stories.ts",
+      "stories": {
+        "ai-queue--default": {
+          "id": "ai-queue--default",
+          "name": "Default"
+        }
+      }
+    }
+  }
+}

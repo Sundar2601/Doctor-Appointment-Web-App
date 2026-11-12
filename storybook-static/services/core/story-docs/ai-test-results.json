@@ -1,0 +1,19 @@
+{
+  "components": {
+    "ai-test-results": {
+      "id": "ai-test-results",
+      "name": "TestResults",
+      "path": "./src/app/ui/test-results.stories.ts",
+      "stories": {
+        "ai-test-results--with-failure": {
+          "id": "ai-test-results--with-failure",
+          "name": "With Failure"
+        },
+        "ai-test-results--all-passing": {
+          "id": "ai-test-results--all-passing",
+          "name": "All Passing"
+        }
+      }
+    }
+  }
+}

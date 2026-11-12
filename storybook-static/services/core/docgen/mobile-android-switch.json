@@ -1,0 +1,86 @@
+{
+  "components": {
+    "mobile-android-switch": {
+      "id": "mobile-android-switch",
+      "name": "AndroidSwitchComponent",
+      "path": "./src/app/ui/android-switch.stories.ts",
+      "description": "Material 3 switch (52x32dp); the thumb grows when on.",
+      "jsDocTags": {},
+      "argTypes": {
+        "ariaLabel": {
+          "name": "ariaLabel",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "checked": {
+          "name": "checked",
+          "type": {
+            "name": "boolean"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "boolean"
+            },
+            "defaultValue": {
+              "summary": false
+            }
+          }
+        },
+        "disabled": {
+          "name": "disabled",
+          "type": {
+            "name": "boolean"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "boolean"
+            },
+            "defaultValue": {
+              "summary": false
+            }
+          }
+        },
+        "checkedChange": {
+          "name": "checkedChange",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "checkedChange",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "(e: boolean) => void"
+            }
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type AndroidSwitchComponentInputs = {\n  ariaLabel?: string;\n  /** @default false */\n  checked?: boolean; // two-way: [(checked)]\n  /** @default false */\n  disabled?: boolean;\n}\n```\n\n## Outputs\n\n```\nexport type AndroidSwitchComponentOutputs = {\n  checkedChange: (e: boolean) => void;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "AndroidSwitchComponent",
+        "selector": "app-android-switch",
+        "standalone": true,
+        "inputs": [
+          "ariaLabel",
+          "checked",
+          "disabled"
+        ],
+        "outputs": [
+          "checkedChange"
+        ],
+        "enums": []
+      }
+    }
+  }
+}

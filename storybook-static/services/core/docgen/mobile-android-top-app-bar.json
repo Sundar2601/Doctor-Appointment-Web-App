@@ -1,0 +1,143 @@
+{
+  "components": {
+    "mobile-android-top-app-bar": {
+      "id": "mobile-android-top-app-bar",
+      "name": "AndroidTopAppBarComponent",
+      "path": "./src/app/ui/android-top-app-bar.stories.ts",
+      "description": "Material 3 top app bar (64dp). `actions` are icon names; extra content goes in the `[actions]` slot.",
+      "jsDocTags": {},
+      "argTypes": {
+        "actions": {
+          "name": "actions",
+          "description": "Icon names for trailing action buttons (use names from android-icons).",
+          "type": {
+            "name": "other",
+            "value": "empty-enum"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string[]"
+            },
+            "defaultValue": {
+              "summary": "[]"
+            }
+          }
+        },
+        "navIcon": {
+          "name": "navIcon",
+          "description": "Icon name for the navigation button; empty hides it.",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string | undefined"
+            },
+            "defaultValue": {
+              "summary": "lucideMenu"
+            }
+          }
+        },
+        "navLabel": {
+          "name": "navLabel",
+          "type": {
+            "name": "string"
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {
+              "summary": "Navigation menu"
+            }
+          }
+        },
+        "title": {
+          "name": "title",
+          "type": {
+            "name": "string",
+            "required": true
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "variant": {
+          "name": "variant",
+          "type": {
+            "name": "enum",
+            "value": [
+              "small",
+              "center-aligned"
+            ]
+          },
+          "table": {
+            "category": "inputs",
+            "type": {
+              "summary": "AndroidTopAppBarVariant"
+            },
+            "defaultValue": {
+              "summary": "small"
+            }
+          }
+        },
+        "actionClick": {
+          "name": "actionClick",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "actionClick",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "string"
+            },
+            "defaultValue": {}
+          }
+        },
+        "navClick": {
+          "name": "navClick",
+          "type": {
+            "name": "other",
+            "value": "void"
+          },
+          "action": "navClick",
+          "table": {
+            "category": "outputs",
+            "type": {
+              "summary": "void"
+            },
+            "defaultValue": {}
+          }
+        }
+      },
+      "apiDescription": "## Inputs\n\n```\nexport type AndroidTopAppBarComponentInputs = {\n  /**\n   * Icon names for trailing action buttons (use names from android-icons).\n   *\n   * @default []\n   */\n  actions?: string[];\n  /**\n   * Icon name for the navigation button; empty hides it.\n   *\n   * @default lucideMenu\n   */\n  navIcon?: string | undefined;\n  /** @default Navigation menu */\n  navLabel?: string;\n  title: string;\n  /** @default small */\n  variant?: AndroidTopAppBarVariant;\n}\n```\n\n## Outputs\n\n```\nexport type AndroidTopAppBarComponentOutputs = {\n  actionClick: string;\n  navClick: void;\n}\n```",
+      "renderer": "angular",
+      "angularComponentMeta": {
+        "name": "AndroidTopAppBarComponent",
+        "selector": "app-android-top-app-bar",
+        "standalone": true,
+        "inputs": [
+          "actions",
+          "navIcon",
+          "navLabel",
+          "title",
+          "variant"
+        ],
+        "outputs": [
+          "actionClick",
+          "navClick"
+        ],
+        "enums": []
+      }
+    }
+  }
+}

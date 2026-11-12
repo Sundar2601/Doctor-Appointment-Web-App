@@ -1,0 +1,23 @@
+{
+  "components": {
+    "display-hero": {
+      "id": "display-hero",
+      "name": "Hero",
+      "path": "./src/app/ui/hero.stories.ts",
+      "stories": {
+        "display-hero--default": {
+          "id": "display-hero--default",
+          "name": "Default"
+        },
+        "display-hero--with-actions": {
+          "id": "display-hero--with-actions",
+          "name": "With Actions"
+        },
+        "display-hero--without-illustration": {
+          "id": "display-hero--without-illustration",
+          "name": "Without Illustration"
+        }
+      }
+    }
+  }
+}

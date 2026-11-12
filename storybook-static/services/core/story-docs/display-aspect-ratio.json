@@ -1,0 +1,23 @@
+{
+  "components": {
+    "display-aspect-ratio": {
+      "id": "display-aspect-ratio",
+      "name": "AspectRatio",
+      "path": "./src/app/ui/aspect-ratio.stories.ts",
+      "stories": {
+        "display-aspect-ratio--widescreen": {
+          "id": "display-aspect-ratio--widescreen",
+          "name": "Widescreen"
+        },
+        "display-aspect-ratio--square": {
+          "id": "display-aspect-ratio--square",
+          "name": "Square"
+        },
+        "display-aspect-ratio--portrait": {
+          "id": "display-aspect-ratio--portrait",
+          "name": "Portrait"
+        }
+      }
+    }
+  }
+}

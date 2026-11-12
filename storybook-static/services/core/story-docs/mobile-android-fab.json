@@ -1,0 +1,28 @@
+{
+  "components": {
+    "mobile-android-fab": {
+      "id": "mobile-android-fab",
+      "name": "AndroidFabComponent",
+      "path": "./src/app/ui/android-fab.stories.ts",
+      "stories": {
+        "mobile-android-fab--default": {
+          "id": "mobile-android-fab--default",
+          "name": "Default",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidFabComponent } from './android-fab.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidFabComponent],\n  template: `\n    <div class=\"p-4\">\n        <app-android-fab\n            [icon]=\"icon\"\n            [label]=\"label\"\n            [size]=\"size\"\n            [ariaLabel]=\"ariaLabel\" />\n    </div>`,\n})\nexport class DemoComponent {\n  icon = 'lucidePlus';\n  size = 'standard';\n  ariaLabel = 'Add';\n}",
+          "warning": "Incomplete snippet: `label` could not be provided, since the story declares no such arg."
+        },
+        "mobile-android-fab--extended": {
+          "id": "mobile-android-fab--extended",
+          "name": "Extended",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidFabComponent } from './android-fab.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidFabComponent],\n  template: `\n    <div class=\"p-4\">\n        <app-android-fab\n            [icon]=\"icon\"\n            [label]=\"label\"\n            [size]=\"size\"\n            [ariaLabel]=\"ariaLabel\" />\n    </div>`,\n})\nexport class DemoComponent {\n  icon = 'lucidePencil';\n  size = 'standard';\n  ariaLabel = 'Add';\n  label = 'Compose';\n}"
+        },
+        "mobile-android-fab--small": {
+          "id": "mobile-android-fab--small",
+          "name": "Small",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidFabComponent } from './android-fab.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidFabComponent],\n  template: `\n    <div class=\"p-4\">\n        <app-android-fab\n            [icon]=\"icon\"\n            [label]=\"label\"\n            [size]=\"size\"\n            [ariaLabel]=\"ariaLabel\" />\n    </div>`,\n})\nexport class DemoComponent {\n  icon = 'lucidePlus';\n  size = 'small';\n  ariaLabel = 'Add';\n}",
+          "warning": "Incomplete snippet: `label` could not be provided, since the story declares no such arg."
+        }
+      }
+    }
+  }
+}

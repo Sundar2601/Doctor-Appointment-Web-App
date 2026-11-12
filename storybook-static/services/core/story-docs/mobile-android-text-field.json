@@ -1,0 +1,36 @@
+{
+  "components": {
+    "mobile-android-text-field": {
+      "id": "mobile-android-text-field",
+      "name": "AndroidTextFieldComponent",
+      "path": "./src/app/ui/android-text-field.stories.ts",
+      "stories": {
+        "mobile-android-text-field--outlined": {
+          "id": "mobile-android-text-field--outlined",
+          "name": "Outlined",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidTextFieldComponent } from './android-text-field.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidTextFieldComponent],\n  template: `\n    <div class=\"w-[280px] p-4\">\n        <app-android-text-field\n            [variant]=\"variant\"\n            [label]=\"label\"\n            [(value)]=\"value\"\n            [placeholder]=\"placeholder\"\n            [supporting]=\"supporting\"\n            [error]=\"error\"\n            [disabled]=\"disabled\" />\n    </div>`,\n})\nexport class DemoComponent {\n  variant = 'outlined';\n  label = 'Email';\n  value = '';\n  placeholder = '';\n  supporting = '';\n  error = '';\n  disabled = false;\n  valueChange(event: unknown) {}\n}"
+        },
+        "mobile-android-text-field--outlined-with-value": {
+          "id": "mobile-android-text-field--outlined-with-value",
+          "name": "Outlined With Value",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidTextFieldComponent } from './android-text-field.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidTextFieldComponent],\n  template: `\n    <div class=\"w-[280px] p-4\">\n        <app-android-text-field\n            [variant]=\"variant\"\n            [label]=\"label\"\n            [(value)]=\"value\"\n            [placeholder]=\"placeholder\"\n            [supporting]=\"supporting\"\n            [error]=\"error\"\n            [disabled]=\"disabled\" />\n    </div>`,\n})\nexport class DemoComponent {\n  variant = 'outlined';\n  label = 'Email';\n  value = 'name@example.com';\n  placeholder = '';\n  supporting = 'We never share your email';\n  error = '';\n  disabled = false;\n  valueChange(event: unknown) {}\n}"
+        },
+        "mobile-android-text-field--outlined-placeholder": {
+          "id": "mobile-android-text-field--outlined-placeholder",
+          "name": "Outlined Placeholder",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidTextFieldComponent } from './android-text-field.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidTextFieldComponent],\n  template: `\n    <div class=\"w-[280px] p-4\">\n        <app-android-text-field\n            [variant]=\"variant\"\n            [label]=\"label\"\n            [(value)]=\"value\"\n            [placeholder]=\"placeholder\"\n            [supporting]=\"supporting\"\n            [error]=\"error\"\n            [disabled]=\"disabled\" />\n    </div>`,\n})\nexport class DemoComponent {\n  variant = 'outlined';\n  label = 'Label';\n  value = '';\n  placeholder = 'Email';\n  supporting = '';\n  error = '';\n  disabled = false;\n  valueChange(event: unknown) {}\n}"
+        },
+        "mobile-android-text-field--filled": {
+          "id": "mobile-android-text-field--filled",
+          "name": "Filled",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidTextFieldComponent } from './android-text-field.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidTextFieldComponent],\n  template: `\n    <div class=\"w-[280px] p-4\">\n        <app-android-text-field\n            [variant]=\"variant\"\n            [label]=\"label\"\n            [(value)]=\"value\"\n            [placeholder]=\"placeholder\"\n            [supporting]=\"supporting\"\n            [error]=\"error\"\n            [disabled]=\"disabled\" />\n    </div>`,\n})\nexport class DemoComponent {\n  variant = 'filled';\n  label = 'Email';\n  value = 'name@example.com';\n  placeholder = '';\n  supporting = '';\n  error = '';\n  disabled = false;\n  valueChange(event: unknown) {}\n}"
+        },
+        "mobile-android-text-field--error": {
+          "id": "mobile-android-text-field--error",
+          "name": "Error",
+          "snippet": "import { Component } from '@angular/core';\nimport { AndroidTextFieldComponent } from './android-text-field.component';\n\n@Component({\n  selector: 'app-demo',\n  imports: [AndroidTextFieldComponent],\n  template: `\n    <div class=\"w-[280px] p-4\">\n        <app-android-text-field\n            [variant]=\"variant\"\n            [label]=\"label\"\n            [(value)]=\"value\"\n            [placeholder]=\"placeholder\"\n            [supporting]=\"supporting\"\n            [error]=\"error\"\n            [disabled]=\"disabled\" />\n    </div>`,\n})\nexport class DemoComponent {\n  variant = 'outlined';\n  label = 'Email';\n  value = 'name@';\n  placeholder = '';\n  supporting = '';\n  error = 'Enter a valid email address';\n  disabled = false;\n  valueChange(event: unknown) {}\n}"
+        }
+      }
+    }
+  }
+}

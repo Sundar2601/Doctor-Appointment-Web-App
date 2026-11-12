@@ -1,0 +1,19 @@
+{
+  "components": {
+    "data-table": {
+      "id": "data-table",
+      "name": "Table",
+      "path": "./src/app/ui/table.stories.ts",
+      "stories": {
+        "data-table--appointments": {
+          "id": "data-table--appointments",
+          "name": "Appointments"
+        },
+        "data-table--with-selected-row": {
+          "id": "data-table--with-selected-row",
+          "name": "With Selected Row"
+        }
+      }
+    }
+  }
+}

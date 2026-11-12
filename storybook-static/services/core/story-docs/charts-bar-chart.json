@@ -1,0 +1,27 @@
+{
+  "components": {
+    "charts-bar-chart": {
+      "id": "charts-bar-chart",
+      "name": "BarChart",
+      "path": "./src/app/ui/bar-chart.stories.ts",
+      "stories": {
+        "charts-bar-chart--default": {
+          "id": "charts-bar-chart--default",
+          "name": "Default"
+        },
+        "charts-bar-chart--stacked": {
+          "id": "charts-bar-chart--stacked",
+          "name": "Stacked"
+        },
+        "charts-bar-chart--horizontal": {
+          "id": "charts-bar-chart--horizontal",
+          "name": "Horizontal"
+        },
+        "charts-bar-chart--with-legend": {
+          "id": "charts-bar-chart--with-legend",
+          "name": "With Legend"
+        }
+      }
+    }
+  }
+}

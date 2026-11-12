@@ -1,0 +1,19 @@
+{
+  "components": {
+    "forms-label": {
+      "id": "forms-label",
+      "name": "Label",
+      "path": "./src/app/ui/label.stories.ts",
+      "stories": {
+        "forms-label--default": {
+          "id": "forms-label--default",
+          "name": "Default"
+        },
+        "forms-label--with-input": {
+          "id": "forms-label--with-input",
+          "name": "With Input"
+        }
+      }
+    }
+  }
+}

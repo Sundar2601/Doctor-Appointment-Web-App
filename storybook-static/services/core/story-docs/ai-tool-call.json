@@ -1,0 +1,27 @@
+{
+  "components": {
+    "ai-tool-call": {
+      "id": "ai-tool-call",
+      "name": "ToolCall",
+      "path": "./src/app/ui/tool-call.stories.ts",
+      "stories": {
+        "ai-tool-call--completed": {
+          "id": "ai-tool-call--completed",
+          "name": "Completed"
+        },
+        "ai-tool-call--running": {
+          "id": "ai-tool-call--running",
+          "name": "Running"
+        },
+        "ai-tool-call--pending": {
+          "id": "ai-tool-call--pending",
+          "name": "Pending"
+        },
+        "ai-tool-call--failed": {
+          "id": "ai-tool-call--failed",
+          "name": "Failed"
+        }
+      }
+    }
+  }
+}

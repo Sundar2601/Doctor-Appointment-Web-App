@@ -1,0 +1,23 @@
+{
+  "components": {
+    "mobile-ios-switch": {
+      "id": "mobile-ios-switch",
+      "name": "Switch",
+      "path": "./src/app/ui/ios-switch.stories.ts",
+      "stories": {
+        "mobile-ios-switch--default": {
+          "id": "mobile-ios-switch--default",
+          "name": "Default"
+        },
+        "mobile-ios-switch--checked": {
+          "id": "mobile-ios-switch--checked",
+          "name": "Checked"
+        },
+        "mobile-ios-switch--disabled": {
+          "id": "mobile-ios-switch--disabled",
+          "name": "Disabled"
+        }
+      }
+    }
+  }
+}
