@@ -24,5 +24,8 @@ type Story = StoryObj<ItemComponent>
 export const Default: Story = {}
 export const WithoutMedia: Story = { args: { showMedia: false } }
 export const NoActions: Story = {
-  render: (args) => ({ props: args, template: `<div class="w-[480px]"><app-item [heading]="heading" [description]="description" /></div>` }),
+  render: (args) => ({
+    props: args,
+    template: `<div class="w-[480px]"><app-item [heading]="heading" [description]="description" /></div>`,
+  }),
 }

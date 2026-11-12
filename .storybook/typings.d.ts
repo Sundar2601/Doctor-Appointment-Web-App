@@ -1,4 +1,6 @@
 declare module '*.md' {
-  const content: string;
-  export default content;
+  const content: string
+  export default content
 }
+
+declare module '*.css'

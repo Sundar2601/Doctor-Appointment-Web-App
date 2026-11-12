@@ -15,6 +15,23 @@ export const DEMO_ACCOUNT = { name: 'Demo Patient', email: DEMO_EMAIL, password:
 const USERS_KEY = 'pondy.users'
 const SESSION_KEY = 'pondy.session'
 
+function readJson(key: string): unknown {
+  try {
+    return JSON.parse(localStorage.getItem(key) ?? 'null')
+  } catch {
+    return null
+  }
+}
+
+function isUser(value: unknown): value is User {
+  const v = value as Partial<User> | null
+  return typeof v?.name === 'string' && typeof v.email === 'string'
+}
+
+function isStoredUser(value: unknown): value is StoredUser {
+  return isUser(value) && typeof (value as Partial<StoredUser>).hash === 'string'
+}
+
 async function sha256(text: string): Promise<string> {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text))
   return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('')
@@ -51,9 +68,7 @@ export class AuthService {
   async signInDemo(): Promise<string | null> {
     const { name, email, password } = DEMO_ACCOUNT
     if (!this.readUsers().some((u) => u.email === email)) {
-      const err = await this.signUp(name, email, password)
-      if (err) return err
-      return null
+      return this.signUp(name, email, password)
     }
     return this.signIn(email, password)
   }
@@ -69,10 +84,12 @@ export class AuthService {
   }
 
   private readUsers(): StoredUser[] {
-    try { return JSON.parse(localStorage.getItem(USERS_KEY) ?? '[]') } catch { return [] }
+    const data = readJson(USERS_KEY)
+    return Array.isArray(data) ? data.filter(isStoredUser) : []
   }
 
   private readSession(): User | null {
-    try { return JSON.parse(localStorage.getItem(SESSION_KEY) ?? 'null') } catch { return null }
+    const data = readJson(SESSION_KEY)
+    return isUser(data) ? { name: data.name, email: data.email } : null
   }
 }

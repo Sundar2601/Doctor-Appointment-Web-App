@@ -5,7 +5,13 @@ import { NotificationItemComponent } from './notification-item.component'
 const meta: Meta<NotificationItemComponent> = {
   title: 'Display/Notification Item',
   decorators: [moduleMetadata({ imports: [NotificationItemComponent] })],
-  argTypes: { title: { control: 'text' }, description: { control: 'text' }, time: { control: 'text' }, initials: { control: 'text' }, unread: { control: 'boolean' } },
+  argTypes: {
+    title: { control: 'text' },
+    description: { control: 'text' },
+    time: { control: 'text' },
+    initials: { control: 'text' },
+    unread: { control: 'boolean' },
+  },
   args: { title: 'Appointment confirmed', description: 'Dr. Smith confirmed your visit on Tuesday.', time: '2 hours ago', unread: false },
   render: (args) => ({
     props: args,

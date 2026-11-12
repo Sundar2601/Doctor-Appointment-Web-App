@@ -3,7 +3,11 @@ import { moduleMetadata } from '@storybook/angular-vite'
 import { ControlDirective } from './control.directive'
 import { FieldComponent } from './field.component'
 
-interface Args { label: string; hint: string; error: string }
+interface Args {
+  label: string
+  hint: string
+  error: string
+}
 
 const meta: Meta<Args> = {
   title: 'Forms/Field',

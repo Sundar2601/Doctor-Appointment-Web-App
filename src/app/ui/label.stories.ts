@@ -3,7 +3,9 @@ import { moduleMetadata } from '@storybook/angular-vite'
 import { ControlDirective } from './control.directive'
 import { LabelDirective } from './label.directive'
 
-interface Args { text: string }
+interface Args {
+  text: string
+}
 
 const meta: Meta<Args> = {
   title: 'Forms/Label',

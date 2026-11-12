@@ -1,6 +1,10 @@
 import { ChangeDetectionStrategy, Component, input, model } from '@angular/core'
 
-export interface TabItem { value: string; label: string; disabled?: boolean }
+export interface TabItem {
+  value: string
+  label: string
+  disabled?: boolean
+}
 
 /**
  * Tab list (role=tablist, arrow/Home/End keys). Usage:
@@ -9,9 +13,13 @@ export interface TabItem { value: string; label: string; disabled?: boolean }
 @Component({
   selector: 'app-tabs',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'block' },
+  host: { class: 'block', '(keydown)': 'onKey($event)' },
   template: `
-    <div role="tablist" [attr.aria-label]="label()" (keydown)="onKey($event)" class="bg-muted text-muted-foreground inline-flex h-9 w-fit items-center justify-center rounded-lg p-[3px]">
+    <div
+      role="tablist"
+      [attr.aria-label]="label()"
+      class="bg-muted text-muted-foreground inline-flex h-9 w-fit items-center justify-center rounded-lg p-[3px]"
+    >
       @for (t of tabs(); track t.value) {
         <button
           type="button"
@@ -23,7 +31,9 @@ export interface TabItem { value: string; label: string; disabled?: boolean }
           (click)="value.set(t.value)"
           class="focus-visible:outline-ring inline-flex h-[calc(100%-1px)] items-center justify-center rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors focus-visible:outline-2 disabled:pointer-events-none disabled:opacity-50"
           [class]="t.value === value() ? 'bg-background text-foreground shadow-sm' : 'hover:text-foreground'"
-        >{{ t.label }}</button>
+        >
+          {{ t.label }}
+        </button>
       }
     </div>
   `,
@@ -42,9 +52,10 @@ export class TabsComponent {
     else if (e.key === 'ArrowLeft') n = (i - 1 + enabled.length) % enabled.length
     else if (e.key === 'Home') n = 0
     else if (e.key === 'End') n = enabled.length - 1
-    if (n < 0) return
+    const target = enabled[n]
+    if (n < 0 || !target) return
     e.preventDefault()
-    this.value.set(enabled[n].value)
-    ;(e.currentTarget as HTMLElement).querySelector<HTMLElement>(`#app-tab-${CSS.escape(enabled[n].value)}`)?.focus()
+    this.value.set(target.value)
+    ;(e.currentTarget as HTMLElement).querySelector<HTMLElement>(`#app-tab-${CSS.escape(target.value)}`)?.focus()
   }
 }

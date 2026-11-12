@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, ElementRef, input, model, viewChild } from '@angular/core'
+import { ChangeDetectionStrategy, Component, computed, type ElementRef, input, model, viewChild } from '@angular/core'
 import { NgIcon, provideIcons } from '@ng-icons/core'
 import { lucideCalendar } from '@ng-icons/lucide'
 
@@ -34,7 +34,17 @@ function ordinal(n: number) {
       <ng-icon name="lucideCalendar" class="size-4 shrink-0" />
       <span class="truncate">{{ label() || placeholder() }}</span>
     </button>
-    <input #native type="date" tabindex="-1" aria-hidden="true" class="pointer-events-none absolute inset-x-0 bottom-0 h-0 opacity-0" [value]="value()" [min]="min()" [max]="max()" (change)="value.set(native.value)" />
+    <input
+      #native
+      type="date"
+      tabindex="-1"
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-x-0 bottom-0 h-0 opacity-0"
+      [value]="value()"
+      [min]="min()"
+      [max]="max()"
+      (change)="value.set(native.value)"
+    />
   `,
 })
 export class DatePickerComponent {
@@ -51,7 +61,9 @@ export class DatePickerComponent {
   private readonly native = viewChild.required<ElementRef<HTMLInputElement>>('native')
   protected readonly label = computed(() => {
     const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(this.value())
-    return m ? `${MONTHS[+m[2] - 1]} ${ordinal(+m[3])}, ${m[1]}` : ''
+    if (!m) return ''
+    const [, year = '', month = '1', day = '1'] = m
+    return `${MONTHS[+month - 1]} ${ordinal(+day)}, ${year}`
   })
 
   protected openPicker() {

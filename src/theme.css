@@ -1,7 +1,9 @@
 /*
  * Theme: shadcn variables from the Figma "shadcn/ui components with variables" file,
  * collection `mode` (Light / Dark). Names are shadcn's own, so the mapping is 1:1.
- * Colors updated 2026-11 to the rebuilt Figma file (AngMCoShsZnEBQ4B1xMObF), collection `Color`.
+ * Brand and status colors come from the "Doctor Appoinment Design System" Figma file (9vmLsVzl4w2ZgPde9ZldZm):
+ * primary #12808f, ring #1ba0b2, destructive #e7000b, success #00a63e, warning #fe9a00, info #0ea5e9.
+ * Dark-mode brand and status values are derived from those (the Figma file was only read in Light mode).
  * Light is the default. Dark applies when an ancestor has the .dark class.
  */
 
@@ -15,43 +17,46 @@
   --card-foreground: #0a0a0a;
   --popover: #ffffff;
   --popover-foreground: #0a0a0a;
-  --primary: #171717;
-  --primary-foreground: #fafafa;
+  --primary: #12808f;
+  --primary-foreground: #ffffff;
   --secondary: #f5f5f5;
   --secondary-foreground: #171717;
   --muted: #f5f5f5;
   --muted-foreground: #525252;
   --accent: #f5f5f5;
   --accent-foreground: #171717;
-  --destructive: #171717;
+  --destructive: #e7000b;
   --destructive-subtle: rgb(231 0 11 / 0.1);
-  --text-destructive: #171717;
-  --warning-subtle: #f5f5f5;
-  --warning-border: #d4d4d4;
-  --text-warning: #171717;
+  --text-destructive: #e7000b;
+  --warning-subtle: rgb(254 154 0 / 0.1);
+  --warning-border: rgb(254 154 0 / 0.4);
+  --text-warning: #a35c00;
+  --brand-400: #38bccb;
+  --brand-500: #1ba0b2;
+  --brand-700: #136774;
   --border: #e5e5e5;
   --input: #e5e5e5;
-  --ring: #a3a3a3;
+  --ring: #1ba0b2;
 
-  --chart-1: #171717;
-  --chart-2: #404040;
-  --chart-3: #737373;
-  --chart-4: #a3a3a3;
-  --chart-5: #d4d4d4;
+  --chart-1: #12808f;
+  --chart-2: #1ba0b2;
+  --chart-3: #38bccb;
+  --chart-4: #136774;
+  --chart-5: #fe9a00;
 
   --sidebar: #fafafa;
   --sidebar-foreground: #0a0a0a;
-  --sidebar-primary: #171717;
-  --sidebar-primary-foreground: #fafafa;
+  --sidebar-primary: #12808f;
+  --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #f5f5f5;
   --sidebar-accent-foreground: #171717;
   --sidebar-border: #e5e5e5;
-  --sidebar-ring: #a3a3a3;
+  --sidebar-ring: #1ba0b2;
 
   /* Status colors from the Figma Color collection */
-  --success: #404040;
-  --warning: #737373;
-  --info: #525252;
+  --success: #00a63e;
+  --warning: #fe9a00;
+  --info: #0ea5e9;
 }
 
 .dark {
@@ -61,42 +66,42 @@
   --card-foreground: #fafafa;
   --popover: #171717;
   --popover-foreground: #fafafa;
-  --primary: #fafafa;
-  --primary-foreground: #171717;
+  --primary: #38bccb;
+  --primary-foreground: #0a0a0a;
   --secondary: #262626;
   --secondary-foreground: #fafafa;
   --muted: #262626;
   --muted-foreground: #a3a3a3;
   --accent: #262626;
   --accent-foreground: #fafafa;
-  --destructive: #fafafa;
+  --destructive: #ff6467;
   --destructive-subtle: rgb(255 127 110 / 0.2);
-  --text-destructive: #fafafa;
-  --warning-subtle: #262626;
-  --warning-border: #404040;
-  --text-warning: #fafafa;
+  --text-destructive: #ff6467;
+  --warning-subtle: rgb(254 154 0 / 0.15);
+  --warning-border: rgb(254 154 0 / 0.4);
+  --text-warning: #ffb900;
   --border: rgb(255 255 255 / 0.1);
   --input: rgb(255 255 255 / 0.15); /* as in Figma; low contrast on dark cards, see PLAN.md */
-  --ring: #737373;
+  --ring: #1ba0b2;
 
-  --chart-1: #fafafa;
-  --chart-2: #d4d4d4;
-  --chart-3: #a3a3a3;
-  --chart-4: #737373;
-  --chart-5: #525252;
+  --chart-1: #38bccb;
+  --chart-2: #1ba0b2;
+  --chart-3: #12808f;
+  --chart-4: #136774;
+  --chart-5: #ffb900;
 
   --sidebar: #171717;
   --sidebar-foreground: #fafafa;
-  --sidebar-primary: #fafafa;
-  --sidebar-primary-foreground: #171717;
+  --sidebar-primary: #38bccb;
+  --sidebar-primary-foreground: #0a0a0a;
   --sidebar-accent: #262626;
   --sidebar-accent-foreground: #fafafa;
   --sidebar-border: rgb(255 255 255 / 0.1);
-  --sidebar-ring: #737373;
+  --sidebar-ring: #1ba0b2;
 
-  --success: #d4d4d4;
-  --warning: #a3a3a3;
-  --info: #a3a3a3;
+  --success: #05df72;
+  --warning: #ffb900;
+  --info: #51a2ff;
 }
 
 /* Tailwind utilities: bg-primary, text-muted-foreground, border-border, rounded-md, ... */
@@ -126,6 +131,9 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-700: var(--brand-700);
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-info: var(--info);
@@ -167,7 +175,9 @@
 }
 
 @layer base {
-  * { border-color: var(--border); }
+  * {
+    border-color: var(--border);
+  }
   body {
     background: var(--background);
     color: var(--foreground);

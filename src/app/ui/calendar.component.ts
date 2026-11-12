@@ -13,9 +13,23 @@ const sameDay = (a: Date, b: Date) => a.getFullYear() === b.getFullYear() && a.g
   host: { class: 'bg-popover text-popover-foreground inline-flex w-fit flex-col gap-2 rounded-md border p-3' },
   template: `
     <div class="flex h-8 w-56 items-center justify-between">
-      <button type="button" class="border-input hover:bg-accent inline-flex size-7 items-center justify-center rounded-md border" aria-label="Previous month" (click)="shift(-1)"><ng-icon name="lucideChevronLeft" size="16" /></button>
+      <button
+        type="button"
+        class="border-input hover:bg-accent inline-flex size-7 items-center justify-center rounded-md border"
+        aria-label="Previous month"
+        (click)="shift(-1)"
+      >
+        <ng-icon name="lucideChevronLeft" size="16" />
+      </button>
       <span class="text-sm font-medium" aria-live="polite">{{ title() }}</span>
-      <button type="button" class="border-input hover:bg-accent inline-flex size-7 items-center justify-center rounded-md border" aria-label="Next month" (click)="shift(1)"><ng-icon name="lucideChevronRight" size="16" /></button>
+      <button
+        type="button"
+        class="border-input hover:bg-accent inline-flex size-7 items-center justify-center rounded-md border"
+        aria-label="Next month"
+        (click)="shift(1)"
+      >
+        <ng-icon name="lucideChevronRight" size="16" />
+      </button>
     </div>
     <div class="grid grid-cols-7" role="grid" [attr.aria-label]="title()">
       @for (d of weekdays; track d) {
@@ -31,7 +45,9 @@ const sameDay = (a: Date, b: Date) => a.getFullYear() === b.getFullYear() && a.g
           [attr.aria-selected]="c.selected"
           [attr.aria-current]="c.today ? 'date' : null"
           (click)="pick(c.date)"
-        >{{ c.date.getDate() }}</button>
+        >
+          {{ c.date.getDate() }}
+        </button>
       }
     </div>
   `,

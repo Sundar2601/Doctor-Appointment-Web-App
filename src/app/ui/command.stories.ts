@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/angular-vite'
 import { moduleMetadata } from '@storybook/angular-vite'
 import { ButtonDirective } from './button.directive'
-import { CommandComponent, CommandItem } from './command.component'
+import { CommandComponent, type CommandItem } from './command.component'
 import { DialogComponent } from './dialog.component'
 
 const items: CommandItem[] = [
@@ -21,7 +21,13 @@ const meta: Meta<CommandComponent> = {
   argTypes: { placeholder: { control: 'text' }, emptyText: { control: 'text' } },
   args: { items, placeholder: 'Type a command or search...', emptyText: 'No results found.' },
   render: (args) => ({
-    props: { ...args, last: '' , pick(i: CommandItem) { this['last'] = i.label } },
+    props: {
+      ...args,
+      last: '',
+      pick(i: CommandItem) {
+        this['last'] = i.label
+      },
+    },
     template: `
       <div class="max-w-md">
         <app-command [items]="items" [placeholder]="placeholder" [emptyText]="emptyText" (selected)="pick($event)" />

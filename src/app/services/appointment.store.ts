@@ -40,11 +40,13 @@ export class AppointmentStore {
   slots(doctorId: string, date: string): string[] {
     const doc = this.doctor(doctorId)
     if (!doc || !date) return []
-    const [y, m, d] = date.split('-').map(Number)
+    const [y = 0, m = 1, d = 1] = date.split('-').map(Number)
     const day = new Date(y, m - 1, d)
     if (!doc.days.includes(day.getDay())) return []
     const taken = new Set(
-      this.all().filter((a) => a.doctorId === doctorId && a.date === date && a.status !== 'Cancelled').map((a) => a.time),
+      this.all()
+        .filter((a) => a.doctorId === doctorId && a.date === date && a.status !== 'Cancelled')
+        .map((a) => a.time),
     )
     const now = new Date()
     const out: string[] = []

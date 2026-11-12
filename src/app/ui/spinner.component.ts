@@ -18,7 +18,11 @@ import { ChangeDetectionStrategy, Component, computed, input } from '@angular/co
     >
       <path d="M21 12a9 9 0 1 1-6.219-8.56" />
     </svg>
-    @if (label()) { <span>{{ label() }}</span> } @else { <span class="sr-only">Loading</span> }
+    @if (label()) {
+      <span>{{ label() }}</span>
+    } @else {
+      <span class="sr-only">Loading</span>
+    }
   `,
 })
 export class SpinnerComponent {

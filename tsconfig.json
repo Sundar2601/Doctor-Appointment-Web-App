@@ -11,7 +11,17 @@
     "isolatedModules": true,
     "lib": ["ES2022", "dom"],
     "types": [],
-    "paths": { "@/*": ["./src/app/*"] }
+    "paths": {
+      "@/*": ["./src/app/*"]
+    },
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true
   },
-  "angularCompilerOptions": { "strictTemplates": true, "strictInjectionParameters": true }
+  "angularCompilerOptions": {
+    "strictTemplates": true,
+    "strictInjectionParameters": true
+  }
 }

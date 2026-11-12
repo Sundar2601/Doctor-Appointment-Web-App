@@ -2,12 +2,22 @@ import type { Meta, StoryObj } from '@storybook/angular-vite'
 import { moduleMetadata } from '@storybook/angular-vite'
 import { TextareaDirective } from './textarea.directive'
 
-interface Args { placeholder: string; disabled: boolean; invalid: boolean; value: string }
+interface Args {
+  placeholder: string
+  disabled: boolean
+  invalid: boolean
+  value: string
+}
 
 const meta: Meta<Args> = {
   title: 'Forms/Textarea',
   decorators: [moduleMetadata({ imports: [TextareaDirective] })],
-  argTypes: { placeholder: { control: 'text' }, disabled: { control: 'boolean' }, invalid: { control: 'boolean' }, value: { control: 'text' } },
+  argTypes: {
+    placeholder: { control: 'text' },
+    disabled: { control: 'boolean' },
+    invalid: { control: 'boolean' },
+    value: { control: 'text' },
+  },
   args: { placeholder: 'Type your message here.', disabled: false, invalid: false, value: '' },
   render: (args) => ({
     props: args,

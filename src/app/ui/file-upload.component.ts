@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, input, output, signal } from '@angular/core'
 import { NgIcon, provideIcons } from '@ng-icons/core'
 import { lucideFile, lucideUpload, lucideX } from '@ng-icons/lucide'
+import { eventFiles } from './dom-events'
 
 /** Drag-and-drop / click file picker. Emits the chosen files. */
 @Component({
@@ -21,7 +22,7 @@ import { lucideFile, lucideUpload, lucideX } from '@ng-icons/lucide'
       <span class="text-sm font-medium">{{ label() }}</span>
       <span class="text-muted-foreground text-xs">{{ hint() }}</span>
       <span class="border-input bg-background rounded-md border px-3 py-1.5 text-sm font-medium shadow-xs">Browse files</span>
-      <input class="sr-only" type="file" [accept]="accept()" [multiple]="multiple()" (change)="take($any($event.target).files)" />
+      <input class="sr-only" type="file" [accept]="accept()" [multiple]="multiple()" (change)="take(eventFiles($event))" />
     </label>
     @if (files().length) {
       <ul class="mt-4 grid gap-2">
@@ -30,7 +31,14 @@ import { lucideFile, lucideUpload, lucideX } from '@ng-icons/lucide'
             <ng-icon name="lucideFile" size="20" class="shrink-0" />
             <span class="min-w-0 flex-1 truncate text-sm font-medium">{{ f.name }}</span>
             <span class="text-muted-foreground text-xs">{{ size(f.size) }}</span>
-            <button type="button" class="text-muted-foreground hover:text-foreground" [attr.aria-label]="'Remove ' + f.name" (click)="remove($index)"><ng-icon name="lucideX" size="16" /></button>
+            <button
+              type="button"
+              class="text-muted-foreground hover:text-foreground"
+              [attr.aria-label]="'Remove ' + f.name"
+              (click)="remove($index)"
+            >
+              <ng-icon name="lucideX" size="16" />
+            </button>
           </li>
         }
       </ul>
@@ -38,6 +46,7 @@ import { lucideFile, lucideUpload, lucideX } from '@ng-icons/lucide'
   `,
 })
 export class FileUploadComponent {
+  protected readonly eventFiles = eventFiles
   readonly label = input('Drag and drop files here')
   readonly hint = input('')
   readonly accept = input('')

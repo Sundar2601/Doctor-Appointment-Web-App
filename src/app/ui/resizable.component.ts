@@ -25,7 +25,9 @@ import { lucideGripVertical } from '@ng-icons/lucide'
       (pointerup)="dragging = false"
       (keydown)="key($event)"
     >
-      <span class="bg-border flex h-4 w-3 items-center justify-center rounded-xs border" [class.rotate-90]="!horizontal()"><ng-icon name="lucideGripVertical" size="10" /></span>
+      <span class="bg-border flex h-4 w-3 items-center justify-center rounded-xs border" [class.rotate-90]="!horizontal()"
+        ><ng-icon name="lucideGripVertical" size="10"
+      /></span>
     </div>
     <div class="min-h-0 min-w-0 flex-1 overflow-auto"><ng-content select="[pane2]" /></div>
   `,

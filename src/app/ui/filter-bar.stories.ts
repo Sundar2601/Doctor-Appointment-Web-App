@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular-vite'
 import { moduleMetadata } from '@storybook/angular-vite'
-import { FilterBarComponent, FilterOption } from './filter-bar.component'
+import { FilterBarComponent, type FilterOption } from './filter-bar.component'
 
 const filters: FilterOption[] = [
   { value: 'cardiology', label: 'Cardiology' },

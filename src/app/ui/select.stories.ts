@@ -2,7 +2,13 @@ import type { Meta, StoryObj } from '@storybook/angular-vite'
 import { moduleMetadata } from '@storybook/angular-vite'
 import { SelectComponent, type SelectOption } from './select.component'
 
-interface Args { options: SelectOption[]; value: string | null; placeholder: string; disabled: boolean; invalid: boolean }
+interface Args {
+  options: SelectOption[]
+  value: string | null
+  placeholder: string
+  disabled: boolean
+  invalid: boolean
+}
 
 const options: SelectOption[] = [
   { value: 'cardiology', label: 'Cardiology' },
@@ -14,7 +20,12 @@ const options: SelectOption[] = [
 const meta: Meta<Args> = {
   title: 'Forms/Select',
   decorators: [moduleMetadata({ imports: [SelectComponent] })],
-  argTypes: { value: { control: 'text' }, placeholder: { control: 'text' }, disabled: { control: 'boolean' }, invalid: { control: 'boolean' } },
+  argTypes: {
+    value: { control: 'text' },
+    placeholder: { control: 'text' },
+    disabled: { control: 'boolean' },
+    invalid: { control: 'boolean' },
+  },
   args: { options, value: null, placeholder: 'Select a specialty', disabled: false, invalid: false },
   render: (args) => ({
     props: args,

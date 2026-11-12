@@ -8,7 +8,10 @@ const meta: Meta<BannerComponent> = {
   decorators: [moduleMetadata({ imports: [BannerComponent, ButtonDirective] })],
   argTypes: { variant: { control: 'select', options: ['info', 'warning', 'success', 'destructive'] }, dismissible: { control: 'boolean' } },
   args: { variant: 'info', dismissible: true },
-  render: (args) => ({ props: args, template: `<app-banner [variant]="variant" [dismissible]="dismissible">Scheduled maintenance this Sunday from 2 to 4 AM.</app-banner>` }),
+  render: (args) => ({
+    props: args,
+    template: `<app-banner [variant]="variant" [dismissible]="dismissible">Scheduled maintenance this Sunday from 2 to 4 AM.</app-banner>`,
+  }),
 }
 export default meta
 type Story = StoryObj<BannerComponent>

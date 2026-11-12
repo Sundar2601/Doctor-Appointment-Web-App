@@ -13,7 +13,16 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core'
     @if (showMedia()) {
       <div class="bg-muted flex size-10 shrink-0 items-center justify-center rounded-sm">
         <ng-content select="[itemMedia]">
-          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg
+            class="size-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
             <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
             <path d="M14 2v4a2 2 0 0 0 2 2h4" />
           </svg>
@@ -22,7 +31,9 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core'
     }
     <div class="flex min-w-0 flex-1 flex-col gap-0.5 text-sm">
       <p class="text-foreground font-medium">{{ heading() }}</p>
-      @if (description()) { <p class="text-muted-foreground">{{ description() }}</p> }
+      @if (description()) {
+        <p class="text-muted-foreground">{{ description() }}</p>
+      }
       <ng-content />
     </div>
     <ng-content select="[itemActions]" />

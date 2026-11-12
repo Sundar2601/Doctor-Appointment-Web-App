@@ -1,5 +1,5 @@
 import { A11yModule } from '@angular/cdk/a11y'
-import { CdkConnectedOverlay, CdkOverlayOrigin, ConnectedPosition } from '@angular/cdk/overlay'
+import { CdkConnectedOverlay, CdkOverlayOrigin, type ConnectedPosition } from '@angular/cdk/overlay'
 import { ChangeDetectionStrategy, Component, computed, input, model } from '@angular/core'
 
 export type PopoverSide = 'bottom' | 'top'
@@ -10,9 +10,16 @@ let uid = 0
   selector: 'app-popover',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CdkConnectedOverlay, CdkOverlayOrigin, A11yModule],
-  host: { class: 'inline-block' },
+  host: { class: 'inline-block', '(click)': 'open.set(!open())' },
   template: `
-    <span cdkOverlayOrigin #origin="cdkOverlayOrigin" class="inline-flex" aria-haspopup="dialog" [attr.aria-expanded]="open()" [attr.aria-controls]="open() ? id : null" (click)="open.set(!open())">
+    <span
+      cdkOverlayOrigin
+      #origin="cdkOverlayOrigin"
+      class="inline-flex"
+      aria-haspopup="dialog"
+      [attr.aria-expanded]="open()"
+      [attr.aria-controls]="open() ? id : null"
+    >
       <ng-content select="[trigger]" />
     </span>
     <ng-template
@@ -24,7 +31,13 @@ let uid = 0
       (overlayKeydown)="$event.key === 'Escape' && open.set(false)"
       (detach)="open.set(false)"
     >
-      <div [id]="id" role="dialog" cdkTrapFocus cdkTrapFocusAutoCapture class="bg-popover text-popover-foreground w-72 rounded-md border p-4 shadow-md outline-none">
+      <div
+        [id]="id"
+        role="dialog"
+        cdkTrapFocus
+        cdkTrapFocusAutoCapture
+        class="bg-popover text-popover-foreground w-72 rounded-md border p-4 shadow-md outline-none"
+      >
         <ng-content />
       </div>
     </ng-template>

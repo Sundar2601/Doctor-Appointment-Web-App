@@ -1,4 +1,4 @@
-import { DialogConfig } from '@angular/cdk/dialog'
+import { type DialogConfig } from '@angular/cdk/dialog'
 import { Overlay } from '@angular/cdk/overlay'
 import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core'
 import { ButtonDirective } from './button.directive'
@@ -18,7 +18,7 @@ import { OverlayPanelBase } from './overlay.base'
           <p [id]="descId" class="text-muted-foreground text-sm">{{ description() }}</p>
         </header>
         <footer class="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
-          <button type="button" appButton variant="outline" (click)="cancel.emit(); close()">{{ cancelLabel() }}</button>
+          <button type="button" appButton variant="outline" (click)="cancelled.emit(); close()">{{ cancelLabel() }}</button>
           <button type="button" appButton (click)="confirm.emit(); close()">{{ confirmLabel() }}</button>
         </footer>
       </div>
@@ -29,10 +29,14 @@ export class AlertDialogComponent extends OverlayPanelBase {
   readonly confirmLabel = input('Continue')
   readonly cancelLabel = input('Cancel')
   readonly confirm = output<void>()
-  readonly cancel = output<void>()
+  readonly cancelled = output<void>()
   protected override readonly role = 'alertdialog' as const
   private readonly overlay = inject(Overlay)
   protected config(): DialogConfig {
-    return { width: '32rem', maxWidth: 'calc(100vw - 2rem)', positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically() }
+    return {
+      width: '32rem',
+      maxWidth: 'calc(100vw - 2rem)',
+      positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
+    }
   }
 }

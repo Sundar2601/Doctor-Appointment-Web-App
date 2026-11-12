@@ -29,7 +29,14 @@ const TONES: Record<BannerVariant, string> = {
     <div class="min-w-0 flex-1 text-sm"><ng-content /></div>
     <ng-content select="[bannerAction]" />
     @if (dismissible()) {
-      <button type="button" class="hover:bg-foreground/10 inline-flex size-6 items-center justify-center rounded-md" aria-label="Dismiss" (click)="closed.set(true)"><ng-icon name="lucideX" size="16" /></button>
+      <button
+        type="button"
+        class="hover:bg-foreground/10 inline-flex size-6 items-center justify-center rounded-md"
+        aria-label="Dismiss"
+        (click)="closed.set(true)"
+      >
+        <ng-icon name="lucideX" size="16" />
+      </button>
     }
   `,
 })

@@ -2,7 +2,7 @@ import { CdkContextMenuTrigger, CdkMenu, CdkMenuBar, CdkMenuItem, CdkMenuTrigger
 import { ChangeDetectionStrategy, Component, Directive, input, output } from '@angular/core'
 import { NgIcon, provideIcons } from '@ng-icons/core'
 import { lucideCheck } from '@ng-icons/lucide'
-import { ButtonDirective, ButtonVariant } from './button.directive'
+import { ButtonDirective, type ButtonVariant } from './button.directive'
 
 export interface MenuEntry {
   label?: string
@@ -17,7 +17,10 @@ export interface MenuEntry {
   /** Shows a check mark. */
   checked?: boolean
 }
-export interface MenubarMenu { label: string; entries: MenuEntry[] }
+export interface MenubarMenu {
+  label: string
+  entries: MenuEntry[]
+}
 
 /** Styled menu surface (CDK menu, role=menu, arrow-key navigation). */
 @Directive({
@@ -25,8 +28,7 @@ export interface MenubarMenu { label: string; entries: MenuEntry[] }
   hostDirectives: [CdkMenu],
   host: { class: 'bg-popover text-popover-foreground flex min-w-48 flex-col rounded-md border p-1 shadow-md outline-none' },
 })
-export class MenuPanelDirective {
-}
+export class MenuPanelDirective {}
 
 /** Renders `entries` as menu items; must sit inside an `appMenuPanel`. */
 @Component({
@@ -51,8 +53,12 @@ export class MenuPanelDirective {
           [class.text-destructive]="e.destructive"
         >
           <span class="flex-1">{{ e.label }}</span>
-          @if (e.checked) { <ng-icon name="lucideCheck" size="16" /> }
-          @if (e.shortcut) { <span class="text-muted-foreground ml-auto text-xs tracking-widest">{{ e.shortcut }}</span> }
+          @if (e.checked) {
+            <ng-icon name="lucideCheck" size="16" />
+          }
+          @if (e.shortcut) {
+            <span class="text-muted-foreground ml-auto text-xs tracking-widest">{{ e.shortcut }}</span>
+          }
         </button>
       }
     }
@@ -115,7 +121,9 @@ export class ContextMenuComponent {
           cdkMenuItem
           [cdkMenuTriggerFor]="menu"
           class="hover:bg-accent focus:bg-accent aria-expanded:bg-accent rounded-sm px-2 py-1 text-sm font-medium outline-none"
-        >{{ m.label }}</button>
+        >
+          {{ m.label }}
+        </button>
         <ng-template #menu>
           <div appMenuPanel><app-menu-entries [entries]="m.entries" (picked)="selected.emit($event)" /></div>
         </ng-template>

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular-vite'
 import { moduleMetadata } from '@storybook/angular-vite'
-import { Step, StepperComponent } from './stepper.component'
+import { type Step, StepperComponent } from './stepper.component'
 
 const steps: Step[] = [
   { title: 'Hospital', description: 'Choose a hospital' },

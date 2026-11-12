@@ -3,7 +3,11 @@ import { moduleMetadata } from '@storybook/angular-vite'
 import { CheckboxDirective } from './checkbox.directive'
 import { LabelDirective } from './label.directive'
 
-interface Args { checked: boolean; disabled: boolean; label: string }
+interface Args {
+  checked: boolean
+  disabled: boolean
+  label: string
+}
 
 const meta: Meta<Args> = {
   title: 'Forms/Checkbox',

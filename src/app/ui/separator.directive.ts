@@ -13,5 +13,7 @@ export type SeparatorOrientation = 'horizontal' | 'vertical'
 })
 export class SeparatorDirective {
   readonly orientation = input<SeparatorOrientation>('horizontal')
-  protected readonly classes = computed(() => `bg-border block shrink-0 ${this.orientation() === 'vertical' ? 'h-full w-px' : 'h-px w-full'}`)
+  protected readonly classes = computed(
+    () => `bg-border block shrink-0 ${this.orientation() === 'vertical' ? 'h-full w-px' : 'h-px w-full'}`,
+  )
 }

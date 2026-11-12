@@ -38,5 +38,11 @@ type Story = StoryObj<NavigationMenuComponent>
 
 export const Default: Story = {}
 export const LinksOnly: Story = {
-  args: { items: [{ label: 'Home', href: '/' }, { label: 'Doctors', href: '/doctors' }, { label: 'Contact', href: '/contact' }] },
+  args: {
+    items: [
+      { label: 'Home', href: '/' },
+      { label: 'Doctors', href: '/doctors' },
+      { label: 'Contact', href: '/contact' },
+    ],
+  },
 }

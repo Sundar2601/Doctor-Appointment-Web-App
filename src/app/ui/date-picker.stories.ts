@@ -2,14 +2,23 @@ import type { Meta, StoryObj } from '@storybook/angular-vite'
 import { moduleMetadata } from '@storybook/angular-vite'
 import { DatePickerComponent } from './date-picker.component'
 
-interface Args { value: string; placeholder: string; min: string; max: string; disabled: boolean }
+interface Args {
+  value: string
+  placeholder: string
+  min: string
+  max: string
+  disabled: boolean
+}
 
 const meta: Meta<Args> = {
   title: 'Forms/Date Picker',
   decorators: [moduleMetadata({ imports: [DatePickerComponent] })],
   argTypes: {
-    value: { control: 'text', description: 'ISO date (yyyy-mm-dd)' }, placeholder: { control: 'text' },
-    min: { control: 'text' }, max: { control: 'text' }, disabled: { control: 'boolean' },
+    value: { control: 'text', description: 'ISO date (yyyy-mm-dd)' },
+    placeholder: { control: 'text' },
+    min: { control: 'text' },
+    max: { control: 'text' },
+    disabled: { control: 'boolean' },
   },
   args: { value: '', placeholder: 'Pick a date', min: '', max: '', disabled: false },
   render: (args) => ({

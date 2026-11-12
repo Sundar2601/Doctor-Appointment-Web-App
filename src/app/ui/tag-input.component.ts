@@ -8,15 +8,27 @@ import { lucideX } from '@ng-icons/lucide'
   imports: [NgIcon],
   viewProviders: [provideIcons({ lucideX })],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'border-input bg-background focus-within:outline-ring flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border p-1.5 focus-within:outline-2 focus-within:outline-offset-1' },
+  host: {
+    class:
+      'border-input bg-background focus-within:outline-ring flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border p-1.5 focus-within:outline-2 focus-within:outline-offset-1',
+  },
   template: `
     @for (t of tags(); track t) {
       <span class="bg-secondary text-secondary-foreground inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-xs font-medium">
         {{ t }}
-        <button type="button" class="hover:text-foreground text-muted-foreground" [attr.aria-label]="'Remove ' + t" (click)="remove(t)"><ng-icon name="lucideX" size="12" /></button>
+        <button type="button" class="hover:text-foreground text-muted-foreground" [attr.aria-label]="'Remove ' + t" (click)="remove(t)">
+          <ng-icon name="lucideX" size="12" />
+        </button>
       </span>
     }
-    <input #i class="placeholder:text-muted-foreground min-w-24 flex-1 bg-transparent text-sm outline-none" [placeholder]="tags().length ? '' : placeholder()" [attr.aria-label]="placeholder()" (keydown)="key($event, i)" (blur)="add(i.value); i.value = ''" />
+    <input
+      #i
+      class="placeholder:text-muted-foreground min-w-24 flex-1 bg-transparent text-sm outline-none"
+      [placeholder]="tags().length ? '' : placeholder()"
+      [attr.aria-label]="placeholder()"
+      (keydown)="key($event, i)"
+      (blur)="add(i.value); i.value = ''"
+    />
   `,
 })
 export class TagInputComponent {

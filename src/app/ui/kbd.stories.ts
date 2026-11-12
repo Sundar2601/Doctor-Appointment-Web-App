@@ -2,7 +2,9 @@ import type { Meta, StoryObj } from '@storybook/angular-vite'
 import { moduleMetadata } from '@storybook/angular-vite'
 import { KbdDirective } from './kbd.directive'
 
-interface Args { keys: string }
+interface Args {
+  keys: string
+}
 
 const meta: Meta<Args> = {
   title: 'Display/Kbd',
@@ -16,5 +18,7 @@ type Story = StoryObj<Args>
 
 export const Default: Story = {}
 export const Combination: Story = {
-  render: () => ({ template: `<div class="flex items-center gap-1"><kbd appKbd>Ctrl</kbd><span>+</span><kbd appKbd>Shift</kbd><span>+</span><kbd appKbd>P</kbd></div>` }),
+  render: () => ({
+    template: `<div class="flex items-center gap-1"><kbd appKbd>Ctrl</kbd><span>+</span><kbd appKbd>Shift</kbd><span>+</span><kbd appKbd>P</kbd></div>`,
+  }),
 }

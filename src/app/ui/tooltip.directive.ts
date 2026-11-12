@@ -1,6 +1,6 @@
-import { Overlay, OverlayRef } from '@angular/cdk/overlay'
+import { Overlay, type OverlayRef } from '@angular/cdk/overlay'
 import { ComponentPortal } from '@angular/cdk/portal'
-import { ChangeDetectionStrategy, Component, Directive, ElementRef, inject, input, OnDestroy, signal } from '@angular/core'
+import { ChangeDetectionStrategy, Component, Directive, ElementRef, inject, input, type OnDestroy, signal } from '@angular/core'
 
 export type TooltipPosition = 'top' | 'bottom' | 'left' | 'right'
 let nextId = 0

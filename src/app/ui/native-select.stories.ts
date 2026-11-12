@@ -2,7 +2,10 @@ import type { Meta, StoryObj } from '@storybook/angular-vite'
 import { moduleMetadata } from '@storybook/angular-vite'
 import { NativeSelectComponent } from './native-select.component'
 
-interface Args { disabled: boolean; invalid: boolean }
+interface Args {
+  disabled: boolean
+  invalid: boolean
+}
 
 const meta: Meta<Args> = {
   title: 'Forms/Native Select',

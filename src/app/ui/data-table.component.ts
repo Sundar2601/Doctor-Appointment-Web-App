@@ -23,7 +23,15 @@ export type DataTableRow = Record<string, string | number>
   host: { class: 'flex flex-col gap-4' },
   template: `
     @if (filterKey()) {
-      <input appControl class="max-w-[280px]" type="search" [placeholder]="filterPlaceholder()" [attr.aria-label]="filterPlaceholder()" [value]="filter()" (input)="setFilter($event)" />
+      <input
+        appControl
+        class="max-w-[280px]"
+        type="search"
+        [placeholder]="filterPlaceholder()"
+        [attr.aria-label]="filterPlaceholder()"
+        [value]="filter()"
+        (input)="setFilter($event)"
+      />
     }
     <div class="overflow-hidden rounded-md border">
       <table appTable>
@@ -61,18 +69,28 @@ export type DataTableRow = Record<string, string | number>
               }
             </tr>
           } @empty {
-            <tr><td class="text-muted-foreground text-center" [attr.colspan]="columns().length + (selectable() ? 1 : 0)">No results.</td></tr>
+            <tr>
+              <td class="text-muted-foreground text-center" [attr.colspan]="columns().length + (selectable() ? 1 : 0)">No results.</td>
+            </tr>
           }
         </tbody>
       </table>
     </div>
     <div class="flex items-center justify-between">
       <p class="text-muted-foreground text-sm">
-        @if (selectable()) { {{ selected().size }} of {{ rows().length }} row(s) selected. } @else { {{ view().length }} row(s). }
+        @if (selectable()) {
+          {{ selected().size }} of {{ rows().length }} row(s) selected.
+        } @else {
+          {{ view().length }} row(s).
+        }
       </p>
       <div class="flex gap-2">
-        <button appButton variant="outline" size="sm" type="button" [disabled]="page() === 0" (click)="page.set(page() - 1)">Previous</button>
-        <button appButton variant="outline" size="sm" type="button" [disabled]="page() >= pageCount() - 1" (click)="page.set(page() + 1)">Next</button>
+        <button appButton variant="outline" size="sm" type="button" [disabled]="page() === 0" (click)="page.set(page() - 1)">
+          Previous
+        </button>
+        <button appButton variant="outline" size="sm" type="button" [disabled]="page() >= pageCount() - 1" (click)="page.set(page() + 1)">
+          Next
+        </button>
       </div>
     </div>
   `,
@@ -97,13 +115,21 @@ export class DataTableComponent {
     const key = this.filterKey()
     const q = this.filter().toLowerCase()
     let list = this.rows().map((row, index) => ({ row, index }))
-    if (key && q) list = list.filter((r) => String(r.row[key] ?? '').toLowerCase().includes(q))
+    if (key && q)
+      list = list.filter((r) =>
+        String(r.row[key] ?? '')
+          .toLowerCase()
+          .includes(q),
+      )
     const s = this.sort()
     if (s) {
       const m = s.dir === 'asc' ? 1 : -1
       list = [...list].sort((a, b) => {
-        const x = a.row[s.key], y = b.row[s.key]
-        return (typeof x === 'number' && typeof y === 'number' ? x - y : String(x).localeCompare(String(y), undefined, { numeric: true })) * m
+        const x = a.row[s.key],
+          y = b.row[s.key]
+        return (
+          (typeof x === 'number' && typeof y === 'number' ? x - y : String(x).localeCompare(String(y), undefined, { numeric: true })) * m
+        )
       })
     }
     return list
@@ -139,7 +165,10 @@ export class DataTableComponent {
   protected toggleAll() {
     const next = new Set(this.selected())
     const all = this.allSelected()
-    for (const r of this.pageRows()) all ? next.delete(r.index) : next.add(r.index)
+    for (const r of this.pageRows()) {
+      if (all) next.delete(r.index)
+      else next.add(r.index)
+    }
     this.commit(next)
   }
   private commit(next: Set<number>) {

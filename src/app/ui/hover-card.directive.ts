@@ -1,6 +1,16 @@
-import { Overlay, OverlayRef } from '@angular/cdk/overlay'
+import { Overlay, type OverlayRef } from '@angular/cdk/overlay'
 import { TemplatePortal } from '@angular/cdk/portal'
-import { ChangeDetectionStrategy, Component, Directive, ElementRef, inject, input, OnDestroy, TemplateRef, ViewContainerRef } from '@angular/core'
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Directive,
+  ElementRef,
+  inject,
+  input,
+  type OnDestroy,
+  type TemplateRef,
+  ViewContainerRef,
+} from '@angular/core'
 
 /** The card surface (Figma "Hover Card"): popover bg, border, shadow, 320px wide. Put it inside the `ng-template` given to `appHoverCard`. */
 @Component({
@@ -18,7 +28,13 @@ export class HoverCardComponent {}
  */
 @Directive({
   selector: '[appHoverCard]',
-  host: { '(mouseenter)': 'schedule(true)', '(mouseleave)': 'schedule(false)', '(focusin)': 'schedule(true)', '(focusout)': 'schedule(false)', '(keydown.escape)': 'close()' },
+  host: {
+    '(mouseenter)': 'schedule(true)',
+    '(mouseleave)': 'schedule(false)',
+    '(focusin)': 'schedule(true)',
+    '(focusout)': 'schedule(false)',
+    '(keydown.escape)': 'close()',
+  },
 })
 export class HoverCardDirective implements OnDestroy {
   readonly hoverCardContent = input.required<TemplateRef<unknown>>()
@@ -46,8 +62,20 @@ export class HoverCardDirective implements OnDestroy {
           .position()
           .flexibleConnectedTo(this.host)
           .withPositions([
-            { originX: 'center', originY: below ? 'bottom' : 'top', overlayX: 'center', overlayY: below ? 'top' : 'bottom', offsetY: below ? 8 : -8 },
-            { originX: 'center', originY: below ? 'top' : 'bottom', overlayX: 'center', overlayY: below ? 'bottom' : 'top', offsetY: below ? -8 : 8 },
+            {
+              originX: 'center',
+              originY: below ? 'bottom' : 'top',
+              overlayX: 'center',
+              overlayY: below ? 'top' : 'bottom',
+              offsetY: below ? 8 : -8,
+            },
+            {
+              originX: 'center',
+              originY: below ? 'top' : 'bottom',
+              overlayX: 'center',
+              overlayY: below ? 'bottom' : 'top',
+              offsetY: below ? -8 : 8,
+            },
           ]),
         scrollStrategy: this.overlay.scrollStrategies.close(),
       })

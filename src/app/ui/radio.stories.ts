@@ -3,7 +3,10 @@ import { moduleMetadata } from '@storybook/angular-vite'
 import { LabelDirective } from './label.directive'
 import { RadioDirective } from './radio.directive'
 
-interface Args { disabled: boolean; selected: string }
+interface Args {
+  disabled: boolean
+  selected: string
+}
 
 const meta: Meta<Args> = {
   title: 'Forms/Radio',

@@ -19,7 +19,10 @@ export class ParagraphDirective {}
 @Directive({ selector: '[appBlockquote]', host: { class: 'text-foreground border-border border-l-2 pl-4 text-base leading-6' } })
 export class BlockquoteDirective {}
 
-@Directive({ selector: '[appInlineCode]', host: { class: 'bg-muted text-foreground rounded-sm px-1.5 py-0.5 font-mono text-[13px] leading-5' } })
+@Directive({
+  selector: '[appInlineCode]',
+  host: { class: 'bg-muted text-foreground rounded-sm px-1.5 py-0.5 font-mono text-[13px] leading-5' },
+})
 export class InlineCodeDirective {}
 
 @Directive({ selector: '[appMuted]', host: { class: 'text-muted-foreground text-sm leading-5' } })

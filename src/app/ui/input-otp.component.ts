@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, ElementRef, input, model, signal, viewChild } from '@angular/core'
+import { ChangeDetectionStrategy, Component, computed, type ElementRef, input, model, signal, viewChild } from '@angular/core'
 
 /**
  * Figma "Input OTP": N 36px slots, optional separator, backed by one real (transparent) input
@@ -14,8 +14,12 @@ import { ChangeDetectionStrategy, Component, computed, ElementRef, input, model,
       <div
         class="border-input bg-background data-[active=true]:border-ring data-[active=true]:outline-ring/50 flex size-9 items-center justify-center rounded-md border text-sm shadow-xs data-[active=true]:outline-3"
         [attr.data-active]="focused() && s === active()"
-      >{{ value()[s] ?? '' }}</div>
-      @if (separatorAfter() === s + 1 && s + 1 < length()) { <span class="text-muted-foreground text-sm" aria-hidden="true">–</span> }
+      >
+        {{ value()[s] ?? '' }}
+      </div>
+      @if (separatorAfter() === s + 1 && s + 1 < length()) {
+        <span class="text-muted-foreground text-sm" aria-hidden="true">–</span>
+      }
     }
     <input
       #field

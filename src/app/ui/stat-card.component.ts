@@ -20,7 +20,9 @@ import { lucideArrowDown, lucideArrowUp } from '@ng-icons/lucide'
       }
     </div>
     <p class="text-3xl font-bold">{{ value() }}</p>
-    @if (hint()) { <p class="text-muted-foreground text-sm">{{ hint() }}</p> }
+    @if (hint()) {
+      <p class="text-muted-foreground text-sm">{{ hint() }}</p>
+    }
   `,
 })
 export class StatCardComponent {

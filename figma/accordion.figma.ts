@@ -11,7 +11,7 @@ const open = instance.getEnum('Open', {
   true: true,
 })
 const body = instance.findText('Yes. It adheres to the WAI-ARIA design pattern.')
-const content = open ?body.textContent : ''
+const content = open ? body.textContent : ''
 
 export default {
   example: open

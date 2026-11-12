@@ -10,7 +10,11 @@ export interface SegmentOption {
 @Component({
   selector: 'app-segmented-control',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'bg-muted text-muted-foreground inline-flex h-9 items-center rounded-lg p-0.75', role: 'radiogroup', '[attr.aria-label]': 'label()' },
+  host: {
+    class: 'bg-muted text-muted-foreground inline-flex h-9 items-center rounded-lg p-0.75',
+    role: 'radiogroup',
+    '[attr.aria-label]': 'label()',
+  },
   template: `
     @for (o of options(); track o.value) {
       <button
@@ -23,7 +27,9 @@ export interface SegmentOption {
         [disabled]="o.disabled"
         (click)="value.set(o.value)"
         (keydown)="key($event, $index)"
-      >{{ o.label }}</button>
+      >
+        {{ o.label }}
+      </button>
     }
   `,
 })
@@ -38,7 +44,7 @@ export class SegmentedControlComponent {
     const o = this.options()
     for (let n = 1; n <= o.length; n++) {
       const t = o[(i + d * n + o.length * n) % o.length]
-      if (!t.disabled) {
+      if (t && !t.disabled) {
         this.value.set(t.value)
         ;((e.currentTarget as HTMLElement).parentElement?.children[o.indexOf(t)] as HTMLElement | undefined)?.focus()
         return

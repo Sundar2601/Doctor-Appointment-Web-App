@@ -28,7 +28,11 @@ export interface TreeNode {
               [style.padding-left.px]="8 + level * 16"
               (click)="activate(n)"
             >
-              @if (n.children) { <ng-icon [name]="isOpen(n.id) ? 'lucideChevronDown' : 'lucideChevronRight'" size="16" /> } @else { <span class="size-4 shrink-0"></span> }
+              @if (n.children) {
+                <ng-icon [name]="isOpen(n.id) ? 'lucideChevronDown' : 'lucideChevronRight'" size="16" />
+              } @else {
+                <span class="size-4 shrink-0"></span>
+              }
               <ng-icon [name]="n.children ? 'lucideFolder' : 'lucideFile'" size="16" />
               <span class="truncate">{{ n.label }}</span>
             </button>

@@ -1,5 +1,5 @@
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay'
-import { ChangeDetectionStrategy, Component, computed, ElementRef, input, model, signal, viewChild } from '@angular/core'
+import { ChangeDetectionStrategy, Component, computed, type ElementRef, input, model, signal, viewChild } from '@angular/core'
 import { NgIcon, provideIcons } from '@ng-icons/core'
 import { lucideCheck, lucideChevronDown } from '@ng-icons/lucide'
 
@@ -31,6 +31,7 @@ export interface SelectOption {
       [id]="id()"
       [disabled]="disabled()"
       [attr.aria-expanded]="open()"
+      [attr.aria-controls]="open() ? id() + '-list' : null"
       [attr.aria-invalid]="invalid() || null"
       [attr.aria-label]="ariaLabel()"
       [attr.aria-activedescendant]="open() && active() >= 0 ? id() + '-opt-' + active() : null"
@@ -41,8 +42,20 @@ export interface SelectOption {
       <span class="truncate" [class.text-muted-foreground]="!selected()">{{ selected()?.label ?? placeholder() }}</span>
       <ng-icon name="lucideChevronDown" class="text-muted-foreground size-4 shrink-0" />
     </button>
-    <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="origin" [cdkConnectedOverlayOpen]="open()" [cdkConnectedOverlayMinWidth]="width()" (overlayOutsideClick)="close()" (detach)="open.set(false)">
-      <div role="listbox" [attr.aria-labelledby]="id()" class="bg-popover text-popover-foreground mt-1 max-h-60 overflow-auto rounded-md border p-1 shadow-md">
+    <ng-template
+      cdkConnectedOverlay
+      [cdkConnectedOverlayOrigin]="origin"
+      [cdkConnectedOverlayOpen]="open()"
+      [cdkConnectedOverlayMinWidth]="width()"
+      (overlayOutsideClick)="close()"
+      (detach)="open.set(false)"
+    >
+      <div
+        role="listbox"
+        [id]="id() + '-list'"
+        [attr.aria-labelledby]="id()"
+        class="bg-popover text-popover-foreground mt-1 max-h-60 overflow-auto rounded-md border p-1 shadow-md"
+      >
         @for (o of options(); track o.value; let i = $index) {
           <div
             role="option"
@@ -52,11 +65,15 @@ export interface SelectOption {
             class="flex cursor-pointer items-center justify-between rounded-sm px-2 py-1.5 text-sm aria-disabled:pointer-events-none aria-disabled:opacity-50"
             [class.bg-accent]="i === active()"
             [class.text-accent-foreground]="i === active()"
+            tabindex="-1"
             (mouseenter)="active.set(i)"
             (click)="pick(o)"
+            (keydown.enter)="pick(o)"
           >
             {{ o.label }}
-            @if (o.value === value()) { <ng-icon name="lucideCheck" class="size-4" /> }
+            @if (o.value === value()) {
+              <ng-icon name="lucideCheck" class="size-4" />
+            }
           </div>
         }
       </div>
@@ -80,11 +97,17 @@ export class SelectComponent {
   protected readonly selected = computed(() => this.options().find((o) => o.value === this.value()))
 
   protected toggle() {
-    this.open() ? this.close() : this.show()
+    if (this.open()) this.close()
+    else this.show()
   }
   private show() {
     this.width.set(this.trigger().nativeElement.offsetWidth)
-    this.active.set(Math.max(0, this.options().findIndex((o) => o.value === this.value())))
+    this.active.set(
+      Math.max(
+        0,
+        this.options().findIndex((o) => o.value === this.value()),
+      ),
+    )
     this.open.set(true)
   }
   protected close() {
@@ -99,7 +122,7 @@ export class SelectComponent {
   private move(dir: 1 | -1, from = this.active()) {
     const opts = this.options()
     for (let i = from + dir; i >= 0 && i < opts.length; i += dir) {
-      if (!opts[i].disabled) return this.active.set(i)
+      if (!opts[i]?.disabled) return this.active.set(i)
     }
   }
   protected onKey(e: KeyboardEvent) {
@@ -111,10 +134,16 @@ export class SelectComponent {
         else this.move(e.key === 'ArrowDown' ? 1 : -1)
         break
       case 'Home':
-        if (this.open()) { e.preventDefault(); this.move(1, -1) }
+        if (this.open()) {
+          e.preventDefault()
+          this.move(1, -1)
+        }
         break
       case 'End':
-        if (this.open()) { e.preventDefault(); this.move(-1, this.options().length) }
+        if (this.open()) {
+          e.preventDefault()
+          this.move(-1, this.options().length)
+        }
         break
       case 'Enter':
       case ' ':

@@ -9,6 +9,7 @@ import { ChangeDetectionStrategy, Component, computed, input } from '@angular/co
 export class AlertComponent {
   readonly tone = input<'danger' | 'success'>('danger')
   protected readonly classes = computed(
-    () => `rounded-md border px-3 py-2 text-sm ${this.tone() === 'danger' ? 'border-foreground bg-background text-foreground' : 'bg-muted text-foreground'}`,
+    () =>
+      `rounded-md border px-3 py-2 text-sm ${this.tone() === 'danger' ? 'border-destructive bg-destructive/10' : 'border-success bg-success/10'} text-foreground`,
   )
 }

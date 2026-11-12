@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular-vite'
 import { moduleMetadata } from '@storybook/angular-vite'
-import { ContextMenuComponent, DropdownMenuComponent, MenubarComponent, MenuEntry } from './menu.component'
+import { ContextMenuComponent, DropdownMenuComponent, MenubarComponent, type MenuEntry } from './menu.component'
 
 const entries: MenuEntry[] = [
   { heading: true, label: 'My account' },
@@ -24,7 +24,13 @@ export const Dropdown: Story = {
   args: { label: 'Open menu', variant: 'outline', entries },
   argTypes: { variant: { control: 'select', options: ['primary', 'outline', 'ghost', 'link'] } },
   render: (args) => ({
-    props: { ...args, last: '' , pick(e: MenuEntry) { this['last'] = e.label ?? '' } },
+    props: {
+      ...args,
+      last: '',
+      pick(e: MenuEntry) {
+        this['last'] = e.label ?? ''
+      },
+    },
     template: `
       <app-dropdown-menu [label]="label" [variant]="variant" [entries]="entries" (selected)="pick($event)" />
       <p class="mt-4 text-sm">Last selected: {{ last || 'none' }}</p>
@@ -47,9 +53,29 @@ export const ContextMenu: Story = {
 export const Menubar: Story = {
   args: {
     menus: [
-      { label: 'File', entries: [{ label: 'New appointment', value: 'new', shortcut: 'Ctrl+N' }, { label: 'Export', value: 'export' }, { separator: true }, { label: 'Quit', value: 'quit', destructive: true }] },
-      { label: 'View', entries: [{ label: 'Show sidebar', value: 'sidebar', checked: true }, { label: 'Compact mode', value: 'compact' }] },
-      { label: 'Help', entries: [{ label: 'Documentation', value: 'docs' }, { label: 'About', value: 'about' }] },
+      {
+        label: 'File',
+        entries: [
+          { label: 'New appointment', value: 'new', shortcut: 'Ctrl+N' },
+          { label: 'Export', value: 'export' },
+          { separator: true },
+          { label: 'Quit', value: 'quit', destructive: true },
+        ],
+      },
+      {
+        label: 'View',
+        entries: [
+          { label: 'Show sidebar', value: 'sidebar', checked: true },
+          { label: 'Compact mode', value: 'compact' },
+        ],
+      },
+      {
+        label: 'Help',
+        entries: [
+          { label: 'Documentation', value: 'docs' },
+          { label: 'About', value: 'about' },
+        ],
+      },
     ],
   },
   render: (args) => ({ props: args, template: `<app-menubar [menus]="menus" />` }),

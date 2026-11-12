@@ -15,7 +15,16 @@ const meta: Meta = {
   title: 'Display/Typography',
   decorators: [
     moduleMetadata({
-      imports: [H1Directive, H2Directive, H3Directive, LeadDirective, ParagraphDirective, BlockquoteDirective, InlineCodeDirective, MutedDirective],
+      imports: [
+        H1Directive,
+        H2Directive,
+        H3Directive,
+        LeadDirective,
+        ParagraphDirective,
+        BlockquoteDirective,
+        InlineCodeDirective,
+        MutedDirective,
+      ],
     }),
   ],
 }

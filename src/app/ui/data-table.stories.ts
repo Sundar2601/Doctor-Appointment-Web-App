@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular-vite'
 import { moduleMetadata } from '@storybook/angular-vite'
-import { DataTableColumn, DataTableComponent, DataTableRow } from './data-table.component'
+import { type DataTableColumn, DataTableComponent, type DataTableRow } from './data-table.component'
 
 const columns: DataTableColumn[] = [
   { key: 'doctor', label: 'Doctor', sortable: true },

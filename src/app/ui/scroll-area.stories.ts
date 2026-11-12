@@ -10,8 +10,16 @@ export default meta
 type Story = StoryObj<ScrollAreaComponent>
 
 const doctors = [
-  'Dr. Anand Kumar', 'Dr. Meera Nair', 'Dr. Suresh Babu', 'Dr. Kavitha Rajan', 'Dr. Vikram Iyer',
-  'Dr. Divya Lakshmanan', 'Dr. Ramesh Chandran', 'Dr. Sangeetha Pillai', 'Dr. Arjun Menon', 'Dr. Nandini Rao',
+  'Dr. Anand Kumar',
+  'Dr. Meera Nair',
+  'Dr. Suresh Babu',
+  'Dr. Kavitha Rajan',
+  'Dr. Vikram Iyer',
+  'Dr. Divya Lakshmanan',
+  'Dr. Ramesh Chandran',
+  'Dr. Sangeetha Pillai',
+  'Dr. Arjun Menon',
+  'Dr. Nandini Rao',
 ]
 
 export const DoctorList: Story = {

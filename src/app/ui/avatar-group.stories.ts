@@ -6,7 +6,11 @@ const meta: Meta<AvatarGroupComponent> = {
   title: 'Display/Avatar Group',
   decorators: [moduleMetadata({ imports: [AvatarGroupComponent] })],
   argTypes: { names: { control: 'object' }, max: { control: 'number' }, size: { control: 'select', options: ['sm', 'md', 'lg'] } },
-  args: { names: ['Ada Lovelace', 'Grace Hopper', 'Alan Turing', 'Linus Torvalds', 'Margaret Hamilton', 'Dennis Ritchie'], max: 4, size: 'md' },
+  args: {
+    names: ['Ada Lovelace', 'Grace Hopper', 'Alan Turing', 'Linus Torvalds', 'Margaret Hamilton', 'Dennis Ritchie'],
+    max: 4,
+    size: 'md',
+  },
   render: (args) => ({ props: args, template: `<app-avatar-group [names]="names" [max]="max" [size]="size" />` }),
 }
 export default meta

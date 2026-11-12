@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, inject, input, signal } f
 import { AuthService } from '@/services/auth.service'
 import { AppointmentStore } from '@/services/appointment.store'
 import { addDays, money } from '@/data/data'
-import { AlertComponent, ButtonDirective, CardComponent, ControlDirective, FieldComponent, PageHeaderComponent } from '@/ui'
+import { AlertComponent, ButtonDirective, CardComponent, ControlDirective, FieldComponent, PageHeaderComponent, eventValue } from '@/ui'
 
 @Component({
   selector: 'app-book-page',
@@ -14,35 +14,51 @@ import { AlertComponent, ButtonDirective, CardComponent, ControlDirective, Field
       <app-card class="lg:col-span-2">
         <form class="grid gap-4" (submit)="$event.preventDefault(); submit()">
           <app-field label="Hospital" for="hosp">
-            <select id="hosp" appControl (change)="hospital.set($any($event.target).value); pick(doctorOptions()[0]?.id ?? '')">
+            <select id="hosp" appControl (change)="hospital.set(eventValue($event)); pick(doctorOptions()[0]?.id ?? '')">
               <option value="">All hospitals</option>
-              @for (h of store.hospitals; track h.id) { <option [value]="h.id" [selected]="h.id === hospital()">{{ h.name }} ({{ h.area }})</option> }
+              @for (h of store.hospitals; track h.id) {
+                <option [value]="h.id" [selected]="h.id === hospital()">{{ h.name }} ({{ h.area }})</option>
+              }
             </select>
           </app-field>
           <app-field label="Doctor" for="doc">
-            <select id="doc" appControl (change)="pick($any($event.target).value)">
-              @for (d of doctorOptions(); track d.id) { <option [value]="d.id" [selected]="d.id === doctorId()">{{ d.name }} — {{ d.specialty }}</option> }
+            <select id="doc" appControl (change)="pick(eventValue($event))">
+              @for (d of doctorOptions(); track d.id) {
+                <option [value]="d.id" [selected]="d.id === doctorId()">{{ d.name }} — {{ d.specialty }}</option>
+              }
             </select>
           </app-field>
           <app-field label="Date" for="date">
-            <input id="date" appControl type="date" [min]="today" [value]="date()" (input)="date.set($any($event.target).value); time.set('')" />
+            <input id="date" appControl type="date" [min]="today" [value]="date()" (input)="date.set(eventValue($event)); time.set('')" />
           </app-field>
           <app-field label="Patient name" for="name">
-            <input id="name" appControl placeholder="Full name" [value]="patient()" (input)="patient.set($any($event.target).value)" />
+            <input id="name" appControl placeholder="Full name" [value]="patient()" (input)="patient.set(eventValue($event))" />
           </app-field>
           <app-field label="Reason for visit" for="reason">
-            <input id="reason" appControl placeholder="e.g. Annual check-up" [value]="reason()" (input)="reason.set($any($event.target).value)" />
+            <input id="reason" appControl placeholder="e.g. Annual check-up" [value]="reason()" (input)="reason.set(eventValue($event))" />
           </app-field>
           <button appButton class="w-full" type="submit" [disabled]="!canSubmit()">Confirm booking</button>
-          @if (error()) { <app-alert>{{ error() }}</app-alert> }
-          @if (confirmed()) { <app-alert tone="success">Booked {{ confirmed() }}. See it under Appointments.</app-alert> }
+          @if (error()) {
+            <app-alert>{{ error() }}</app-alert>
+          }
+          @if (confirmed()) {
+            <app-alert tone="success">Booked {{ confirmed() }}. See it under Appointments.</app-alert>
+          }
         </form>
       </app-card>
 
       <app-card class="lg:col-span-3" heading="Available times" [description]="summary()">
         <div class="grid grid-cols-3 gap-2 sm:grid-cols-4">
           @for (t of slots(); track t) {
-            <button appButton type="button" [variant]="t === time() ? 'primary' : 'outline'" [attr.aria-pressed]="t === time()" (click)="time.set(t)">{{ t }}</button>
+            <button
+              appButton
+              type="button"
+              [variant]="t === time() ? 'primary' : 'outline'"
+              [attr.aria-pressed]="t === time()"
+              (click)="time.set(t)"
+            >
+              {{ t }}
+            </button>
           } @empty {
             <p class="text-muted-foreground col-span-full text-sm">No free slots on this date. Try another day.</p>
           }
@@ -52,27 +68,31 @@ import { AlertComponent, ButtonDirective, CardComponent, ControlDirective, Field
   `,
 })
 export class BookPage {
+  protected readonly eventValue = eventValue
   protected readonly store = inject(AppointmentStore)
   protected readonly money = money
   /** Bound from the ?doctor= query param. */
-  readonly doctor_ = input<string>(undefined, { alias: 'doctor' })
+  readonly doctor = input<string>()
   protected readonly today = addDays(0)
   protected readonly picked = signal('')
   protected readonly hospital = signal('')
   protected readonly doctorOptions = computed(() => this.store.doctors.filter((d) => !this.hospital() || d.hospitalId === this.hospital()))
   protected readonly doctorId = computed(() => {
     const opts = this.doctorOptions()
-    const want = this.picked() || this.doctor_()
+    const want = this.picked() || this.doctor()
     return opts.find((d) => d.id === want)?.id ?? opts[0]?.id ?? ''
   })
-  protected readonly doctor = computed(() => this.store.doctor(this.doctorId()))
+  protected readonly selectedDoctor = computed(() => this.store.doctor(this.doctorId()))
   protected readonly date = signal(addDays(1))
   protected readonly time = signal('')
   protected readonly patient = signal(inject(AuthService).user()?.name ?? '')
   protected readonly reason = signal('')
   protected readonly error = signal('')
   protected readonly confirmed = signal('')
-  protected readonly summary = computed(() => `${this.doctor()?.name ?? ''} · ${this.store.hospital(this.doctor()?.hospitalId ?? '')?.name ?? ''} · ${money(this.doctor()?.fee ?? 0)} / visit`)
+  protected readonly summary = computed(
+    () =>
+      `${this.selectedDoctor()?.name ?? ''} · ${this.store.hospital(this.selectedDoctor()?.hospitalId ?? '')?.name ?? ''} · ${money(this.selectedDoctor()?.fee ?? 0)} / visit`,
+  )
   protected readonly slots = computed(() => this.store.slots(this.doctorId(), this.date()))
   protected readonly canSubmit = computed(() => !!this.time() && this.patient().trim().length > 1)
 

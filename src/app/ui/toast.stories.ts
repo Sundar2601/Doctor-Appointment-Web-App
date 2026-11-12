@@ -5,7 +5,7 @@ import { ToasterComponent } from './toaster.component'
 import { ToastService } from './toast.service'
 
 @Component({
-  selector: 'story-toast-demo',
+  selector: 'app-story-toast-demo',
   imports: [ToasterComponent],
   template: `
     <button type="button" class="rounded-md border px-3 py-2 text-sm" (click)="fire()">Show toast</button>
@@ -26,11 +26,16 @@ class ToastDemoComponent {
 const meta: Meta<ToastDemoComponent> = {
   title: 'Feedback/Toast',
   decorators: [moduleMetadata({ imports: [ToastDemoComponent] })],
-  argTypes: { title: { control: 'text' }, description: { control: 'text' }, actionLabel: { control: 'text' }, duration: { control: 'number' } },
+  argTypes: {
+    title: { control: 'text' },
+    description: { control: 'text' },
+    actionLabel: { control: 'text' },
+    duration: { control: 'number' },
+  },
   args: { title: 'Event has been created', duration: 4000 },
   render: (args) => ({
     props: args,
-    template: `<story-toast-demo [title]="title" [description]="description" [actionLabel]="actionLabel" [duration]="duration" />`,
+    template: `<app-story-toast-demo [title]="title" [description]="description" [actionLabel]="actionLabel" [duration]="duration" />`,
   }),
 }
 export default meta

@@ -25,7 +25,9 @@ import { lucideStar } from '@ng-icons/lucide'
         <ng-icon name="lucideStar" size="20" [class]="n <= (hover() || value()) ? '[&_svg]:fill-current' : ''" />
       </button>
     }
-    @if (count() !== undefined) { <span class="text-muted-foreground ml-1 text-sm">{{ value().toFixed(1) }} ({{ count() }})</span> }
+    @if (count() !== undefined) {
+      <span class="text-muted-foreground ml-1 text-sm">{{ value().toFixed(1) }} ({{ count() }})</span>
+    }
   `,
 })
 export class RatingComponent {

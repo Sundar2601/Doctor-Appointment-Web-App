@@ -2,15 +2,23 @@ import type { Meta, StoryObj } from '@storybook/angular-vite'
 import { moduleMetadata } from '@storybook/angular-vite'
 import { ControlDirective } from './control.directive'
 
-interface Args { placeholder: string; value: string; type: string; disabled: boolean; invalid: boolean }
+interface Args {
+  placeholder: string
+  value: string
+  type: string
+  disabled: boolean
+  invalid: boolean
+}
 
 const meta: Meta<Args> = {
   title: 'Forms/Input',
   decorators: [moduleMetadata({ imports: [ControlDirective] })],
   argTypes: {
-    placeholder: { control: 'text' }, value: { control: 'text' },
+    placeholder: { control: 'text' },
+    value: { control: 'text' },
     type: { control: 'select', options: ['text', 'email', 'password', 'number'] },
-    disabled: { control: 'boolean' }, invalid: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    invalid: { control: 'boolean' },
   },
   args: { placeholder: 'Email', value: '', type: 'text', disabled: false, invalid: false },
   render: (args) => ({

@@ -6,7 +6,9 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core'
   host: { class: 'mb-6 block' },
   template: `
     <h1 class="text-2xl font-semibold tracking-tight">{{ title() }}</h1>
-    @if (subtitle()) { <p class="text-muted-foreground text-sm">{{ subtitle() }}</p> }
+    @if (subtitle()) {
+      <p class="text-muted-foreground text-sm">{{ subtitle() }}</p>
+    }
   `,
 })
 export class PageHeaderComponent {

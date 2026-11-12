@@ -8,18 +8,31 @@ import { lucideActivity, lucideCheck } from '@ng-icons/lucide'
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgIcon],
   viewProviders: [provideIcons({ lucideActivity, lucideCheck })],
-  host: { class: 'bg-primary text-primary-foreground relative flex min-h-full flex-col justify-between gap-10 overflow-hidden p-10 lg:p-16' },
+  host: {
+    class: 'bg-primary text-primary-foreground relative flex min-h-full flex-col justify-between gap-10 overflow-hidden p-10 lg:p-16',
+  },
   template: `
     <div aria-hidden="true" class="bg-primary-foreground/10 pointer-events-none absolute -top-48 left-1/3 size-[620px] rounded-full"></div>
-    <div aria-hidden="true" class="bg-primary-foreground/10 pointer-events-none absolute -bottom-24 -left-36 size-[460px] rounded-full"></div>
+    <div
+      aria-hidden="true"
+      class="bg-primary-foreground/10 pointer-events-none absolute -bottom-24 -left-36 size-[460px] rounded-full"
+    ></div>
     <div aria-hidden="true" class="bg-primary-foreground/15 pointer-events-none absolute top-1/2 -right-12 size-56 rounded-full"></div>
 
     <div class="relative flex items-center gap-3">
-      <span class="bg-primary-foreground text-primary flex size-10 items-center justify-center rounded-lg"><ng-icon name="lucideActivity" size="16" /></span>
+      <span class="bg-primary-foreground text-primary flex size-10 items-center justify-center rounded-lg"
+        ><ng-icon name="lucideActivity" size="16"
+      /></span>
       <span class="text-lg font-semibold">{{ brand() }}</span>
     </div>
 
-    <svg class="relative mx-auto h-auto w-full max-w-104" viewBox="0 0 416 230" fill="none" role="img" aria-label="Doctor with two patients">
+    <svg
+      class="relative mx-auto h-auto w-full max-w-104"
+      viewBox="0 0 416 230"
+      fill="none"
+      role="img"
+      aria-label="Doctor with two patients"
+    >
       <circle cx="82" cy="60" r="26" fill="currentColor" fill-opacity=".45" />
       <path d="M0 230c0-48 36-86 82-86s82 38 82 86Z" fill="currentColor" fill-opacity=".35" />
       <circle cx="334" cy="60" r="26" fill="currentColor" fill-opacity=".45" />
@@ -36,7 +49,9 @@ import { lucideActivity, lucideCheck } from '@ng-icons/lucide'
       <ul class="grid gap-3 text-sm">
         @for (perk of perks(); track perk) {
           <li class="flex items-center gap-3">
-            <span class="bg-primary-foreground/20 flex size-6 shrink-0 items-center justify-center rounded-full"><ng-icon name="lucideCheck" size="16" /></span>
+            <span class="bg-primary-foreground/20 flex size-6 shrink-0 items-center justify-center rounded-full"
+              ><ng-icon name="lucideCheck" size="16"
+            /></span>
             {{ perk }}
           </li>
         }
@@ -47,5 +62,9 @@ import { lucideActivity, lucideCheck } from '@ng-icons/lucide'
 export class AuthBrandPanelComponent {
   readonly brand = input('Doctor Appointment')
   readonly headline = input('Book hospital appointments across Puducherry.')
-  readonly perks = input<string[]>(['Browse hospitals and specialists', 'Pick a doctor, a date and an available time', 'Search, filter and cancel your bookings'])
+  readonly perks = input<string[]>([
+    'Browse hospitals and specialists',
+    'Pick a doctor, a date and an available time',
+    'Search, filter and cancel your bookings',
+  ])
 }

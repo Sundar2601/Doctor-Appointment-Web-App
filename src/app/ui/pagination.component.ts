@@ -22,12 +22,29 @@ import { ButtonDirective } from './button.directive'
           @if (p === 0) {
             <span class="flex size-9 items-center justify-center" aria-hidden="true">…</span>
           } @else {
-            <button type="button" appButton size="icon" [variant]="p === page() ? 'outline' : 'ghost'" [attr.aria-current]="p === page() ? 'page' : null" [attr.aria-label]="'Page ' + p" (click)="go(p)">{{ p }}</button>
+            <button
+              type="button"
+              appButton
+              size="icon"
+              [variant]="p === page() ? 'outline' : 'ghost'"
+              [attr.aria-current]="p === page() ? 'page' : null"
+              [attr.aria-label]="'Page ' + p"
+              (click)="go(p)"
+            >
+              {{ p }}
+            </button>
           }
         </li>
       }
       <li>
-        <button type="button" appButton variant="ghost" aria-label="Go to next page" [disabled]="page() >= pageCount()" (click)="go(page() + 1)">
+        <button
+          type="button"
+          appButton
+          variant="ghost"
+          aria-label="Go to next page"
+          [disabled]="page() >= pageCount()"
+          (click)="go(page() + 1)"
+        >
           <span class="hidden sm:inline">Next</span><ng-icon name="lucideChevronRight" size="16" />
         </button>
       </li>
@@ -42,13 +59,16 @@ export class PaginationComponent {
 
   /** Page numbers; `0` marks an ellipsis. */
   protected readonly pages = computed<number[]>(() => {
-    const total = this.pageCount(), cur = this.page(), s = this.siblings()
+    const total = this.pageCount(),
+      cur = this.page(),
+      s = this.siblings()
     const set = new Set<number>([1, total])
     for (let i = cur - s; i <= cur + s; i++) if (i >= 1 && i <= total) set.add(i)
     const sorted = [...set].sort((a, b) => a - b)
     const out: number[] = []
     sorted.forEach((n, i) => {
-      if (i > 0 && n - sorted[i - 1] > 1) out.push(n - sorted[i - 1] === 2 ? n - 1 : 0)
+      const prev = sorted[i - 1]
+      if (prev !== undefined && n - prev > 1) out.push(n - prev === 2 ? n - 1 : 0)
       out.push(n)
     })
     return out

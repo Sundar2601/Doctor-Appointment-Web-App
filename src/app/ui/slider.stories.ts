@@ -2,13 +2,22 @@ import type { Meta, StoryObj } from '@storybook/angular-vite'
 import { moduleMetadata } from '@storybook/angular-vite'
 import { SliderDirective } from './slider.directive'
 
-interface Args { value: number; min: number; max: number; step: number; disabled: boolean }
+interface Args {
+  value: number
+  min: number
+  max: number
+  step: number
+  disabled: boolean
+}
 
 const meta: Meta<Args> = {
   title: 'Forms/Slider',
   decorators: [moduleMetadata({ imports: [SliderDirective] })],
   argTypes: {
-    value: { control: 'number' }, min: { control: 'number' }, max: { control: 'number' }, step: { control: 'number' },
+    value: { control: 'number' },
+    min: { control: 'number' },
+    max: { control: 'number' },
+    step: { control: 'number' },
     disabled: { control: 'boolean' },
   },
   args: { value: 50, min: 0, max: 100, step: 1, disabled: false },

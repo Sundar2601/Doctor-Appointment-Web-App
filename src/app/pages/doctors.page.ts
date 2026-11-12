@@ -2,7 +2,15 @@ import { ChangeDetectionStrategy, Component, computed, inject, input, signal } f
 import { RouterLink } from '@angular/router'
 import { AppointmentStore } from '@/services/appointment.store'
 import { money } from '@/data/data'
-import { AvatarComponent, ButtonDirective, CardComponent, ControlDirective, EmptyStateComponent, PageHeaderComponent } from '@/ui'
+import {
+  AvatarComponent,
+  ButtonDirective,
+  CardComponent,
+  ControlDirective,
+  EmptyStateComponent,
+  PageHeaderComponent,
+  eventValue,
+} from '@/ui'
 
 const DAY = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
@@ -12,9 +20,11 @@ const DAY = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   imports: [RouterLink, AvatarComponent, ButtonDirective, CardComponent, ControlDirective, EmptyStateComponent, PageHeaderComponent],
   template: `
     <app-page-header title="Doctors" subtitle="Choose a specialist and book a visit." />
-    <select appControl class="mb-4 w-72" aria-label="Filter by hospital" (change)="picked.set($any($event.target).value)">
+    <select appControl class="mb-4 w-72" aria-label="Filter by hospital" (change)="picked.set(eventValue($event))">
       <option value="">All hospitals</option>
-      @for (h of store.hospitals; track h.id) { <option [value]="h.id" [selected]="h.id === hospitalId()">{{ h.name }}</option> }
+      @for (h of store.hospitals; track h.id) {
+        <option [value]="h.id" [selected]="h.id === hospitalId()">{{ h.name }}</option>
+      }
     </select>
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       @for (d of rows(); track d.id) {
@@ -36,6 +46,7 @@ const DAY = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   `,
 })
 export class DoctorsPage {
+  protected readonly eventValue = eventValue
   protected readonly store = inject(AppointmentStore)
   protected readonly money = money
   readonly hospital = input<string | undefined>()

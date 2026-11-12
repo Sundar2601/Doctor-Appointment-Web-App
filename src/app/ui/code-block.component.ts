@@ -11,7 +11,12 @@ import { lucideCheck, lucideCopy } from '@ng-icons/lucide'
   host: { class: 'bg-muted text-foreground relative block rounded-md' },
   template: `
     <pre class="overflow-x-auto p-4 font-mono text-[13px] leading-5"><code>{{ code() }}</code></pre>
-    <button type="button" class="hover:bg-accent absolute top-2 right-2 inline-flex size-7 items-center justify-center rounded-md" aria-label="Copy code" (click)="copy()">
+    <button
+      type="button"
+      class="hover:bg-accent absolute top-2 right-2 inline-flex size-7 items-center justify-center rounded-md"
+      aria-label="Copy code"
+      (click)="copy()"
+    >
       <ng-icon [name]="copied() ? 'lucideCheck' : 'lucideCopy'" size="14" />
     </button>
   `,

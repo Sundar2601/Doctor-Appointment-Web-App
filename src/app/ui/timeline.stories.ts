@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular-vite'
 import { moduleMetadata } from '@storybook/angular-vite'
-import { TimelineComponent, TimelineItem } from './timeline.component'
+import { TimelineComponent, type TimelineItem } from './timeline.component'
 
 const items: TimelineItem[] = [
   { title: 'Appointment booked', description: 'Dr. Anand Kumar, Cardiology at JIPMER', time: '12 Nov, 10:02 AM' },

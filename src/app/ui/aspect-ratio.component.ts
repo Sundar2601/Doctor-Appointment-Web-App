@@ -4,7 +4,10 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core'
 @Component({
   selector: 'app-aspect-ratio',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'bg-muted relative flex w-full items-center justify-center overflow-hidden rounded-lg', '[style.aspect-ratio]': 'ratio()' },
+  host: {
+    class: 'bg-muted relative flex w-full items-center justify-center overflow-hidden rounded-lg',
+    '[style.aspect-ratio]': 'ratio()',
+  },
   template: '<ng-content />',
 })
 export class AspectRatioComponent {

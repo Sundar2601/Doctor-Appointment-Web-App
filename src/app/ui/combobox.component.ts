@@ -1,6 +1,6 @@
 import { CdkTrapFocus } from '@angular/cdk/a11y'
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay'
-import { ChangeDetectionStrategy, Component, computed, ElementRef, input, model, signal, viewChild } from '@angular/core'
+import { ChangeDetectionStrategy, Component, computed, type ElementRef, input, model, signal, viewChild } from '@angular/core'
 import { NgIcon, provideIcons } from '@ng-icons/core'
 import { lucideCheck, lucideChevronsUpDown, lucideSearch } from '@ng-icons/lucide'
 
@@ -31,6 +31,7 @@ export interface ComboboxOption {
       [id]="id()"
       [disabled]="disabled()"
       [attr.aria-expanded]="open()"
+      [attr.aria-controls]="open() ? id() + '-list' : null"
       [attr.aria-label]="ariaLabel()"
       class="border-input bg-background focus-visible:outline-ring flex h-9 w-full items-center justify-between gap-2 rounded-md border px-3 text-sm shadow-xs focus-visible:outline-2 focus-visible:outline-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
       (click)="open() ? close() : show()"
@@ -38,7 +39,14 @@ export interface ComboboxOption {
       <span class="truncate" [class.text-muted-foreground]="!selected()">{{ selected()?.label ?? placeholder() }}</span>
       <ng-icon name="lucideChevronsUpDown" class="text-muted-foreground size-4 shrink-0" />
     </button>
-    <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="origin" [cdkConnectedOverlayOpen]="open()" [cdkConnectedOverlayMinWidth]="width()" (overlayOutsideClick)="close()" (detach)="open.set(false)">
+    <ng-template
+      cdkConnectedOverlay
+      [cdkConnectedOverlayOrigin]="origin"
+      [cdkConnectedOverlayOpen]="open()"
+      [cdkConnectedOverlayMinWidth]="width()"
+      (overlayOutsideClick)="close()"
+      (detach)="open.set(false)"
+    >
       <div cdkTrapFocus cdkTrapFocusAutoCapture class="bg-popover text-popover-foreground mt-1 overflow-hidden rounded-md border shadow-md">
         <div class="flex h-10 items-center gap-2 px-3">
           <ng-icon name="lucideSearch" class="text-muted-foreground size-4 shrink-0" />
@@ -64,11 +72,15 @@ export interface ComboboxOption {
               class="flex cursor-pointer items-center justify-between rounded-sm px-2 py-1.5 text-sm aria-disabled:pointer-events-none aria-disabled:opacity-50"
               [class.bg-accent]="i === active()"
               [class.text-accent-foreground]="i === active()"
+              tabindex="-1"
               (mouseenter)="active.set(i)"
               (click)="pick(o)"
+              (keydown.enter)="pick(o)"
             >
               {{ o.label }}
-              @if (o.value === value()) { <ng-icon name="lucideCheck" class="size-4" /> }
+              @if (o.value === value()) {
+                <ng-icon name="lucideCheck" class="size-4" />
+              }
             </div>
           } @empty {
             <p class="text-muted-foreground px-2 py-1.5 text-sm">{{ emptyText() }}</p>
@@ -103,7 +115,12 @@ export class ComboboxComponent {
   protected show() {
     this.width.set(this.trigger().nativeElement.offsetWidth)
     this.query.set('')
-    this.active.set(Math.max(0, this.options().findIndex((o) => o.value === this.value())))
+    this.active.set(
+      Math.max(
+        0,
+        this.options().findIndex((o) => o.value === this.value()),
+      ),
+    )
     this.open.set(true)
   }
   protected close() {
@@ -121,12 +138,19 @@ export class ComboboxComponent {
   }
   protected onKey(e: KeyboardEvent) {
     const n = this.filtered().length
-    if (e.key === 'ArrowDown') { e.preventDefault(); this.active.set(n ? (this.active() + 1) % n : 0) }
-    else if (e.key === 'ArrowUp') { e.preventDefault(); this.active.set(n ? (this.active() - 1 + n) % n : 0) }
-    else if (e.key === 'Enter') {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      this.active.set(n ? (this.active() + 1) % n : 0)
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault()
+      this.active.set(n ? (this.active() - 1 + n) % n : 0)
+    } else if (e.key === 'Enter') {
       e.preventDefault()
       const o = this.filtered()[this.active()]
       if (o) this.pick(o)
-    } else if (e.key === 'Escape') { this.close(); this.trigger().nativeElement.focus() }
+    } else if (e.key === 'Escape') {
+      this.close()
+      this.trigger().nativeElement.focus()
+    }
   }
 }

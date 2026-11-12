@@ -1,8 +1,17 @@
-import { Dialog, DialogConfig, DialogRef } from '@angular/cdk/dialog'
-import { Directive, effect, inject, DestroyRef, input, model, TemplateRef, untracked, viewChild, ViewContainerRef } from '@angular/core'
+import { Dialog, type DialogConfig, type DialogRef } from '@angular/cdk/dialog'
+import {
+  Directive,
+  effect,
+  inject,
+  DestroyRef,
+  input,
+  model,
+  type TemplateRef,
+  untracked,
+  viewChild,
+  ViewContainerRef,
+} from '@angular/core'
 import { filter } from 'rxjs'
-
-
 
 let uid = 0
 

@@ -22,12 +22,14 @@ export const Hospitals: Story = {
 
 export const Doctors: Story = {
   render: () => ({
-    props: { doctors: [
-      { name: 'Dr. Anand Kumar', specialty: 'Cardiology' },
-      { name: 'Dr. Meera Nair', specialty: 'Pediatrics' },
-      { name: 'Dr. Suresh Babu', specialty: 'Orthopedics' },
-      { name: 'Dr. Kavitha Rajan', specialty: 'Dermatology' },
-    ] },
+    props: {
+      doctors: [
+        { name: 'Dr. Anand Kumar', specialty: 'Cardiology' },
+        { name: 'Dr. Meera Nair', specialty: 'Pediatrics' },
+        { name: 'Dr. Suresh Babu', specialty: 'Orthopedics' },
+        { name: 'Dr. Kavitha Rajan', specialty: 'Dermatology' },
+      ],
+    },
     template: `
       <app-carousel>
         @for (d of doctors; track d.name) {

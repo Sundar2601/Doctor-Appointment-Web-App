@@ -19,16 +19,30 @@ export interface Step {
       <div class="flex shrink-0 items-center gap-3" [attr.aria-current]="i === current() ? 'step' : null">
         <span
           class="flex size-8 shrink-0 items-center justify-center rounded-full text-sm font-medium"
-          [class]="i < current() ? 'bg-primary text-primary-foreground border border-primary' : i === current() ? 'bg-background text-primary border-primary border-2' : 'border text-muted-foreground'"
+          [class]="
+            i < current()
+              ? 'bg-primary text-primary-foreground border border-primary'
+              : i === current()
+                ? 'bg-background text-primary border-primary border-2'
+                : 'border text-muted-foreground'
+          "
         >
-          @if (i < current()) { <ng-icon name="lucideCheck" size="16" /> } @else { {{ i + 1 }} }
+          @if (i < current()) {
+            <ng-icon name="lucideCheck" size="16" />
+          } @else {
+            {{ i + 1 }}
+          }
         </span>
         <span class="flex flex-col whitespace-nowrap" [class.text-muted-foreground]="i > current()">
           <span class="text-sm font-medium" [class.text-foreground]="i <= current()">{{ s.title }}</span>
-          @if (s.description) { <span class="text-muted-foreground text-xs">{{ s.description }}</span> }
+          @if (s.description) {
+            <span class="text-muted-foreground text-xs">{{ s.description }}</span>
+          }
         </span>
       </div>
-      @if (!last) { <div class="h-px min-w-px flex-1" [class]="i < current() ? 'bg-primary' : 'bg-border'"></div> }
+      @if (!last) {
+        <div class="h-px min-w-px flex-1" [class]="i < current() ? 'bg-primary' : 'bg-border'"></div>
+      }
     }
   `,
 })

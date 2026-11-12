@@ -28,9 +28,13 @@ import { ButtonDirective, CardComponent, EmptyStateComponent, PageHeaderComponen
           <li class="flex items-center justify-between gap-3 py-3">
             <span>
               <span class="font-medium">{{ a.patient }}</span>
-              <span class="text-muted-foreground block">{{ store.doctor(a.doctorId)?.name }} · {{ store.hospitalOfDoctor(a.doctorId)?.name }}</span>
+              <span class="text-muted-foreground block"
+                >{{ store.doctor(a.doctorId)?.name }} · {{ store.hospitalOfDoctor(a.doctorId)?.name }}</span
+              >
             </span>
-            <span class="text-right whitespace-nowrap">{{ a.date }}<span class="text-muted-foreground block">{{ a.time }}</span></span>
+            <span class="text-right whitespace-nowrap"
+              >{{ a.date }}<span class="text-muted-foreground block">{{ a.time }}</span></span
+            >
           </li>
         } @empty {
           <li><app-empty-state title="No upcoming appointments" description="Book a visit to see it here." /></li>

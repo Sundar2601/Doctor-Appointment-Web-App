@@ -10,13 +10,25 @@ import { lucideBell } from '@ng-icons/lucide'
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'flex items-start gap-3 rounded-md p-3', '[class.bg-accent]': 'unread()' },
   template: `
-    <span class="bg-muted text-muted-foreground flex size-8 shrink-0 items-center justify-center rounded-full text-xs">@if (initials()) { {{ initials() }} } @else { <ng-icon name="lucideBell" size="16" /> }</span>
+    <span class="bg-muted text-muted-foreground flex size-8 shrink-0 items-center justify-center rounded-full text-xs">
+      @if (initials()) {
+        {{ initials() }}
+      } @else {
+        <ng-icon name="lucideBell" size="16" />
+      }
+    </span>
     <div class="grid min-w-0 flex-1 gap-0.5">
       <p class="text-sm font-medium">{{ title() }}</p>
-      @if (description()) { <p class="text-muted-foreground text-sm">{{ description() }}</p> }
-      @if (time()) { <p class="text-muted-foreground text-xs">{{ time() }}</p> }
+      @if (description()) {
+        <p class="text-muted-foreground text-sm">{{ description() }}</p>
+      }
+      @if (time()) {
+        <p class="text-muted-foreground text-xs">{{ time() }}</p>
+      }
     </div>
-    @if (unread()) { <span class="bg-primary size-2 shrink-0 rounded-full" aria-label="Unread"></span> }
+    @if (unread()) {
+      <span class="bg-primary size-2 shrink-0 rounded-full" aria-label="Unread"></span>
+    }
   `,
 })
 export class NotificationItemComponent {

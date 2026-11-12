@@ -25,7 +25,7 @@ const meta: Meta<AlertDialogComponent> = {
     template: `
       <button appButton variant="outline" (click)="open = true">Open alert dialog</button>
       <app-alert-dialog [heading]="heading" [description]="description" [confirmLabel]="confirmLabel" [cancelLabel]="cancelLabel"
-        [(open)]="open" (confirm)="result = 'Confirmed'" (cancel)="result = 'Cancelled'" />
+        [(open)]="open" (confirm)="result = 'Confirmed'" (cancelled)="result = 'Cancelled'" />
       <p class="mt-4 text-sm">Result: {{ result || 'none' }}</p>
     `,
   }),
@@ -35,5 +35,10 @@ type Story = StoryObj<AlertDialogComponent>
 
 export const Default: Story = {}
 export const Destructive: Story = {
-  args: { heading: 'Delete account?', description: 'All your data will be permanently removed.', confirmLabel: 'Delete', cancelLabel: 'Keep account' },
+  args: {
+    heading: 'Delete account?',
+    description: 'All your data will be permanently removed.',
+    confirmLabel: 'Delete',
+    cancelLabel: 'Keep account',
+  },
 }

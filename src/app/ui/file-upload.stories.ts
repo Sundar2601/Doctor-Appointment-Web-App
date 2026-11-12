@@ -2,7 +2,12 @@ import type { Meta, StoryObj } from '@storybook/angular-vite'
 import { moduleMetadata } from '@storybook/angular-vite'
 import { FileUploadComponent } from './file-upload.component'
 
-interface Args { label: string; hint: string; accept: string; multiple: boolean }
+interface Args {
+  label: string
+  hint: string
+  accept: string
+  multiple: boolean
+}
 
 const meta: Meta<Args> = {
   title: 'Forms/File Upload',

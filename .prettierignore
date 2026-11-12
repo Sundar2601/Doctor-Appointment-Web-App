@@ -1,0 +1,6 @@
+dist
+.angular
+storybook-static
+node_modules
+package-lock.json
+.storybook/generated.css

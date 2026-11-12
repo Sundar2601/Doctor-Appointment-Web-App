@@ -2,12 +2,20 @@ import type { Meta, StoryObj } from '@storybook/angular-vite'
 import { moduleMetadata } from '@storybook/angular-vite'
 import { ToggleGroupComponent, ToggleGroupItemDirective } from './toggle-group.component'
 
-interface Args { value: string[]; type: 'single' | 'multiple'; disabled: boolean }
+interface Args {
+  value: string[]
+  type: 'single' | 'multiple'
+  disabled: boolean
+}
 
 const meta: Meta<Args> = {
   title: 'Actions/Toggle Group',
   decorators: [moduleMetadata({ imports: [ToggleGroupComponent, ToggleGroupItemDirective] })],
-  argTypes: { type: { control: 'select', options: ['single', 'multiple'] }, disabled: { control: 'boolean' }, value: { control: 'object' } },
+  argTypes: {
+    type: { control: 'select', options: ['single', 'multiple'] },
+    disabled: { control: 'boolean' },
+    value: { control: 'object' },
+  },
   args: { value: [], type: 'multiple', disabled: false },
   render: (args) => ({
     props: args,

@@ -2,7 +2,10 @@ import type { Meta, StoryObj } from '@storybook/angular-vite'
 import { moduleMetadata } from '@storybook/angular-vite'
 import { TagInputComponent } from './tag-input.component'
 
-interface Args { tags: string[]; placeholder: string }
+interface Args {
+  tags: string[]
+  placeholder: string
+}
 
 const meta: Meta<Args> = {
   title: 'Forms/Tag Input',

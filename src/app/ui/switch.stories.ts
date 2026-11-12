@@ -3,7 +3,10 @@ import { moduleMetadata } from '@storybook/angular-vite'
 import { LabelDirective } from './label.directive'
 import { SwitchDirective } from './switch.directive'
 
-interface Args { checked: boolean; disabled: boolean }
+interface Args {
+  checked: boolean
+  disabled: boolean
+}
 
 const meta: Meta<Args> = {
   title: 'Forms/Switch',

@@ -3,7 +3,10 @@ import { RouterLink } from '@angular/router'
 import { NgIcon, provideIcons } from '@ng-icons/core'
 import { lucideChevronRight } from '@ng-icons/lucide'
 
-export interface BreadcrumbItem { label: string; href?: string }
+export interface BreadcrumbItem {
+  label: string
+  href?: string
+}
 
 /** Usage: `<app-breadcrumb [items]="[{label:'Home', href:'/'}, {label:'Doctors'}]" />` (last item is the current page). */
 @Component({
@@ -17,12 +20,20 @@ export interface BreadcrumbItem { label: string; href?: string }
       @for (item of items(); track $index; let last = $last) {
         <li class="inline-flex items-center gap-1.5">
           @if (!last && item.href) {
-            <a [routerLink]="item.href" class="hover:text-foreground focus-visible:outline-ring rounded-sm transition-colors focus-visible:outline-2">{{ item.label }}</a>
+            <a
+              [routerLink]="item.href"
+              class="hover:text-foreground focus-visible:outline-ring rounded-sm transition-colors focus-visible:outline-2"
+              >{{ item.label }}</a
+            >
           } @else {
-            <span [attr.aria-current]="last ? 'page' : null" [class.text-foreground]="last" [class.font-normal]="last">{{ item.label }}</span>
+            <span [attr.aria-current]="last ? 'page' : null" [class.text-foreground]="last" [class.font-normal]="last">{{
+              item.label
+            }}</span>
           }
         </li>
-        @if (!last) { <li role="presentation" aria-hidden="true" class="[&>ng-icon]:size-3.5"><ng-icon name="lucideChevronRight" /></li> }
+        @if (!last) {
+          <li role="presentation" aria-hidden="true" class="[&>ng-icon]:size-3.5"><ng-icon name="lucideChevronRight" /></li>
+        }
       }
     </ol>
   `,
