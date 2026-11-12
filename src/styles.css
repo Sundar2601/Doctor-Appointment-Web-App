@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+@plugin "tailwindcss-animate";
+@import './theme.css';
+@import './typeset.css';
+@import './utilities.css';
+@source './';

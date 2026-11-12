@@ -1,0 +1,7 @@
+node_modules
+dist
+.angular
+
+.angular
+dist
+.DS_Store
