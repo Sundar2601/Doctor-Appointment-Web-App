@@ -3,6 +3,7 @@ import { AppointmentStore } from '@/services/appointment.store'
 import { SearchService } from '@/services/search.service'
 import type { ApptStatus } from '@/data/data'
 import {
+  AlertDialogComponent,
   AvatarComponent,
   BadgeComponent,
   type BadgeTone,
@@ -11,6 +12,7 @@ import {
   EmptyStateComponent,
   HeroComponent,
   SegmentedControlComponent,
+  SelectComponent,
   TableDirective,
   eventValue,
 } from '@/ui'
@@ -27,6 +29,8 @@ import {
     HeroComponent,
     SegmentedControlComponent,
     TableDirective,
+    AlertDialogComponent,
+    SelectComponent,
   ],
   template: `
     <app-hero
@@ -44,18 +48,22 @@ import {
         [value]="q()"
         (input)="q.set(eventValue($event))"
       />
-      <select appControl class="w-full! sm:w-[150px]!" aria-label="Filter by status" (change)="status.set(eventValue($event))">
-        <option value="" [selected]="!status()">All statuses</option>
-        @for (s of statuses; track s) {
-          <option [value]="s" [selected]="s === status()">{{ s }}</option>
-        }
-      </select>
-      <select appControl class="w-full! sm:w-[180px]!" aria-label="Filter by doctor" (change)="doctor.set(eventValue($event))">
-        <option value="">All doctors</option>
-        @for (d of store.doctors; track d.id) {
-          <option [value]="d.id">{{ d.name }}</option>
-        }
-      </select>
+      <app-select
+        class="w-full sm:w-[150px]"
+        ariaLabel="Filter by status"
+        placeholder="All statuses"
+        [options]="statusOptions"
+        [value]="status()"
+        (valueChange)="status.set($event ?? '')"
+      />
+      <app-select
+        class="w-full sm:w-[180px]"
+        ariaLabel="Filter by doctor"
+        placeholder="All doctors"
+        [options]="doctorOptions"
+        [value]="doctor()"
+        (valueChange)="doctor.set($event ?? '')"
+      />
       <app-segmented-control class="ml-auto" label="Status" [options]="tabs()" [(value)]="status" />
     </div>
     <div class="bg-card overflow-x-auto rounded-xl border shadow-sm">
@@ -92,7 +100,7 @@ import {
               </td>
               <td class="text-right">
                 @if (a.status === 'Scheduled') {
-                  <button appButton variant="outline" size="sm" type="button" (click)="cancel(a.id)">Cancel</button>
+                  <button appButton variant="outline" size="sm" type="button" (click)="cancelTarget.set(a.id)">Cancel</button>
                 }
               </td>
             </tr>
@@ -104,6 +112,15 @@ import {
         </tbody>
       </table>
     </div>
+    <app-alert-dialog
+      heading="Cancel appointment?"
+      [description]="'Appointment ' + cancelTarget() + ' will be cancelled. This cannot be undone.'"
+      confirmLabel="Cancel appointment"
+      cancelLabel="Keep it"
+      [open]="cancelTarget() !== null"
+      (openChange)="!$event && cancelTarget.set(null)"
+      (confirm)="confirmCancel()"
+    />
   `,
 })
 export class AppointmentsPage {
@@ -134,7 +151,15 @@ export class AppointmentsPage {
       )
       .sort((a, b) => (b.date + b.time).localeCompare(a.date + a.time))
   })
-  protected cancel(id: string) {
-    if (confirm(`Cancel appointment ${id}?`)) this.store.cancel(id)
+  protected readonly cancelTarget = signal<string | null>(null)
+  protected readonly statusOptions = [{ value: '', label: 'All statuses' }, ...this.statuses.map((s) => ({ value: s, label: s }))]
+  protected readonly doctorOptions = [
+    { value: '', label: 'All doctors' },
+    ...this.store.doctors.map((d) => ({ value: d.id, label: d.name })),
+  ]
+  protected confirmCancel() {
+    const id = this.cancelTarget()
+    if (id) this.store.cancel(id)
+    this.cancelTarget.set(null)
   }
 }

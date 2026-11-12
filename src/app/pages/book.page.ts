@@ -10,6 +10,7 @@ import {
   ControlDirective,
   FieldComponent,
   HeroComponent,
+  SelectComponent,
   ItemComponent,
   eventValue,
 } from '@/ui'
@@ -26,6 +27,7 @@ import {
     FieldComponent,
     HeroComponent,
     ItemComponent,
+    SelectComponent,
   ],
   template: `
     <app-hero
@@ -38,19 +40,16 @@ import {
         <h2 class="font-medium">Appointment details</h2>
         <form class="grid gap-4" (submit)="$event.preventDefault(); submit()">
           <app-field label="Hospital" for="hosp">
-            <select id="hosp" appControl (change)="hospital.set(eventValue($event)); pick(doctorOptions()[0]?.id ?? '')">
-              <option value="">All hospitals</option>
-              @for (h of store.hospitals; track h.id) {
-                <option [value]="h.id" [selected]="h.id === hospital()">{{ h.name }} ({{ h.area }})</option>
-              }
-            </select>
+            <app-select
+              id="hosp"
+              ariaLabel="Hospital"
+              [options]="hospitalOptions()"
+              [value]="hospital()"
+              (valueChange)="hospital.set($event ?? ''); pick(doctorOptions()[0]?.id ?? '')"
+            />
           </app-field>
           <app-field label="Doctor" for="doc">
-            <select #docSelect id="doc" appControl (change)="pick(eventValue($event))">
-              @for (d of doctorOptions(); track d.id) {
-                <option [value]="d.id" [selected]="d.id === doctorId()">{{ d.name }} — {{ d.specialty }}</option>
-              }
-            </select>
+            <app-select id="doc" ariaLabel="Doctor" [options]="doctorChoices()" [value]="doctorId()" (valueChange)="pick($event ?? '')" />
           </app-field>
           <app-field label="Date" for="date">
             <app-date-picker id="date" ariaLabel="Date" [min]="today" [value]="date()" (valueChange)="date.set($event); time.set('')" />
@@ -73,7 +72,7 @@ import {
 
       <app-card class="w-full min-w-0 flex-1 gap-4 p-6 shadow-sm">
         <app-item [heading]="selectedDoctor()?.name ?? ''" [description]="summary()">
-          <button itemActions appButton variant="outline" size="sm" type="button" (click)="docSelect.focus()">Change</button>
+          <button itemActions appButton variant="outline" size="sm" type="button" (click)="focusDoctor()">Change</button>
         </app-item>
         <h2 class="font-medium">Available times</h2>
         @for (g of groups(); track g.label) {
@@ -107,14 +106,22 @@ export class BookPage {
   /** Bound from the ?doctor= query param. */
   readonly doctor = input<string>()
   protected readonly today = addDays(0)
+  protected readonly hospitalOptions = computed(() => [
+    { value: '', label: 'All hospitals' },
+    ...this.store.hospitals.map((h) => ({ value: h.id, label: `${h.name} (${h.area})` })),
+  ])
   protected readonly picked = signal('')
   protected readonly hospital = signal('')
   protected readonly doctorOptions = computed(() => this.store.doctors.filter((d) => !this.hospital() || d.hospitalId === this.hospital()))
+  protected readonly doctorChoices = computed(() => this.doctorOptions().map((d) => ({ value: d.id, label: `${d.name} — ${d.specialty}` })))
   protected readonly doctorId = computed(() => {
     const opts = this.doctorOptions()
     const want = this.picked() || this.doctor()
     return opts.find((d) => d.id === want)?.id ?? opts[0]?.id ?? ''
   })
+  protected focusDoctor() {
+    document.getElementById('doc')?.focus()
+  }
   protected readonly selectedDoctor = computed(() => this.store.doctor(this.doctorId()))
   protected readonly date = signal(addDays(1))
   protected readonly time = signal('')

@@ -32,7 +32,7 @@ function toIso(d: Date): string {
   imports: [NgIcon, CdkConnectedOverlay, CdkOverlayOrigin, CalendarComponent],
   viewProviders: [provideIcons({ lucideCalendar })],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'relative block w-full' },
+  host: { class: 'relative block w-full', '[attr.id]': 'null' },
   template: `
     <button
       cdkOverlayOrigin

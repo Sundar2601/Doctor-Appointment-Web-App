@@ -2336,11 +2336,11 @@
     .sm\:w-80 {
       width: calc(var(--spacing) * 80);
     }
-    .sm\:w-\[150px\]\! {
-      width: 150px !important;
+    .sm\:w-\[150px\] {
+      width: 150px;
     }
-    .sm\:w-\[180px\]\! {
-      width: 180px !important;
+    .sm\:w-\[180px\] {
+      width: 180px;
     }
     .sm\:w-\[280px\]\! {
       width: 280px !important;

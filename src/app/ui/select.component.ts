@@ -31,7 +31,7 @@ export interface SelectOption {
   imports: [CdkConnectedOverlay, CdkOverlayOrigin, NgIcon],
   viewProviders: [provideIcons({ lucideCheck, lucideChevronDown })],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'block w-full' },
+  host: { class: 'block w-full', '[attr.id]': 'null' },
   template: `
     <button
       #trigger
@@ -66,6 +66,7 @@ export interface SelectOption {
         role="listbox"
         [id]="id() + '-list'"
         [attr.aria-labelledby]="id()"
+        [style.min-width.px]="width()"
         class="bg-popover text-popover-foreground mt-1 max-h-60 min-w-56 overflow-auto rounded-md border p-1 shadow-md"
       >
         @for (o of options(); track o.value; let i = $index) {
