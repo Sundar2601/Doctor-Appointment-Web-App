@@ -1,0 +1,17 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="260" height="144" viewBox="0 0 260 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Illustration">
+<path id="Vector" d="M208 26H162C155.373 26 150 31.3726 150 38V106C150 112.627 155.373 118 162 118H208C214.627 118 220 112.627 220 106V38C220 31.3726 214.627 26 208 26Z" fill="white" fill-opacity="0.35"/>
+<path id="Vector_2" d="M164 12H88C80.268 12 74 18.268 74 26V122C74 129.732 80.268 136 88 136H164C171.732 136 178 129.732 178 122V26C178 18.268 171.732 12 164 12Z" fill="white" fill-opacity="0.94"/>
+<path id="Vector_3" d="M136 4H116C111.582 4 108 7.58172 108 12V18C108 22.4183 111.582 26 116 26H136C140.418 26 144 22.4183 144 18V12C144 7.58172 140.418 4 136 4Z" fill="white"/>
+<g id="Group">
+<path id="Vector_4" d="M98 63C102.971 63 107 58.9706 107 54C107 49.0294 102.971 45 98 45C93.0294 45 89 49.0294 89 54C89 58.9706 93.0294 63 98 63Z" fill="#12808F"/>
+<path id="Vector_5" d="M93 54L97 58L104 50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+<path id="Vector_6" d="M157.5 49H120.5C118.015 49 116 51.0147 116 53.5C116 55.9853 118.015 58 120.5 58H157.5C159.985 58 162 55.9853 162 53.5C162 51.0147 159.985 49 157.5 49Z" fill="#12808F" fill-opacity="0.35"/>
+<path id="Vector_7" d="M98 93C102.971 93 107 88.9706 107 84C107 79.0294 102.971 75 98 75C93.0294 75 89 79.0294 89 84C89 88.9706 93.0294 93 98 93Z" fill="#12808F"/>
+<path id="Vector_8" d="M93 84L97 88L104 80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+<path id="Vector_9" d="M149.5 79H120.5C118.015 79 116 81.0147 116 83.5C116 85.9853 118.015 88 120.5 88H149.5C151.985 88 154 85.9853 154 83.5C154 81.0147 151.985 79 149.5 79Z" fill="#12808F" fill-opacity="0.35"/>
+<path id="Vector_10" d="M107 114C107 118.971 102.971 123 98 123C93.0294 123 89 118.971 89 114C89 109.029 93.0294 105 98 105C102.971 105 107 109.029 107 114Z" stroke-width="3" stroke="#12808F"/>
+<path id="Vector_11" d="M155.5 109H120.5C118.015 109 116 111.015 116 113.5C116 115.985 118.015 118 120.5 118H155.5C157.985 118 160 115.985 160 113.5C160 111.015 157.985 109 155.5 109Z" fill="#12808F" fill-opacity="0.35"/>
+</g>
+</g>
+</svg>

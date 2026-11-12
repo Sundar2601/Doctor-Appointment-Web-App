@@ -1,21 +1,28 @@
 import { ChangeDetectionStrategy, Component, inject, input, signal } from '@angular/core'
 import { Router, RouterLink } from '@angular/router'
 import { AuthService, DEMO_ACCOUNT } from '@/services/auth.service'
-import { AlertComponent, ButtonDirective, CardComponent, ControlDirective, FieldComponent, eventValue, eventChecked } from '@/ui'
+import {
+  AlertComponent,
+  AuthBrandPanelComponent,
+  ButtonDirective,
+  CheckboxDirective,
+  ControlDirective,
+  FieldComponent,
+  eventValue,
+  eventChecked,
+} from '@/ui'
 
 @Component({
   selector: 'app-signin-page',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, AlertComponent, ButtonDirective, CardComponent, ControlDirective, FieldComponent],
+  imports: [RouterLink, AlertComponent, AuthBrandPanelComponent, ButtonDirective, CheckboxDirective, ControlDirective, FieldComponent],
   template: `
-    <div class="bg-muted/40 flex min-h-svh items-center justify-center p-4">
-      <app-card class="w-full max-w-md p-6 shadow-sm sm:p-8">
-        <form class="grid gap-5" (submit)="$event.preventDefault(); submit()" novalidate>
-          <div class="text-center">
-            <span class="bg-primary text-primary-foreground mx-auto mb-3 flex size-10 items-center justify-center rounded-md font-semibold"
-              >D</span
-            >
-            <h1 class="text-2xl font-semibold tracking-tight">Welcome back</h1>
+    <div class="grid min-h-svh lg:grid-cols-2">
+      <app-auth-brand-panel class="hidden lg:flex" />
+      <main class="flex items-center justify-center p-6 sm:p-10">
+        <form class="grid w-full max-w-100 gap-5" (submit)="$event.preventDefault(); submit()" novalidate>
+          <div class="grid gap-2">
+            <h1 class="text-3xl font-bold tracking-tight">Welcome back</h1>
             <p class="text-muted-foreground text-sm">Sign in to book and manage appointments.</p>
           </div>
           <app-field label="Email" for="email">
@@ -36,21 +43,23 @@ import { AlertComponent, ButtonDirective, CardComponent, ControlDirective, Field
               autocomplete="current-password"
               (input)="password.set(eventValue($event))"
             />
-            <label class="text-muted-foreground mt-1 flex items-center gap-2 text-xs"
-              ><input type="checkbox" class="accent-primary" (change)="show.set(eventChecked($event))" /> Show password</label
-            >
           </app-field>
+          <label class="flex items-center gap-2 text-sm"
+            ><input type="checkbox" appCheckbox (change)="show.set(eventChecked($event))" /> Show password</label
+          >
           @if (error()) {
             <app-alert>{{ error() }}</app-alert>
           }
-          <button appButton type="submit" [disabled]="busy()">{{ busy() ? 'Signing in…' : 'Sign in' }}</button>
-          <button appButton variant="outline" type="button" [disabled]="busy()" (click)="demo()">Use demo account</button>
+          <div class="grid gap-2">
+            <button appButton type="submit" class="w-full" [disabled]="busy()">{{ busy() ? 'Signing in…' : 'Sign in' }}</button>
+            <button appButton variant="outline" type="button" class="w-full" [disabled]="busy()" (click)="demo()">Use demo account</button>
+          </div>
           <p class="text-muted-foreground text-center text-xs">Demo: {{ demoEmail }} / {{ demoPassword }}</p>
           <p class="text-muted-foreground text-center text-sm">
-            New here? <a appButton variant="link" routerLink="/signup" class="p-0">Create an account</a>
+            New here? <a routerLink="/signup" class="text-primary font-medium hover:underline">Create an account</a>
           </p>
         </form>
-      </app-card>
+      </main>
     </div>
   `,
 })

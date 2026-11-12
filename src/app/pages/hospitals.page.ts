@@ -8,7 +8,9 @@ import {
   CardComponent,
   ControlDirective,
   EmptyStateComponent,
-  PageHeaderComponent,
+  HeroComponent,
+  SelectComponent,
+  CheckboxDirective,
   eventValue,
   eventChecked,
 } from '@/ui'
@@ -16,40 +18,62 @@ import {
 @Component({
   selector: 'app-hospitals-page',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, BadgeComponent, ButtonDirective, CardComponent, ControlDirective, EmptyStateComponent, PageHeaderComponent],
+  imports: [
+    RouterLink,
+    BadgeComponent,
+    ButtonDirective,
+    CardComponent,
+    ControlDirective,
+    EmptyStateComponent,
+    HeroComponent,
+    SelectComponent,
+    CheckboxDirective,
+  ],
   template: `
-    <app-page-header title="Hospitals" subtitle="Hospitals across Puducherry, Karaikal, Mahé and Yanam. The list is not exhaustive." />
-    <div class="mb-4 flex flex-wrap items-center gap-2">
-      <input
-        appControl
-        type="search"
-        class="max-w-xs"
-        placeholder="Search hospital"
-        aria-label="Search hospitals"
-        (input)="q.set(eventValue($event))"
+    <div class="flex flex-col gap-6">
+      <app-hero
+        title="Hospitals"
+        subtitle="Hospitals across Puducherry, Karaikal, Mahé and Yanam. The list is not exhaustive."
+        illustration="illustrations/hero-hospitals.svg"
       />
-      <select appControl class="w-auto" aria-label="Filter by area" (change)="area.set(eventValue($event))">
-        <option value="">All areas</option>
-        @for (a of areas; track a) {
-          <option [value]="a">{{ a }}</option>
+      <div class="flex flex-wrap items-center gap-2">
+        <input
+          appControl
+          type="search"
+          class="w-full sm:w-80"
+          placeholder="Search hospital"
+          aria-label="Search hospitals"
+          (input)="q.set(eventValue($event))"
+        />
+        <div class="w-44">
+          <app-select
+            ariaLabel="Filter by area"
+            placeholder="All areas"
+            [options]="areaOptions"
+            [value]="area()"
+            (valueChange)="area.set($event ?? '')"
+          />
+        </div>
+        <label class="flex items-center gap-2 text-sm">
+          <input type="checkbox" appCheckbox (change)="er.set(eventChecked($event))" />
+          Emergency only
+        </label>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        @for (h of rows(); track h.id) {
+          <app-card class="p-6!" [heading]="h.name" [description]="h.area + ' · ' + h.type">
+            <p class="text-sm">{{ h.ownership }} · {{ doctorCount(h.id) }} demo doctors</p>
+            <div class="mt-auto flex items-center justify-between gap-2">
+              <a appButton routerLink="/doctors" [queryParams]="{ hospital: h.id }">View doctors</a>
+              @if (h.emergency) {
+                <app-badge tone="danger">24/7 ER</app-badge>
+              }
+            </div>
+          </app-card>
+        } @empty {
+          <app-empty-state class="col-span-full" title="No hospitals found" description="No hospitals match your filters." />
         }
-      </select>
-      <label class="flex items-center gap-2 text-sm"
-        ><input type="checkbox" class="accent-primary size-4" (change)="er.set(eventChecked($event))" /> Emergency only</label
-      >
-    </div>
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      @for (h of rows(); track h.id) {
-        <app-card [heading]="h.name" [description]="h.area + ' · ' + h.type">
-          @if (h.emergency) {
-            <app-badge cardAction tone="danger">24/7 ER</app-badge>
-          }
-          <p class="text-xs">{{ h.ownership }} · {{ doctorCount(h.id) }} demo doctors</p>
-          <a appButton routerLink="/doctors" [queryParams]="{ hospital: h.id }">View doctors</a>
-        </app-card>
-      } @empty {
-        <app-empty-state class="col-span-full" title="No hospitals found" description="No hospitals match your filters." />
-      }
+      </div>
     </div>
   `,
 })
@@ -57,7 +81,7 @@ export class HospitalsPage {
   protected readonly eventValue = eventValue
   protected readonly eventChecked = eventChecked
   protected readonly store = inject(AppointmentStore)
-  protected readonly areas = AREAS
+  protected readonly areaOptions = [{ value: '', label: 'All areas' }, ...AREAS.map((a) => ({ value: a, label: a }))]
   protected readonly q = signal('')
   protected readonly area = signal('')
   protected readonly er = signal(false)

@@ -58,15 +58,17 @@ export interface SidebarGroup {
       @if (!collapsed()) {
         <div class="min-w-0 flex-1"><ng-content select="[sidebarHeader]" /></div>
       }
-      <button
-        type="button"
-        [attr.aria-label]="collapsed() ? 'Expand sidebar' : 'Collapse sidebar'"
-        [attr.aria-expanded]="!collapsed()"
-        (click)="collapsed.set(!collapsed())"
-        class="hover:bg-sidebar-accent focus-visible:outline-sidebar-ring flex size-8 shrink-0 items-center justify-center rounded-md focus-visible:outline-2"
-      >
-        <ng-icon name="lucidePanelLeft" size="16" />
-      </button>
+      @if (collapsible()) {
+        <button
+          type="button"
+          [attr.aria-label]="collapsed() ? 'Expand sidebar' : 'Collapse sidebar'"
+          [attr.aria-expanded]="!collapsed()"
+          (click)="collapsed.set(!collapsed())"
+          class="hover:bg-sidebar-accent focus-visible:outline-sidebar-ring flex size-8 shrink-0 items-center justify-center rounded-md focus-visible:outline-2"
+        >
+          <ng-icon name="lucidePanelLeft" size="16" />
+        </button>
+      }
     </div>
     <nav class="flex min-h-0 flex-1 flex-col gap-4 overflow-auto" aria-label="Sidebar">
       @for (g of groups(); track $index) {
@@ -102,4 +104,6 @@ export interface SidebarGroup {
 export class SidebarComponent {
   readonly groups = input.required<SidebarGroup[]>()
   readonly collapsed = model(false)
+  /** Show the collapse toggle. Disable for a fixed app-shell sidebar. */
+  readonly collapsible = input(true)
 }

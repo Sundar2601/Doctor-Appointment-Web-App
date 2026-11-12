@@ -1,86 +1,93 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
-import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router'
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core'
+import { toSignal } from '@angular/core/rxjs-interop'
+import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router'
 import { NgIcon, provideIcons } from '@ng-icons/core'
-import {
-  lucideBuilding2,
-  lucideCalendarPlus,
-  lucideClipboardList,
-  lucideLayoutDashboard,
-  lucideLogOut,
-  lucideMoon,
-  lucideStethoscope,
-  lucideSun,
-} from '@ng-icons/lucide'
+import { lucideActivity, lucideLogOut, lucideMoon, lucideSearch, lucideSun, lucideUser } from '@ng-icons/lucide'
+import { filter, map } from 'rxjs'
 import { AuthService } from '@/services/auth.service'
-import { AvatarComponent, ButtonDirective } from '@/ui'
 import { ThemeService } from '@/services/theme.service'
+import { AvatarComponent, BreadcrumbComponent, ButtonDirective, SidebarComponent, type SidebarGroup } from '@/ui'
+
+const NAV: SidebarGroup[] = [
+  {
+    label: 'Menu',
+    items: [
+      { label: 'Dashboard', href: '/dashboard', icon: 'lucideLayoutDashboard' },
+      { label: 'Hospitals', href: '/hospitals', icon: 'lucideBuilding2' },
+      { label: 'Doctors', href: '/doctors', icon: 'lucideUsers' },
+      { label: 'Appointments', href: '/appointments', icon: 'lucideCalendar' },
+    ],
+  },
+]
+
+/** Page titles for the breadcrumb, keyed by the first URL segment. */
+const PAGE_TITLES: Record<string, string> = {
+  dashboard: 'Dashboard',
+  hospitals: 'Hospitals',
+  doctors: 'Doctors',
+  book: 'Book appointment',
+  appointments: 'Appointments',
+}
 
 @Component({
   selector: 'app-root',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, NgIcon, AvatarComponent, ButtonDirective],
-  viewProviders: [
-    provideIcons({
-      lucideBuilding2,
-      lucideCalendarPlus,
-      lucideClipboardList,
-      lucideLayoutDashboard,
-      lucideLogOut,
-      lucideMoon,
-      lucideStethoscope,
-      lucideSun,
-    }),
-  ],
+  imports: [RouterOutlet, RouterLink, NgIcon, AvatarComponent, BreadcrumbComponent, ButtonDirective, SidebarComponent],
+  viewProviders: [provideIcons({ lucideActivity, lucideLogOut, lucideMoon, lucideSearch, lucideSun, lucideUser })],
   template: `
     @if (!auth.isLoggedIn()) {
       <router-outlet />
     } @else {
       <div class="flex min-h-svh">
-        <aside class="bg-sidebar text-sidebar-foreground sticky top-0 hidden h-svh w-60 shrink-0 flex-col border-r md:flex">
-          <a routerLink="/" class="flex h-16 items-center gap-2 border-b px-5 text-lg font-semibold tracking-tight">
-            <span class="bg-primary text-primary-foreground flex size-7 items-center justify-center rounded-md text-sm">D</span>
-            Doctor Appointment App
+        <app-sidebar class="sticky top-0 hidden h-svh w-64 shrink-0 md:flex" [groups]="nav" [collapsible]="false">
+          <a sidebarHeader routerLink="/" class="flex items-center gap-2 px-2 py-1">
+            <span class="bg-sidebar-primary text-sidebar-primary-foreground flex size-8 items-center justify-center rounded-md">
+              <ng-icon name="lucideActivity" size="16" />
+            </span>
+            <span class="flex flex-col">
+              <span class="text-sm leading-5 font-semibold">Doctor Appointment</span>
+              <span class="text-muted-foreground text-xs">Puducherry region</span>
+            </span>
           </a>
-          <nav class="flex flex-1 flex-col gap-1 p-3 text-sm" aria-label="Main">
-            @for (item of nav; track item.path) {
-              <a
-                [routerLink]="item.path"
-                routerLinkActive="bg-sidebar-accent text-sidebar-accent-foreground font-medium"
-                class="hover:bg-sidebar-accent flex items-center gap-3 rounded-md px-3 py-2"
-              >
-                <ng-icon [name]="item.icon" class="size-4" />{{ item.label }}
-              </a>
-            }
-          </nav>
-          <button appButton variant="ghost" type="button" class="mx-3 mb-2 justify-start" (click)="signOut()">
-            <ng-icon name="lucideLogOut" />Sign out
-          </button>
-          <div class="text-muted-foreground border-t p-4 text-xs">Puducherry region</div>
-        </aside>
+          <div sidebarFooter class="flex items-center gap-2 px-2 py-1">
+            <span class="bg-muted flex size-8 shrink-0 items-center justify-center rounded-full"
+              ><ng-icon name="lucideUser" size="16"
+            /></span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm leading-5 font-medium">{{ auth.user()?.name }}</span>
+              <span class="text-muted-foreground block truncate text-xs">{{ auth.user()?.email }}</span>
+            </span>
+            <button appButton variant="ghost" size="icon" type="button" aria-label="Sign out" (click)="signOut()">
+              <ng-icon name="lucideLogOut" size="16" />
+            </button>
+          </div>
+        </app-sidebar>
 
-        <div class="flex min-w-0 flex-1 flex-col">
-          <header class="bg-background/80 sticky top-0 z-40 flex h-16 items-center gap-3 border-b px-4 backdrop-blur sm:px-6">
-            <nav class="flex gap-1 md:hidden" aria-label="Mobile">
-              @for (item of nav; track item.path) {
-                <a [routerLink]="item.path" routerLinkActive="bg-accent" class="rounded-md p-2" [attr.aria-label]="item.label"
-                  ><ng-icon [name]="item.icon"
-                /></a>
-              }
-            </nav>
-            <div class="ml-auto flex items-center gap-3">
-              <button appButton variant="ghost" size="icon" type="button" aria-label="Toggle theme" (click)="theme.toggleTheme()">
-                <ng-icon [name]="theme.themeMode() === 'dark' ? 'lucideSun' : 'lucideMoon'" />
-              </button>
-              <div class="flex items-center gap-2 text-sm">
-                <app-avatar [name]="auth.user()?.name ?? ''" />
-                <span class="hidden sm:block"
-                  ><span class="block leading-tight font-medium">{{ auth.user()?.name }}</span
-                  ><span class="text-muted-foreground block text-xs leading-tight">{{ auth.user()?.email }}</span></span
-                >
-              </div>
-            </div>
+        <div class="flex min-w-0 flex-1 flex-col gap-6 px-4 py-8 sm:px-8 lg:px-16">
+          <header class="flex items-center gap-4">
+            <app-breadcrumb [items]="crumbs()" />
+            <span class="flex-1"></span>
+            <label class="text-muted-foreground relative hidden h-10 w-56 items-center gap-2 px-3 text-sm sm:flex">
+              <ng-icon name="lucideSearch" size="16" />
+              <span class="sr-only">Search</span>
+              <input type="search" placeholder="Search..." class="placeholder:text-muted-foreground w-full bg-transparent outline-none" />
+            </label>
+            <button
+              appButton
+              variant="ghost"
+              size="icon"
+              type="button"
+              aria-label="Toggle theme"
+              [attr.aria-pressed]="theme.themeMode() === 'dark'"
+              (click)="theme.toggleTheme()"
+            >
+              <ng-icon [name]="theme.themeMode() === 'dark' ? 'lucideSun' : 'lucideMoon'" size="16" />
+            </button>
+            <app-avatar [name]="auth.user()?.name ?? ''" />
           </header>
-          <main class="w-full max-w-7xl flex-1 px-4 py-8 sm:px-6"><router-outlet /></main>
+          <main class="min-w-0 flex-1 [&>:not(router-outlet)]:flex [&>:not(router-outlet)]:flex-col [&>:not(router-outlet)]:gap-6">
+            <router-outlet />
+          </main>
         </div>
       </div>
     }
@@ -90,15 +97,22 @@ export class AppComponent {
   protected readonly theme = inject(ThemeService)
   protected readonly auth = inject(AuthService)
   private readonly router = inject(Router)
+  protected readonly nav = NAV
+
+  private readonly url = toSignal(
+    this.router.events.pipe(
+      filter((e) => e instanceof NavigationEnd),
+      map(() => this.router.url),
+    ),
+    { initialValue: this.router.url },
+  )
+  protected readonly crumbs = computed(() => {
+    const segment = this.url().split(/[?#/]/).filter(Boolean)[0] ?? 'dashboard'
+    return [{ label: 'Home', href: '/dashboard' }, { label: PAGE_TITLES[segment] ?? 'Dashboard' }]
+  })
+
   protected signOut() {
     this.auth.signOut()
     void this.router.navigateByUrl('/signin')
   }
-  protected readonly nav = [
-    { path: '/dashboard', label: 'Dashboard', icon: 'lucideLayoutDashboard' },
-    { path: '/hospitals', label: 'Hospitals', icon: 'lucideBuilding2' },
-    { path: '/doctors', label: 'Doctors', icon: 'lucideStethoscope' },
-    { path: '/book', label: 'Book appointment', icon: 'lucideCalendarPlus' },
-    { path: '/appointments', label: 'Appointments', icon: 'lucideClipboardList' },
-  ]
 }

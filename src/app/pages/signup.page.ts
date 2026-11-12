@@ -1,25 +1,23 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core'
 import { Router, RouterLink } from '@angular/router'
 import { AuthService } from '@/services/auth.service'
-import { AlertComponent, ButtonDirective, CardComponent, ControlDirective, FieldComponent, eventValue } from '@/ui'
+import { AlertComponent, AuthBrandPanelComponent, ButtonDirective, ControlDirective, FieldComponent, eventValue } from '@/ui'
 
 @Component({
   selector: 'app-signup-page',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, AlertComponent, ButtonDirective, CardComponent, ControlDirective, FieldComponent],
+  imports: [RouterLink, AlertComponent, AuthBrandPanelComponent, ButtonDirective, ControlDirective, FieldComponent],
   template: `
-    <div class="bg-muted/40 flex min-h-svh items-center justify-center p-4">
-      <app-card class="w-full max-w-md p-6 shadow-sm sm:p-8">
-        <form class="grid gap-4" (submit)="$event.preventDefault(); submit()" novalidate>
-          <div class="text-center">
-            <span class="bg-primary text-primary-foreground mx-auto mb-3 flex size-10 items-center justify-center rounded-md font-semibold"
-              >D</span
-            >
-            <h1 class="text-2xl font-semibold tracking-tight">Create your account</h1>
+    <div class="grid min-h-svh lg:grid-cols-2">
+      <app-auth-brand-panel class="hidden lg:flex" />
+      <main class="flex items-center justify-center p-6 sm:p-10">
+        <form class="grid w-full max-w-100 gap-5" (submit)="$event.preventDefault(); submit()" novalidate>
+          <div class="grid gap-2">
+            <h1 class="text-3xl font-bold tracking-tight">Create your account</h1>
             <p class="text-muted-foreground text-sm">Book hospital appointments across Puducherry.</p>
           </div>
           <app-field label="Full name" for="name">
-            <input id="name" appControl autocomplete="name" (input)="name.set(eventValue($event))" />
+            <input id="name" appControl autocomplete="name" placeholder="Your full name" (input)="name.set(eventValue($event))" />
           </app-field>
           <app-field label="Email" for="email">
             <input
@@ -45,12 +43,14 @@ import { AlertComponent, ButtonDirective, CardComponent, ControlDirective, Field
           @if (error()) {
             <app-alert>{{ error() }}</app-alert>
           }
-          <button appButton type="submit" [disabled]="!valid() || busy()">{{ busy() ? 'Creating…' : 'Create account' }}</button>
+          <button appButton type="submit" class="w-full" [disabled]="!valid() || busy()">
+            {{ busy() ? 'Creating…' : 'Create account' }}
+          </button>
           <p class="text-muted-foreground text-center text-sm">
-            Already registered? <a appButton variant="link" routerLink="/signin" class="p-0">Sign in</a>
+            Already registered? <a routerLink="/signin" class="text-primary font-medium hover:underline">Sign in</a>
           </p>
         </form>
-      </app-card>
+      </main>
     </div>
   `,
 })
